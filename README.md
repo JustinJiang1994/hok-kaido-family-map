@@ -24,8 +24,7 @@ python3 build.py --output ../北海道家庭旅行地图.html
 ## 项目结构
 
 - `content/hokkaido.json`：北海道七个主题的文字、统计年份及官方来源
-- `scripts/build_intro.py`：生成主题信息图与首页介绍
-- `src/assets/intro/`：原创 SVG 信息图（构建时内嵌，无需联网加载）
+- `scripts/build_intro.py`：生成每主题一张配图的首页介绍
 - `src/index.html`：页面结构
 - `src/app.js`：地图、区域日期、标记和详情交互
 - `src/style.css`：移动端样式
