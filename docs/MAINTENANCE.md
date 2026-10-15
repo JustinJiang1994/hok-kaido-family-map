@@ -74,3 +74,8 @@
 - Source figures and URLs live in content/agriculture-comparison.json. The obsolete agriculture-comparison.svg is removed. Reader now has 43 chapters.
 - Audited all seven active charts: agricultural area/output, fishery quantity/value, population density, age structure and historical timeline. Regional charts use consistent denominators; density explicitly compares Hokkaido with Japan including Hokkaido; age percentages are Hokkaido internal age groups. Timeline is not a share comparison.
 - Checked mobile reader at 390×844: charts load, labels fit without horizontal overflow, and return button remains accessible. Map scripts and attraction content are unchanged.
+
+### 2026-10-15 · Named population comparisons
+- Added content/population-comparison.json from the 2020 census table I-2-1; six prefectures at the same administrative level and date.
+- population-total.svg compares populations with exact counts and reference areas; population-density.svg uses published densities on one linear scale. Hokkaido density excludes the four islands noted in the source, unlike the reference-area column.
+- Both SVGs have matching 640×1120 metadata. Source labels, data values and standalone build equality checked; browser file preview was blocked by URL policy, so this revision has no completed mobile browser visual check.

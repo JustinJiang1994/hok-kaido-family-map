@@ -6,10 +6,27 @@ def t(x,y,s,size=26,color='#193e42',weight=500):return f'<text x="{x}" y="{y}" f
 def start(title,h):return f'<svg xmlns="http://www.w3.org/2000/svg" width="640" height="{h}" viewBox="0 0 640 {h}"><title>{escape(title)}</title><rect width="640" height="{h}" rx="18" fill="#eff5f0"/><g font-family="PingFang SC,Microsoft YaHei,sans-serif">'+t(28,50,title,32,weight=750)
 def bar(y,width,color):return f'<rect x="28" y="{y}" width="{width}" height="38" rx="5" fill="{color}"/>'
 def save(name,s):(ROOT/'src/assets/intro'/f'{name}.svg').write_text(s+'</g></svg>')
-s=start('同样1平方公里，住多少人？',510)+t(28,94,'2020年人口密度 · 相同刻度比较',24)
-for y,label,value,color in [(150,'北海道',67,'#236e67'),(285,'日本全国（含北海道）',338,'#9a532e')]:
- s+=t(28,y,label,27,weight=700)+t(28,y+38,f'{value} 人 / 平方公里',30,color,700)+bar(y+58,584*value/338,color)
-s+=t(28,430,'全国平均约为北海道的5倍。',26)+t(28,468,'来源：北海道政府《数据册2026·人口》',20)+t(28,495,'采用官方密度值，不据行政总面积重新计算。',20);save('population-density',s)
+# Keep populations, areas and densities from the same 2020 census table.
+import json
+population=json.loads((ROOT/'content/population-comparison.json').read_text())
+for metric in ['total','density']:
+ density=metric=='density';height=1120
+ s=start('同样1平方公里，住多少人？' if density else '人口相近，土地有多不同？',height)
+ s+=t(28,94,'2020年10月1日 · 都道府县比较',24)
+ s+=t(28,137,'东京约为北海道的96倍密度' if density else '北海道522万人，福冈514万人',28,weight=700)
+ s+=t(28,173,'大阪约为北海道的70倍密度' if density else '北海道表列面积约为福冈的17倍',25)
+ maximum=max(row[3 if density else 1] for row in population['rows'])
+ for n,(name,count,area,people_per_km) in enumerate(population['rows']):
+  y=231+n*125;value=people_per_km if density else count
+  color='#236e67' if n==0 else '#617b99'
+  s+=t(28,y,name,29,weight=750)
+  s+=t(258,y,f'{people_per_km:,.1f} 人/km²' if density else f'{count/10000:,.2f} 万人',28,color,700)
+  s+=bar(y+17,584*value/maximum,color)
+  s+=t(28,y+83,f'约为北海道的 {people_per_km/66.6:.1f} 倍密度' if density else f'人口 {count:,} 人 · 面积 {area:,.2f} km²',21)
+ lines=(['各条均从0起，同一线性刻度；不是人口占比。','密度采用官方公布值；北海道计算时扣除','齿舞、色丹、国后、择捉面积。'] if density else ['面积为普查表列参考面积，非可居住面积。','均为整个都道府县，不是市区或都市圈。','人口按万人显示，同时列出原始人数。'])
+ for n,line in enumerate(lines):s+=t(28,1010+n*28,line,21)
+ s+=t(28,1100,'来源：日本统计局2020年国势调查 表Ⅰ－２－１',20)
+ save('population-density' if density else 'population-total',s)
 s=start('把居民想成100个人',560)+t(28,94,'2020年 · 北海道年龄构成',24)
 for y,label,value,color in [(150,'15岁以下',10.8,'#c07336'),(270,'15—64岁',57.0,'#236e67'),(390,'65岁及以上',32.2,'#67528c')]:
  s+=t(28,y,label,28,weight=650)+t(415,y,f'{value:.1f}%',32,color,750)+bar(y+20,584,'#dce5de')+bar(y+20,584*value/100,color)
@@ -42,4 +59,4 @@ s=start('从近代转折，走到今天',1070)+t(28,93,'城市 · 交通 · 自�
 for n,(year,label) in enumerate(rows):
  y=145+n*98;s+=f'<circle cx="46" cy="{y}" r="9" fill="#ca6537"/>'+t(72,y+8,year,29,'#9a532e',750)+t(72,y+47,label,25)
 s+=t(28,1030,'来源：北海道政府《数据册2026·历史年表》',20)+t(28,1058,'近代之前的文化与历史，见正文第一章。',20);save('history-timeline',s)
-print('Built 5 reading charts')
+print('Built 6 reading charts')
