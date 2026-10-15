@@ -1,6 +1,6 @@
 'use strict';
 const $=s=>document.querySelector(s),esc=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-let region='札幌',current=[],markers=[],bounds,selectedId=null;
+let region='行程总览',current=[],markers=[],bounds,selectedId=null;
 const map=L.map('map',{zoomAnimation:false,fadeAnimation:false,scrollWheelZoom:false,zoomControl:true,minZoom:5,maxZoom:18}).setView([43.2,142.1],7);
 map.attributionControl.setPrefix('');
 const tiles=L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png',{minZoom:5,maxZoom:18,attribution:'<a href="https://maps.gsi.go.jp/development/ichiran.html" target="_blank">地理院タイル</a>'}).addTo(map);
@@ -9,6 +9,7 @@ setTimeout(()=>{if(!tileSuccess){$('#mapStatus').className='error';$('#mapStatus
 const routeLayer=L.layerGroup().addTo(map),markerLayer=L.layerGroup().addTo(map);
 const placeColor=p=>p.type==='food'?'#c65c18':p.type==='hub'?'#54677c':'#c02570';
 function renderMarkers(){
+ if(region==='行程总览')return;
  markerLayer.clearLayers();routeLayer.clearLayers();markers=[];const size=map.getSize(),used=[];
  current.forEach(p=>{const actual=map.latLngToContainerPoint([p.lat,p.lon]);if(actual.x<0||actual.y<0||actual.x>size.x||actual.y>size.y)return;
  let best=null;for(let y=26;y<=size.y-38;y+=6)for(let x=26;x<=size.x-26;x+=6){if(x<78&&y<126)continue;if(used.some(q=>Math.abs(x-q.x)<46&&Math.abs(y-q.y)<46))continue;const d=(x-actual.x)**2+(y-actual.y)**2;if(!best||d<best.d)best={x,y,d};}
@@ -36,15 +37,58 @@ function showPlace(p){
 }
 detail.addEventListener('click',e=>{if(e.target===detail){const r=detail.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)detail.close();}});
 function highlight(id){selectedId=id;}
-const MAP_REGIONS=['札幌','旭川','美瑛','新千岁机场'];
-const REGION_DATES={'札幌':['12月17—19日','第1—3天'],'旭川':['12月19—22日','第3—6天'],'美瑛':['12月21日','第5天'],'新千岁机场':['12月17日、22日','第1、6天']};
-const airport={id:'airport',name:'新千岁机场',city:'新千岁机场',type:'hub',lat:42.787,lon:141.681,desc:'北海道的抵达与返程门户。这里先标机场位置，餐厅待补充。'};
-function fitRegion(){map.fitBounds(bounds,{padding:innerWidth<560?[40,55]:[65,65],maxZoom:region==='新千岁机场'?15:14,animate:false});}
+const MAP_REGIONS=['行程总览','札幌','旭川','美瑛'];
+const REGION_DATES={'行程总览':['12月17—22日','6天动线'],'札幌':['12月17—19日','第1—3天'],'旭川':['12月19—22日','第3—6天'],'美瑛':['12月21日','第5天']};
+const JOURNEY_HUBS={airport:[42.787,141.681],sapporo:[43.062,141.354],asahi:[43.768,142.365],biei:[43.588,142.467],zoo:[43.768,142.480]};
+const JOURNEY=[
+ {title:'第1天 · 12月17日',route:'新千岁机场 → 札幌',note:'上海经羽田飞抵北海道，随后前往札幌。',points:['airport','sapporo']},
+ {title:'第2天 · 12月18日',route:'札幌市内游览',note:'札幌景点、白色恋人公园与圣诞市集。',points:['sapporo']},
+ {title:'第3天 · 12月19日',route:'札幌 → 旭川',note:'在札幌购物，预计16:00左右出发去旭川。',points:['sapporo','asahi']},
+ {title:'第4天 · 12月20日',route:'旭川 ⇄ 旭山动物园',note:'游览旭山动物园，之后返回旭川。',points:['asahi','zoo','asahi']},
+ {title:'第5天 · 12月21日',route:'旭川 ⇄ 美瑛',note:'美瑛雪景、青池与白须瀑布，之后返回旭川。',points:['asahi','biei','asahi']},
+ {title:'第6天 · 12月22日',route:'旭川 → 新千岁机场',note:'从旭川前往机场，搭机返回上海。',points:['asahi','airport']}
+];
+const overviewLayer=L.layerGroup().addTo(map);
+let dayIndex=0,playing=false,animation=0,started=0,traveler,activeLine;
+function stopJourney(){playing=false;cancelAnimationFrame(animation);if($('#playJourney'))$('#playJourney').textContent='▶ 播放';}
+function drawDay(index){
+ dayIndex=index;overviewLayer.clearLayers();const day=JOURNEY[index];
+ $('#journeyTitle').textContent=day.title;$('#journeyRoute').textContent=day.route;$('#journeyNote').textContent=day.note;
+ $('#journeyDays').innerHTML=JOURNEY.map((d,i)=>`<button data-day="${i}" aria-label="${d.title}" aria-pressed="${i===index}" class="${i===index?'active':''}">${i+1}</button>`).join('');
+ const all=['airport','sapporo','asahi','biei'];L.polyline(all.map(k=>JOURNEY_HUBS[k]),{color:'#738e92',weight:3,opacity:.35,dashArray:'5 8',interactive:false}).addTo(overviewLayer);
+ const points=day.points.map(k=>JOURNEY_HUBS[k]);activeLine=L.polyline(points,{color:'#da5b20',weight:5,opacity:.9,interactive:false}).addTo(overviewLayer);
+ [['airport','新千岁机场','right'],['sapporo','札幌','left'],['asahi','旭川','left'],['biei','美瑛','right']].forEach(([id,name,dir])=>{
+ L.circleMarker(JOURNEY_HUBS[id],{radius:6,color:'white',weight:2,fillColor:'#193e42',fillOpacity:1,interactive:false}).addTo(overviewLayer).bindTooltip(name,{permanent:true,direction:dir,className:'hub-label',offset:[dir==='left'?-8:8,0]});
+ });
+ if(index===3)L.circleMarker(JOURNEY_HUBS.zoo,{radius:5,color:'white',weight:2,fillColor:'#193e42',fillOpacity:1,interactive:false}).addTo(overviewLayer).bindTooltip('旭山动物园',{permanent:true,direction:'top',className:'hub-label',offset:[0,-10]});
+ traveler=L.circleMarker(points[0],{radius:9,color:'white',weight:3,fillColor:'#da5b20',fillOpacity:1,interactive:false}).addTo(overviewLayer);started=performance.now();
+}
+function tickJourney(now){
+ if(!playing||region!=='行程总览')return;
+ const t=Math.min(1,(now-started)/2000),points=JOURNEY[dayIndex].points.map(k=>JOURNEY_HUBS[k]);
+ if(points.length>1){const progress=t*(points.length-1),i=Math.min(points.length-2,Math.floor(progress)),u=progress-i;
+ traveler.setLatLng([points[i][0]+(points[i+1][0]-points[i][0])*u,points[i][1]+(points[i+1][1]-points[i][1])*u]);}
+ if(t>=1){if(dayIndex===JOURNEY.length-1){stopJourney();$('#playJourney').textContent='↻ 再看一次';return;}drawDay(dayIndex+1);}
+ animation=requestAnimationFrame(tickJourney);
+}
+function startJourney(){playing=true;started=performance.now();$('#playJourney').textContent='Ⅱ 暂停';animation=requestAnimationFrame(tickJourney);}
+function fitRegion(){map.fitBounds(bounds,{padding:region==='行程总览'?[70,45]:innerWidth<560?[40,55]:[65,65],maxZoom:14,animate:false});}
 function render(){
- current=PLACES.filter(p=>p.city===region);if(region==='新千岁机场')current=[airport,...PLACES.filter(p=>['新千岁','新千岁机场'].includes(p.city))];
+ stopJourney();overviewLayer.clearLayers();markerLayer.clearLayers();routeLayer.clearLayers();
+ const overview=region==='行程总览';if(overview&&innerWidth<560)map.dragging.disable();else map.dragging.enable();document.body.classList.toggle('overview-mode',overview);
+ $('#journeyPanel').hidden=!overview;$('#hokkaidoIntro').hidden=!overview;$('#placeLegend').hidden=overview;
+ $('#mapHint').textContent=overview?'橙色圆点展示移动方向 · 线条为区域动线示意，不是导航路线':'双指缩放 · 点圆点查看 · 密集圆点以细线连接实际位置';
+ current=PLACES.filter(p=>p.city===region);
  $('#days').innerHTML=MAP_REGIONS.map(name=>`<button data-region="${name}" class="${region===name?'active':''}" aria-pressed="${region===name}"><strong>${name}</strong><small>${REGION_DATES[name][0]}</small><small>${REGION_DATES[name][1]}</small></button>`).join('');
- $('#mapTitle').textContent=region+'地图';
- map.closePopup();routeLayer.clearLayers();bounds=L.latLngBounds(current.map(p=>[p.lat,p.lon]));fitRegion();renderMarkers();}
+ $('#mapTitle').textContent=overview?'这几天怎么走':region+'地图';
+ bounds=L.latLngBounds(overview?Object.values(JOURNEY_HUBS):current.map(p=>[p.lat,p.lon]));
+ map.invalidateSize({animate:false});fitRegion();
+ if(overview){drawDay(0);if(!matchMedia('(prefers-reduced-motion: reduce)').matches)startJourney();}else renderMarkers();
+ $('main').scrollTop=0;
+}
 $('#days').onclick=e=>{const b=e.target.closest('[data-region]');if(b){region=b.dataset.region;render();}};
+$('#journeyDays').onclick=e=>{const b=e.target.closest('[data-day]');if(b){stopJourney();drawDay(Number(b.dataset.day));}};
+$('#playJourney').onclick=()=>{if(playing)stopJourney();else{if(dayIndex===JOURNEY.length-1)drawDay(0);startJourney();}};
+document.addEventListener('visibilitychange',()=>{if(document.hidden)stopJourney();});
 $('#fit').onclick=fitRegion;map.on('moveend',renderMarkers);map.on('resize',()=>{if(bounds)fitRegion();});
 render();

@@ -1,5 +1,13 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>北海道 · 手机地图</title><link rel="stylesheet" href="vendor/leaflet.css"><link rel="stylesheet" href="style.css"></head><body>
 <header><h1>北海道旅行地图</h1><span>点圆点，看介绍</span></header>
 <nav id="days" aria-label="选择区域"></nav>
-<main><section class="map-panel"><div class="map-head"><h2 id="mapTitle">札幌地图</h2><button id="fit">回到全图</button></div><div id="map" aria-label="北海道真实道路地图"></div><div class="map-bottom"><div class="legend"><span style="color:#c02570">● 景点</span><span style="color:#c65c18">● 餐厅（待补充）</span><span style="color:#54677c">● 机场</span></div><p>双指缩放 · 点圆点查看 · 密集圆点以细线连接实际位置</p><div id="mapStatus" role="status">正在加载道路地图…</div></div></section></main>
+<main><section class="map-panel"><div class="map-head"><h2 id="mapTitle">札幌地图</h2><button id="fit">回到全图</button></div><section id="journeyPanel" hidden aria-label="行程播放"><div class="journey-top"><strong id="journeyTitle"></strong><button id="playJourney">Ⅱ 暂停</button></div><h3 id="journeyRoute"></h3><p id="journeyNote"></p><div id="journeyDays" aria-label="选择第几天"></div></section><div id="map" aria-label="北海道真实道路地图"></div><div class="map-bottom"><div class="legend" id="placeLegend"><span style="color:#c02570">● 景点</span><span style="color:#c65c18">● 餐厅（待补充）</span><span style="color:#54677c">● 机场</span></div><p id="mapHint">双指缩放 · 点圆点查看 · 密集圆点以细线连接实际位置</p><div id="mapStatus" role="status">正在加载道路地图…</div></div></section>
+<article id="hokkaidoIntro" hidden>
+<p class="intro-eyebrow">往下认识北海道</p><h2>雪、城市与开阔的丘陵</h2>
+<p>北海道位于日本北部，是日本四大岛中最靠北的一座。这次旅行集中在札幌、旭川与美瑛一带，新千岁机场是进出北海道的门户。</p>
+<section><h3>先认识这几个地方</h3><p><strong>札幌：</strong>北海道的主要城市，可以看街区、公园与城市夜景，也方便购物和用餐。</p><p><strong>旭川：</strong>位于北海道内陆，是这次去旭山动物园和美瑛的住宿基地。</p><p><strong>美瑛：</strong>在旭川以南，以起伏丘陵、树景和白金地区的青池、瀑布闻名，冬天以雪景为主。</p></section>
+<section><h3>12月的北海道是什么样</h3><p>白昼较短，雪后的城市和丘陵与夏季照片很不一样。青池可能结冰覆雪，花田也会进入冬季景观；照片中的季节标注可以帮助大家提前认识差别。</p><p>城市之间有一定距离，冬天路况和天气可能让移动更慢。行程总览展示的是你们预计的移动方向，具体时间仍按航班、交通和天气调整。</p></section>
+<section><h3>边看风景，也认识当地文化</h3><p>札幌的红砖厅舍和钟楼记录着城市的发展。北海道也有历史悠久的阿伊努文化；了解这片土地时，除了自然风景，也可以留意当地的历史与生活方式。</p></section>
+<p class="intro-foot">想看具体景点的照片和介绍，点上方的札幌、旭川或美瑛标签。</p>
+</article></main>
 <script src="vendor/leaflet.js"></script><script src="data.js"></script><script src="media.js"></script><script src="app.js"></script></body></html>

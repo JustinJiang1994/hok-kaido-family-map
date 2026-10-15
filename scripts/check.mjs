@@ -4,6 +4,7 @@ import assert from 'node:assert/strict';
 const root = new URL('../', import.meta.url);
 const read = f => fs.readFileSync(new URL(f, root), 'utf8');
 for (const f of ['app.js', 'data.js', 'media.js']) new vm.Script(read('src/' + f), {filename:f});
+new vm.Script(['data.js','media.js','app.js'].map(f => read('src/' + f)).join('\n'), {filename:'combined-app'});
 const places = vm.runInNewContext(read('src/data.js') + '\nPLACES');
 const media = vm.runInNewContext(read('src/media.js') + '\nPLACE_MEDIA');
 assert.equal(new Set(places.map(p => p.id)).size, places.length, 'Duplicate place ids');
