@@ -21,3 +21,6 @@
 
 /* Regional maps keep their original flex layout; the wrapper is overview-only. */
 body:not(.overview-mode) .map-stage{display:contents}body:not(.overview-mode) #map{height:auto;flex:1;min-height:180px}
+
+/* Homepage reading cards are scoped away from all map and place-detail styles. */
+#hokkaidoIntro{background:transparent;border:0;padding:0;margin-top:20px}#hokkaidoIntro .intro-opening{padding:14px 8px 20px}#hokkaidoIntro .topic-card{background:#fffef8;border:1px solid #d5dfd4;border-radius:16px;overflow:hidden;margin:0 0 20px}#hokkaidoIntro .topic-image{display:block;width:100%;height:auto;background:#edf2ed}#hokkaidoIntro .topic-copy{padding:4px 20px 20px}#hokkaidoIntro .topic-copy h3{font-size:21px;line-height:1.5;margin:18px 0 12px}#hokkaidoIntro .topic-copy p{font-size:17px;line-height:1.9;margin:0 0 14px}#hokkaidoIntro .topic-copy .topic-note{font-size:14px;padding:12px;background:#f1f3ec;border-radius:8px}#hokkaidoIntro .topic-copy .topic-source{font-size:12px;line-height:1.7;color:#6b7b73;margin-bottom:0}@media(min-width:800px){#hokkaidoIntro .topic-card{display:grid;grid-template-columns:1fr 1fr;align-items:start}#hokkaidoIntro .topic-image{position:sticky;top:0}#hokkaidoIntro .intro-opening{max-width:700px}}
