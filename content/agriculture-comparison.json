@@ -1,0 +1,10 @@
+{
+  "year": 2024,
+  "source": "https://www.pref.hokkaido.lg.jp/ss/tkk/databook/260921.html",
+  "checkedOn": "2026-10-15",
+  "comparison": "北海道 vs 日本其余46个都府县合计",
+  "metrics": [
+    {"label": "耕地面积", "hokkaidoPercent": 26.6, "hokkaidoValue": "113.8万公顷", "takeaway": "全国每100份耕地，约27份在北海道。"},
+    {"label": "农业产出额", "hokkaidoPercent": 13.7, "hokkaidoValue": "1兆4,817亿日元", "takeaway": "全国每100份农业产出，约14份来自北海道。"}
+  ]
+}

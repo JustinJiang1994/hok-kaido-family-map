@@ -53,3 +53,5 @@
 验收：逐个打开七个封面，检查配图、章数、长文滚动、顶部和底部返回，以及 Escape 关闭。手机上返回按钮须始终可见；退出后保留封面列表位置。
 
 地理章节的四区支持 `image`（含来源、尺寸、核验日期）、`position`、`role`、`spots` 和 `trip` 字段。图片必须与对应地区景点匹配；区域背景景点与既定行程须分别注明。
+
+农业对比图数据在 `content/agriculture-comparison.json`。更新后运行 `python3 scripts/build_agriculture_chart.py` 再生成介绍及构建。两条占比条均以全国100%为基准，其他地区为公布占比的补数；不要将面积和产值当成相同指标。

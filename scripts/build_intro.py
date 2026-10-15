@@ -12,6 +12,9 @@ for c in DATA['cards']:
  chapters=''
  for section in c['sections']:
   chunk='<section class="reading-chapter"><h3>'+e(section['title'])+'</h3>'
+  if section.get('chart'):
+   q=section['chart']
+   chunk+=f'<figure class="comparison-chart"><img src="{e(q["src"])}" alt="{e(q["caption"])}" width="{q["width"]}" height="{q["height"]}"><figcaption>{e(q["credit"])}</figcaption></figure>'
   if section.get('image'):
    q=section['image']
    chunk+=f'<figure class="region-photo"><img src="{e(q["src"])}" alt="{e(q["caption"])}" width="{q["width"]}" height="{q["height"]}" loading="lazy" decoding="async" referrerpolicy="no-referrer"><figcaption>{e(q["caption"])}<small>图片：{e(q["credit"])}</small></figcaption></figure>'
