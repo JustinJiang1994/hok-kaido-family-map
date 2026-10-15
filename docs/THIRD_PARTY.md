@@ -17,3 +17,5 @@
 ## 北海道读本配图
 
 每主题一张配图；照片以外链加载。中文分区图为官方 SVG 底图的标注改编版，保存在 `src/assets/intro/regions-zh.svg` 并内嵌到单文件 HTML，原始地址为 https://www.visit-hokkaido.jp/basic/images/areaMap.svg 。其余配图：分区地图和拉面来自 HOKKAIDO LOVE!；钟楼及札幌夜景来自札幌官方旅游网站；青池来自美瑛町；田园来自美瑛町观光协会；阿伊努生活文化来自 Upopoy。原图版权归相应权利人；署名、图注和原始网页保存在 `content/hokkaido.json`，不暗示自由再利用授权。
+
+地理分区章节另引用四张官方资料图：札幌大通公园圣诞市集、美瑛青池、函馆山夜景、摩周湖。逐图地址、原始网页与署名保存在地理主题各章节的 `image` 字段。
