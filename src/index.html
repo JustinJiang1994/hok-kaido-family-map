@@ -1,7 +1,7 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>北海道 · 手机地图</title><link rel="stylesheet" href="vendor/leaflet.css"><link rel="stylesheet" href="style.css"></head><body>
 <header><h1>北海道旅行地图</h1><span>点圆点，看介绍</span></header>
 <nav id="days" aria-label="选择区域"></nav>
-<main><section class="map-panel"><div class="map-head"><h2 id="mapTitle">札幌地图</h2><button id="fit">回到全图</button></div><section id="journeyPanel" hidden aria-label="行程播放"><div class="journey-top"><strong id="journeyTitle"></strong><button id="playJourney">Ⅱ 暂停</button></div><h3 id="journeyRoute"></h3><p id="journeyNote"></p></section><div id="map" aria-label="北海道真实道路地图"></div><div class="map-bottom"><div class="legend" id="placeLegend"><span style="color:#c02570">● 景点</span><span style="color:#c65c18">● 餐厅（待补充）</span><span style="color:#54677c">● 机场</span></div><p id="mapHint">双指缩放 · 点圆点查看 · 密集圆点以细线连接实际位置</p><div id="mapStatus" role="status">正在加载道路地图…</div></div></section>
+<main><section class="map-panel"><div class="map-head"><h2 id="mapTitle">札幌地图</h2><button id="fit">回到全图</button></div><div class="map-stage"><div id="map" aria-label="北海道真实道路地图"></div><section id="journeyPanel" hidden aria-label="当前移动路线"><strong id="journeyTitle"></strong><h3 id="journeyRoute"></h3></section><span id="islandCaption" hidden>北海道全览 · 自动循环</span></div><div class="map-bottom"><div class="legend" id="placeLegend"><span style="color:#c02570">● 景点</span><span style="color:#c65c18">● 餐厅（待补充）</span><span style="color:#54677c">● 机场</span></div><p id="mapHint">双指缩放 · 点圆点查看 · 密集圆点以细线连接实际位置</p><div id="mapStatus" role="status">正在加载道路地图…</div></div></section>
 <article id="hokkaidoIntro" hidden>
 <p class="intro-eyebrow">往下认识北海道</p><h2>雪、城市与开阔的丘陵</h2>
 <p>北海道位于日本北部，是日本四大岛中最靠北的一座。这次旅行集中在札幌、旭川与美瑛一带，新千岁机场是进出北海道的门户。</p>
@@ -10,4 +10,4 @@
 <section><h3>边看风景，也认识当地文化</h3><p>札幌的红砖厅舍和钟楼记录着城市的发展。北海道也有历史悠久的阿伊努文化；了解这片土地时，除了自然风景，也可以留意当地的历史与生活方式。</p></section>
 <p class="intro-foot">想看具体景点的照片和介绍，点上方的札幌、旭川或美瑛标签。</p>
 </article></main>
-<script src="vendor/leaflet.js"></script><script src="data.js"></script><script src="media.js"></script><script src="app.js"></script></body></html>
+<script src="vendor/leaflet.js"></script><script src="data.js"></script><script src="media.js"></script><script src="outline.js"></script><script src="app.js"></script></body></html>

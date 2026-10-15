@@ -1,7 +1,7 @@
 'use strict';
 const $=s=>document.querySelector(s),esc=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let region='行程总览',current=[],markers=[],bounds,selectedId=null;
-const map=L.map('map',{zoomAnimation:false,fadeAnimation:false,scrollWheelZoom:false,zoomControl:true,minZoom:5,maxZoom:18}).setView([43.2,142.1],7);
+const map=L.map('map',{zoomSnap:0.1,zoomAnimation:false,fadeAnimation:false,scrollWheelZoom:false,zoomControl:true,minZoom:5,maxZoom:18}).setView([43.2,142.1],7);
 map.attributionControl.setPrefix('');
 const tiles=L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png',{minZoom:5,maxZoom:18,attribution:'<a href="https://maps.gsi.go.jp/development/ichiran.html" target="_blank">地理院タイル</a>'}).addTo(map);
 let tileSuccess=0;tiles.on('loading',()=>{tileSuccess=0;$('#mapStatus').textContent='正在加载这一片区域的道路地图…';});tiles.on('tileload',()=>{tileSuccess++;$('#mapStatus').className='';$('#mapStatus').textContent='浅色道路底图 · 放大可看街区';});tiles.on('tileerror',()=>{if(!tileSuccess){$('#mapStatus').className='error';$('#mapStatus').textContent='道路底图暂未加载，请检查网络；请稍后刷新重试。';}});
@@ -49,7 +49,7 @@ const JOURNEY=[
 ];
 const overviewLayer=L.layerGroup().addTo(map),hubLabels=L.layerGroup().addTo(map);
 let dayIndex=0,playing=false,animation=0,started=0,elapsed=0,traveler,activeLine;
-function stopJourney(){if(playing)elapsed=performance.now()-started;playing=false;cancelAnimationFrame(animation);if($('#playJourney'))$('#playJourney').textContent='▶ 继续播放';}
+function stopJourney(){if(playing)elapsed=performance.now()-started;playing=false;cancelAnimationFrame(animation);}
 function drawOverviewLabels(){
  hubLabels.clearLayers();if(region!=='行程总览')return;
  const size=map.getSize();
@@ -57,21 +57,23 @@ function drawOverviewLabels(){
  const actual=map.latLngToContainerPoint(JOURNEY_HUBS[id]);
  const target=map.containerPointToLatLng([Math.max(55,Math.min(size.x-55,actual.x+dx)),actual.y+dy]);
  L.polyline([JOURNEY_HUBS[id],target],{color:'#486b70',weight:1,opacity:.7,interactive:false}).addTo(hubLabels);
- L.marker(target,{interactive:false,icon:L.divIcon({className:'overview-label',html:esc(name),iconSize:[100,30],iconAnchor:[50,15]})}).addTo(hubLabels);
+ L.marker(target,{interactive:false,icon:L.divIcon({className:'overview-label'+(JOURNEY[dayIndex].points.includes(id)?' is-current':''),html:esc(name),iconSize:[100,30],iconAnchor:[50,15]})}).addTo(hubLabels);
  });
 }
 function drawDay(index){
  dayIndex=index;const day=JOURNEY[index];
- $('#journeyTitle').textContent=day.title;$('#journeyRoute').textContent=day.route;$('#journeyNote').textContent=day.note;
+ $('#journeyTitle').textContent=day.title;$('#journeyRoute').textContent=day.route;drawOverviewLabels();
  started=performance.now();elapsed=0;
 }
 function setupJourney(){
  overviewLayer.clearLayers();
+ L.polygon([[[30,125],[55,125],[55,165],[30,165]],HOKKAIDO_OUTLINE],{stroke:false,fillColor:'#e4f0f1',fillOpacity:.96,interactive:false}).addTo(overviewLayer);
+ L.polygon(HOKKAIDO_OUTLINE,{color:'#287875',weight:2,fillColor:'#d1ebde',fillOpacity:.18,interactive:false}).addTo(overviewLayer);
  const path=['airport','sapporo','asahi','biei','asahi','airport'].map(k=>JOURNEY_HUBS[k]);
- L.polyline(path,{color:'#b4bfbb',weight:3,dashArray:'4 7',interactive:false}).addTo(overviewLayer);
- activeLine=L.polyline([path[0]],{color:'#df5b24',weight:4,opacity:1,interactive:false}).addTo(overviewLayer);
+ L.polyline(path,{color:'white',weight:9,opacity:.95,interactive:false}).addTo(overviewLayer);
+ activeLine=L.polyline([path[0]],{color:'#e75019',weight:6,opacity:1,interactive:false}).addTo(overviewLayer);
  Object.values(JOURNEY_HUBS).slice(0,4).forEach(pos=>L.circleMarker(pos,{radius:5,color:'white',weight:2,fillColor:'#193e42',fillOpacity:1,interactive:false}).addTo(overviewLayer));
- traveler=L.circleMarker(path[0],{radius:8,color:'white',weight:3,fillColor:'#df5b24',fillOpacity:1,interactive:false}).addTo(overviewLayer);
+ traveler=L.circleMarker(path[0],{radius:10,color:'white',weight:3,fillColor:'#e75019',fillOpacity:1,interactive:false}).addTo(overviewLayer);
  drawOverviewLabels();drawDay(0);
 }
 function tickJourney(now){
@@ -79,26 +81,25 @@ function tickJourney(now){
  const t=Math.min(1,(now-started)/2200),points=JOURNEY[dayIndex].points.map(k=>JOURNEY_HUBS[k]);
  const u=Math.min(1,t/0.8),pos=[points[0][0]+(points[1][0]-points[0][0])*u,points[0][1]+(points[1][1]-points[0][1])*u];
  traveler.setLatLng(pos);activeLine.setLatLngs([...JOURNEY.slice(0,dayIndex+1).map(d=>JOURNEY_HUBS[d.points[0]]),pos]);
- if(t>=1){if(dayIndex===JOURNEY.length-1){stopJourney();$('#playJourney').textContent='↻ 再看一次';return;}drawDay(dayIndex+1);}
+ if(t>=1){if(dayIndex===JOURNEY.length-1){activeLine.setLatLngs([JOURNEY_HUBS.airport]);drawDay(0);}else drawDay(dayIndex+1);}
  animation=requestAnimationFrame(tickJourney);
 }
-function startJourney(){playing=true;started=performance.now()-elapsed;$('#playJourney').textContent='Ⅱ 暂停';animation=requestAnimationFrame(tickJourney);}
-function fitRegion(){map.fitBounds(bounds,{padding:region==='行程总览'?[16,20]:innerWidth<560?[40,55]:[65,65],maxZoom:14,animate:false});if(region==='行程总览')drawOverviewLabels();}
+function startJourney(){playing=true;started=performance.now()-elapsed;animation=requestAnimationFrame(tickJourney);}
+function fitRegion(){map.fitBounds(bounds,{paddingTopLeft:region==='行程总览'?[16,80]:[0,0],paddingBottomRight:region==='行程总览'?[16,28]:[0,0],padding:region==='行程总览'?[0,0]:innerWidth<560?[40,55]:[65,65],maxZoom:14,animate:false});if(region==='行程总览')drawOverviewLabels();}
 function render(){
  stopJourney();overviewLayer.clearLayers();hubLabels.clearLayers();markerLayer.clearLayers();routeLayer.clearLayers();
  const overview=region==='行程总览';if(overview&&innerWidth<560)map.dragging.disable();else map.dragging.enable();document.body.classList.toggle('overview-mode',overview);
- $('#journeyPanel').hidden=!overview;$('#hokkaidoIntro').hidden=!overview;$('#placeLegend').hidden=overview;
- $('#mapHint').textContent=overview?'橙色圆点展示移动方向 · 线条为区域动线示意，不是导航路线':'双指缩放 · 点圆点查看 · 密集圆点以细线连接实际位置';
+ $('#journeyPanel').hidden=!overview;$('#islandCaption').hidden=!overview;$('#hokkaidoIntro').hidden=!overview;$('#placeLegend').hidden=overview;
+ $('#mapHint').textContent=overview?'动线为示意 · 下滑认识北海道 ↓':'双指缩放 · 点圆点查看 · 密集圆点以细线连接实际位置';
  current=PLACES.filter(p=>p.city===region);
  $('#days').innerHTML=MAP_REGIONS.map(name=>`<button data-region="${name}" class="${region===name?'active':''}" aria-pressed="${region===name}"><strong>${name}</strong><small>${REGION_DATES[name][0]}</small><small>${REGION_DATES[name][1]}</small></button>`).join('');
  $('#mapTitle').textContent=overview?'北海道全览':region+'地图';
- bounds=L.latLngBounds(overview?[[41.3,139.3],[45.7,146.0]]:current.map(p=>[p.lat,p.lon]));
+ bounds=L.latLngBounds(overview?[[41.35,139.35],[45.6,145.9]]:current.map(p=>[p.lat,p.lon]));
  map.invalidateSize({animate:false});fitRegion();
  if(overview){setupJourney();if(!matchMedia('(prefers-reduced-motion: reduce)').matches)startJourney();}else renderMarkers();
  $('main').scrollTop=0;
 }
 $('#days').onclick=e=>{const b=e.target.closest('[data-region]');if(b){region=b.dataset.region;render();}};
-$('#playJourney').onclick=()=>{if(playing)stopJourney();else{if(dayIndex===JOURNEY.length-1&&elapsed>=2200)setupJourney();startJourney();}};
-document.addEventListener('visibilitychange',()=>{if(document.hidden)stopJourney();});
+document.addEventListener('visibilitychange',()=>{if(document.hidden)stopJourney();else if(region==='行程总览'&&!matchMedia('(prefers-reduced-motion: reduce)').matches)startJourney();});
 $('#fit').onclick=fitRegion;map.on('moveend',()=>{if(region==='行程总览')drawOverviewLabels();else renderMarkers();});map.on('resize',()=>{if(bounds)fitRegion();});
 render();
