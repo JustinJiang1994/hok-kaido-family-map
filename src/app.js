@@ -41,54 +41,64 @@ const MAP_REGIONS=['行程总览','札幌','旭川','美瑛'];
 const REGION_DATES={'行程总览':['12月17—22日','6天动线'],'札幌':['12月17—19日','第1—3天'],'旭川':['12月19—22日','第3—6天'],'美瑛':['12月21日','第5天']};
 const JOURNEY_HUBS={airport:[42.787,141.681],sapporo:[43.062,141.354],asahi:[43.768,142.365],biei:[43.588,142.467],zoo:[43.768,142.480]};
 const JOURNEY=[
- {title:'第1天 · 12月17日',route:'新千岁机场 → 札幌',note:'上海经羽田飞抵北海道，随后前往札幌。',points:['airport','sapporo']},
- {title:'第2天 · 12月18日',route:'札幌市内游览',note:'札幌景点、白色恋人公园与圣诞市集。',points:['sapporo']},
- {title:'第3天 · 12月19日',route:'札幌 → 旭川',note:'在札幌购物，预计16:00左右出发去旭川。',points:['sapporo','asahi']},
- {title:'第4天 · 12月20日',route:'旭川 ⇄ 旭山动物园',note:'游览旭山动物园，之后返回旭川。',points:['asahi','zoo','asahi']},
- {title:'第5天 · 12月21日',route:'旭川 ⇄ 美瑛',note:'美瑛雪景、青池与白须瀑布，之后返回旭川。',points:['asahi','biei','asahi']},
- {title:'第6天 · 12月22日',route:'旭川 → 新千岁机场',note:'从旭川前往机场，搭机返回上海。',points:['asahi','airport']}
+ {title:'第1天 · 12月17日',route:'新千岁机场 → 札幌',note:'抵达北海道；第1—3天在札幌。',points:['airport','sapporo']},
+ {title:'第3天 · 12月19日',route:'札幌 → 旭川',note:'预计16:00左右离开札幌；第4天在旭川游览动物园。',points:['sapporo','asahi']},
+ {title:'第5天 · 12月21日',route:'旭川 → 美瑛',note:'前往美瑛看雪景、青池与白须瀑布。',points:['asahi','biei']},
+ {title:'第5天 · 12月21日',route:'美瑛 → 旭川',note:'结束美瑛游览，返回旭川。',points:['biei','asahi']},
+ {title:'第6天 · 12月22日',route:'旭川 → 新千岁机场',note:'前往机场，搭机返回上海。',points:['asahi','airport']}
 ];
-const overviewLayer=L.layerGroup().addTo(map);
-let dayIndex=0,playing=false,animation=0,started=0,traveler,activeLine;
-function stopJourney(){playing=false;cancelAnimationFrame(animation);if($('#playJourney'))$('#playJourney').textContent='▶ 播放';}
-function drawDay(index){
- dayIndex=index;overviewLayer.clearLayers();const day=JOURNEY[index];
- $('#journeyTitle').textContent=day.title;$('#journeyRoute').textContent=day.route;$('#journeyNote').textContent=day.note;
- $('#journeyDays').innerHTML=JOURNEY.map((d,i)=>`<button data-day="${i}" aria-label="${d.title}" aria-pressed="${i===index}" class="${i===index?'active':''}">${i+1}</button>`).join('');
- const all=['airport','sapporo','asahi','biei'];L.polyline(all.map(k=>JOURNEY_HUBS[k]),{color:'#738e92',weight:3,opacity:.35,dashArray:'5 8',interactive:false}).addTo(overviewLayer);
- const points=day.points.map(k=>JOURNEY_HUBS[k]);activeLine=L.polyline(points,{color:'#da5b20',weight:5,opacity:.9,interactive:false}).addTo(overviewLayer);
- [['airport','新千岁机场','right'],['sapporo','札幌','left'],['asahi','旭川','left'],['biei','美瑛','right']].forEach(([id,name,dir])=>{
- L.circleMarker(JOURNEY_HUBS[id],{radius:6,color:'white',weight:2,fillColor:'#193e42',fillOpacity:1,interactive:false}).addTo(overviewLayer).bindTooltip(name,{permanent:true,direction:dir,className:'hub-label',offset:[dir==='left'?-8:8,0]});
+const overviewLayer=L.layerGroup().addTo(map),hubLabels=L.layerGroup().addTo(map);
+let dayIndex=0,playing=false,animation=0,started=0,elapsed=0,traveler,activeLine;
+function stopJourney(){if(playing)elapsed=performance.now()-started;playing=false;cancelAnimationFrame(animation);if($('#playJourney'))$('#playJourney').textContent='▶ 继续播放';}
+function drawOverviewLabels(){
+ hubLabels.clearLayers();if(region!=='行程总览')return;
+ const size=map.getSize();
+ [['airport','新千岁机场',-85,57],['sapporo','札幌',-88,-12],['asahi','旭川',75,-45],['biei','美瑛',85,20]].forEach(([id,name,dx,dy])=>{
+ const actual=map.latLngToContainerPoint(JOURNEY_HUBS[id]);
+ const target=map.containerPointToLatLng([Math.max(55,Math.min(size.x-55,actual.x+dx)),actual.y+dy]);
+ L.polyline([JOURNEY_HUBS[id],target],{color:'#486b70',weight:1,opacity:.7,interactive:false}).addTo(hubLabels);
+ L.marker(target,{interactive:false,icon:L.divIcon({className:'overview-label',html:esc(name),iconSize:[100,30],iconAnchor:[50,15]})}).addTo(hubLabels);
  });
- if(index===3)L.circleMarker(JOURNEY_HUBS.zoo,{radius:5,color:'white',weight:2,fillColor:'#193e42',fillOpacity:1,interactive:false}).addTo(overviewLayer).bindTooltip('旭山动物园',{permanent:true,direction:'top',className:'hub-label',offset:[0,-10]});
- traveler=L.circleMarker(points[0],{radius:9,color:'white',weight:3,fillColor:'#da5b20',fillOpacity:1,interactive:false}).addTo(overviewLayer);started=performance.now();
+}
+function drawDay(index){
+ dayIndex=index;const day=JOURNEY[index];
+ $('#journeyTitle').textContent=day.title;$('#journeyRoute').textContent=day.route;$('#journeyNote').textContent=day.note;
+ started=performance.now();elapsed=0;
+}
+function setupJourney(){
+ overviewLayer.clearLayers();
+ const path=['airport','sapporo','asahi','biei','asahi','airport'].map(k=>JOURNEY_HUBS[k]);
+ L.polyline(path,{color:'#b4bfbb',weight:3,dashArray:'4 7',interactive:false}).addTo(overviewLayer);
+ activeLine=L.polyline([path[0]],{color:'#df5b24',weight:4,opacity:1,interactive:false}).addTo(overviewLayer);
+ Object.values(JOURNEY_HUBS).slice(0,4).forEach(pos=>L.circleMarker(pos,{radius:5,color:'white',weight:2,fillColor:'#193e42',fillOpacity:1,interactive:false}).addTo(overviewLayer));
+ traveler=L.circleMarker(path[0],{radius:8,color:'white',weight:3,fillColor:'#df5b24',fillOpacity:1,interactive:false}).addTo(overviewLayer);
+ drawOverviewLabels();drawDay(0);
 }
 function tickJourney(now){
  if(!playing||region!=='行程总览')return;
- const t=Math.min(1,(now-started)/2000),points=JOURNEY[dayIndex].points.map(k=>JOURNEY_HUBS[k]);
- if(points.length>1){const progress=t*(points.length-1),i=Math.min(points.length-2,Math.floor(progress)),u=progress-i;
- traveler.setLatLng([points[i][0]+(points[i+1][0]-points[i][0])*u,points[i][1]+(points[i+1][1]-points[i][1])*u]);}
+ const t=Math.min(1,(now-started)/2200),points=JOURNEY[dayIndex].points.map(k=>JOURNEY_HUBS[k]);
+ const u=Math.min(1,t/0.8),pos=[points[0][0]+(points[1][0]-points[0][0])*u,points[0][1]+(points[1][1]-points[0][1])*u];
+ traveler.setLatLng(pos);activeLine.setLatLngs([...JOURNEY.slice(0,dayIndex+1).map(d=>JOURNEY_HUBS[d.points[0]]),pos]);
  if(t>=1){if(dayIndex===JOURNEY.length-1){stopJourney();$('#playJourney').textContent='↻ 再看一次';return;}drawDay(dayIndex+1);}
  animation=requestAnimationFrame(tickJourney);
 }
-function startJourney(){playing=true;started=performance.now();$('#playJourney').textContent='Ⅱ 暂停';animation=requestAnimationFrame(tickJourney);}
-function fitRegion(){map.fitBounds(bounds,{padding:region==='行程总览'?[70,45]:innerWidth<560?[40,55]:[65,65],maxZoom:14,animate:false});}
+function startJourney(){playing=true;started=performance.now()-elapsed;$('#playJourney').textContent='Ⅱ 暂停';animation=requestAnimationFrame(tickJourney);}
+function fitRegion(){map.fitBounds(bounds,{padding:region==='行程总览'?[16,20]:innerWidth<560?[40,55]:[65,65],maxZoom:14,animate:false});if(region==='行程总览')drawOverviewLabels();}
 function render(){
- stopJourney();overviewLayer.clearLayers();markerLayer.clearLayers();routeLayer.clearLayers();
+ stopJourney();overviewLayer.clearLayers();hubLabels.clearLayers();markerLayer.clearLayers();routeLayer.clearLayers();
  const overview=region==='行程总览';if(overview&&innerWidth<560)map.dragging.disable();else map.dragging.enable();document.body.classList.toggle('overview-mode',overview);
  $('#journeyPanel').hidden=!overview;$('#hokkaidoIntro').hidden=!overview;$('#placeLegend').hidden=overview;
  $('#mapHint').textContent=overview?'橙色圆点展示移动方向 · 线条为区域动线示意，不是导航路线':'双指缩放 · 点圆点查看 · 密集圆点以细线连接实际位置';
  current=PLACES.filter(p=>p.city===region);
  $('#days').innerHTML=MAP_REGIONS.map(name=>`<button data-region="${name}" class="${region===name?'active':''}" aria-pressed="${region===name}"><strong>${name}</strong><small>${REGION_DATES[name][0]}</small><small>${REGION_DATES[name][1]}</small></button>`).join('');
- $('#mapTitle').textContent=overview?'这几天怎么走':region+'地图';
- bounds=L.latLngBounds(overview?Object.values(JOURNEY_HUBS):current.map(p=>[p.lat,p.lon]));
+ $('#mapTitle').textContent=overview?'北海道全览':region+'地图';
+ bounds=L.latLngBounds(overview?[[41.3,139.3],[45.7,146.0]]:current.map(p=>[p.lat,p.lon]));
  map.invalidateSize({animate:false});fitRegion();
- if(overview){drawDay(0);if(!matchMedia('(prefers-reduced-motion: reduce)').matches)startJourney();}else renderMarkers();
+ if(overview){setupJourney();if(!matchMedia('(prefers-reduced-motion: reduce)').matches)startJourney();}else renderMarkers();
  $('main').scrollTop=0;
 }
 $('#days').onclick=e=>{const b=e.target.closest('[data-region]');if(b){region=b.dataset.region;render();}};
-$('#journeyDays').onclick=e=>{const b=e.target.closest('[data-day]');if(b){stopJourney();drawDay(Number(b.dataset.day));}};
-$('#playJourney').onclick=()=>{if(playing)stopJourney();else{if(dayIndex===JOURNEY.length-1)drawDay(0);startJourney();}};
+$('#playJourney').onclick=()=>{if(playing)stopJourney();else{if(dayIndex===JOURNEY.length-1&&elapsed>=2200)setupJourney();startJourney();}};
 document.addEventListener('visibilitychange',()=>{if(document.hidden)stopJourney();});
-$('#fit').onclick=fitRegion;map.on('moveend',renderMarkers);map.on('resize',()=>{if(bounds)fitRegion();});
+$('#fit').onclick=fitRegion;map.on('moveend',()=>{if(region==='行程总览')drawOverviewLabels();else renderMarkers();});map.on('resize',()=>{if(bounds)fitRegion();});
 render();
