@@ -62,3 +62,9 @@
 - Density and age use 2020 census figures, fisheries use 2024 marine fishing/aquaculture territorial statistics; processing shipments use 2023 data. Do not conflate these denominators or years.
 - Optional section `image`, `chart`, and `facts` are independent of geography-only `position`, `role`, `spots`, `trip`.
 - Official photos remain externally hosted and require internet; source URLs/captions are stored in content/hokkaido.json. New photos visually checked at 390×844.
+
+### 2026-10-15 · Name the comparator prefectures
+- Fishery comparison now has two charts listing named prefectures, absolute values and national shares; data is stored in content/fishery-comparison.json.
+- IMPORTANT correction: use the national MAFF/JFA 2024 table for all prefectures. Hokkaido is 897,524 t and 279,298 million yen in this table, not the previous local-territorial figures. Do not mix these series.
+- Quantity shows six selected prefectures, not a complete ranking: Ibaraki's marine total/aquaculture is confidential. Value shows the national top five. Remaining aggregate is explicitly described.
+- Supersedes the previous fisheries scope note above. Old two-color fishery asset removed. Both charts checked at 390×844 without overflow; local standalone rebuilt byte-identically.

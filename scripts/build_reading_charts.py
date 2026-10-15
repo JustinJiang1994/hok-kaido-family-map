@@ -14,13 +14,32 @@ s=start('把居民想成100个人',560)+t(28,94,'2020年 · 北海道年龄构�
 for y,label,value,color in [(150,'15岁以下',10.8,'#c07336'),(270,'15—64岁',57.0,'#236e67'),(390,'65岁及以上',32.2,'#67528c')]:
  s+=t(28,y,label,28,weight=650)+t(415,y,f'{value:.1f}%',32,color,750)+bar(y+20,584,'#dce5de')+bar(y+20,584*value/100,color)
 s+=t(28,498,'每条浅色底带都表示全部人口100%。',23)+t(28,538,'来源：2020年国势调查／北海道政府数据册',20);save('population-age',s)
-s=start('日本的海产，北海道占多少？',650)+t(28,94,'2024年 · 海面渔业及养殖业（属地统计）',23)
-for y,label,value,pct in [(155,'产量','111万吨',30.9),(355,'产值','2,856亿日元',19.3)]:
- s+=t(28,y,label+' · 北海道'+value,29,weight=700)+bar(y+30,584,'#c8d5e4')+bar(y+30,584*pct/100,'#236e67')+t(28,y+112,f'北海道 {pct:.1f}%',29,'#236e67',750)+t(310,y+112,f'其他地区 {100-pct:.1f}%',27)+t(28,y+156,'整条色带＝日本全国100%',23)
-s+=t(28,565,'重量与金额分别比较，不等同于利润。',24)+t(28,606,'来源：北海道政府《数据册2026·水产业》',20)+t(28,636,'其他地区＝全国占比100%减去北海道占比',20);save('fishery-comparison',s)
+# Keep all cross-prefecture figures on the same national statistical basis.
+import json
+fish=json.loads((ROOT/'content/fishery-comparison.json').read_text())
+for key,heading,unit,divisor in [('quantity','海产产量：看看各地有多少','万吨',10000),('value','海产产出额：看看各地有多少','亿日元',100)]:
+ metric=fish[key];rows=metric['rows'];total=metric['total']
+ rest=total-sum(v for _,v in rows)
+ height=285+(len(rows)+1)*92+150
+ s=start(heading,height)+t(28,92,'2024年 · 海面捕捞＋养殖 · 全国统一口径',23)
+ s+=t(28,133,f'全国合计 {total/divisor:,.2f} {unit}',27,weight=700)
+ s+=t(28,172,'逐行标出地区、数值及全国占比',23)
+ maxval=max([v for _,v in rows]+[rest])
+ for n,(name,value) in enumerate(rows+[['未单列地区合计',rest]]):
+  y=222+n*92;col='#236e67' if n==0 else '#617b99' if n<len(rows) else '#b6c2ce'
+  s+=t(28,y,name,28,weight=700)+t(320,y,f'{value/divisor:,.2f} {unit}',26)
+  s+=f'<rect x="28" y="{y+17}" width="{440*value/maxval:.3f}" height="28" rx="4" fill="{col}"/>'
+  s+=t(490,y+40,f'{value/total*100:.1f}%',27,weight=700)
+ y=240+(len(rows)+1)*92
+ if key=='quantity':
+  lines=['展示6个主要地区，非完整排名。','茨城县海面合计保密，归入未单列地区；','其公开的捕捞量为23.19万吨（不含养殖）。']
+ else:lines=['具名地区为全国前五位。','未单列地区包括静冈、兵库、高知等。','两图口径相同，产量与金额不能视作利润。']
+ for n,line in enumerate(lines):s+=t(28,y+n*30,line,22)
+ s+=t(28,height-35,'来源：日本水产厅2024年都道府县统计表3-15',19)+t(28,height-10,'全国减去具名地区＝未单列地区；占比四舍五入。',19)
+ save('fishery-'+key,s)
 rows=[('1869','北海道命名；设立开拓使'),('1876—1888','农学校、铁路与红砖厅舍'),('1950','首届札幌雪祭'),('1971—1972','地铁开业；札幌冬奥会'),('1988','青函隧道通车；新千岁机场开港'),('2005','知床列入世界自然遗产'),('2016','北海道新干线首段开业'),('2020','Upopoy开放'),('2021','绳文遗址群列入世界文化遗产')]
 s=start('从近代转折，走到今天',1070)+t(28,93,'城市 · 交通 · 自然保护 · 文化传承',24)+'<path d="M46 138V968" stroke="#b8d2c8" stroke-width="5"/>'
 for n,(year,label) in enumerate(rows):
  y=145+n*98;s+=f'<circle cx="46" cy="{y}" r="9" fill="#ca6537"/>'+t(72,y+8,year,29,'#9a532e',750)+t(72,y+47,label,25)
 s+=t(28,1030,'来源：北海道政府《数据册2026·历史年表》',20)+t(28,1058,'近代之前的文化与历史，见正文第一章。',20);save('history-timeline',s)
-print('Built 4 reading charts')
+print('Built 5 reading charts')
