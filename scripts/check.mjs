@@ -19,3 +19,14 @@ for (const p of places) {
 }
 assert.equal(Object.keys(media).length, places.filter(p => p.type === 'sight').length, 'Orphaned media');
 console.log(`Checked ${places.length} places and ${Object.values(media).reduce((n,m)=>n+m.photos.length,0)} photos.`);
+// Overview padding and fractional zoom must never leak into regional maps.
+const fitSource = read('src/app.js').split('function fitRegion(){')[1].split('\nfunction render(){')[0];
+for (const width of [390, 1200]) {
+  const calls = [];
+  const context = {region:'札幌',innerWidth:width,bounds:[],map:{options:{zoomSnap:0.1},fitBounds:(b,o)=>calls.push(o)},drawOverviewLabels:()=>{throw Error('Overview leaked');}};
+  vm.runInNewContext('function fitRegion(){'+fitSource+'\nfitRegion();', context);
+  assert.equal(context.map.options.zoomSnap,1);
+  assert.equal(JSON.stringify(calls[0].padding),JSON.stringify(width<560?[40,55]:[65,65]));
+  assert(!('paddingTopLeft' in calls[0]) && !('paddingBottomRight' in calls[0]));
+}
+console.log('Regional zoom and padding isolation checked.');

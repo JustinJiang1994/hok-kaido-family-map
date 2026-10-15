@@ -1,7 +1,7 @@
 'use strict';
 const $=s=>document.querySelector(s),esc=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let region='行程总览',current=[],markers=[],bounds,selectedId=null;
-const map=L.map('map',{zoomSnap:0.1,zoomAnimation:false,fadeAnimation:false,scrollWheelZoom:false,zoomControl:true,minZoom:5,maxZoom:18}).setView([43.2,142.1],7);
+const map=L.map('map',{zoomAnimation:false,fadeAnimation:false,scrollWheelZoom:false,zoomControl:true,minZoom:5,maxZoom:18}).setView([43.2,142.1],7);
 map.attributionControl.setPrefix('');
 const tiles=L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png',{minZoom:5,maxZoom:18,attribution:'<a href="https://maps.gsi.go.jp/development/ichiran.html" target="_blank">地理院タイル</a>'}).addTo(map);
 let tileSuccess=0;tiles.on('loading',()=>{tileSuccess=0;$('#mapStatus').textContent='正在加载这一片区域的道路地图…';});tiles.on('tileload',()=>{tileSuccess++;$('#mapStatus').className='';$('#mapStatus').textContent='浅色道路底图 · 放大可看街区';});tiles.on('tileerror',()=>{if(!tileSuccess){$('#mapStatus').className='error';$('#mapStatus').textContent='道路底图暂未加载，请检查网络；请稍后刷新重试。';}});
@@ -85,7 +85,17 @@ function tickJourney(now){
  animation=requestAnimationFrame(tickJourney);
 }
 function startJourney(){playing=true;started=performance.now()-elapsed;animation=requestAnimationFrame(tickJourney);}
-function fitRegion(){map.fitBounds(bounds,{paddingTopLeft:region==='行程总览'?[16,80]:[0,0],paddingBottomRight:region==='行程总览'?[16,28]:[0,0],padding:region==='行程总览'?[0,0]:innerWidth<560?[40,55]:[65,65],maxZoom:14,animate:false});if(region==='行程总览')drawOverviewLabels();}
+function fitRegion(){
+ if(region==='行程总览'){
+  map.options.zoomSnap=0.1;
+  map.fitBounds(bounds,{paddingTopLeft:[16,80],paddingBottomRight:[16,28],maxZoom:14,animate:false});
+  drawOverviewLabels();
+ }else{
+  // Preserve the regional maps' original integer zoom and edge padding.
+  map.options.zoomSnap=1;
+  map.fitBounds(bounds,{padding:innerWidth<560?[40,55]:[65,65],maxZoom:14,animate:false});
+ }
+}
 function render(){
  stopJourney();overviewLayer.clearLayers();hubLabels.clearLayers();markerLayer.clearLayers();routeLayer.clearLayers();
  const overview=region==='行程总览';if(overview&&innerWidth<560)map.dragging.disable();else map.dragging.enable();document.body.classList.toggle('overview-mode',overview);
