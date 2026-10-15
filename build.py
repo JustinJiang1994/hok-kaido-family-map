@@ -12,7 +12,7 @@ def build(output=None):
     for name in ['vendor/leaflet.css', 'style.css']:
         html = html.replace(f'<link rel="stylesheet" href="{name}">',
                             '<style>' + (source / name).read_text(encoding='utf-8') + '</style>')
-    for name in ['vendor/leaflet.js', 'data.js', 'media.js', 'outline.js', 'app.js']:
+    for name in ['vendor/leaflet.js', 'data.js', 'media.js', 'outline.js', 'app.js', 'intro.js']:
         html = html.replace(f'<script src="{name}"></script>',
                             '<script>\n' + (source / name).read_text(encoding='utf-8') + '\n</script>')
     # Embed local topic images so the delivered HTML remains a single file.

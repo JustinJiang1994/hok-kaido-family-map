@@ -27,6 +27,7 @@ python3 build.py --output ../北海道家庭旅行地图.html
 - `scripts/build_intro.py`：生成每主题一张配图的首页介绍
 - `src/index.html`：页面结构
 - `src/app.js`：地图、区域日期、标记和详情交互
+- `src/intro.js`：主题封面与独立分章阅读页
 - `src/style.css`：移动端样式
 - `src/data.js`：地点名称、区域、经纬度和类型
 - `src/media.js`：景点章节、图片、来源、核对日期
