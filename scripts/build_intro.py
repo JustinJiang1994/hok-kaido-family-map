@@ -18,7 +18,10 @@ for c in DATA['cards']:
   if section.get('image'):
    q=section['image']
    chunk+=f'<figure class="region-photo"><img src="{e(q["src"])}" alt="{e(q["caption"])}" width="{q["width"]}" height="{q["height"]}" loading="lazy" decoding="async" referrerpolicy="no-referrer"><figcaption>{e(q["caption"])}<small>图片：{e(q["credit"])}</small></figcaption></figure>'
+  if section.get('position'):
    chunk+='<div class="region-position"><strong>在北海道的位置</strong><p>'+e(section['position'])+'</p><strong>区域特色 · '+e(section['role'])+'</strong></div>'
+  if section.get('facts'):
+   chunk+='<dl class="reading-facts">'+''.join('<div><dt>'+e(value)+'</dt><dd>'+e(label)+'</dd></div>' for value,label in section['facts'])+'</dl>'
   chunk+=''.join('<p>'+e(p)+'</p>' for p in section['paragraphs'])
   if section.get('spots'):
    chunk+='<h4>有哪些特色景点？</h4><dl class="region-spots">'+''.join('<div><dt>'+e(name)+'</dt><dd>'+e(desc)+'</dd></div>' for name,desc in section['spots'])+'</dl><p class="region-trip">'+e(section['trip'])+'</p>'

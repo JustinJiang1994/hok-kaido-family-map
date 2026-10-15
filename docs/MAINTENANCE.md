@@ -55,3 +55,10 @@
 地理章节的四区支持 `image`（含来源、尺寸、核验日期）、`position`、`role`、`spots` 和 `trip` 字段。图片必须与对应地区景点匹配；区域背景景点与既定行程须分别注明。
 
 农业对比图数据在 `content/agriculture-comparison.json`。更新后运行 `python3 scripts/build_agriculture_chart.py` 再生成介绍及构建。两条占比条均以全国100%为基准，其他地区为公布占比的补数；不要将面积和产值当成相同指标。
+
+### 2026-10-15 · Seven-topic enrichment
+- Reader now contains 41 chapters across geography, history, population, food, landscapes, industry and culture. Each topic gains specific explanation, photos or dated figures; map behavior remains unchanged.
+- `scripts/build_reading_charts.py` builds population density, age structure, fishery comparison and historical timeline SVGs. Run it before `scripts/build_intro.py` when changing their source figures.
+- Density and age use 2020 census figures, fisheries use 2024 marine fishing/aquaculture territorial statistics; processing shipments use 2023 data. Do not conflate these denominators or years.
+- Optional section `image`, `chart`, and `facts` are independent of geography-only `position`, `role`, `spots`, `trip`.
+- Official photos remain externally hosted and require internet; source URLs/captions are stored in content/hokkaido.json. New photos visually checked at 390×844.
