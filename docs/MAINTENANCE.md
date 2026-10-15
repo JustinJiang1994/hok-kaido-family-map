@@ -54,7 +54,7 @@
 
 地理章节的四区支持 `image`（含来源、尺寸、核验日期）、`position`、`role`、`spots` 和 `trip` 字段。图片必须与对应地区景点匹配；区域背景景点与既定行程须分别注明。
 
-农业对比图数据在 `content/agriculture-comparison.json`。更新后运行 `python3 scripts/build_agriculture_chart.py` 再生成介绍及构建。两条占比条均以全国100%为基准，其他地区为公布占比的补数；不要将面积和产值当成相同指标。
+农业对比图数据在 `content/agriculture-comparison.json`。更新后运行 `python3 scripts/build_agriculture_chart.py` 再生成介绍及构建。分别生成耕地面积、农业产出额两张图，各列全国前五名的名称、原始数值和占比，另列其余42个都府县合计。占比从原始值计算，不能手填补数。耕地分母为全国耕地面积；产出额分母为47个都道府县估算值之和（2024年108,200亿日元），不能混用全国单独估算值107,801亿日元。不要将面积和产出额当成相同指标。
 
 ### 2026-10-15 · Seven-topic enrichment
 - Reader now contains 41 chapters across geography, history, population, food, landscapes, industry and culture. Each topic gains specific explanation, photos or dated figures; map behavior remains unchanged.
@@ -68,3 +68,9 @@
 - IMPORTANT correction: use the national MAFF/JFA 2024 table for all prefectures. Hokkaido is 897,524 t and 279,298 million yen in this table, not the previous local-territorial figures. Do not mix these series.
 - Quantity shows six selected prefectures, not a complete ranking: Ibaraki's marine total/aquaculture is confidential. Value shows the national top five. Remaining aggregate is explicitly described.
 - Supersedes the previous fisheries scope note above. Old two-color fishery asset removed. Both charts checked at 390×844 without overflow; local standalone rebuilt byte-identically.
+
+### 2026-10-15 · Agriculture regional comparison and chart audit
+- Agriculture now has two separate mobile charts (2024): cultivated area and agricultural output. Named top-five prefectures, absolute values, shares, year and statistical scope are visible; remaining 42 prefectures are explicitly aggregated.
+- Source figures and URLs live in content/agriculture-comparison.json. The obsolete agriculture-comparison.svg is removed. Reader now has 43 chapters.
+- Audited all seven active charts: agricultural area/output, fishery quantity/value, population density, age structure and historical timeline. Regional charts use consistent denominators; density explicitly compares Hokkaido with Japan including Hokkaido; age percentages are Hokkaido internal age groups. Timeline is not a share comparison.
+- Checked mobile reader at 390×844: charts load, labels fit without horizontal overflow, and return button remains accessible. Map scripts and attraction content are unchanged.

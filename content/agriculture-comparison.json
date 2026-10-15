@@ -1,10 +1,20 @@
 {
   "year": 2024,
-  "source": "https://www.pref.hokkaido.lg.jp/ss/tkk/databook/260921.html",
   "checkedOn": "2026-10-15",
-  "comparison": "北海道 vs 日本其余46个都府县合计",
   "metrics": [
-    {"label": "耕地面积", "hokkaidoPercent": 26.6, "hokkaidoValue": "113.8万公顷", "takeaway": "全国每100份耕地，约27份在北海道。"},
-    {"label": "农业产出额", "hokkaidoPercent": 13.7, "hokkaidoValue": "1兆4,817亿日元", "takeaway": "全国每100份农业产出，约14份来自北海道。"}
+    {
+      "id": "area", "label": "耕地面积", "total": 4272000, "unit": "公顷", "displayUnit": "万公顷", "divisor": 10000,
+      "scope": "2024年7月15日田畑合计；全国前五位",
+      "rows": [["北海道",1138000],["新潟县",166500],["茨城县",158300],["青森县",147300],["岩手县",146000]],
+      "sources": ["https://www.maff.go.jp/j/tokei/kouhyou/sakumotu/menseki/menseki_kouti_24.pdf", "https://www.maff.go.jp/hokuriku/stat/data/attach/pdf/hokuriku_tyousakekka-43.pdf", "https://www.maff.go.jp/tohoku/stinfo/toukei/attach/pdf/sumapoke-17.pdf"],
+      "note": "田畑合计包括水田和旱地等；不是某种作物的播种面积。"
+    },
+    {
+      "id": "value", "label": "农业产出额", "total": 108200, "unit": "亿日元", "displayUnit": "亿日元", "divisor": 1,
+      "scope": "2024年都道府县推计；全国前五位",
+      "rows": [["北海道",14817],["鹿儿岛县",5689],["茨城县",5494],["千叶县",4533],["青森县",4119]],
+      "sources": ["https://www.maff.go.jp/j/tokei/kouhyou/nougyou_sansyutu/pdf/shotoku_kenbetu_24.pdf", "https://www.maff.go.jp/j/wpaper/w_maff/r7/r7_h/trend/part1/chap3/c3_1_00.html", "https://www.maff.go.jp/tohoku/tiiki/miyagi/attach/pdf/index-10.pdf", "https://www.maff.go.jp/j/tokei/kouhyou/nougyou_sansyutu/gaiyou/"],
+      "note": "分母为47个都道府县合计108200亿日元，不采用全国独立推计107801亿日元。"
+    }
   ]
 }
