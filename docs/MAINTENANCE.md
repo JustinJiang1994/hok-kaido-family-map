@@ -142,3 +142,8 @@
 ### 2026-10-16 · Weather icons and stronger temperatures
 - Conditions now pair decorative sun/cloud/snow/rain/fog/thunder icons with text in overview and regional forecasts. Temperatures use bold dark type and whole-degree rounding for compact phone comparisons; underlying API data is unchanged.
 - At 375px and 320px, three region columns remain visible with no page or temperature overflow. Preview fixture now includes sunny/cloudy/rainy days as well as snow to check the icons; fixture data stays out of the release.
+
+### 2026-10-16 · Regional forecast verification and scroll fix
+- Verified Sapporo, Asahikawa and Biei in six sequential switches at 375×812: one matching region, six icons/dates, 18px/800-weight temperatures, matching coordinates and Japan update times. 320px rows and page did not overflow.
+- Delayed Sapporo by three seconds while ignoring abort, then switched to Biei: the late response did not replace Biei values or update time. Returning to overview restored the three-column comparison.
+- Found regional main inherited non-scrolling full-screen map layout. Enabled main vertical scrolling for regional pages while retaining the map panel's 100% viewport height. Touch scrolling now reaches the last forecast date, historical reference and clothing. Rechecked regional switching and overview after the fix. All weather values in this check were isolated simulation data.

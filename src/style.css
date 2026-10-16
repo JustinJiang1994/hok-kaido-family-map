@@ -91,3 +91,5 @@ body:not(.overview-mode) .map-stage{display:contents}body:not(.overview-mode) #m
 #tripWeather .forecast-row>strong:last-of-type{font-size:18px;font-weight:800;color:#103d50}
 @media(max-width:700px){#tripWeather .comparison-temperature{font-size:18px}#tripWeather .forecast-comparison th,#tripWeather .forecast-comparison td{padding:5px 3px}}
 @media(max-width:350px){#tripWeather .comparison-temperature{font-size:16px}#tripWeather .forecast-comparison th:first-child{width:35px}#tripWeather .weather-condition-icon{font-size:16px}}
+/* Regional maps keep their viewport height; weather below stays reachable by touch. */
+body:not(.overview-mode) main{overflow-y:auto;overscroll-behavior-y:contain}
