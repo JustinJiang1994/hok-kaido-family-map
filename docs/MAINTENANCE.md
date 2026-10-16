@@ -83,3 +83,9 @@
 ### 2026-10-16 · Mobile population chart verification
 - Previewed over localhost at 390×844, then checked revised charts at 375×812. Enlarged supporting text to 28 SVG units, separated exact population and area onto two lines, and increased row spacing. Both chart dimensions are now 640×1530.
 - Verified all six names/values visually, loaded images, no horizontal overflow, scrolling to chart headings and footnotes, and sticky return button closure. This completes the previously blocked mobile visual check.
+
+### 2026-10-16 · Trip weather
+- Independent src/weather.js panel for fixed 2026-12-17 through 2026-12-22 dates and four selectable locations. Uses Open-Meteo daily forecast, Asia/Tokyo, forecast_days=16; opening/refresh/visible-hourly updates, no background notification service.
+- Never substitutes today's weather or climate averages for out-of-range trip dates. Missing dates, missing values, past dates, timeout and failures have explicit messages. Region changes abort previous requests. Open-Meteo attribution and JMA seasonal information link remain visible.
+- Run node scripts/check-weather.mjs for Japan-date boundaries, 16-day horizon, exact date lookup and null/zero values. Live API returned the expected 16-day schema; 375×812 mobile check passed region switch, refresh, six dates and no horizontal overflow. Future December forecasts cannot yet be verified against live data.
+- build.py embeds weather.js in the standalone HTML; trip dates are maintained in weather.js and the panel heading.
