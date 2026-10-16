@@ -133,3 +133,8 @@
 ### 2026-10-16 · One-screen mobile climate comparison
 - Mobile cards place region left and temperature right, with one compact snowfall line and clothing line. Removed redundant feel/retry copy from the historical-only mobile layout; historical/not-current-forecast label stays visible.
 - Verified 375×812 screenshot shows all three regions with clothing in one screen. At 320×740, combined cards measured about 399px tall, without horizontal overflow or region/temperature collision. Live-forecast history temperatures retain normal flow.
+
+### 2026-10-16 · Compact six-day forecast comparison
+- Overview forecasts now use one semantic table: six date rows and three regional columns, with conditions, minimum–maximum temperatures and new snowfall. Regional pages retain their own forecast and clearly labeled historical reference. Clothing stays in three short lines below the overview table.
+- Historical-only footnote is hidden when the overview comparison is active. Each region retains independent fetch/error handling and Japan-time update labels; missing dates remain aligned cells.
+- Simulated Dec 16 at 375×812: all six rows and three clothing lines visible together. At 320×740 no horizontal overflow or temperature overflow. Checked missing dates/null temperatures, zero snow, network errors and region/overview switching. Fixtures remain isolated in ignored local-archive; these are not real December forecasts.
