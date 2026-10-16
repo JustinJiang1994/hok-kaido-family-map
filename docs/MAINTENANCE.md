@@ -155,3 +155,8 @@
 ### 2026-10-16 · Single-row mobile region tabs
 - All four phone pages now share a four-column tab row with region, compact month/day dates and day numbers. Overview explicitly shows days 1–6. Desktop keeps full date notation. Header spacing is consistent across tabs.
 - At 320px all four buttons share one row, measure 71×67px and have no horizontal text overflow. Switching all four tabs kept the layout consistent. At 375px the six-day regional forecast fits with substantially more visible space than the previous two-row tabs.
+
+### 2026-10-16 · Four-tab phone scroll verification
+- Checked 375px maps: loaded road tiles, 7/3/6 regional markers and 4 overview hubs; dates/day labels intact across forward and reverse switches.
+- Found outer body/document could be programmatically scrolled when revealing overview weather, clipping the header. Fixed the viewport shell and clipped body overflow, leaving main as the only page content scroller.
+- Rechecked all four tabs plus overview/Biei return at 320×740: root/body scroll stayed zero, tabs stayed at y=42.5, main began exactly below tabs, and all six forecast rows fitted below them. No tab text overflow. At 375×812 regional forecast and separate history heading were visible together. Weather values were isolated simulation data.
