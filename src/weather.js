@@ -13,10 +13,30 @@ const TripWeather = (() => {
 (() => {
  const root=document.getElementById('tripWeather');if(!root)return;
  const select=root.querySelector('select'),button=root.querySelector('button'),status=root.querySelector('[role=status]'),grid=root.querySelector('.weather-days');
+ const regionKeys={札幌:'sapporo',旭川:'asahikawa',美瑛:'biei'};
+ const history=root.querySelector('.climate-cards');
+ const historyCards=[...history.children];
+ const historySummary=root.querySelector('#climateReference summary');
+ function prioritizeHistory(name){
+  const first=historyCards.find(card=>card.querySelector('h4').textContent===name);
+  historyCards.forEach(card=>card.classList.toggle('is-selected-region',card===first));
+  history.replaceChildren(...(first?[first,...historyCards.filter(card=>card!==first)]:historyCards));
+  historySummary.replaceChildren(document.createTextNode(first?`${name}往年12月气温与降雪 `:'往年12月气温与降雪 '));
+  const badge=document.createElement('span');badge.textContent='历史参考';historySummary.append(badge);
+ }
+ function syncMapRegion(name){
+  const key=regionKeys[name];
+  // Overview keeps the last weather choice; automatic route playback does not change it.
+  if(key&&select.value!==key){select.value=key;refresh();}
+ }
+ document.getElementById('days')?.addEventListener('click',event=>{
+  const tab=event.target.closest('[data-region]');if(tab)syncMapRegion(tab.dataset.region);
+ });
  let controller,lastFetch=0;
  async function refresh(){
   controller?.abort();controller=new AbortController();const active=controller;const today=TripWeather.day();
   const key=select.value;const [name,lat,lon]=TripWeather.places[key];
+  prioritizeHistory(name);
   button.disabled=true;grid.replaceChildren();
   const cards=TripWeather.dates.map((date,i)=>{
    const card=document.createElement('article');const title=document.createElement('h3');title.textContent=`12/${17+i} · 第${i+1}天`;card.append(title);
@@ -47,5 +67,7 @@ const TripWeather = (() => {
  button.addEventListener('click',refresh);select.addEventListener('change',refresh);
  document.addEventListener('visibilitychange',()=>{if(!document.hidden&&Date.now()-lastFetch>3600000)refresh();});
  setInterval(()=>{if(!document.hidden&&Date.now()-lastFetch>3600000)refresh();},60000);
+ const initialKey=regionKeys[document.querySelector('#days [aria-pressed="true"]')?.dataset.region];
+ if(initialKey)select.value=initialKey;
  refresh();
 })();

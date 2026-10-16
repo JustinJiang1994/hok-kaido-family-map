@@ -106,3 +106,8 @@
 - Default view shows only selected-region forecast; six days use a two-column grid on phones. Temperature notation is minimum–maximum, explained above cards. Unavailable forecasts hide both the grid and its units legend.
 - Historical climate, clothing guidance and forecast/source notes use independent native details/summary controls, collapsed by default. Historical label and source content remain inside the historical panel.
 - Verified actual-date empty state and simulated Dec 16 forecast at 375×812, Biei selection/time, no horizontal overflow, independent expand/collapse. Existing forecast logic tests and map checks passed; release contains no fixture data.
+
+### 2026-10-16 · Map-to-weather region linkage
+- Weather listens to region-tab clicks without modifying map rendering. Sapporo/Asahikawa/Biei tabs select and refresh the matching weather location. Overview preserves the last choice; animated route steps do not trigger weather requests.
+- Historical cards are reordered in the DOM with the selected location first and visibly highlighted. Summary includes its name. Open/closed state is retained; manual weather choices also reorder history. Airport has no substituted historical station.
+- 375×812 simulation checked three region tabs, successive switches, matching request location/time and current history card, overview retention, open history retention, and absence of horizontal overflow. Slow previous-location responses remain guarded by request identity.
