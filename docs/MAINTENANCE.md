@@ -124,3 +124,8 @@
 - Empty forecast state now displays a selected-region historical temperature hero with explicit historical/not-current-forecast label, large mean low/high range, a plain-language cold summary and short clothing suggestion. Values match JMA December normals in content/december-climate.json; update the weather.js hero values alongside those normals.
 - Available forecasts use weather icons and emphasized daily temperature ranges. Optional climate/clothing details remain folded; technical/source notes are secondary. Station URLs remain in source markup but are not displayed on each climate card; Open-Meteo attribution stays in optional weather notes.
 - Verified 375×812 real-date hero, Biei linkage and simulated six-day forecast with icons, hero hidden and no horizontal overflow. No mock values enter the release.
+
+### 2026-10-16 · Direct regional weather listing
+- Overview now directly lists Sapporo, Asahikawa and Biei; regional map tabs show their own card. Removed weather selectors, refresh buttons and collapsible sections. Clothing, historical temperature ranges and monthly snowfall are visible without interaction.
+- Near departure, each visible region fetches its own forecast concurrently, with independent timeout/error states and identity protection on map switches. Visible-hourly and reopen refresh remain. Small Open-Meteo attribution retained.
+- Checked 375×812 actual-date view: three regions, zero weather buttons/selects/summaries, no overflow. Simulated forecast produced six days for each region; Biei tab reduced listing to Biei. Historical inputs remain sourced in content/december-climate.json.
