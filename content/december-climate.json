@@ -1,0 +1,44 @@
+{
+  "period": "1991–2020",
+  "month": 12,
+  "checked": "2026-10-16",
+  "source": "日本气象厅平年值",
+  "stations": [
+    {
+      "name": "札幌",
+      "mean": -0.9,
+      "high": 2.0,
+      "low": -4.0,
+      "snow": 113,
+      "depth": 47,
+      "block": "47412",
+      "prec": "14",
+      "kind": "sfc",
+      "source": "https://www.data.jma.go.jp/stats/etrn/view/nml_sfc_ym.php?prec_no=14&block_no=47412&year=&month=&day=&view="
+    },
+    {
+      "name": "旭川",
+      "mean": -4.2,
+      "high": -0.8,
+      "low": -8.0,
+      "snow": 158,
+      "depth": 58,
+      "block": "47407",
+      "prec": "12",
+      "kind": "sfc",
+      "source": "https://www.data.jma.go.jp/stats/etrn/view/nml_sfc_ym.php?prec_no=12&block_no=47407&year=&month=&day=&view="
+    },
+    {
+      "name": "美瑛",
+      "mean": -5.5,
+      "high": -1.6,
+      "low": -10.8,
+      "snow": 182,
+      "depth": 48,
+      "block": "1052",
+      "prec": "12",
+      "kind": "amd",
+      "source": "https://www.data.jma.go.jp/stats/etrn/view/nml_amd_ym.php?prec_no=12&block_no=1052&year=&month=&day=&view="
+    }
+  ]
+}

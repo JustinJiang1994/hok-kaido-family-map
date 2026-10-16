@@ -26,15 +26,17 @@ const TripWeather = (() => {
    return {date,body,state};
   });
   const pending=cards.filter(c=>c.state==='available');
+  grid.hidden=!pending.length;
   if(!pending.length){status.textContent=today>TripWeather.dates[5]?'这次旅行日期已过。':`${name} · 目前还查不到这六天的逐日预报。预计12月2日起逐天进入预报范围，12月7日起可覆盖六天（以服务实际数据为准）。`;button.disabled=false;lastFetch=Date.now();return;}
   status.textContent=`正在获取${name}的最新预报…`;
   const timeout=setTimeout(()=>active.abort(),12000);
   try{
    const q=new URLSearchParams({latitude:lat,longitude:lon,timezone:'Asia/Tokyo',forecast_days:16,daily:'weather_code,temperature_2m_max,temperature_2m_min,precipitation_probability_max,snowfall_sum'});
-   const response=await fetch('https://api.open-meteo.com/v1/forecast?'+q,{signal:active.signal});if(!response.ok)throw Error('weather');
+   const response=await fetch('https://api.open-meteo.com/v1/forecast?'+q,{signal:active.signal,cache:'no-store'});if(!response.ok)throw Error('weather');
    const data=await response.json();if(active!==controller)return;
    let count=0;
    pending.forEach(c=>{const d=TripWeather.row(data.daily,c.date);c.body.replaceChildren();if(!d){c.body.textContent='服务暂未提供这一天的数据';return;}count++;
+    const range=document.createElement('small');range.className='forecast-range';range.textContent=TripWeather.distance(c.date,today)>7?'远期预报 · 变化较大':'临近预报 · 仍需持续确认';c.body.append(range);
     for(const text of [TripWeather.condition(d.weather_code),`最低 ${TripWeather.value(d.temperature_2m_min,'℃')} / 最高 ${TripWeather.value(d.temperature_2m_max,'℃')}`,`降水概率 ${TripWeather.value(d.precipitation_probability_max,'%')}`,`预计新降雪 ${TripWeather.value(d.snowfall_sum,'cm')}`]){const line=document.createElement('span');line.textContent=text;c.body.append(line);}
    });
    status.textContent=`${name} · 已获取 ${count} 天 · 获取时间 ${new Intl.DateTimeFormat('zh-CN',{timeZone:'Asia/Tokyo',month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date())}（日本时间）`;

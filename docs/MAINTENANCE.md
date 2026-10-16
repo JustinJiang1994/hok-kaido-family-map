@@ -89,3 +89,9 @@
 - Never substitutes today's weather or climate averages for out-of-range trip dates. Missing dates, missing values, past dates, timeout and failures have explicit messages. Region changes abort previous requests. Open-Meteo attribution and JMA seasonal information link remain visible.
 - Run node scripts/check-weather.mjs for Japan-date boundaries, 16-day horizon, exact date lookup and null/zero values. Live API returned the expected 16-day schema; 375×812 mobile check passed region switch, refresh, six dates and no horizontal overflow. Future December forecasts cannot yet be verified against live data.
 - build.py embeds weather.js in the standalone HTML; trip dates are maintained in weather.js and the panel heading.
+
+### 2026-10-16 · December historical climate reference
+- content/december-climate.json records JMA 1991–2020 December normals for Sapporo, Asahikawa and Biei, including individual station URLs and verification date. Matching static HTML in #climateReference is available offline; update both when changing source data.
+- Monthly mean temperature, mean daily max/min, total snowfall depth and mean monthly maximum snow depth are explicitly historical, whole-month measures, not trip forecasts or extreme values. Biei station is not a substitute for higher-elevation Shirogane sites. Clothing guidance references official Sapporo tourism advice; its older climate figures are not reused.
+- When no trip dates are forecastable, hide six repeated placeholder cards and show historical reference. Live forecasts remain above history once available. Added far-range/near-range labels, no-store fetch and JMA latest forecast/warning links. Fetch time is not model issuance time; no accuracy guarantee.
+- Checked at 375×812: three cards, no horizontal overflow or label/value overlaps; historical label, snowfall explanation and clothing copy readable. Date-boundary tests continue to pass.
