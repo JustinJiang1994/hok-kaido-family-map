@@ -3,6 +3,157 @@
   "imageType": "Official topic and chapter photos with captions and provenance; reproducible SVG statistical charts",
   "cards": [
     {
+      "id": "specialties",
+      "kicker": "08 / 北海道特色",
+      "title": "北海道特色：从便利店认识当地生活",
+      "summary": "Seicomart、现做热饭、道北牛奶与地方饮料：顺路就能认识的北海道。",
+      "image": {
+        "src": "https://www.secoma.co.jp/aboutus/nurture/kids/images/gaikan.jpg",
+        "caption": "Seicomart 门店外观 · 品牌官方资料图",
+        "credit": "Secoma",
+        "width": 800,
+        "height": 600
+      },
+      "sections": [
+        {
+          "title": "Seicomart：从札幌长出来的便利店",
+          "facts": [
+            [
+              "1971年",
+              "第一家店在札幌开业"
+            ],
+            [
+              "认招牌",
+              "Seicomart／セイコーマート"
+            ]
+          ],
+          "paragraphs": [
+            "到了北海道，除了看风景，也可以逛逛本地人日常用的便利店。Seicomart 的第一家店于1971年在札幌开业，后来逐步发展到北海道各地。看到这个名字，就能想到一种很有当地生活气息的购物体验。",
+            "它的特色不只是售卖商品：Secoma 集团把原料采购、食品生产、物流配送和门店零售连在一起。因此货架上既有普通便利店食品，也能看到使用北海道原料的自有品牌商品。",
+            "旅行时可以把它当作顺路补给点，买早餐、饮水或一份热食。先找住处附近的门店即可，不必专门绕远路打卡；营业时间、座位和商品种类因店而异，也不要默认所有店都24小时营业。"
+          ]
+        },
+        {
+          "title": "HOT CHEF：在店里做好的热饭",
+          "image": {
+            "src": "https://www.seicomart.co.jp/images/instore/hc/hot_main.jpg",
+            "caption": "HOT CHEF 店内调理品牌 · 官方资料图",
+            "credit": "Seicomart",
+            "width": 420,
+            "height": 240
+          },
+          "paragraphs": [
+            "HOT CHEF 是 Seicomart 的店内烹调品牌。与单纯把成品便当加热不同，设有厨房的门店会制作米饭、便当和熟食；在冬天路过时，热食柜是很容易理解它特色的地方。",
+            "可以留意大饭团、猪排饭和炸鸡等品类。这里的“ザンギ（Zangi）”是北海道常见的炸鸡叫法，通常先调味再炸；具体口味和做法会随店家、商品而不同。",
+            "认准 HOT CHEF 标识再选购：不是每家 Seicomart 都供应，也不能保证任何时候都有全部品种。你们7个人若临时买饭，可以各自选喜欢的，儿童份量、辣度与过敏原以商品标示和店员说明为准。"
+          ]
+        },
+        {
+          "title": "丰富町牛奶：把道北牧场带到货架上",
+          "image": {
+            "src": "https://www.seicomart.co.jp/images/instore/randing/milk/img_7.png",
+            "caption": "Secoma 北海道牛乳 · 官方商品图",
+            "credit": "Seicomart",
+            "width": 400,
+            "height": 500
+          },
+          "paragraphs": [
+            "丰富町位于道北。Seicomart 的北海道牛乳系列把这个酪农产地与日常购物联系起来；拿起一盒牛奶，可以从包装上的产地和品名认识北海道的乳业。",
+            "“北海道牛乳”是使用100%生乳的成分无调整牛奶；同系列也有调整乳脂肪含量的产品。名字相近，口感与脂肪含量却不同，适合并排看看标签，而不是把所有“北海道牛奶”都理解成同一种。",
+            "早餐可以选自己习惯的牛奶或酸奶，再配面包。冷藏食品按包装要求保存、尽快饮用；它们更适合旅行中品尝，不能把普通冷藏奶当成能长时间放在行李里的伴手礼。"
+          ]
+        },
+        {
+          "title": "Ribbon Napolin：橙色的北海道汽水",
+          "image": {
+            "src": "https://www.pokkasapporo-fb.jp/products/cms/images/WA96.jpg",
+            "caption": "Ribbon Napolin 470ml · 官方商品图",
+            "credit": "Pokka Sapporo",
+            "width": 596,
+            "height": 596
+          },
+          "facts": [
+            [
+              "1911年",
+              "Napolin 开始销售"
+            ]
+          ],
+          "paragraphs": [
+            "Ribbon Napolin 是在北海道长期销售的橙色碳酸饮料，口感偏甜、带气泡。看到橙色瓶身和 Ribbon 字样，就能把它与普通可乐区分开。",
+            "它的地方特色来自长期的销售与消费习惯。逛超市或便利店时，可以买一小瓶分着尝，体验北海道日常饮料的味道；橙色外观并不等于鲜榨橙汁，饮料类型和配料请看包装。"
+          ]
+        },
+        {
+          "title": "Soft Katsugen：另一种当地熟悉的味道",
+          "image": {
+            "src": "https://www.meg-snow.com/products/img-p/3138_main.png",
+            "caption": "雪印 Soft Katsugen · 官方商品图",
+            "credit": "雪印 Megmilk",
+            "width": 600,
+            "height": 600
+          },
+          "facts": [
+            [
+              "1956年",
+              "瓶装 Katsugen 问世"
+            ],
+            [
+              "1979年",
+              "纸盒装 Soft Katsugen 推出"
+            ]
+          ],
+          "paragraphs": [
+            "Soft Katsugen（ソフトカツゲン）是北海道销售的乳酸菌饮料，带有酸甜口感。它与纯牛奶不是同一种饮品，也和碳酸汽水不同，通常在冷藏饮料区找。",
+            "这一品牌的历史可以追溯到1956年的瓶装 Katsugen；1979年推出了纸盒装 Soft Katsugen。因此“1956年”说的是品牌起点，不是今天纸盒包装的诞生时间。",
+            "想比较地方味道时，大人可以选少量尝尝，再和牛奶的口感作比较。给孩子选饮品仍以平时习惯、成分和实际份量为准，不必为了打卡把甜饮料都试一遍。"
+          ]
+        },
+        {
+          "title": "“炒面便当”：名字叫便当，其实是杯面",
+          "image": {
+            "src": "https://www.maruchan.co.jp/products/upload/picture/c891191dc5393792b10c2749bbf00207.png",
+            "caption": "Maruchan やきそば弁当 · 官方商品图",
+            "credit": "东洋水产",
+            "width": 600,
+            "height": 600
+          },
+          "paragraphs": [
+            "やきそば弁当（Yakisoba Bento）是北海道常见的即食炒面。“弁当”是商品名的一部分，打开并不是一盒有米饭和菜的普通便当，而是用热水泡开、沥水后拌酱的面。",
+            "经典款附有中式汤料包，是它容易让人记住的特点。冲泡顺序和用水方式按手中包装操作，不同系列可能不同；准备前先找好耐热杯，避免只顾着倒水而漏看说明。",
+            "它适合在住宿处尝尝这种地方日常食品，也便于在超市辨认。便利店热饭、冷藏乳品、地方汽水和即食面放在一起看，比单纯记住“必买清单”更能认识当地人的生活。"
+          ]
+        }
+      ],
+      "note": "配图为品牌官方门店或商品资料图，不代表旅行当天的包装、库存或陈列。商品与营业情况以现场为准。",
+      "sources": [
+        [
+          "Secoma·集团历史",
+          "https://www.secoma.co.jp/aboutus/history.html"
+        ],
+        [
+          "Seicomart·HOT CHEF",
+          "https://www.seicomart.co.jp/instore/hc01.html"
+        ],
+        [
+          "Seicomart·北海道牛乳",
+          "https://www.seicomart.co.jp/instore/milk.html"
+        ],
+        [
+          "Pokka Sapporo·Ribbon Napolin",
+          "https://www.pokkasapporo-fb.jp/products/soda/ribbon/WA96.html"
+        ],
+        [
+          "雪印Megmilk·Katsugen历史",
+          "https://www.meg-snow.com/100th/katsugen.html"
+        ],
+        [
+          "东洋水产·炒面便当",
+          "https://www.maruchan.co.jp/products/search/205405.html"
+        ]
+      ],
+      "checkedOn": "2026-10-16"
+    },
+    {
       "id": "geography",
       "kicker": "01 / 地理",
       "title": "先看四大分区，再认识这次的路线",

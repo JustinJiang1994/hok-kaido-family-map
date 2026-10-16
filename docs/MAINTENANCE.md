@@ -165,3 +165,7 @@
 - Added seven sights (23 total): Hokkaido University Museum, Sapporo Beer Museum, Mt. Moiwa, Tokiwa Park, Kitasaito Garden, Hokusei-no-oka and Takushinkan. Added eight official-source reference photos (45 total), all visually inspected and browser-loaded. Summer pictures and the exhibition poster are explicitly captioned.
 - New places have empty day lists and do not change the planned route. Winter closure, admission changes, opening hours and child-specific notes are in each detail.
 - At a 375×700 iframe viewport, all seven details opened/closed with 549px scrollable bodies and no horizontal overflow; scrolling to the last Takushinkan information row retained the close button. This is browser layout testing, not a physical iPhone WeChat test.
+
+## 2026-10-16 北海道特色读本
+- 总览增加特色封面及六节图文：Seicomart、HOT CHEF、丰富町牛奶、Ribbon Napolin、Soft Katsugen、炒面便当；来源留在 content/hokkaido.json。
+- 375×700 浏览器预览：六张官方图片加载成功，长文滚动与固定返回按钮正常。未改动地图、景点、天气或行程。
