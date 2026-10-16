@@ -38,7 +38,7 @@ function showPlace(p){
 detail.addEventListener('click',e=>{if(e.target===detail){const r=detail.getBoundingClientRect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)detail.close();}});
 function highlight(id){selectedId=id;}
 const MAP_REGIONS=['行程总览','札幌','旭川','美瑛'];
-const REGION_DATES={'行程总览':['12月17—22日','6天动线'],'札幌':['12月17—19日','第1—3天'],'旭川':['12月19—22日','第3—6天'],'美瑛':['12月21日','第5天']};
+const REGION_DATES={'行程总览':['12月17—22日','第1—6天'],'札幌':['12月17—19日','第1—3天'],'旭川':['12月19—22日','第3—6天'],'美瑛':['12月21日','第5天']};
 const JOURNEY_HUBS={airport:[42.787,141.681],sapporo:[43.062,141.354],asahi:[43.768,142.365],biei:[43.588,142.467],zoo:[43.768,142.480]};
 const JOURNEY=[
  {title:'第1天 · 12月17日',route:'新千岁机场 → 札幌',note:'抵达北海道；第1—3天在札幌。',points:['airport','sapporo']},
@@ -102,7 +102,7 @@ function render(){
  $('#journeyPanel').hidden=!overview;$('#islandCaption').hidden=!overview;$('#hokkaidoIntro').hidden=!overview;$('#placeLegend').hidden=overview;
  $('#mapHint').textContent=overview?'动线为示意 · 下滑认识北海道 ↓':'双指缩放 · 点圆点查看 · 密集圆点以细线连接实际位置';
  current=PLACES.filter(p=>p.city===region);
- $('#days').innerHTML=MAP_REGIONS.map(name=>`<button data-region="${name}" class="${region===name?'active':''}" aria-pressed="${region===name}"><strong>${name}</strong><small>${REGION_DATES[name][0]}</small><small>${REGION_DATES[name][1]}</small></button>`).join('');
+ $('#days').innerHTML=MAP_REGIONS.map(name=>`<button data-region="${name}" class="${region===name?'active':''}" aria-pressed="${region===name}"><strong>${name}</strong><small><span class="tab-date-full">${REGION_DATES[name][0]}</span><span class="tab-date-short">${REGION_DATES[name][0].replace("月","/").replace("日","")}</span></small><small>${REGION_DATES[name][1]}</small></button>`).join('');
  $('#mapTitle').textContent=overview?'北海道全览':region+'地图';
  bounds=L.latLngBounds(overview?[[41.35,139.35],[45.6,145.9]]:current.map(p=>[p.lat,p.lon]));
  map.invalidateSize({animate:false});fitRegion();

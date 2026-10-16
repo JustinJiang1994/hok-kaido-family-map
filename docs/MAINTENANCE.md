@@ -151,3 +151,7 @@
 ### 2026-10-16 · Compact regional forecasts and separate history
 - Regional live forecasts use six dense rows with icons, bold 18–20px temperatures and secondary precipitation/snow text. Update time follows the forecast; historical climate and clothing move into a separate warm-colored panel headed with the region and explicitly labeled not this year's forecast.
 - Verified all three regions at 320px: six rows, matching data/history region and no row overflow; forecast height about 352px (368px at 375px). Overview still restores its six-row three-region table. Historical-only and network-failure rendering paths retain the original compact cards.
+
+### 2026-10-16 · Single-row mobile region tabs
+- All four phone pages now share a four-column tab row with region, compact month/day dates and day numbers. Overview explicitly shows days 1–6. Desktop keeps full date notation. Header spacing is consistent across tabs.
+- At 320px all four buttons share one row, measure 71×67px and have no horizontal text overflow. Switching all four tabs kept the layout consistent. At 375px the six-day regional forecast fits with substantially more visible space than the previous two-row tabs.

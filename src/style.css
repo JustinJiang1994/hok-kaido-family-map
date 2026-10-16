@@ -112,3 +112,15 @@ body:not(.overview-mode) main{overflow-y:auto;overscroll-behavior-y:contain}
 #tripWeather .has-regional-forecast .weather-snow{display:block;font-size:12px;margin:4px 0}
 #tripWeather .has-regional-forecast .weather-outfit{font-size:14px;margin:7px 0 0}
 @media(max-width:350px){#tripWeather .has-regional-forecast .region-forecast{padding:8px}#tripWeather .has-regional-forecast .forecast-row>strong:last-of-type{font-size:18px}#tripWeather .has-regional-forecast .comparison-condition{font-size:13px}}
+
+/* One consistent, touch-friendly tab row on every phone page. */
+.tab-date-short{display:none}
+@media(max-width:560px){
+ #days,.overview-mode #days{grid-template-columns:repeat(4,minmax(0,1fr));gap:4px;padding-bottom:8px;flex-shrink:0}
+ #days button,.overview-mode #days button{min-height:65px;min-width:0;padding:5px 2px;line-height:1.35}
+ #days strong,.overview-mode #days strong{font-size:15px;white-space:nowrap}
+ #days small,.overview-mode #days small{font-size:11px;line-height:1.4;margin-top:2px;white-space:nowrap}
+ #days .tab-date-full{display:none}#days .tab-date-short{display:inline}
+ header,.overview-mode header{padding-top:8px;padding-bottom:8px;flex-shrink:0}
+ header h1,.overview-mode header h1{font-size:19px}header>span{display:none}
+}
