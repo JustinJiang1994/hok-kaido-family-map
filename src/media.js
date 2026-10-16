@@ -980,5 +980,362 @@ const PLACE_MEDIA={
       "https://www.biei-hokkaido.jp/ja/facility/shikisai-no-oka-flower-park-winter",
       "https://www.shikisainooka.jp/about/guide/"
     ]
+  },
+  "unimuseum": {
+    "title": "北海道大学综合博物馆",
+    "tagline": "走进大学里的免费博物馆，从巨大骨架和标本认识北海道的自然与研究。",
+    "highlights": [
+      "大型动物骨骼与化石",
+      "能近距离观察的学术标本",
+      "旧理学部建筑与校园风景"
+    ],
+    "details": [
+      "这里位于北海道大学校园内，靠近札幌站北侧。馆内把自然标本、大学历史和各学科的研究放在一起，适合把“北海道有什么动物、植物和地质”变成看得见的东西。",
+      "带3岁孩子可以从骨骼、动物和触摸类展区开始，不必逐一读完说明。校园很大，冬季把博物馆作为一个明确目的地更容易控制步行量；并非所有教学楼都对游客开放。"
+    ],
+    "history": "馆舍建于1929年，原为北海道帝国大学理学部本馆；展示也介绍其前身札幌农学校以来的历史。",
+    "facts": [
+      {
+        "label": "营业时间",
+        "value": "10:00—17:00"
+      },
+      {
+        "label": "休馆",
+        "value": "周一；逢法定假日开放，下一工作日休馆。另有年末年初等休馆安排。"
+      },
+      {
+        "label": "门票",
+        "value": "免费"
+      },
+      {
+        "label": "地址",
+        "value": "札幌市北区北10条西8丁目，北海道大学校园内"
+      },
+      {
+        "label": "冬季与亲子",
+        "value": "室内看展；从车站到馆仍需户外步行，雪地推车可能不便。"
+      }
+    ],
+    "note": "照片为馆内展示资料图，具体展陈可能调整。",
+    "checkedOn": "2026-10-16",
+    "informationSources": [
+      "https://www.sapporo.travel/spot/facility/hokkaido_university_museum/"
+    ],
+    "photos": [
+      {
+        "src": "https://www.sapporo.travel/cms/wp-content/uploads/2020/10/hokudai_main_02-1200x600-1.jpg",
+        "caption": "北海道大学综合博物馆 · 官方资料图",
+        "credit": "札幌观光协会",
+        "sourceUrl": "https://www.sapporo.travel/spot/facility/hokkaido_university_museum/",
+        "verification": "Official venue page attribution, visual inspection and browser image load checked",
+        "verified": "2026-10-16"
+      },
+      {
+        "src": "https://www.sapporo.travel/cms/wp-content/uploads/2020/10/hokudai_sub_02-360x270-1-300x200.jpg",
+        "caption": "馆内束柱兽骨架展示 · 官方资料图",
+        "credit": "札幌观光协会",
+        "sourceUrl": "https://www.sapporo.travel/spot/facility/hokkaido_university_museum/",
+        "verification": "Official venue page attribution, visual inspection and browser image load checked",
+        "verified": "2026-10-16"
+      }
+    ]
+  },
+  "beer": {
+    "title": "札幌啤酒博物馆",
+    "tagline": "在红砖建筑里了解札幌啤酒与北海道近代产业的故事。",
+    "highlights": [
+      "红砖建筑与红星标志",
+      "按时代展开的酿酒历史展示",
+      "博物馆与啤酒园的建筑外观"
+    ],
+    "details": [
+      "这里是历史展示博物馆，馆内没有正在生产啤酒的制造设备，也不是惠庭市的北海道工厂。看点包括早期酿酒事业、品牌发展的资料，以及保留下来的红砖建筑。",
+      "自由参观可以按自己的节奏看，官方参考时长约15—30分钟。带孩子也能看建筑和历史；试饮是另一个环节，不能把成人试饮内容当成儿童体验。"
+    ],
+    "history": "札幌啤酒的历史可追溯到1876年的北海道开拓事业。博物馆于2026年7月更新开放，旧攻略中的免费入馆信息已不适用。",
+    "facts": [
+      {
+        "label": "营业时间",
+        "value": "11:00—18:00；最晚入馆17:30"
+      },
+      {
+        "label": "自由参观门票",
+        "value": "成人1,000日元；初中生至未满20岁500日元；小学生及以下免费。"
+      },
+      {
+        "label": "预约",
+        "value": "自由参观无需预约；导览团另行购票，活动日程不同。"
+      },
+      {
+        "label": "休业",
+        "value": "12月31日休业；临时调整及导览停办日另行公告。"
+      },
+      {
+        "label": "地址",
+        "value": "札幌市东区北7条东9丁目1-1"
+      }
+    ],
+    "note": "儿童及驾驶者不饮酒。照片是该博物馆资料图，季节布置可能变化。",
+    "checkedOn": "2026-10-16",
+    "informationSources": [
+      "https://www.sapporobeer.jp/brewery/s_museum/kengaku/"
+    ],
+    "photos": [
+      {
+        "src": "https://www.sapporobeer.jp/brewery/s_museum/img/index-main_img01.jpg",
+        "caption": "札幌啤酒博物馆 · 官方资料图",
+        "credit": "札幌啤酒株式会社",
+        "sourceUrl": "https://www.sapporobeer.jp/brewery/s_museum/",
+        "verification": "Official venue page attribution, visual inspection and browser image load checked",
+        "verified": "2026-10-16"
+      }
+    ]
+  },
+  "moiwa": {
+    "title": "藻岩山山顶展望台",
+    "tagline": "从海拔531米的山顶，看札幌的灯光铺向石狩平原。",
+    "highlights": [
+      "360度山顶视野",
+      "缆车与迷你缆车接续体验",
+      "城市夜景与山顶幸福之钟"
+    ],
+    "details": [
+      "藻岩山在札幌市区西南侧。上山通常先搭空中缆车到中腹，再换乘迷你缆车抵达山顶；地图标记的是山顶观景点，不是山麓乘车入口。",
+      "晴朗时，远眺范围比市中心高楼更开阔；下雪、低云和浓雾时也可能什么都看不清。对长辈和孩子来说，是否值得上山主要取决于能见度与候车情况。"
+    ],
+    "history": null,
+    "facts": [
+      {
+        "label": "冬季营业",
+        "value": "常规11:00—22:00；末班上山及特别营业以当天运营公告为准。"
+      },
+      {
+        "label": "停运",
+        "value": "恶劣天气或设备检修可能停运。"
+      },
+      {
+        "label": "交通入口",
+        "value": "山麓站：札幌市中央区伏见5丁目3-7；需乘缆车接续到山顶。"
+      },
+      {
+        "label": "费用",
+        "value": "缆车付费，往返及儿童票价以运营方当期售票为准。"
+      },
+      {
+        "label": "冬季与亲子",
+        "value": "山顶风寒明显；观景台有户外区域，手套、帽子及防滑鞋很重要。"
+      }
+    ],
+    "note": "夜景为官方资料照片；实际能见度和积雪以当天为准。",
+    "checkedOn": "2026-10-16",
+    "informationSources": [
+      "https://www.sapporo.travel/night-view-guide/spot/moiwayama/"
+    ],
+    "photos": [
+      {
+        "src": "https://www.sapporo.travel/cms/wp-content/uploads/2024/01/616e85b584e6995f652222e6d51d367a-3.jpg",
+        "caption": "从藻岩山展望札幌夜景 · 官方资料图",
+        "credit": "札幌观光协会",
+        "sourceUrl": "https://www.sapporo.travel/night-view-guide/spot/moiwayama/",
+        "verification": "Official venue page attribution, visual inspection and browser image load checked",
+        "verified": "2026-10-16"
+      }
+    ]
+  },
+  "tokiwa": {
+    "title": "常磐公园",
+    "tagline": "旭川市中心的老公园，把树木、池塘和城市文化设施连在一起。",
+    "highlights": [
+      "千鸟池与树木景观",
+      "园内雕塑和历史纪念碑",
+      "邻近美术馆、图书馆的文化街区"
+    ],
+    "details": [
+      "常磐公园位于旭川站以北、市区靠近石狩川的一侧。它不像动物园那样以项目为主，更适合认识旭川居民日常散步的环境；周边还有美术馆、公会堂和中央图书馆。",
+      "冬季以树木、雪地和公园轮廓为主，夏季的花坛、游船不能照搬到12月。带老人孩子可只走清扫过的短段步道，不要走上池面或跨越雪堆。"
+    ],
+    "history": "这是旭川最早开设的公园，建设可追溯至1910年。园区经历洪水后的修复与长期整备，逐渐成为城市中心的公共文化空间。",
+    "facts": [
+      {
+        "label": "区域",
+        "value": "旭川市常磐公园，市中心北侧"
+      },
+      {
+        "label": "参观",
+        "value": "户外公园；冬季可通行区域受除雪与现场管理影响。"
+      },
+      {
+        "label": "费用",
+        "value": "公园散步不需门票，周边馆舍另有开放时间与收费。"
+      },
+      {
+        "label": "12月提示",
+        "value": "不要把2月的旭川冬祭当成本次12月旅行的活动。"
+      }
+    ],
+    "note": "配图为非冬季实景，用来认识园区形态；12月通常不是照片中的绿地状态。",
+    "checkedOn": "2026-10-16",
+    "informationSources": [
+      "https://www.asahikawa-park.or.jp/park/synthesis/tokiwa.html"
+    ],
+    "photos": [
+      {
+        "src": "https://www.asahikawa-park.or.jp/park/tokiwa_toppage_img_2022_11_002.jpg",
+        "caption": "常磐公园 · 非冬季官方资料图",
+        "credit": "旭川市公园绿地协会",
+        "sourceUrl": "https://www.asahikawa-park.or.jp/park/synthesis/tokiwa.html",
+        "verification": "Official venue page attribution, visual inspection and browser image load checked",
+        "verified": "2026-10-16"
+      }
+    ]
+  },
+  "kitasaito": {
+    "title": "北彩都花园",
+    "tagline": "旭川站南侧的河畔花园，在车站附近就能看见开阔的城市自然。",
+    "highlights": [
+      "车站南侧的开阔空间",
+      "忠别川一带的河畔景观",
+      "认识旭川“车站与花园相邻”的城市布局"
+    ],
+    "details": [
+      "北彩都花园沿旭川站南侧展开，分布着不同庭园区域。夏季重点是花卉和植物配置，冬季则以雪景和河岸空间为主；图中的花海不能作为12月景观预期。",
+      "这里适合当作站前环境来认识。地图标记在花园中心一带，并不等于所有冬季活动的集合点；雪地活动是否举行、在哪里举办，需要看当季公告。"
+    ],
+    "history": null,
+    "facts": [
+      {
+        "label": "位置",
+        "value": "旭川站南侧至宫前地区；站南区域与车站相连。"
+      },
+      {
+        "label": "花园中心冬季时间",
+        "value": "11月至4月9:00—17:00。此时间指花园中心，不是所有户外区域。"
+      },
+      {
+        "label": "花园中心休馆",
+        "value": "周一；逢节假日则翌周二休馆，另有年末年初休馆。"
+      },
+      {
+        "label": "冬季提示",
+        "value": "2026年12月21日为周一，不宜把花园中心当作当日室内休息点。"
+      }
+    ],
+    "note": "配图为非冬季花园资料图；冰雪项目开放情况不作保证。",
+    "checkedOn": "2026-10-16",
+    "informationSources": [
+      "https://asahikawa-park.or.jp/kitasaito/"
+    ],
+    "photos": [
+      {
+        "src": "https://asahikawa-park.or.jp/kitasaito/images/top/main05.png",
+        "caption": "北彩都花园 · 非冬季官方资料图",
+        "credit": "旭川市公园绿地协会",
+        "sourceUrl": "https://asahikawa-park.or.jp/kitasaito/",
+        "verification": "Official venue page attribution, visual inspection and browser image load checked",
+        "verified": "2026-10-16"
+      }
+    ]
+  },
+  "hokusei": {
+    "title": "北西之丘展望公园",
+    "tagline": "以金字塔形展望台闻名的丘陵公园，可认识美瑛镇北侧的田园地形。",
+    "highlights": [
+      "金字塔形展望台外观",
+      "丘陵与远山的层次",
+      "夏季薰衣草与冬季雪原的季节差异"
+    ],
+    "details": [
+      "公园位于美瑛站约2.5公里外的丘陵，周边仍有农业生产用地。晴朗时可看大雪山方向，夏季花卉是另一季节的景色。",
+      "特别注意：官方明确说明，展望台因积雪易滑会在积雪季关闭。因此12月只能把它作为了解区域的候选，不能承诺上塔观景，也不能跨越封闭区域。"
+    ],
+    "history": null,
+    "facts": [
+      {
+        "label": "费用",
+        "value": "免费"
+      },
+      {
+        "label": "开放",
+        "value": "公园通年；展望台积雪期关闭。"
+      },
+      {
+        "label": "咨询处",
+        "value": "园内观光咨询处仅5—9月营业。"
+      },
+      {
+        "label": "冬季设施",
+        "value": "官方标明冬季无厕所；停车及可步行区域需看现场除雪情况。"
+      },
+      {
+        "label": "位置",
+        "value": "美瑛町大久保协生，美瑛站北侧约2.5公里。"
+      }
+    ],
+    "note": "这是季节限制明显的景点，12月不作为保证可上塔的景点。照片与当天雪况不同。",
+    "checkedOn": "2026-10-16",
+    "informationSources": [
+      "https://www.biei-hokkaido.jp/ja/facility/hokusei-no-oka"
+    ],
+    "photos": [
+      {
+        "src": "https://www.biei-hokkaido.jp/wp3/wp-content/uploads/2023/10/IMG_20250905_083656-scaled.jpg",
+        "caption": "北西之丘展望公园 · 非冬季官方资料图",
+        "credit": "美瑛町观光协会",
+        "sourceUrl": "https://www.biei-hokkaido.jp/ja/facility/hokusei-no-oka",
+        "verification": "Official venue page attribution, visual inspection and browser image load checked",
+        "verified": "2026-10-16"
+      }
+    ]
+  },
+  "takushin": {
+    "title": "拓真馆",
+    "tagline": "在摄影作品里看懂美瑛的四季，也理解眼前的雪原为何让人着迷。",
+    "highlights": [
+      "前田家三代摄影家的美瑛作品",
+      "冬季静景与春夏秋色彩的对照",
+      "用照片认识农田和丘陵的季节变化"
+    ],
+    "details": [
+      "拓真馆位于美瑛町拓进地区，以风景摄影展示为核心。看过作品再看美瑛的田地，容易注意到作物、光线和丘陵起伏共同形成的风景。",
+      "最新公布的冬季展览展出前田真三、前田昇与前田景三代摄影家的作品，对照田园景色的静与动。它属于安静看展的场所，带3岁孩子可根据兴趣短暂停留，馆内拍摄遵守现场规则。"
+    ],
+    "history": "摄影家前田真三于1987年开设拓真馆，使美瑛田园风景的摄影作品拥有了当地的常设展示空间。",
+    "facts": [
+      {
+        "label": "本期展期",
+        "value": "2026年10月31日—2027年3月28日"
+      },
+      {
+        "label": "本期营业时间",
+        "value": "10:00—16:00；最晚入馆15:45。"
+      },
+      {
+        "label": "本期休馆",
+        "value": "该展期公告标注无休馆日；临时调整以现场为准。"
+      },
+      {
+        "label": "门票",
+        "value": "免费"
+      },
+      {
+        "label": "地址",
+        "value": "北海道上川郡美瑛町字拓进"
+      }
+    ],
+    "note": "配图为本期展览宣传图，含摄影作品，不是展厅现场照片。",
+    "checkedOn": "2026-10-16",
+    "informationSources": [
+      "https://www.biei-hokkaido.jp/ja/27074"
+    ],
+    "photos": [
+      {
+        "src": "https://www.biei-hokkaido.jp/wp3/wp-content/uploads/2026/10/56fd2316d05ac3354285cb4d99390baa-1024x722.jpg",
+        "caption": "拓真馆冬季展览宣传图 · 2026—2027展期",
+        "credit": "美瑛町观光协会／拓真馆",
+        "sourceUrl": "https://www.biei-hokkaido.jp/ja/27074",
+        "verification": "Official venue page attribution, visual inspection and browser image load checked",
+        "verified": "2026-10-16"
+      }
+    ]
   }
 };

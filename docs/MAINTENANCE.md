@@ -160,3 +160,8 @@
 - Checked 375px maps: loaded road tiles, 7/3/6 regional markers and 4 overview hubs; dates/day labels intact across forward and reverse switches.
 - Found outer body/document could be programmatically scrolled when revealing overview weather, clipping the header. Fixed the viewport shell and clipped body overflow, leaving main as the only page content scroller.
 - Rechecked all four tabs plus overview/Biei return at 320×740: root/body scroll stayed zero, tabs stayed at y=42.5, main began exactly below tabs, and all six forecast rows fitted below them. No tab text overflow. At 375×812 regional forecast and separate history heading were visible together. Weather values were isolated simulation data.
+
+### 2026-10-16 · Additional regional sights
+- Added seven sights (23 total): Hokkaido University Museum, Sapporo Beer Museum, Mt. Moiwa, Tokiwa Park, Kitasaito Garden, Hokusei-no-oka and Takushinkan. Added eight official-source reference photos (45 total), all visually inspected and browser-loaded. Summer pictures and the exhibition poster are explicitly captioned.
+- New places have empty day lists and do not change the planned route. Winter closure, admission changes, opening hours and child-specific notes are in each detail.
+- At a 375×700 iframe viewport, all seven details opened/closed with 549px scrollable bodies and no horizontal overflow; scrolling to the last Takushinkan information row retained the close button. This is browser layout testing, not a physical iPhone WeChat test.
