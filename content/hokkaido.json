@@ -6,7 +6,7 @@
       "id": "specialties",
       "kicker": "08 / 北海道特色",
       "title": "北海道特色：便利店与伴手礼",
-      "summary": "Seicomart 与地方饮料，还有白色恋人、六花亭、ROYCE：认识特色，也知道怎么买、哪里买。",
+      "summary": "Seicomart 与地方饮料，还有白色恋人、六花亭、ROYCE、KINOTOYA：认识特色，也知道怎么买、哪里买。",
       "image": {
         "src": "https://www.secoma.co.jp/aboutus/nurture/kids/images/gaikan.jpg",
         "caption": "Seicomart 门店外观 · 品牌官方资料图",
@@ -202,6 +202,33 @@
           ]
         },
         {
+          "title": "KINOTOYA：现烤芝士挞与浓郁牛乳冰淇淋",
+          "image": {
+            "src": "https://www.kinotoya.com/cp_admin/wp-content/uploads/2018/09/807d00e5c08cd366b20834a49cf5cdcc.jpg",
+            "caption": "KINOTOYA 现烤芝士挞 · 品牌官方商品图",
+            "credit": "KINOTOYA",
+            "width": 600,
+            "height": 600
+          },
+          "facts": [
+            [
+              "现场尝",
+              "芝士挞、牛乳冰淇淋"
+            ],
+            [
+              "带走送人",
+              "曲奇比鲜点心方便"
+            ]
+          ],
+          "paragraphs": [
+            "有什么特色｜KINOTOYA（きのとや）是札幌的洋菓子品牌。代表性的现烤芝士挞，用香脆挞壳配柔软芝士慕斯；极上牛乳软冰淇淋则加入北海道马斯卡彭，奶香浓郁，适合现场吃。",
+            "哪些值得买｜先尝原味现烤芝士挞；新千岁机场店还有蓝莓芝士挞，果酱带来不同口味。想把两款都试到，可选各3个的组合。带回家分送则可以看看 KINOTOYA 曲奇；机场店有四种口味的限定包装，官网标示保存期限为制造日起50天，实际以包装为准。",
+            "在哪里能买｜札幌购物时，可去南2条西3丁目、Pole Town 地下街内的 KINOTOYA BAKE 店，买芝士挞、曲奇或现场吃冰淇淋。新千岁机场国内线2楼也有 KINOTOYA 店；如果从国际线回上海，请在安检前预留往返购物时间。各店供应不同，不要默认所有限定口味都有。",
+            "怎么带走｜现烤芝士挞官网标示需冷藏、消费期限3天，当天可常温携带；回程较长时请店员确认保冷安排，到家后按要求保存。它更适合旅行中品尝或回家马上吃，冰淇淋则不能当作长途伴手礼。",
+            "别找错店｜机场原 KINOTOYA Factory 店已在2024年改为“札幌农学校 Factory 店”，与现有 KINOTOYA 新千岁机场店不同。认准きのとや招牌，再找现烤芝士挞和极上牛乳软冰淇淋。"
+          ]
+        },
+        {
           "title": "挑伴手礼：按收礼的人来选",
           "image": {
             "src": "https://www.royce.com/images/goods/8400_2.jpg",
@@ -211,7 +238,7 @@
             "height": 400
           },
           "paragraphs": [
-            "分送多位亲友｜优先看白色恋人的独立包装与总片数。喜欢葡萄干、准备很快享用的亲友，可选六花亭奶油夹心。想和家里人一起尝鲜，ROYCE 生巧或巧克力薯片更适合共享。",
+            "分送多位亲友｜优先看白色恋人的独立包装与总片数。喜欢葡萄干、准备很快享用的亲友，可选六花亭奶油夹心。想和家里人一起尝鲜，ROYCE 生巧或巧克力薯片更适合共享。 喜欢现烤点心，可在 KINOTOYA 尝芝士挞；需要较方便携带的礼物，可看它的曲奇。",
             "购物地点怎么选｜札幌门店适合慢慢挑口味、看组合；机场适合补买常规款、最后购买需要保冷的商品。上述机场2楼店位于国内线航站楼，你们回上海若从国际线出发，需预留前往国内线购物及返回办理手续的时间，不要等国际线安检后再找。",
             "给3岁孩子怎么选｜先看配料中的酒精和过敏原，尤其奶、蛋、小麦、坚果等；生巧 Au Lait 与 Mild Milk 的酒精标示不同。家里有明确忌口时直接拿包装向店员确认，不把“北海道特产”当作适合所有人的保证。",
             "少买一点，更容易带｜六大一小可以先合购小规格尝味，再选礼盒。每个品牌先挑一种代表商品即可；价格、限定款和库存会变化，结账前再确认份数、期限与保存条件。"
@@ -295,6 +322,22 @@
         [
           "新千岁机场·Snow Shop 等购物店铺",
           "https://www.hokkaido-airports.com/ja/new-chitose/spend/taxfree/"
+        ],
+        [
+          "KINOTOYA·新千岁机场店与商品",
+          "https://www.kinotoya.com/shop_list/chitose/"
+        ],
+        [
+          "KINOTOYA·Pole Town 店",
+          "https://www.kinotoya.com/shop_list/poultown/"
+        ],
+        [
+          "KINOTOYA·原机场Factory店更名公告",
+          "https://www.kinotoya.com/news/9453/"
+        ],
+        [
+          "新千岁机场·KINOTOYA店",
+          "https://www.hokkaido-airports.com/ja/new-chitose/spend/shop/72/"
         ]
       ],
       "checkedOn": "2026-10-16"
