@@ -1,9 +1,9 @@
 # 杭州服务器部署
 
 - 服务器：120.26.54.152（杭州 ECS）
-- 访问网址：`http://120.26.54.152/hokkaido/`；根路径暂返回 404，留给个人主页。
+- 访问网址：`https://120.26.54.152/hokkaido/`；根路径暂返回 404，留给个人主页。
 - 网站目录：`/srv/hokkaido-family-map`，仅 `dist` 对外提供文件
-- 独立 Web 服务：Nginx，80 端口
+- 独立 Web 服务：Nginx，443 端口；80 端口保留证书验证并跳转 HTTPS
 - 配置：`/etc/nginx/conf.d/hokkaido-family-map.conf`，模板在 `deploy/nginx.conf`
 - 幸福助手：`xingfu-assistant-tool.service`，8080 端口；网站更新不操作此服务
 
@@ -32,3 +32,18 @@ systemctl show xingfu-assistant-tool -p MainPID -p NRestarts
 ```
 
 回滚时将选定的 `dist/index.html.backup-<commit>` 复制为临时文件，再 `mv` 替换 `dist/index.html`；保留 Git 历史用于排查。不要重启或改写幸福助手的服务和文件。
+
+## HTTPS 与续期
+
+使用 Let’s Encrypt 公网 IP 短期证书（约 6 天），Certbot 5.8.0 官方 snap 管理。
+证书名称 `hokkaido-ip`，文件位于 `/etc/letsencrypt/live/hokkaido-ip/`，私钥只保留在服务器。
+`snap.certbot.renew.timer` 自动检查续期；部署钩子 `/etc/letsencrypt/renewal-hooks/deploy/hokkaido-nginx` 在配置检查通过后重新加载 Nginx。
+HTTP 验证目录 `/var/www/letsencrypt/.well-known/acme-challenge/` 必须保持公网可访问。安全组需要 TCP 80、443；不改幸福助手 8080。
+
+```sh
+/snap/bin/certbot renew --cert-name hokkaido-ip --dry-run
+systemctl list-timers --all | grep certbot
+curl -fsS -o /dev/null https://120.26.54.152/hokkaido/
+```
+
+上线前配置备份：`/etc/nginx/hokkaido.pre-tls.conf`。不要用不带证书路径的旧配置覆盖当前 HTTPS 配置。
