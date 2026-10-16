@@ -1,6 +1,7 @@
 # 杭州服务器部署
 
 - 服务器：120.26.54.152（杭州 ECS）
+- 访问网址：`http://120.26.54.152/hokkaido/`；根路径暂返回 404，留给个人主页。
 - 网站目录：`/srv/hokkaido-family-map`，仅 `dist` 对外提供文件
 - 独立 Web 服务：Nginx，80 端口
 - 配置：`/etc/nginx/conf.d/hokkaido-family-map.conf`，模板在 `deploy/nginx.conf`
@@ -25,7 +26,7 @@ bash deploy/update.sh /tmp/hokkaido.bundle
 
 ```sh
 nginx -t
-curl -fsS -o /dev/null -H 'Host: 120.26.54.152' http://127.0.0.1/
+curl -fsS -o /dev/null -H 'Host: 120.26.54.152' http://127.0.0.1/hokkaido/
 curl -fsS -o /dev/null http://127.0.0.1:8080/
 systemctl show xingfu-assistant-tool -p MainPID -p NRestarts
 ```
