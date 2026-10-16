@@ -424,7 +424,7 @@
             "src": "assets/intro/population-total.svg",
             "caption": "2020年北海道、东京、大阪、神奈川、爱知、福冈人口总数与参考面积比较",
             "width": 640,
-            "height": 1120,
+            "height": 1530,
             "credit": "本项目依官方资料绘制；数据年份与口径见图内说明"
           }
         },
@@ -439,7 +439,7 @@
             "src": "assets/intro/population-density.svg",
             "caption": "2020年人口密度：北海道66.6、东京6402.6、大阪4638.4、神奈川3823.2、爱知1458.0、福冈1029.8人每平方公里",
             "width": 640,
-            "height": 1120,
+            "height": 1530,
             "credit": "本项目依日本统计局2020年国势调查绘制；同一行政层级、同一年份"
           }
         },

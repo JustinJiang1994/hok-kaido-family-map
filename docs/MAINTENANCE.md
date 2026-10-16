@@ -79,3 +79,7 @@
 - Added content/population-comparison.json from the 2020 census table I-2-1; six prefectures at the same administrative level and date.
 - population-total.svg compares populations with exact counts and reference areas; population-density.svg uses published densities on one linear scale. Hokkaido density excludes the four islands noted in the source, unlike the reference-area column.
 - Both SVGs have matching 640×1120 metadata. Source labels, data values and standalone build equality checked; browser file preview was blocked by URL policy, so this revision has no completed mobile browser visual check.
+
+### 2026-10-16 · Mobile population chart verification
+- Previewed over localhost at 390×844, then checked revised charts at 375×812. Enlarged supporting text to 28 SVG units, separated exact population and area onto two lines, and increased row spacing. Both chart dimensions are now 640×1530.
+- Verified all six names/values visually, loaded images, no horizontal overflow, scrolling to chart headings and footnotes, and sticky return button closure. This completes the previously blocked mobile visual check.
