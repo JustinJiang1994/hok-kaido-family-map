@@ -13,6 +13,11 @@ const TripWeather = (() => {
 (() => {
  const root=document.getElementById('tripWeather');if(!root)return;
  const select=root.querySelector('select'),button=root.querySelector('button'),status=root.querySelector('[role=status]'),grid=root.querySelector('.weather-days');
+ const regionPicker=select.closest('label');
+ const regionName=document.createElement('strong');regionName.className='weather-region-name';regionName.hidden=true;regionPicker.after(regionName);
+ function showRegionControl(name){
+  const overview=name==='行程总览';regionPicker.hidden=!overview;select.disabled=!overview;regionName.hidden=overview;regionName.textContent=overview?'':name;
+ }
  const regionKeys={札幌:'sapporo',旭川:'asahikawa',美瑛:'biei'};
  const history=root.querySelector('.climate-cards');
  const historyCards=[...history.children];
@@ -25,6 +30,7 @@ const TripWeather = (() => {
   const badge=document.createElement('span');badge.textContent='历史参考';historySummary.append(badge);
  }
  function syncMapRegion(name){
+  showRegionControl(name);
   const key=regionKeys[name];
   // Overview keeps the last weather choice; automatic route playback does not change it.
   if(key&&select.value!==key){select.value=key;refresh();}
@@ -67,7 +73,9 @@ const TripWeather = (() => {
  button.addEventListener('click',refresh);select.addEventListener('change',refresh);
  document.addEventListener('visibilitychange',()=>{if(!document.hidden&&Date.now()-lastFetch>3600000)refresh();});
  setInterval(()=>{if(!document.hidden&&Date.now()-lastFetch>3600000)refresh();},60000);
- const initialKey=regionKeys[document.querySelector('#days [aria-pressed="true"]')?.dataset.region];
+ const initialRegion=document.querySelector('#days [aria-pressed="true"]')?.dataset.region||'行程总览';
+ showRegionControl(initialRegion);
+ const initialKey=regionKeys[initialRegion];
  if(initialKey)select.value=initialKey;
  refresh();
 })();

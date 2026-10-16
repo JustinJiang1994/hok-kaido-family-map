@@ -49,3 +49,5 @@ body:not(.overview-mode) .map-stage{display:contents}body:not(.overview-mode) #m
 #tripWeather .weather-unit{font-size:13px;color:#526c68;margin:8px 0}#tripWeather .weather-unit[hidden]{display:none}
 
 #tripWeather .climate-cards .is-selected-region{border:2px solid #397b6d}#tripWeather .climate-cards .is-selected-region h4:after{content:"当前地区";font-size:13px;color:#397b6d;margin-left:10px;font-weight:500}
+
+#tripWeather .weather-controls [hidden]{display:none!important}#tripWeather .weather-region-name{font-size:21px;line-height:1.5;margin-right:auto}

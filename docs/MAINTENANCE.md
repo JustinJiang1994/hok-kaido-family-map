@@ -111,3 +111,7 @@
 - Weather listens to region-tab clicks without modifying map rendering. Sapporo/Asahikawa/Biei tabs select and refresh the matching weather location. Overview preserves the last choice; animated route steps do not trigger weather requests.
 - Historical cards are reordered in the DOM with the selected location first and visibly highlighted. Summary includes its name. Open/closed state is retained; manual weather choices also reorder history. Airport has no substituted historical station.
 - 375×812 simulation checked three region tabs, successive switches, matching request location/time and current history card, overview retention, open history retention, and absence of horizontal overflow. Slow previous-location responses remain guarded by request identity.
+
+### 2026-10-16 · Overview-only weather selector
+- Regional tabs hide and disable the weather select and show the current region name instead. Overview restores the selector and keeps the last weather choice. Control mode updates even when the selected weather already matches the tab.
+- 375×812 simulation verified all three named regions, overview manual airport choice, and return to Sapporo with matching weather and prioritized history; no horizontal overflow.
