@@ -95,3 +95,9 @@
 - Monthly mean temperature, mean daily max/min, total snowfall depth and mean monthly maximum snow depth are explicitly historical, whole-month measures, not trip forecasts or extreme values. Biei station is not a substitute for higher-elevation Shirogane sites. Clothing guidance references official Sapporo tourism advice; its older climate figures are not reused.
 - When no trip dates are forecastable, hide six repeated placeholder cards and show historical reference. Live forecasts remain above history once available. Added far-range/near-range labels, no-store fetch and JMA latest forecast/warning links. Fetch time is not model issuance time; no accuracy guarantee.
 - Checked at 375×812: three cards, no horizontal overflow or label/value overlaps; historical label, snowfall explanation and clothing copy readable. Date-boundary tests continue to pass.
+
+### 2026-10-16 · Near-departure mobile simulation
+- Run python3 scripts/build_weather_preview.py after build.py to generate local-archive/weather-preview/index.html. Serve that directory locally only. It mocks Date to Dec 16 and only the weather endpoint; all weather numbers are fictitious and a persistent watermark identifies screenshots. Release HTML is never modified.
+- 375×812 checks passed: six dates shown, Sapporo -4/1, Asahikawa -11/-6, Biei -14/-9 (fixture values), location coordinates and no-store fetch correct; Japan fetch times advanced 10:01 → 10:02 → 10:03, refresh → 10:04.
+- Missing date gives five days and explicit missing-day text; null temperature says unavailable while zero snowfall remains 0. Network failure clears the prior data/time. A delayed Sapporo response that ignores abort did not overwrite Asahikawa after a quick switch.
+- All six date headings verified; no horizontal overflow. Historical reference remains below live forecast with a separate label and styling. Screenshots are in ignored local-archive; simulation cannot verify accuracy of real December weather.
