@@ -20,7 +20,7 @@ fixture=r'''<script>
   const low=region==='札幌'?-4:region==='旭川'?-11:region==='美瑛'?-14:-6;
   const code=region==='札幌'?3:region==='旭川'?71:73;
   const daily={time:[],weather_code:[],temperature_2m_min:[],temperature_2m_max:[],precipitation_probability_max:[],snowfall_sum:[]};
-  for(let i=0;i<6;i++){daily.time.push('2026-12-'+(17+i));daily.weather_code.push(code);daily.temperature_2m_min.push(low-i);daily.temperature_2m_max.push(low+5-i);daily.precipitation_probability_max.push(20+i*10);daily.snowfall_sum.push(i);}
+  for(let i=0;i<6;i++){daily.time.push('2026-12-'+(17+i));daily.weather_code.push(i===1?0:i===2?2:i===3?61:code);daily.temperature_2m_min.push(low-i);daily.temperature_2m_max.push(low+5-i);daily.precipitation_probability_max.push(20+i*10);daily.snowfall_sum.push(i);}
   if(testMode==='missing'){for(const k in daily)daily[k].pop();daily.temperature_2m_min[0]=null;}
   return {ok:true,json:async()=>({daily,timezone:'Asia/Tokyo'})};
  };

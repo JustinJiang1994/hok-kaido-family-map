@@ -5,10 +5,12 @@ const TripWeather = (() => {
  const day=(now=new Date())=>new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Tokyo',year:'numeric',month:'2-digit',day:'2-digit'}).format(now);
  const distance=(a,b)=>Math.round((Date.parse(a+'T00:00:00Z')-Date.parse(b+'T00:00:00Z'))/86400000);
  const state=(date,today)=>distance(date,today)<0?'past':distance(date,today)>15?'future':'available';
- const condition=code=>({0:'晴',1:'大致晴朗',2:'局部多云',3:'阴',45:'雾',48:'冻雾',51:'小毛毛雨',53:'毛毛雨',55:'强毛毛雨',56:'冻毛毛雨',57:'冻毛毛雨',61:'小雨',63:'中雨',65:'大雨',66:'冻雨',67:'强冻雨',71:'小雪',73:'中雪',75:'大雪',77:'雪粒',80:'阵雨',81:'阵雨',82:'强阵雨',85:'阵雪',86:'强阵雪',95:'雷雨',96:'雷雨伴冰雹',99:'雷雨伴冰雹'}[code]||'天气数据待补充');
+ const condition=code=>({0:'晴',1:'少云',2:'多云',3:'阴',45:'雾',48:'冻雾',51:'小毛毛雨',53:'毛毛雨',55:'强毛毛雨',56:'冻毛毛雨',57:'冻毛毛雨',61:'小雨',63:'中雨',65:'大雨',66:'冻雨',67:'强冻雨',71:'小雪',73:'中雪',75:'大雪',77:'雪粒',80:'阵雨',81:'阵雨',82:'强阵雨',85:'阵雪',86:'强阵雪',95:'雷雨',96:'雷雨伴冰雹',99:'雷雨伴冰雹'}[code]||'天气数据待补充');
+ const icon=code=>code===0?'☀️':[1,2].includes(code)?'🌤️':code===3?'☁️':[45,48].includes(code)?'🌫️':[71,73,75,77,85,86].includes(code)?'❄️':[95,96,99].includes(code)?'⛈️':[51,53,55,56,57,61,63,65,66,67,80,81,82].includes(code)?'🌧️':'—';
+ const temperature=v=>typeof v==='number'&&Number.isFinite(v)?String(Math.round(v)):'暂缺';
  const value=(v,unit)=>typeof v==='number'&&Number.isFinite(v)?`${Math.round(v*10)/10}${unit}`:'暂缺';
  const row=(daily,date)=>{const i=daily?.time?.indexOf(date)??-1;return i<0?null:Object.fromEntries(Object.entries(daily).map(([k,v])=>[k,v[i]]));};
- return {dates,places,day,distance,state,condition,value,row};
+ return {dates,places,day,distance,state,condition,icon,temperature,value,row};
 })();
 
 (() => {
@@ -19,6 +21,7 @@ const TripWeather = (() => {
  let region=document.querySelector('#days [aria-pressed="true"]')?.dataset.region||'行程总览',controller,lastFetch=0;
  const el=(tag,cls,text)=>{const e=document.createElement(tag);e.className=cls;if(text!==undefined)e.textContent=text;return e;};
 
+ function weatherCondition(code){const label=el('span','comparison-condition');const icon=el('span','weather-condition-icon',TripWeather.icon(code));icon.setAttribute('aria-hidden','true');label.append(icon,el('span','',TripWeather.condition(code)));return label;}
  function comparison(results,today){
   const panel=el('section','weather-comparison');
   panel.append(el('p','comparison-note','六天预报对比 · 气温为最低～最高（℃）'));
@@ -30,7 +33,7 @@ const TripWeather = (() => {
    for(const key of Object.keys(climate)){
     const td=el('td','');const d=TripWeather.row(results[key]?.daily,date);const state=TripWeather.state(date,today);
     if(state!=='available'||!d){td.append(el('span','comparison-unavailable',state==='past'?'已过去':state==='future'?'未到预报期':results[key]?.error?'暂未连上':'暂无数据'));}
-    else{td.append(el('span','comparison-condition',TripWeather.condition(d.weather_code)),el('strong','comparison-temperature',`${TripWeather.value(d.temperature_2m_min,'')}～${TripWeather.value(d.temperature_2m_max,'')}`),el('small','comparison-snow',`新雪 ${TripWeather.value(d.snowfall_sum,'cm')}`));}
+    else{td.append(weatherCondition(d.weather_code),el('strong','comparison-temperature',`${TripWeather.temperature(d.temperature_2m_min)}～${TripWeather.temperature(d.temperature_2m_max)}`),el('small','comparison-snow',`新雪 ${TripWeather.value(d.snowfall_sum,'cm')}`));}
     tr.append(td);
    }body.append(tr);
   }table.append(body);panel.append(table);
@@ -61,7 +64,7 @@ const TripWeather = (() => {
     let count=0;forecast.append(el('p','forecast-label','旅行日期预报 · 最低～最高'));
     for(const date of TripWeather.dates){const d=TripWeather.row(data.daily,date);const row=el('div','forecast-row');row.append(el('strong','',`12/${date.slice(-2)}`));
      if(!pending.includes(date)||!d){row.append(el('span','',TripWeather.state(date,today)==='past'?'日期已过':'暂无预报'));}else{
-      count++;row.append(el('span','',TripWeather.condition(d.weather_code)),el('strong','',`${TripWeather.value(d.temperature_2m_min,'')}～${TripWeather.value(d.temperature_2m_max,'')}℃`));
+      count++;row.append(weatherCondition(d.weather_code),el('strong','',`${TripWeather.temperature(d.temperature_2m_min)}～${TripWeather.temperature(d.temperature_2m_max)}℃`));
       row.append(el('small','forecast-extra',`降水 ${TripWeather.value(d.precipitation_probability_max,'%')} · 新雪 ${TripWeather.value(d.snowfall_sum,'cm')}${TripWeather.distance(date,today)>7?' · 远期参考':''}`));
      }forecast.append(row);
     }

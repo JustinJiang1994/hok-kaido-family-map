@@ -138,3 +138,7 @@
 - Overview forecasts now use one semantic table: six date rows and three regional columns, with conditions, minimum–maximum temperatures and new snowfall. Regional pages retain their own forecast and clearly labeled historical reference. Clothing stays in three short lines below the overview table.
 - Historical-only footnote is hidden when the overview comparison is active. Each region retains independent fetch/error handling and Japan-time update labels; missing dates remain aligned cells.
 - Simulated Dec 16 at 375×812: all six rows and three clothing lines visible together. At 320×740 no horizontal overflow or temperature overflow. Checked missing dates/null temperatures, zero snow, network errors and region/overview switching. Fixtures remain isolated in ignored local-archive; these are not real December forecasts.
+
+### 2026-10-16 · Weather icons and stronger temperatures
+- Conditions now pair decorative sun/cloud/snow/rain/fog/thunder icons with text in overview and regional forecasts. Temperatures use bold dark type and whole-degree rounding for compact phone comparisons; underlying API data is unchanged.
+- At 375px and 320px, three region columns remain visible with no page or temperature overflow. Preview fixture now includes sunny/cloudy/rainy days as well as snow to check the icons; fixture data stays out of the release.
