@@ -129,3 +129,6 @@ body:not(.overview-mode) main{overflow-y:auto;overscroll-behavior-y:contain}
 html{overflow:hidden}
 body{position:fixed;inset:0}
 body:not(.reading-open){overflow:clip}
+
+/* Single-category map filter, with generous phone tap targets. */
+.legend{gap:8px}.legend button{flex:1;min-height:44px;border:1px solid #d6ddd8;border-radius:9px;background:#fff;color:var(--type-color);font-size:15px;font-weight:700;padding:7px 12px}.legend button[aria-pressed="true"]{background:var(--type-color);border-color:var(--type-color);color:white;box-shadow:0 2px 5px #193e421c}.legend[hidden]{display:none}

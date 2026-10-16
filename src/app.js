@@ -1,6 +1,13 @@
 'use strict';
 const $=s=>document.querySelector(s),esc=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-let region='行程总览',current=[],markers=[],bounds,selectedId=null;
+let region='行程总览',placeType='sight',current=[],markers=[],bounds,selectedId=null;
+const PLACE_TYPES={sight:'景点',food:'餐厅',shop:'购物'};
+function updatePlaceFilter(){
+ current=PLACES.filter(p=>p.city===region&&p.type===placeType);
+ document.querySelectorAll('[data-place-type]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.placeType===placeType)));
+ if(region!=='行程总览')$('#mapHint').textContent=current.length?'只显示'+PLACE_TYPES[placeType]+' · 点圆点查看介绍 · 双指缩放':'暂未添加'+region+'的'+PLACE_TYPES[placeType]+'地点，可切换其他类型';
+}
+
 const map=L.map('map',{zoomAnimation:false,fadeAnimation:false,scrollWheelZoom:false,zoomControl:true,minZoom:5,maxZoom:18}).setView([43.2,142.1],7);
 map.attributionControl.setPrefix('');
 const tiles=L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png',{minZoom:5,maxZoom:18,attribution:'<a href="https://maps.gsi.go.jp/development/ichiran.html" target="_blank">地理院タイル</a>'}).addTo(map);
@@ -102,15 +109,16 @@ function render(){
  const overview=region==='行程总览';if(overview&&innerWidth<560)map.dragging.disable();else map.dragging.enable();document.body.classList.toggle('overview-mode',overview);
  $('#journeyPanel').hidden=!overview;$('#islandCaption').hidden=!overview;$('#hokkaidoIntro').hidden=!overview;$('#placeLegend').hidden=overview;
  $('#mapHint').textContent=overview?'动线为示意 · 下滑认识北海道 ↓':'双指缩放 · 点圆点查看 · 密集圆点以细线连接实际位置';
- current=PLACES.filter(p=>p.city===region);
+ updatePlaceFilter();
  $('#days').innerHTML=MAP_REGIONS.map(name=>`<button data-region="${name}" class="${region===name?'active':''}" aria-pressed="${region===name}"><strong>${name}</strong><small><span class="tab-date-full">${REGION_DATES[name][0]}</span><span class="tab-date-short">${REGION_DATES[name][0].replace("月","/").replace("日","")}</span></small><small>${REGION_DATES[name][1]}</small></button>`).join('');
  $('#mapTitle').textContent=overview?'北海道全览':region+'地图';
- bounds=L.latLngBounds(overview?[[41.35,139.35],[45.6,145.9]]:current.map(p=>[p.lat,p.lon]));
+ bounds=L.latLngBounds(overview?[[41.35,139.35],[45.6,145.9]]:PLACES.filter(p=>p.city===region).map(p=>[p.lat,p.lon]));
  map.invalidateSize({animate:false});fitRegion();
  if(overview){setupJourney();if(!matchMedia('(prefers-reduced-motion: reduce)').matches)startJourney();}else renderMarkers();
  $('main').scrollTop=0;
 }
-$('#days').onclick=e=>{const b=e.target.closest('[data-region]');if(b){region=b.dataset.region;render();}};
+$('#days').onclick=e=>{const b=e.target.closest('[data-region]');if(b){region=b.dataset.region;placeType='sight';render();}};
+$('#placeLegend').onclick=e=>{const b=e.target.closest('[data-place-type]');if(!b||region==='行程总览')return;placeType=b.dataset.placeType;selectedId=null;if(detail.open)detail.close();updatePlaceFilter();renderMarkers();};
 document.addEventListener('visibilitychange',()=>{if(document.hidden)stopJourney();else if(region==='行程总览'&&!matchMedia('(prefers-reduced-motion: reduce)').matches)startJourney();});
 $('#fit').onclick=fitRegion;map.on('moveend',()=>{if(region==='行程总览')drawOverviewLabels();else renderMarkers();});map.on('resize',()=>{if(bounds)fitRegion();});
 render();
