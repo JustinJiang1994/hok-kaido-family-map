@@ -43,12 +43,24 @@ const TripWeather = (() => {
  document.getElementById('days')?.addEventListener('click',event=>{
   const tab=event.target.closest('[data-region]');if(tab)syncMapRegion(tab.dataset.region);
  });
+ const hero=document.createElement('div');hero.className='weather-hero';status.before(hero);
+ const climate={sapporo:['−4','2','113','白天接近冰点，早晚更冷','羽绒外套 · 手套围巾 · 防滑冬靴'],asahikawa:['−8','−0.8','158','白天也常在零下','厚羽绒 · 保暖内层 · 遮耳帽'],biei:['−10.8','−1.6','182','早晚寒冷，户外多备一层','厚羽绒 · 防风裤 · 防水防滑冬靴']};
+ function showClimate(key,name){
+  hero.replaceChildren();const c=climate[key];
+  const label=document.createElement('div');label.className='weather-hero-label';label.textContent=`${name} · 往年12月`;hero.append(label);
+  if(!c){const p=document.createElement('p');p.textContent='旅行天气，临近出发再看';hero.append(p);return;}
+  const badge=document.createElement('small');badge.textContent='历史参考 · 不是今年预报';hero.append(badge);
+  const temperature=document.createElement('div');temperature.className='weather-hero-temperature';temperature.textContent=`${c[0]}～${c[1]}°C`;hero.append(temperature);
+  const caption=document.createElement('p');caption.className='weather-hero-caption';caption.textContent='平均低温～平均高温';hero.append(caption);
+  const feel=document.createElement('strong');feel.textContent=c[3];hero.append(feel);
+  const clothes=document.createElement('p');clothes.className='weather-outfit';clothes.textContent='🧥 '+c[4];hero.append(clothes);
+ }
  let controller,lastFetch=0;
  async function refresh(){
   controller?.abort();controller=new AbortController();const active=controller;const today=TripWeather.day();
   const key=select.value;const [name,lat,lon]=TripWeather.places[key];
   prioritizeHistory(name);
-  button.disabled=true;grid.replaceChildren();
+  button.disabled=true;grid.replaceChildren();hero.hidden=true;
   const cards=TripWeather.dates.map((date,i)=>{
    const card=document.createElement('article');const title=document.createElement('h3');title.textContent=`12/${17+i} · 第${i+1}天`;card.append(title);
    const body=document.createElement('p');card.append(body);grid.append(card);
@@ -59,7 +71,7 @@ const TripWeather = (() => {
   const pending=cards.filter(c=>c.state==='available');
   grid.hidden=!pending.length;
   root.querySelector('.weather-unit').hidden=!pending.length;
-  if(!pending.length){status.textContent=today>TripWeather.dates[5]?'这次旅行日期已过。':`${name} · 尚无旅行日期预报。预计12月2日起逐天开放；可先点开历史参考。`;button.disabled=false;lastFetch=Date.now();return;}
+  if(!pending.length){hero.hidden=false;showClimate(key,name);status.textContent=today>TripWeather.dates[5]?'这次旅行日期已过。':'出发前会自动换成每日预报。';button.disabled=false;lastFetch=Date.now();return;}
   status.textContent=`正在获取${name}的最新预报…`;
   const timeout=setTimeout(()=>active.abort(),12000);
   try{
@@ -69,7 +81,8 @@ const TripWeather = (() => {
    let count=0;
    pending.forEach(c=>{const d=TripWeather.row(data.daily,c.date);c.body.replaceChildren();if(!d){c.body.textContent='服务暂未提供这一天的数据';return;}count++;
     const range=document.createElement('small');range.className='forecast-range';range.textContent=TripWeather.distance(c.date,today)>7?'远期 · 变化较大':'临近预报';c.body.append(range);
-    for(const text of [TripWeather.condition(d.weather_code),`${TripWeather.value(d.temperature_2m_min,'')}～${TripWeather.value(d.temperature_2m_max,'')}℃`,`降水概率 ${TripWeather.value(d.precipitation_probability_max,'%')}`,`预计新降雪 ${TripWeather.value(d.snowfall_sum,'cm')}`]){const line=document.createElement('span');line.textContent=text;c.body.append(line);}
+    const icon=document.createElement('span');icon.className='weather-icon';icon.setAttribute('aria-hidden','true');icon.textContent=d.weather_code===0?'☀️':[1,2].includes(d.weather_code)?'🌤️':[71,73,75,77,85,86].includes(d.weather_code)?'🌨️':d.weather_code>=51?'🌧️':'☁️';c.body.append(icon);
+    for(const [index,text] of [TripWeather.condition(d.weather_code),`${TripWeather.value(d.temperature_2m_min,'')}～${TripWeather.value(d.temperature_2m_max,'')}℃`,`降水概率 ${TripWeather.value(d.precipitation_probability_max,'%')}`,`预计新降雪 ${TripWeather.value(d.snowfall_sum,'cm')}`].entries()){const line=document.createElement('span');if(index===1)line.className='forecast-temperature';line.textContent=text;c.body.append(line);}
    });
    status.textContent=`${name} · 已获取 ${count} 天 · 获取时间 ${new Intl.DateTimeFormat('zh-CN',{timeZone:'Asia/Tokyo',month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date())}（日本时间）`;
   }catch(e){if(active!==controller)return;pending.forEach(c=>c.body.textContent='暂时无法获取，请联网后重试');status.textContent='天气服务连接失败，未显示旧预报。';}

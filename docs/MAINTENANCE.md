@@ -119,3 +119,8 @@
 ### 2026-10-16 · Region-scoped historical weather
 - Regional pages render only their matching historical climate card; overview restores all three and labels the section as a comparison. Cached original DOM cards preserve values and station links across switches.
 - Mode changes update history even when weather selection stays the same (Biei → overview → Biei). Expanded state is preserved. Verified all three regional cards and overview round trip at 375×812. Snowfall explanation now uses a general heading instead of Sapporo's specific number.
+
+### 2026-10-16 · Weather visual hierarchy
+- Empty forecast state now displays a selected-region historical temperature hero with explicit historical/not-current-forecast label, large mean low/high range, a plain-language cold summary and short clothing suggestion. Values match JMA December normals in content/december-climate.json; update the weather.js hero values alongside those normals.
+- Available forecasts use weather icons and emphasized daily temperature ranges. Optional climate/clothing details remain folded; technical/source notes are secondary. Station URLs remain in source markup but are not displayed on each climate card; Open-Meteo attribution stays in optional weather notes.
+- Verified 375×812 real-date hero, Biei linkage and simulated six-day forecast with icons, hero hidden and no horizontal overflow. No mock values enter the release.
