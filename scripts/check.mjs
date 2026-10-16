@@ -11,13 +11,14 @@ assert.equal(new Set(places.map(p => p.id)).size, places.length, 'Duplicate plac
 for (const p of places) {
   assert(Number.isFinite(p.lat) && Number.isFinite(p.lon), `Coordinates: ${p.id}`);
   assert(['札幌','旭川','美瑛','新千岁','新千岁机场'].includes(p.city), `Region: ${p.id}`);
-  if (p.type !== 'sight') continue;
+  assert(['sight','food','shop','hub'].includes(p.type), `Category: ${p.id}`);
+  if (p.type === 'hub') continue;
   const m = media[p.id];
   assert(m?.tagline && m.highlights?.length && m.details?.length && m.facts?.length, `Incomplete details: ${p.id}`);
   assert(m.checkedOn && m.informationSources?.length, `Missing sources: ${p.id}`);
   for (const image of m.photos) assert(image.src.startsWith('https://') && image.caption && image.credit && image.sourceUrl, `Image provenance: ${p.id}`);
 }
-assert.equal(Object.keys(media).length, places.filter(p => p.type === 'sight').length, 'Orphaned media');
+assert.equal(Object.keys(media).length, places.filter(p => p.type !== 'hub').length, 'Orphaned media');
 console.log(`Checked ${places.length} places and ${Object.values(media).reduce((n,m)=>n+m.photos.length,0)} photos.`);
 // Overview padding and fractional zoom must never leak into regional maps.
 const fitSource = read('src/app.js').split('function fitRegion(){')[1].split('\nfunction render(){')[0];
@@ -30,3 +31,7 @@ for (const width of [390, 1200]) {
   assert(!('paddingTopLeft' in calls[0]) && !('paddingBottomRight' in calls[0]));
 }
 console.log('Regional zoom and padding isolation checked.');
+
+assert.equal(places.filter(p=>p.id.startsWith('donbe-')).length,3);
+assert.equal(places.filter(p=>p.id.startsWith('tenma-')).length,2);
+for(const p of places.filter(p=>['food','shop'].includes(p.type))) assert(media[p.id].facts.some(f=>f.label==='地址'||f.label==='位置'), `Missing location: ${p.id}`);

@@ -243,7 +243,7 @@ const PLACE_MEDIA={
     ]
   },
   "clock": {
-    "title": "札幌钟楼",
+    "title": "札幌钟楼（计时台）",
     "intro": "札幌市中心的白色木造建筑，原是札幌农学校的演武场。低矮的木楼与周围现代建筑形成鲜明对比。",
     "story": "钟塔、红色星饰和入口匾额是外观的辨认重点。馆内可以了解建筑与札幌农学校的历史，也有适合认识相关人物的展陈。",
     "note": "相册展示外观、建筑细节与馆内塑像，不是冬季实时照片。外面拍照时留意人行道通行，参观开放情况以现场为准。",
@@ -1337,5 +1337,591 @@ const PLACE_MEDIA={
         "verified": "2026-10-16"
       }
     ]
+  },
+  "susukino": {
+    "title": "薄野（すすきの）",
+    "tagline": "札幌霓虹与餐饮店最集中的街区之一。",
+    "highlights": [
+      "薄野路口霓虹招牌",
+      "夜间城市街景",
+      "餐饮与购物街区"
+    ],
+    "details": [
+      "常被称作日本三大欢乐街之一，是一片街区，不是一家店。地图以薄野站附近路口代表位置。",
+      "可在公共步道看招牌、拍夜景；带老人和孩子时，留意路口车流与夜间人潮。"
+    ],
+    "history": "",
+    "facts": [
+      {
+        "label": "位置",
+        "value": "南3～8条、西1～6丁目一带；薄野站／丰水薄野站附近"
+      },
+      {
+        "label": "开放",
+        "value": "街区可通行，店铺各自营业"
+      }
+    ],
+    "checkedOn": "2026-10-16",
+    "informationSources": [
+      {
+        "title": "官方网站",
+        "url": "https://www.sapporo.travel/night-view-guide/spot/susukino/"
+      }
+    ],
+    "note": "",
+    "photos": [
+      {
+        "src": "https://www.sapporo.travel/cms/wp-content/uploads/2024/01/susukino_05-scaled1.jpg",
+        "caption": "薄野街区夜景 · 官方资料图",
+        "credit": "札幌观光协会",
+        "sourceUrl": "https://www.sapporo.travel/night-view-guide/spot/susukino/",
+        "verified": "2026-10-16"
+      }
+    ]
+  },
+  "nijo": {
+    "title": "二条市场",
+    "tagline": "市中心可逛海鲜摊、吃海鲜丼的老市场。",
+    "highlights": [
+      "海产与干货店铺",
+      "市场街景",
+      "创成川附近散步"
+    ],
+    "details": [
+      "市场与其中的餐厅是不同地点，地图上也单独标出了丼兵卫二条市场店。",
+      "营业时间随店铺不同；购物先确认价格、份量和保存方式。"
+    ],
+    "history": "据当地旅游资料，市场起源于明治初期石狩沿岸渔民来此售鱼，后来逐渐发展为市中心的市场。",
+    "facts": [
+      {
+        "label": "地址",
+        "value": "中央区南3条东1～2丁目"
+      },
+      {
+        "label": "参考时间",
+        "value": "市场约7:00～17:00；饮食店约7:00～21:00，依各店而异"
+      }
+    ],
+    "checkedOn": "2026-10-16",
+    "informationSources": [
+      {
+        "title": "官方网站",
+        "url": "https://www.sapporo.travel/spot/facility/nijo_fish_market/"
+      }
+    ],
+    "note": "",
+    "photos": [
+      {
+        "src": "https://www.sapporo.travel/cms/wp-content/uploads/2020/10/MV_slide4.jpg",
+        "caption": "二条市场 · 官方资料图",
+        "credit": "札幌观光协会",
+        "sourceUrl": "https://www.sapporo.travel/spot/facility/nijo_fish_market/",
+        "verified": "2026-10-16"
+      }
+    ]
+  },
+  "nakajima": {
+    "title": "中岛公园",
+    "tagline": "薄野以南的城市公园，树木、池塘与历史建筑相邻。",
+    "highlights": [
+      "冬日树影与园路",
+      "菖蒲池周边",
+      "园内丰平馆"
+    ],
+    "details": [
+      "地图标示园区参考位置，丰平馆另外标点，可分别点击了解。",
+      "12月适合按除雪路段散步；日本庭园冬季关闭，不能把夏季划船和庭园体验当作冬季开放项目。"
+    ],
+    "history": "",
+    "facts": [
+      {
+        "label": "地址",
+        "value": "中央区中岛公园1；地铁中岛公园站附近"
+      },
+      {
+        "label": "开放",
+        "value": "公共园路依现场通行情况；日本庭园约11月上旬至4月下旬关闭"
+      },
+      {
+        "label": "冬季",
+        "value": "越野滑雪等活动依积雪与公告，不保证12月开放"
+      }
+    ],
+    "checkedOn": "2026-10-16",
+    "informationSources": [
+      {
+        "title": "官方网站",
+        "url": "https://www.sapporo.travel/spot/facility/nakajima_park/"
+      }
+    ],
+    "note": "照片用于认识园区；12月树木、池面与地面状态不同。",
+    "photos": [
+      {
+        "src": "https://www.sapporo.travel/cms/wp-content/uploads/2020/10/1566460229-1.jpg",
+        "caption": "中岛公园 · 非冬季资料图",
+        "credit": "札幌观光协会",
+        "sourceUrl": "https://www.sapporo.travel/spot/facility/nakajima_park/",
+        "verified": "2026-10-16"
+      }
+    ]
+  },
+  "hoheikan": {
+    "title": "丰平馆",
+    "tagline": "中岛公园内白墙蓝边的历史洋馆。",
+    "highlights": [
+      "白墙蓝色线脚",
+      "室内历史装饰",
+      "了解札幌近代建筑"
+    ],
+    "details": [
+      "丰平馆位于公园内，是有室内展陈的建筑，和公园开放时间不同。可结合外观与内部装饰认识当时的西式建筑。"
+    ],
+    "history": "1880年建成，最初是开拓使经营的西式酒店；1958年迁至中岛公园，后来曾作为婚礼场所使用。",
+    "facts": [
+      {
+        "label": "地址",
+        "value": "中央区中岛公园1-20"
+      },
+      {
+        "label": "开放",
+        "value": "9:00～17:00，16:30停止入馆；部分日期延时"
+      },
+      {
+        "label": "休馆",
+        "value": "每月第2个周二（逢节假日顺延）、12月29日～1月3日"
+      },
+      {
+        "label": "交通",
+        "value": "中岛公园站3号出口步行约5分钟"
+      }
+    ],
+    "checkedOn": "2026-10-16",
+    "informationSources": [
+      {
+        "title": "官方网站",
+        "url": "https://www.s-hoheikan.jp/"
+      }
+    ],
+    "note": "",
+    "photos": [
+      {
+        "src": "https://www.s-hoheikan.jp/hoheikan_wp/wp-content/themes/hoheikan/assets/img/sp_mv.jpg",
+        "caption": "丰平馆 · 官方资料图",
+        "credit": "丰平馆",
+        "sourceUrl": "https://www.s-hoheikan.jp/",
+        "verified": "2026-10-16"
+      }
+    ]
+  },
+  "parco": {
+    "title": "札幌 PARCO 百货",
+    "tagline": "大通站附近的时装、生活杂货与餐饮商场。",
+    "highlights": [
+      "时装与生活杂货",
+      "楼上餐饮",
+      "大通站直连"
+    ],
+    "details": [
+      "适合与大通、薄野周边购物一起认识。各品牌楼层会调整，到店看当日楼层指引。"
+    ],
+    "history": "",
+    "facts": [
+      {
+        "label": "地址",
+        "value": "中央区南1条西3-3"
+      },
+      {
+        "label": "营业",
+        "value": "物贩10:00～20:00；餐厅按各店时间"
+      },
+      {
+        "label": "亲子",
+        "value": "馆内有换尿布设施；授乳空间位于6楼"
+      }
+    ],
+    "checkedOn": "2026-10-16",
+    "informationSources": [
+      {
+        "title": "官方网站",
+        "url": "https://sapporo.parco.jp/info/?gcd=access"
+      }
+    ],
+    "note": "",
+    "photos": []
+  },
+  "marui-odori": {
+    "title": "丸井今井百货 · 札幌本店大通馆",
+    "tagline": "临大通公园一侧的馆舍，有食品与百货楼层。",
+    "highlights": [
+      "大通商圈百货",
+      "分馆购物",
+      "看清楼层与馆名"
+    ],
+    "details": [
+      "临大通公园一侧的馆舍，有食品与百货楼层。",
+      "两栋馆舍分别标点，方便辨认；不是两家独立连锁分店。"
+    ],
+    "history": "",
+    "facts": [
+      {
+        "label": "地址",
+        "value": "中央区南1条西2丁目"
+      },
+      {
+        "label": "营业",
+        "value": "以当天馆内公告为准，食品、餐饮和部分柜台可能不同"
+      },
+      {
+        "label": "地图位置",
+        "value": "馆舍附近参考点，入口请按现场指引"
+      }
+    ],
+    "checkedOn": "2026-10-16",
+    "informationSources": [
+      {
+        "title": "官方网站",
+        "url": "https://www.maruiimai.mistore.jp/sapporo/access.html/index.html"
+      }
+    ],
+    "note": "",
+    "photos": []
+  },
+  "marui-ichijo": {
+    "title": "丸井今井百货 · 札幌本店一条馆",
+    "tagline": "与大通馆同属札幌本店；请按馆名与楼层找柜台。",
+    "highlights": [
+      "大通商圈百货",
+      "分馆购物",
+      "看清楼层与馆名"
+    ],
+    "details": [
+      "与大通馆同属札幌本店；请按馆名与楼层找柜台。",
+      "两栋馆舍分别标点，方便辨认；不是两家独立连锁分店。"
+    ],
+    "history": "",
+    "facts": [
+      {
+        "label": "地址",
+        "value": "中央区南1条西2丁目"
+      },
+      {
+        "label": "营业",
+        "value": "以当天馆内公告为准，食品、餐饮和部分柜台可能不同"
+      },
+      {
+        "label": "地图位置",
+        "value": "馆舍附近参考点，入口请按现场指引"
+      }
+    ],
+    "checkedOn": "2026-10-16",
+    "informationSources": [
+      {
+        "title": "官方网站",
+        "url": "https://www.maruiimai.mistore.jp/sapporo/access.html/index.html"
+      }
+    ],
+    "note": "",
+    "photos": []
+  },
+  "daimaru": {
+    "title": "大丸百货 · 札幌店",
+    "tagline": "与札幌站相连，方便挑伴手礼和逛百货。",
+    "highlights": [
+      "地下食品层",
+      "札幌站直连",
+      "百货与餐饮"
+    ],
+    "details": [
+      "适合在车站周边购物时顺路逛，食品层可比较多个品牌。商品库存与楼层以当天指引为准。"
+    ],
+    "history": "",
+    "facts": [
+      {
+        "label": "地址",
+        "value": "中央区北5条西4丁目7番地"
+      },
+      {
+        "label": "营业",
+        "value": "按当日店铺及楼层公告；餐饮可能与百货不同"
+      }
+    ],
+    "checkedOn": "2026-10-16",
+    "informationSources": [
+      {
+        "title": "官方网站",
+        "url": "https://www.daimaru.co.jp/sapporo/access.html"
+      }
+    ],
+    "note": "",
+    "photos": []
+  },
+  "apia": {
+    "title": "APIA 地下街",
+    "tagline": "札幌站南侧地下的购物与餐饮街区。",
+    "highlights": [
+      "车站地下连通",
+      "日常购物",
+      "餐饮与咖啡"
+    ],
+    "details": [
+      "APIA 是有范围的地下街，地图标示中心附近；并非一栋地面商场。到地下后按分区与店铺编号找位置。"
+    ],
+    "history": "",
+    "facts": [
+      {
+        "label": "位置",
+        "value": "JR札幌站与地铁札幌站相连的地下空间"
+      },
+      {
+        "label": "营业",
+        "value": "各店营业时间不同，以地下街当天公告为准"
+      },
+      {
+        "label": "步行",
+        "value": "地下连通方便避雪，但仍需看电梯和出口指引"
+      }
+    ],
+    "checkedOn": "2026-10-16",
+    "informationSources": [
+      {
+        "title": "官方网站",
+        "url": "https://www.visit-hokkaido.jp/cn/spot/detail_10061.html"
+      }
+    ],
+    "note": "",
+    "photos": []
+  },
+  "donbe-asa": {
+    "title": "丼兵卫 · 札幌朝市店",
+    "tagline": "以海鲜丼为主，分店位置与营业时间不同。",
+    "highlights": [
+      "海鲜丼",
+      "按当天食材选择",
+      "注意分店名称"
+    ],
+    "details": [
+      "这家是丼兵卫 · 札幌朝市店，请勿与其他市场分店混淆。",
+      "食材或醋饭售完可能提前结束。6大1小到店前可电话问座位和熟食选择；本页未替你们预约。"
+    ],
+    "history": "",
+    "facts": [
+      {
+        "label": "地址",
+        "value": "札幌市中央区北12条西20丁目1-20，札幌朝市内"
+      },
+      {
+        "label": "营业",
+        "value": "7:00～13:00；周日、节假日及市场临时休市日休息"
+      },
+      {
+        "label": "电话",
+        "value": "011-614-6533"
+      },
+      {
+        "label": "座位",
+        "value": "13席，含7个吧台位、2人桌与4人桌；不能默认7人同桌"
+      },
+      {
+        "label": "位置",
+        "value": "地图为店铺或所在街区附近参考点，按上述地址找入口"
+      }
+    ],
+    "checkedOn": "2026-10-16",
+    "informationSources": [
+      {
+        "title": "官方网站",
+        "url": "https://www.donbe.sapporo-asaichi.com/shop/"
+      }
+    ],
+    "note": "",
+    "photos": []
+  },
+  "donbe-nijo": {
+    "title": "丼兵卫 · 二条市场店",
+    "tagline": "以海鲜丼为主，分店位置与营业时间不同。",
+    "highlights": [
+      "海鲜丼",
+      "按当天食材选择",
+      "注意分店名称"
+    ],
+    "details": [
+      "这家是丼兵卫 · 二条市场店，请勿与其他市场分店混淆。",
+      "食材或醋饭售完可能提前结束。6大1小到店前可电话问座位和熟食选择；本页未替你们预约。"
+    ],
+    "history": "",
+    "facts": [
+      {
+        "label": "地址",
+        "value": "札幌市中央区南3条东2丁目"
+      },
+      {
+        "label": "营业",
+        "value": "7:00～20:00，最后点单19:30；通常无休"
+      },
+      {
+        "label": "电话",
+        "value": "011-330-8859"
+      },
+      {
+        "label": "座位",
+        "value": "7人同桌、儿童椅及预约需电话确认"
+      },
+      {
+        "label": "位置",
+        "value": "地图为店铺或所在街区附近参考点，按上述地址找入口"
+      }
+    ],
+    "checkedOn": "2026-10-16",
+    "informationSources": [
+      {
+        "title": "官方网站",
+        "url": "https://www.donbe.sapporo-asaichi.com/shop/"
+      }
+    ],
+    "note": "",
+    "photos": [
+      {
+        "src": "https://www.donbe.sapporo-asaichi.com/images/IMG_9765_pc.jpg",
+        "caption": "丼兵卫二条市场店 · 官方门店图",
+        "credit": "丼兵卫",
+        "sourceUrl": "https://www.donbe.sapporo-asaichi.com/shop/",
+        "verified": "2026-10-16"
+      }
+    ]
+  },
+  "donbe-jogai": {
+    "title": "丼兵卫 · 场外市场店",
+    "tagline": "以海鲜丼为主，分店位置与营业时间不同。",
+    "highlights": [
+      "海鲜丼",
+      "按当天食材选择",
+      "注意分店名称"
+    ],
+    "details": [
+      "这家是丼兵卫 · 场外市场店，请勿与其他市场分店混淆。",
+      "食材或醋饭售完可能提前结束。6大1小到店前可电话问座位和熟食选择；本页未替你们预约。"
+    ],
+    "history": "",
+    "facts": [
+      {
+        "label": "地址",
+        "value": "札幌市中央区北11条西22丁目1-28"
+      },
+      {
+        "label": "营业",
+        "value": "7:00～15:00，最后点单14:30；周三休息"
+      },
+      {
+        "label": "电话",
+        "value": "011-330-7957"
+      },
+      {
+        "label": "座位",
+        "value": "官方列36席；7人同桌与儿童椅仍需确认"
+      },
+      {
+        "label": "位置",
+        "value": "地图为店铺或所在街区附近参考点，按上述地址找入口"
+      }
+    ],
+    "checkedOn": "2026-10-16",
+    "informationSources": [
+      {
+        "title": "官方网站",
+        "url": "https://www.donbe.sapporo-asaichi.com/shop/"
+      }
+    ],
+    "note": "",
+    "photos": [
+      {
+        "src": "https://www.donbe.sapporo-asaichi.com/images/7D53075F-C578-4D6A-BDE7-8AA23892064F.jpg",
+        "caption": "丼兵卫场外市场店 · 官方门店图",
+        "credit": "丼兵卫",
+        "sourceUrl": "https://www.donbe.sapporo-asaichi.com/shop/",
+        "verified": "2026-10-16"
+      }
+    ]
+  },
+  "tenma-stellar": {
+    "title": "天马咖喱 · 札幌Stellar Place店",
+    "tagline": "供应汤咖喱和咖喱饭；官方列34席，全日禁烟。",
+    "highlights": [
+      "汤咖喱与咖喱饭",
+      "室内用餐",
+      "两家分店分开标记"
+    ],
+    "details": [
+      "供应汤咖喱和咖喱饭；官方列34席，全日禁烟。",
+      "6大1小用餐前请电话确认是否可预约、同桌或相邻座位、儿童份量与辣度。本页不保证7人同桌。"
+    ],
+    "history": "",
+    "facts": [
+      {
+        "label": "地址",
+        "value": "札幌市中央区北5条西2丁目，Stellar Place CENTER 6F"
+      },
+      {
+        "label": "营业",
+        "value": "11:00～22:00，最后点单21:30"
+      },
+      {
+        "label": "电话",
+        "value": "011-209-5105"
+      },
+      {
+        "label": "定位",
+        "value": "标点为所在商场／地下街附近，具体店位请按楼层导览"
+      }
+    ],
+    "checkedOn": "2026-10-16",
+    "informationSources": [
+      {
+        "title": "官方网站",
+        "url": "https://www.jr-tower.jp/shop_detail_stellar/129"
+      }
+    ],
+    "note": "",
+    "photos": []
+  },
+  "tenma-aurora": {
+    "title": "天马咖喱 · Aurora Town店",
+    "tagline": "供应汤咖喱、咖喱饭与店内制作的咖喱面包，也可外带。",
+    "highlights": [
+      "汤咖喱与咖喱饭",
+      "室内用餐",
+      "两家分店分开标记"
+    ],
+    "details": [
+      "供应汤咖喱、咖喱饭与店内制作的咖喱面包，也可外带。",
+      "6大1小用餐前请电话确认是否可预约、同桌或相邻座位、儿童份量与辣度。本页不保证7人同桌。"
+    ],
+    "history": "",
+    "facts": [
+      {
+        "label": "地址",
+        "value": "札幌市中央区大通地下街 Aurora Town 内"
+      },
+      {
+        "label": "营业",
+        "value": "11:00～21:00，最后点单20:30"
+      },
+      {
+        "label": "电话",
+        "value": "011-596-0573"
+      },
+      {
+        "label": "定位",
+        "value": "标点为所在商场／地下街附近，具体店位请按楼层导览"
+      }
+    ],
+    "checkedOn": "2026-10-16",
+    "informationSources": [
+      {
+        "title": "官方网站",
+        "url": "https://www.sapporo-chikagai.jp/shop/single/190"
+      }
+    ],
+    "note": "",
+    "photos": []
   }
 };

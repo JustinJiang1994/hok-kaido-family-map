@@ -6,7 +6,7 @@
       "id": "specialties",
       "kicker": "08 / 北海道特色",
       "title": "北海道特色：便利店与伴手礼",
-      "summary": "Seicomart 与地方饮料，还有白色恋人、六花亭、ROYCE、KINOTOYA：认识特色，也知道怎么买、哪里买。",
+      "summary": "Seicomart 与地方饮料，还有白色恋人、六花亭、ROYCE、KINOTOYA、LeTAO 和薯条三兄弟：认识特色，也知道怎么买、哪里买。",
       "image": {
         "src": "https://www.secoma.co.jp/aboutus/nurture/kids/images/gaikan.jpg",
         "caption": "Seicomart 门店外观 · 品牌官方资料图",
@@ -229,6 +229,38 @@
           ]
         },
         {
+          "title": "LeTAO：双层芝士蛋糕与小樽风味点心",
+          "image": {
+            "src": "https://www.letao-brand.jp/lp/doublefromage/assets/images/main_slide01.jpg",
+            "caption": "LeTAO 双层芝士蛋糕 · 品牌官方资料图",
+            "credit": "LeTAO 官方网站",
+            "width": 640,
+            "height": 480
+          },
+          "paragraphs": [
+            "有什么特色｜LeTAO（ルタオ）来自小樽，招牌 Double Fromage 双层芝士蛋糕，把浓郁的烘焙芝士层与柔软的乳酪层叠在一起，适合喜欢奶香、柔滑口感的人。",
+            "哪些值得买｜全家分着吃，优先尝原味双层芝士蛋糕；喜欢巧克力可看看 Chocolat Double。送人或不便保冷时，可选“小樽色内通りフロマージュ”芝士风味猫舌饼干，比整只冷冻蛋糕容易安排。具体规格和保存方式看包装。",
+            "在哪里能买｜返程可在新千岁机场国内线2楼的 LeTAO 新千岁机场店选购；品牌官网也列有札幌大丸店。巧克力专门店 Nouvelle Vague LeTAO Chocolatier 与普通 LeTAO 店的商品不完全相同。无需为了买经典款专程增加小樽行程。",
+            "怎么带回家｜双层芝士蛋糕冷冻保存；官方说明解冻后冷藏，并在开始解冻后48小时内食用。购买时告诉店员到家总时长，确认能否保冷，不把冬季室外低温当作冷链。若运输不方便，在当地品尝蛋糕、带饼干回家更省心。"
+          ]
+        },
+        {
+          "title": "薯条三兄弟：带皮马铃薯的咸香脆口",
+          "image": {
+            "src": "https://www.calbee.co.jp/jagapokkuru/assets/img/products_jagapokkuru-pkg.png",
+            "caption": "じゃがポックル 鄂霍次克盐味 · Calbee 官方商品包装图",
+            "credit": "薯条三兄弟 官方网站",
+            "width": 640,
+            "height": 480
+          },
+          "paragraphs": [
+            "有什么特色｜中文常说的“薯条三兄弟”，通常指 Calbee 的じゃがポックル（Jaga Pokkuru）。使用100%北海道产马铃薯，带皮切条，特点是酥脆的口感与马铃薯香；它是包装零食，不是餐厅现炸薯条。",
+            "哪些值得买｜第一次买选经典“鄂霍次克盐味”；想换口味可看看扇贝盐味或北海道玉米味。经典款有18克×10袋、18克×6袋等规格，独立小袋适合分送。不同口味的克数、过敏原和销售范围可能不同，不要只看外盒颜色。",
+            "在哪里能买｜经典盐味主要在北海道的伴手礼商店和机场销售，返程可在新千岁机场伴手礼区寻找 POTATO FARM／Calbee 标识。玉米味的官方销售渠道还包括 Calbee＋新千岁机场店。不是每家便利店都有，具体库存到店确认。",
+            "怎么选更方便｜和甜点搭配送礼时，它能补上一种咸味选择。盒装占空间、薯条也怕压，放行李时保留外盒保护；避开高温和潮湿，按包装保存，开袋后尽快吃。"
+          ]
+        },
+        {
           "title": "挑伴手礼：按收礼的人来选",
           "image": {
             "src": "https://www.royce.com/images/goods/8400_2.jpg",
@@ -338,6 +370,30 @@
         [
           "新千岁机场·KINOTOYA店",
           "https://www.hokkaido-airports.com/ja/new-chitose/spend/shop/72/"
+        ],
+        [
+          "LeTAO·机场店",
+          "https://www.letao-brand.jp/shop/airport/"
+        ],
+        [
+          "LeTAO·双层芝士蛋糕",
+          "https://www.letao.jp/item/f011.html"
+        ],
+        [
+          "LeTAO·机场销售商品",
+          "https://www.letao-brand.jp/airport/"
+        ],
+        [
+          "Calbee·薯条三兄弟",
+          "https://www.calbee.co.jp/jagapokkuru/products/jagapokkuru/"
+        ],
+        [
+          "Calbee·销售渠道说明",
+          "https://faq.calbee.co.jp/faq_detail.html?id=112"
+        ],
+        [
+          "Calbee·玉米味商品公告",
+          "https://www.calbee.co.jp/newsrelease/260309.php"
         ]
       ],
       "checkedOn": "2026-10-16"

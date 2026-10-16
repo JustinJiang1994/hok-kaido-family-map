@@ -4,7 +4,7 @@ add('odori','大通公园 · 圣诞市集','札幌','sight',43.060,141.353,[17,1
 add('shiroi','白色恋人公园','札幌','sight',43.088,141.271,[18],'甜点、欧式庭院与50周年爱心灯饰。','计划景点','2026年12月1日开始冬季灯饰，延长营业至19:00。付费参观与手作体验有各自的截止时间，需另查预约。建议留2—3小时。','https://www.shiroikoibitopark.jp/christmas/');
 add('shrine','北海道神宫','札幌','sight',43.054,141.308,[18],'白雪参道与树林，给城市行程留一点安静。','计划景点','目前11—12月常规开放至16:00，排在白天。附近是圆山公园。','https://www.sapporo.travel/spot/facility/hokkaido_shrine/');
 add('red','红砖厅舍','札幌','sight',43.064,141.347,[19],'红砖与白雪，北海道历史的一扇窗。','顺路候选','旧北海道厅建于1888年，可以寻找建筑里的五稜星装饰。馆内介绍北海道历史与阿伊努文化，靠近札幌站。','https://www.sapporo.travel/spot/facility/former_hokkaido_government_office/');
-add('clock','札幌钟楼','札幌','sight',43.063,141.353,[18,19],'原本是札幌农学校演武场的小建筑。','顺路候选','札幌农学校后来发展为北海道大学。钟楼适合短暂停留。','https://www.sapporo.travel/spot/facility/clock_tower/');
+add('clock','札幌钟楼（计时台）','札幌','sight',43.063,141.353,[18,19],'原本是札幌农学校演武场的小建筑。','顺路候选','札幌农学校后来发展为北海道大学。钟楼适合短暂停留。','https://www.sapporo.travel/spot/facility/clock_tower/');
 add('t38','JR Tower T38','札幌','sight',43.068,141.352,[17,19],'在温暖的室内，俯瞰棋盘般的城市。','顺路候选','札幌站直连展望室，适合抵达较早的首晚。与电视塔、藻岩山三选一即可，视天气与体力决定。','https://www.jr-tower.com/t38');
 add('tv','札幌电视塔','札幌','sight',43.061,141.357,[18],'俯看大通公园与冬季灯饰。','顺路候选','逛市集时可追加展望台，不必为观景点来回穿城。','https://www.sapporo.travel/spot/facility/sapporo_tv_tower/');
 add('zoo','旭山动物园','旭川','sight',43.768,142.480,[20],'企鹅、海豹与北极熊，这一天的主角。','计划景点','企鹅散步需要足够积雪，12月20日尚不能保证。建议留4小时左右，并在园内休息吃饭。','https://www.city.asahikawa.hokkaido.jp/asahiyamazoo/generalinformation/d075901.html');
@@ -27,3 +27,19 @@ add("tokiwa","常磐公园","旭川","sight",43.7759,142.3581,[],"旭川市中�
 add("kitasaito","北彩都花园","旭川","sight",43.7591,142.363,[],"旭川站南侧的河畔花园，在车站附近就能看见开阔的城市自然。","补充景点","配图为非冬季花园资料图；冰雪项目开放情况不作保证。","https://asahikawa-park.or.jp/kitasaito/");
 add("hokusei","北西之丘展望公园","美瑛","sight",43.6057,142.4573,[],"以金字塔形展望台闻名的丘陵公园，可认识美瑛镇北侧的田园地形。","补充景点","这是季节限制明显的景点，12月不作为保证可上塔的景点。照片与当天雪况不同。","https://www.biei-hokkaido.jp/ja/facility/hokusei-no-oka");
 add("takushin","拓真馆","美瑛","sight",43.529872,142.489253,[],"在摄影作品里看懂美瑛的四季，也理解眼前的雪原为何让人着迷。","补充景点","配图为本期展览宣传图，含摄影作品，不是展厅现场照片。","https://www.biei-hokkaido.jp/ja/27074");
+
+// User-supplied additions, checked 2026-10-16.
+add("susukino","薄野（すすきの）","札幌","sight",43.0555,141.3534,[],"札幌霓虹与餐饮店最集中的街区之一。","用户收藏","","https://www.sapporo.travel/night-view-guide/spot/susukino/");
+add("nijo","二条市场","札幌","sight",43.0582,141.359,[],"市中心可逛海鲜摊、吃海鲜丼的老市场。","用户收藏","","https://www.sapporo.travel/spot/facility/nijo_fish_market/");
+add("nakajima","中岛公园","札幌","sight",43.0448,141.3546,[],"薄野以南的城市公园，树木、池塘与历史建筑相邻。","用户收藏","照片用于认识园区；12月树木、池面与地面状态不同。","https://www.sapporo.travel/spot/facility/nakajima_park/");
+add("hoheikan","丰平馆","札幌","sight",43.0463,141.3526,[],"中岛公园内白墙蓝边的历史洋馆。","用户收藏","","https://www.s-hoheikan.jp/");
+add("parco","札幌 PARCO 百货","札幌","shop",43.058774,141.353193,[],"大通站附近的时装、生活杂货与餐饮商场。","用户收藏","","https://sapporo.parco.jp/info/?gcd=access");
+add("marui-odori","丸井今井百货 · 札幌本店大通馆","札幌","shop",43.06,141.355,[],"临大通公园一侧的馆舍，有食品与百货楼层。","用户收藏","","https://www.maruiimai.mistore.jp/sapporo/access.html/index.html");
+add("marui-ichijo","丸井今井百货 · 札幌本店一条馆","札幌","shop",43.05925,141.355,[],"与大通馆同属札幌本店；请按馆名与楼层找柜台。","用户收藏","","https://www.maruiimai.mistore.jp/sapporo/access.html/index.html");
+add("daimaru","大丸百货 · 札幌店","札幌","shop",43.06759,141.34931,[],"与札幌站相连，方便挑伴手礼和逛百货。","用户收藏","","https://www.daimaru.co.jp/sapporo/access.html");
+add("apia","APIA 地下街","札幌","shop",43.0672,141.3515,[],"札幌站南侧地下的购物与餐饮街区。","用户收藏","","https://www.visit-hokkaido.jp/cn/spot/detail_10061.html");
+add("donbe-asa","丼兵卫 · 札幌朝市店","札幌","food",43.071304,141.321732,[],"以海鲜丼为主，分店位置与营业时间不同。","用户收藏","","https://www.donbe.sapporo-asaichi.com/shop/");
+add("donbe-nijo","丼兵卫 · 二条市场店","札幌","food",43.058674,141.3588,[],"以海鲜丼为主，分店位置与营业时间不同。","用户收藏","","https://www.donbe.sapporo-asaichi.com/shop/");
+add("donbe-jogai","丼兵卫 · 场外市场店","札幌","food",43.070324,141.320755,[],"以海鲜丼为主，分店位置与营业时间不同。","用户收藏","","https://www.donbe.sapporo-asaichi.com/shop/");
+add("tenma-stellar","天马咖喱 · 札幌Stellar Place店","札幌","food",43.0682,141.3525,[],"供应汤咖喱和咖喱饭；官方列34席，全日禁烟。","用户收藏","","https://www.jr-tower.jp/shop_detail_stellar/129");
+add("tenma-aurora","天马咖喱 · Aurora Town店","札幌","food",43.0608,141.3551,[],"供应汤咖喱、咖喱饭与店内制作的咖喱面包，也可外带。","用户收藏","","https://www.sapporo-chikagai.jp/shop/single/190");

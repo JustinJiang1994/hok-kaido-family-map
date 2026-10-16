@@ -7,7 +7,7 @@ const tiles=L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.p
 let tileSuccess=0;tiles.on('loading',()=>{tileSuccess=0;$('#mapStatus').textContent='正在加载这一片区域的道路地图…';});tiles.on('tileload',()=>{tileSuccess++;$('#mapStatus').className='';$('#mapStatus').textContent='浅色道路底图 · 放大可看街区';});tiles.on('tileerror',()=>{if(!tileSuccess){$('#mapStatus').className='error';$('#mapStatus').textContent='道路底图暂未加载，请检查网络；请稍后刷新重试。';}});
 setTimeout(()=>{if(!tileSuccess){$('#mapStatus').className='error';$('#mapStatus').textContent='底图加载较慢，请检查网络；点圆点仍可查看介绍。';}},12000);
 const routeLayer=L.layerGroup().addTo(map),markerLayer=L.layerGroup().addTo(map);
-const placeColor=p=>p.type==='food'?'#c65c18':p.type==='hub'?'#54677c':'#c02570';
+const placeColor=p=>p.type==='food'?'#c65c18':p.type==='shop'?'#6351b5':p.type==='hub'?'#54677c':'#c02570';
 function renderMarkers(){
  if(region==='行程总览')return;
  markerLayer.clearLayers();routeLayer.clearLayers();markers=[];const size=map.getSize(),used=[];
@@ -18,16 +18,17 @@ function renderMarkers(){
 const detail=document.createElement('dialog');detail.id='placeDetail';detail.setAttribute('aria-labelledby','detailTitle');document.body.append(detail);
 function renderSections(p,info){
  if(!info?.tagline)return `<p>${esc(p.desc||p.note)}</p>`;
+ const noun=p.type==='food'?'餐厅':p.type==='shop'?'购物地点':'景点';
  const section=(title,body)=>`<section class="info-section"><h3>${title}</h3>${body}</section>`;
  return section('一句话介绍',`<p class="place-tagline">${esc(info.tagline)}</p>`)
- +section('景点看点',`<ul>${info.highlights.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`)
- +section('景点详细介绍',info.details.map(x=>`<p>${esc(x)}</p>`).join(''))
+ +section(p.type==='food'?'吃什么':p.type==='shop'?'逛什么':'景点看点',`<ul>${info.highlights.map(x=>`<li>${esc(x)}</li>`).join('')}</ul>`)
+ +section(noun+'详细介绍',info.details.map(x=>`<p>${esc(x)}</p>`).join(''))
  +(info.history?section('历史背景',`<p>${esc(info.history)}</p>`):'')
- +section('营业时间等景点信息',`<dl class="place-facts">${info.facts.map(x=>`<div><dt>${esc(x.label)}</dt><dd>${esc(x.value)}</dd></div>`).join('')}</dl><p class="info-checked">核对日期：${esc(info.checkedOn)} · 时间均为日本当地时间。临时调整以现场公告为准。</p>`);
+ +section('营业时间与到访信息',`<dl class="place-facts">${info.facts.map(x=>`<div><dt>${esc(x.label)}</dt><dd>${esc(x.value)}</dd></div>`).join('')}</dl><p class="info-checked">核对日期：${esc(info.checkedOn)} · 时间均为日本当地时间。临时调整以现场公告为准。</p>`);
 }
 function showPlace(p){
  highlight(p.id);const info=PLACE_MEDIA[p.id],photos=info?.photos||[];
- detail.innerHTML=`<div class="detail-head"><h2 id="detailTitle">${esc(info?.title||p.name)}</h2><button id="closeDetail" aria-label="关闭地点介绍">关闭 ×</button></div><div class="detail-body">${photos.length?`<section class="photo-section" aria-label="${esc(p.name)}照片"><div class="photo-track" tabindex="0" aria-label="左右滑动查看照片">${photos.map((im,i)=>`<figure class="photo-slide"><div class="photo-frame"><img src="${esc(im.src)}" alt="${esc(im.caption)}" loading="${i===0?'eager':'lazy'}" decoding="async"><div class="photo-error" hidden>照片暂未加载<br><button type="button">重新加载</button></div></div><figcaption>${esc(im.caption)}<small>照片：${esc(im.credit)}</small></figcaption></figure>`).join('')}</div><div class="photo-controls"><button id="prevPhoto" aria-label="上一张照片">‹</button><span id="photoCount" aria-live="polite">1 / ${photos.length}</span><span class="swipe-tip">左右滑动看照片</span><button id="nextPhoto" aria-label="下一张照片">›</button></div></section>`:''}<div class="place-copy"><p class="place-city">${esc(p.city)} · ${p.type==='hub'?'交通枢纽':'景点'}</p>${renderSections(p,info)}${info?.note?'<div class="visit-note"><strong>看图与到访提示</strong><p>'+esc(info.note)+'</p></div>':p.detail?'<p>'+esc(p.detail)+'</p>':''}${photos.length?'<p class="photo-footnote">图片来自上述景点官方或当地官方旅游页面，为资料照片，季节、天气与现场布置可能不同。图片需联网加载。</p>':''}</div></div>`;
+ detail.innerHTML=`<div class="detail-head"><h2 id="detailTitle">${esc(info?.title||p.name)}</h2><button id="closeDetail" aria-label="关闭地点介绍">关闭 ×</button></div><div class="detail-body">${photos.length?`<section class="photo-section" aria-label="${esc(p.name)}照片"><div class="photo-track" tabindex="0" aria-label="左右滑动查看照片">${photos.map((im,i)=>`<figure class="photo-slide"><div class="photo-frame"><img src="${esc(im.src)}" alt="${esc(im.caption)}" loading="${i===0?'eager':'lazy'}" decoding="async"><div class="photo-error" hidden>照片暂未加载<br><button type="button">重新加载</button></div></div><figcaption>${esc(im.caption)}<small>照片：${esc(im.credit)}</small></figcaption></figure>`).join('')}</div><div class="photo-controls"><button id="prevPhoto" aria-label="上一张照片">‹</button><span id="photoCount" aria-live="polite">1 / ${photos.length}</span><span class="swipe-tip">左右滑动看照片</span><button id="nextPhoto" aria-label="下一张照片">›</button></div></section>`:''}<div class="place-copy"><p class="place-city">${esc(p.city)} · ${p.type==='hub'?'交通枢纽':p.type==='food'?'餐厅':p.type==='shop'?'购物':'景点'}</p>${renderSections(p,info)}${info?.note?'<div class="visit-note"><strong>看图与到访提示</strong><p>'+esc(info.note)+'</p></div>':p.detail?'<p>'+esc(p.detail)+'</p>':''}${photos.length?'<p class="photo-footnote">图片来自上述地点官方或当地官方旅游页面，为资料照片，季节、天气与现场布置可能不同。图片需联网加载。</p>':''}</div></div>`;
  $('#closeDetail').onclick=()=>detail.close();if(!detail.open)detail.showModal();
  const track=detail.querySelector('.photo-track');if(!track)return;
  let index=0;const update=()=>{index=Math.max(0,Math.min(photos.length-1,Math.round(track.scrollLeft/track.clientWidth)));$('#photoCount').textContent=(index+1)+' / '+photos.length;$('#prevPhoto').disabled=index===0;$('#nextPhoto').disabled=index===photos.length-1;};
