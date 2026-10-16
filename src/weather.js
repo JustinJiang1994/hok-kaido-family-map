@@ -19,7 +19,7 @@ const TripWeather = (() => {
   const key=select.value;const [name,lat,lon]=TripWeather.places[key];
   button.disabled=true;grid.replaceChildren();
   const cards=TripWeather.dates.map((date,i)=>{
-   const card=document.createElement('article');const title=document.createElement('h3');title.textContent=`12月${17+i}日 · 第${i+1}天`;card.append(title);
+   const card=document.createElement('article');const title=document.createElement('h3');title.textContent=`12/${17+i} · 第${i+1}天`;card.append(title);
    const body=document.createElement('p');card.append(body);grid.append(card);
    const state=TripWeather.state(date,today);
    body.textContent=state==='past'?'日期已过，不显示为预报':state==='future'?'尚未进入逐日预报范围':'正在获取…';
@@ -27,7 +27,8 @@ const TripWeather = (() => {
   });
   const pending=cards.filter(c=>c.state==='available');
   grid.hidden=!pending.length;
-  if(!pending.length){status.textContent=today>TripWeather.dates[5]?'这次旅行日期已过。':`${name} · 目前还查不到这六天的逐日预报。预计12月2日起逐天进入预报范围，12月7日起可覆盖六天（以服务实际数据为准）。`;button.disabled=false;lastFetch=Date.now();return;}
+  root.querySelector('.weather-unit').hidden=!pending.length;
+  if(!pending.length){status.textContent=today>TripWeather.dates[5]?'这次旅行日期已过。':`${name} · 尚无旅行日期预报。预计12月2日起逐天开放；可先点开历史参考。`;button.disabled=false;lastFetch=Date.now();return;}
   status.textContent=`正在获取${name}的最新预报…`;
   const timeout=setTimeout(()=>active.abort(),12000);
   try{
@@ -36,8 +37,8 @@ const TripWeather = (() => {
    const data=await response.json();if(active!==controller)return;
    let count=0;
    pending.forEach(c=>{const d=TripWeather.row(data.daily,c.date);c.body.replaceChildren();if(!d){c.body.textContent='服务暂未提供这一天的数据';return;}count++;
-    const range=document.createElement('small');range.className='forecast-range';range.textContent=TripWeather.distance(c.date,today)>7?'远期预报 · 变化较大':'临近预报 · 仍需持续确认';c.body.append(range);
-    for(const text of [TripWeather.condition(d.weather_code),`最低 ${TripWeather.value(d.temperature_2m_min,'℃')} / 最高 ${TripWeather.value(d.temperature_2m_max,'℃')}`,`降水概率 ${TripWeather.value(d.precipitation_probability_max,'%')}`,`预计新降雪 ${TripWeather.value(d.snowfall_sum,'cm')}`]){const line=document.createElement('span');line.textContent=text;c.body.append(line);}
+    const range=document.createElement('small');range.className='forecast-range';range.textContent=TripWeather.distance(c.date,today)>7?'远期 · 变化较大':'临近预报';c.body.append(range);
+    for(const text of [TripWeather.condition(d.weather_code),`${TripWeather.value(d.temperature_2m_min,'')}～${TripWeather.value(d.temperature_2m_max,'')}℃`,`降水概率 ${TripWeather.value(d.precipitation_probability_max,'%')}`,`预计新降雪 ${TripWeather.value(d.snowfall_sum,'cm')}`]){const line=document.createElement('span');line.textContent=text;c.body.append(line);}
    });
    status.textContent=`${name} · 已获取 ${count} 天 · 获取时间 ${new Intl.DateTimeFormat('zh-CN',{timeZone:'Asia/Tokyo',month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date())}（日本时间）`;
   }catch(e){if(active!==controller)return;pending.forEach(c=>c.body.textContent='暂时无法获取，请联网后重试');status.textContent='天气服务连接失败，未显示旧预报。';}

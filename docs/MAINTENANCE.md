@@ -101,3 +101,8 @@
 - 375×812 checks passed: six dates shown, Sapporo -4/1, Asahikawa -11/-6, Biei -14/-9 (fixture values), location coordinates and no-store fetch correct; Japan fetch times advanced 10:01 → 10:02 → 10:03, refresh → 10:04.
 - Missing date gives five days and explicit missing-day text; null temperature says unavailable while zero snowfall remains 0. Network failure clears the prior data/time. A delayed Sapporo response that ignores abort did not overwrite Asahikawa after a quick switch.
 - All six date headings verified; no horizontal overflow. Historical reference remains below live forecast with a separate label and styling. Screenshots are in ignored local-archive; simulation cannot verify accuracy of real December weather.
+
+### 2026-10-16 · Compact mobile weather
+- Default view shows only selected-region forecast; six days use a two-column grid on phones. Temperature notation is minimum–maximum, explained above cards. Unavailable forecasts hide both the grid and its units legend.
+- Historical climate, clothing guidance and forecast/source notes use independent native details/summary controls, collapsed by default. Historical label and source content remain inside the historical panel.
+- Verified actual-date empty state and simulated Dec 16 forecast at 375×812, Biei selection/time, no horizontal overflow, independent expand/collapse. Existing forecast logic tests and map checks passed; release contains no fixture data.
