@@ -129,3 +129,7 @@
 - Overview now directly lists Sapporo, Asahikawa and Biei; regional map tabs show their own card. Removed weather selectors, refresh buttons and collapsible sections. Clothing, historical temperature ranges and monthly snowfall are visible without interaction.
 - Near departure, each visible region fetches its own forecast concurrently, with independent timeout/error states and identity protection on map switches. Visible-hourly and reopen refresh remain. Small Open-Meteo attribution retained.
 - Checked 375×812 actual-date view: three regions, zero weather buttons/selects/summaries, no overflow. Simulated forecast produced six days for each region; Biei tab reduced listing to Biei. Historical inputs remain sourced in content/december-climate.json.
+
+### 2026-10-16 · One-screen mobile climate comparison
+- Mobile cards place region left and temperature right, with one compact snowfall line and clothing line. Removed redundant feel/retry copy from the historical-only mobile layout; historical/not-current-forecast label stays visible.
+- Verified 375×812 screenshot shows all three regions with clothing in one screen. At 320×740, combined cards measured about 399px tall, without horizontal overflow or region/temperature collision. Live-forecast history temperatures retain normal flow.

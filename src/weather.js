@@ -25,7 +25,7 @@ const TripWeather = (() => {
    const [name,low,high,snow,feel,clothes]=climate[key];
    const card=el('article','weather-region-card');card.append(el('h3','',name));
    const history=el('div','weather-history-overview');
-   history.append(el('small','weather-history-badge','往年12月 · 历史参考，不是今年预报'),el('div','weather-big-temperature',`${low}～${high}°C`),el('p','weather-lowhigh','平均低温～平均高温'),el('strong','weather-feel',feel),el('p','weather-snow',`❄ 全月累计新降雪约 ${snow} cm`));
+   history.append(el('small','weather-history-badge','往年12月 · 非今年预报'),el('div','weather-big-temperature',`${low}～${high}°C`),el('p','weather-lowhigh','平均低温～平均高温'),el('strong','weather-feel',feel),el('p','weather-snow',`❄ 全月累计新降雪约 ${snow} cm`));
    const forecast=el('div','region-forecast');const status=el('p','region-forecast-status');card.append(forecast,history,el('p','weather-outfit','🧥 '+clothes),status);list.append(card);
    if(!pending.length){status.textContent=today>TripWeather.dates[5]?'旅行日期已过':'临近出发，自动显示每日预报';return;}
    status.textContent='正在更新预报…';
