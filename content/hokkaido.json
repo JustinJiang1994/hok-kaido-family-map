@@ -5,8 +5,8 @@
     {
       "id": "specialties",
       "kicker": "08 / 北海道特色",
-      "title": "北海道特色：从便利店认识当地生活",
-      "summary": "Seicomart、现做热饭、道北牛奶与地方饮料：顺路就能认识的北海道。",
+      "title": "北海道特色：便利店与伴手礼",
+      "summary": "Seicomart 与地方饮料，还有白色恋人、六花亭、ROYCE：认识特色，也知道怎么买、哪里买。",
       "image": {
         "src": "https://www.secoma.co.jp/aboutus/nurture/kids/images/gaikan.jpg",
         "caption": "Seicomart 门店外观 · 品牌官方资料图",
@@ -122,6 +122,100 @@
             "经典款附有中式汤料包，是它容易让人记住的特点。冲泡顺序和用水方式按手中包装操作，不同系列可能不同；准备前先找好耐热杯，避免只顾着倒水而漏看说明。",
             "它适合在住宿处尝尝这种地方日常食品，也便于在超市辨认。便利店热饭、冷藏乳品、地方汽水和即食面放在一起看，比单纯记住“必买清单”更能认识当地人的生活。"
           ]
+        },
+        {
+          "title": "白色恋人：适合分送的薄脆夹心饼干",
+          "image": {
+            "src": "https://shop.ishiya.co.jp/cdn/shop/products/shiroi-koibito_image2_600x.jpg?v=1711930630",
+            "caption": "白色恋人夹心饼干 · ISHIYA 官方商品图",
+            "credit": "ISHIYA",
+            "width": 600,
+            "height": 400
+          },
+          "facts": [
+            [
+              "薄脆口感",
+              "猫舌饼干 × 巧克力"
+            ],
+            [
+              "分送亲友",
+              "独立包装，按片数选择"
+            ]
+          ],
+          "paragraphs": [
+            "有什么特色｜ISHIYA 的白色恋人自1976年推出。两片薄薄的猫舌饼干夹住巧克力，口感轻脆，奶香比较明显；它是饼干类点心，不是需要冷藏的生巧克力。",
+            "哪些值得买｜第一次买可以先选经典白巧克力夹心；喜欢多一点可可风味，可以选白、黑两款混合装。“黑”款夹的是牛奶巧克力，并不是苦味黑巧。送同事或亲友时，独立小包装容易分，先数好收礼人数再选盒装片数；自己吃不必为了包装买大盒。",
+            "在哪里能买｜你们在札幌可到白色恋人公园的 Shop Piccadilly、札幌大通本店或大丸札幌店选购；返程也可在新千岁机场的伴手礼商店购买，例如国内线2楼安检前的 Snow Shop 出发店。具体口味与规格以店内库存为准。",
+            "带回家怎么放｜官方要求避开阳光，在28℃以下阴凉处保存，别放在暖气旁或晒热的车内。品牌已公布从2026年12月起陆续换新包装，你们出发时可能见到新旧包装并存；配图主要帮助认识饼干，不保证与现场盒子完全一样。"
+          ]
+        },
+        {
+          "title": "六花亭：奶油葡萄干夹心与十胜点心",
+          "image": {
+            "src": "https://www.rokkatei.co.jp/assets/images/en/img_03.jpg",
+            "caption": "Marusei 奶油夹心饼干 · 六花亭官方商品图",
+            "credit": "六花亭",
+            "width": 600,
+            "height": 400
+          },
+          "facts": [
+            [
+              "浓郁口感",
+              "奶油 × 白巧 × 葡萄干"
+            ],
+            [
+              "先尝小盒",
+              "适合喜欢葡萄干的人"
+            ]
+          ],
+          "paragraphs": [
+            "有什么特色｜六花亭起源于十胜的带广。最具代表性的 Marusei Butter Sand（マルセイバターサンド）用饼干夹住奶油、白巧克力与葡萄干做的馅，吃起来比白色恋人更厚实、浓郁。它于1977年推出，名字和包装呼应十胜早期的“Marusei”奶油。",
+            "哪些值得买｜喜欢奶油和葡萄干，优先试 Marusei 奶油夹心；不喜欢葡萄干，可以看看品牌的白巧克力，或选包含不同点心的六花セレクト等组合。先买小份全家尝尝，再决定送哪一种，比只按名气买大盒更合适。门店现吃的冰淇淋夹心与可带走的奶油夹心是不同商品，别拿错。",
+            "在哪里能买｜札幌本店位于中央区北4条西6丁目3-3，适合在札幌站周边购物时顺路去。新千岁机场国内线2楼安检前的 Snow Shop 出发店也销售六花亭商品，适合返程补买经典款；店铺限定点心不一定在机场有售。",
+            "带回家怎么放｜普通 Marusei 奶油夹心官网标示在25℃以下阴凉处可存放约9～10天，实际到手的食用期限以盒上日期为准。这类点心不适合买完放很久再送；购买时告诉店员回程时间，问清保存方式。冷冻系列与普通款要求不同，不要混用。"
+          ]
+        },
+        {
+          "title": "ROYCE：生巧克力与咸甜巧克力薯片",
+          "image": {
+            "src": "https://www.royce.com/images/goods/2054_2.jpg",
+            "caption": "ROYCE 生巧克力 Au Lait（オーレ） · 官方商品图",
+            "credit": "ROYCE",
+            "width": 600,
+            "height": 400
+          },
+          "facts": [
+            [
+              "生巧要冷藏",
+              "10℃以下保存"
+            ],
+            [
+              "咸甜搭配",
+              "巧克力薯片适合分享"
+            ]
+          ],
+          "paragraphs": [
+            "有什么特色｜ROYCE 的生巧克力加入北海道鲜奶油，质地柔软，入口容易融化；巧克力薯片则把咸脆薯片与巧克力放在一起，是另一种很容易记住的搭配。两者的口感与保存条件都不同。",
+            "哪些值得买｜喜欢柔软奶香的成年人可选经典 Au Lait（オーレ）；这款用洋酒调味。想避开酒精，可以找明确标注不使用洋酒的 Mild Milk（マイルドミルク）。喜欢咸甜零食，可买 Potatochip Chocolate Original（ポテトチップチョコレート［オリジナル］）全家分着吃；薯片盒较占空间、也怕压，行李紧张时少买几盒。",
+            "在哪里能买｜新千岁机场国内线2楼有 ROYCE 新千岁机场店，可以回程集中购买。机场3楼 Smile Road 的 ROYCE Chocolate World 是另一个店区，有动物等造型巧克力与工厂展示；不要把3楼限定商品当作每家柜台都能买到的常规款。",
+            "带回家怎么放｜生巧克力需10℃以下冷藏，建议接近返程时购买，并请店员按从机场到家所需的总时间配保冷用品；不要只算飞行时长。巧克力薯片 Original 要放在25℃以下，避开日晒和潮湿。即使北海道室外很冷，室内暖气、转机和到家途中仍可能升温。"
+          ]
+        },
+        {
+          "title": "挑伴手礼：按收礼的人来选",
+          "image": {
+            "src": "https://www.royce.com/images/goods/8400_2.jpg",
+            "caption": "ROYCE 巧克力薯片 Original · 官方商品图",
+            "credit": "ROYCE",
+            "width": 600,
+            "height": 400
+          },
+          "paragraphs": [
+            "分送多位亲友｜优先看白色恋人的独立包装与总片数。喜欢葡萄干、准备很快享用的亲友，可选六花亭奶油夹心。想和家里人一起尝鲜，ROYCE 生巧或巧克力薯片更适合共享。",
+            "购物地点怎么选｜札幌门店适合慢慢挑口味、看组合；机场适合补买常规款、最后购买需要保冷的商品。上述机场2楼店位于国内线航站楼，你们回上海若从国际线出发，需预留前往国内线购物及返回办理手续的时间，不要等国际线安检后再找。",
+            "给3岁孩子怎么选｜先看配料中的酒精和过敏原，尤其奶、蛋、小麦、坚果等；生巧 Au Lait 与 Mild Milk 的酒精标示不同。家里有明确忌口时直接拿包装向店员确认，不把“北海道特产”当作适合所有人的保证。",
+            "少买一点，更容易带｜六大一小可以先合购小规格尝味，再选礼盒。每个品牌先挑一种代表商品即可；价格、限定款和库存会变化，结账前再确认份数、期限与保存条件。"
+          ]
         }
       ],
       "note": "配图为品牌官方门店或商品资料图，不代表旅行当天的包装、库存或陈列。商品与营业情况以现场为准。",
@@ -149,6 +243,58 @@
         [
           "东洋水产·炒面便当",
           "https://www.maruchan.co.jp/products/search/205405.html"
+        ],
+        [
+          "ISHIYA·白色恋人商品",
+          "https://shop.ishiya.co.jp/collections/shiroi-koibito"
+        ],
+        [
+          "ISHIYA·保存与购买问答",
+          "https://www.ishiya.co.jp/inquiry/"
+        ],
+        [
+          "ISHIYA·2026年12月包装更新",
+          "https://www.ishiya.co.jp/news/007022.html"
+        ],
+        [
+          "ISHIYA·门店资料",
+          "https://www.ishiya.co.jp/shiroikoibito-cakes/"
+        ],
+        [
+          "六花亭·品牌与札幌本店",
+          "https://www.rokkatei.co.jp/cn/"
+        ],
+        [
+          "六花亭·Marusei 奶油夹心",
+          "https://www.rokkatei-eshop.com/store/ProductDetail.aspx?pcd=10051"
+        ],
+        [
+          "六花亭·商品目录",
+          "https://www.rokkatei-eshop.com/store/top.aspx"
+        ],
+        [
+          "ROYCE·生巧 Au Lait",
+          "https://www.royce.com/goods/detail/?o_no=2054"
+        ],
+        [
+          "ROYCE·生巧 Mild Milk",
+          "https://www.royce.com/goods/detail/?o_no=2095"
+        ],
+        [
+          "ROYCE·巧克力薯片 Original",
+          "https://www.royce.com/goods/detail/?o_no=8400"
+        ],
+        [
+          "新千岁机场·ROYCE 店",
+          "https://www.hokkaido-airports.com/ja/new-chitose/spend/shop/69/"
+        ],
+        [
+          "ROYCE·Chocolate World",
+          "https://www.royce.com/brand/shop/detail/?no=111"
+        ],
+        [
+          "新千岁机场·Snow Shop 等购物店铺",
+          "https://www.hokkaido-airports.com/ja/new-chitose/spend/taxfree/"
         ]
       ],
       "checkedOn": "2026-10-16"
