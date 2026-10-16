@@ -15,7 +15,9 @@ const TripWeather = (() => {
  const select=root.querySelector('select'),button=root.querySelector('button'),status=root.querySelector('[role=status]'),grid=root.querySelector('.weather-days');
  const regionPicker=select.closest('label');
  const regionName=document.createElement('strong');regionName.className='weather-region-name';regionName.hidden=true;regionPicker.after(regionName);
+ let weatherMapRegion='行程总览';
  function showRegionControl(name){
+  weatherMapRegion=name;
   const overview=name==='行程总览';regionPicker.hidden=!overview;select.disabled=!overview;regionName.hidden=overview;regionName.textContent=overview?'':name;
  }
  const regionKeys={札幌:'sapporo',旭川:'asahikawa',美瑛:'biei'};
@@ -25,8 +27,10 @@ const TripWeather = (() => {
  function prioritizeHistory(name){
   const first=historyCards.find(card=>card.querySelector('h4').textContent===name);
   historyCards.forEach(card=>card.classList.toggle('is-selected-region',card===first));
-  history.replaceChildren(...(first?[first,...historyCards.filter(card=>card!==first)]:historyCards));
-  historySummary.replaceChildren(document.createTextNode(first?`${name}往年12月气温与降雪 `:'往年12月气温与降雪 '));
+  const regional=weatherMapRegion!=='行程总览'&&first;
+  history.classList.toggle('single-region',Boolean(regional));
+  history.replaceChildren(...(regional?[first]:first?[first,...historyCards.filter(card=>card!==first)]:historyCards));
+  historySummary.replaceChildren(document.createTextNode(regional?`${name}往年12月气温与降雪 `:'三地12月气温与降雪对比 '));
   const badge=document.createElement('span');badge.textContent='历史参考';historySummary.append(badge);
  }
  function syncMapRegion(name){
@@ -34,6 +38,7 @@ const TripWeather = (() => {
   const key=regionKeys[name];
   // Overview keeps the last weather choice; automatic route playback does not change it.
   if(key&&select.value!==key){select.value=key;refresh();}
+  else prioritizeHistory(TripWeather.places[select.value][0]);
  }
  document.getElementById('days')?.addEventListener('click',event=>{
   const tab=event.target.closest('[data-region]');if(tab)syncMapRegion(tab.dataset.region);

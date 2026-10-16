@@ -115,3 +115,7 @@
 ### 2026-10-16 · Overview-only weather selector
 - Regional tabs hide and disable the weather select and show the current region name instead. Overview restores the selector and keeps the last weather choice. Control mode updates even when the selected weather already matches the tab.
 - 375×812 simulation verified all three named regions, overview manual airport choice, and return to Sapporo with matching weather and prioritized history; no horizontal overflow.
+
+### 2026-10-16 · Region-scoped historical weather
+- Regional pages render only their matching historical climate card; overview restores all three and labels the section as a comparison. Cached original DOM cards preserve values and station links across switches.
+- Mode changes update history even when weather selection stays the same (Biei → overview → Biei). Expanded state is preserved. Verified all three regional cards and overview round trip at 375×812. Snowfall explanation now uses a general heading instead of Sapporo's specific number.

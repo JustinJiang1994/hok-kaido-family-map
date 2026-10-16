@@ -51,3 +51,5 @@ body:not(.overview-mode) .map-stage{display:contents}body:not(.overview-mode) #m
 #tripWeather .climate-cards .is-selected-region{border:2px solid #397b6d}#tripWeather .climate-cards .is-selected-region h4:after{content:"当前地区";font-size:13px;color:#397b6d;margin-left:10px;font-weight:500}
 
 #tripWeather .weather-controls [hidden]{display:none!important}#tripWeather .weather-region-name{font-size:21px;line-height:1.5;margin-right:auto}
+
+#tripWeather .climate-cards.single-region{grid-template-columns:minmax(0,1fr)}
