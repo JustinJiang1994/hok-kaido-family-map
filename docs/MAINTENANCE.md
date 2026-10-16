@@ -147,3 +147,7 @@
 - Verified Sapporo, Asahikawa and Biei in six sequential switches at 375×812: one matching region, six icons/dates, 18px/800-weight temperatures, matching coordinates and Japan update times. 320px rows and page did not overflow.
 - Delayed Sapporo by three seconds while ignoring abort, then switched to Biei: the late response did not replace Biei values or update time. Returning to overview restored the three-column comparison.
 - Found regional main inherited non-scrolling full-screen map layout. Enabled main vertical scrolling for regional pages while retaining the map panel's 100% viewport height. Touch scrolling now reaches the last forecast date, historical reference and clothing. Rechecked regional switching and overview after the fix. All weather values in this check were isolated simulation data.
+
+### 2026-10-16 · Compact regional forecasts and separate history
+- Regional live forecasts use six dense rows with icons, bold 18–20px temperatures and secondary precipitation/snow text. Update time follows the forecast; historical climate and clothing move into a separate warm-colored panel headed with the region and explicitly labeled not this year's forecast.
+- Verified all three regions at 320px: six rows, matching data/history region and no row overflow; forecast height about 352px (368px at 375px). Overview still restores its six-row three-region table. Historical-only and network-failure rendering paths retain the original compact cards.

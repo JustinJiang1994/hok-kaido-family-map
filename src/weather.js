@@ -69,6 +69,9 @@ const TripWeather = (() => {
      }forecast.append(row);
     }
     history.classList.toggle('has-live-forecast',count>0);
+    card.classList.add('has-regional-forecast');forecast.after(status);
+    history.prepend(el('h4','history-section-title','历史参考 · '+name));
+    history.append(card.querySelector('.weather-outfit'));
     status.textContent=`${count}天预报 · ${new Intl.DateTimeFormat('zh-CN',{timeZone:'Asia/Tokyo',month:'numeric',day:'numeric',hour:'2-digit',minute:'2-digit',hour12:false}).format(new Date())} 更新（日本时间）`;
    }catch(e){results[key]={error:true};if(active===controller)status.textContent='预报暂未连上，稍后自动重试；上方为历史参考';}finally{clearTimeout(timeout);}
   }));

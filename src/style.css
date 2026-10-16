@@ -93,3 +93,22 @@ body:not(.overview-mode) .map-stage{display:contents}body:not(.overview-mode) #m
 @media(max-width:350px){#tripWeather .comparison-temperature{font-size:16px}#tripWeather .forecast-comparison th:first-child{width:35px}#tripWeather .weather-condition-icon{font-size:16px}}
 /* Regional maps keep their viewport height; weather below stays reachable by touch. */
 body:not(.overview-mode) main{overflow-y:auto;overscroll-behavior-y:contain}
+
+/* Six compact forecast rows, followed by a separate historical reference panel. */
+#tripWeather .has-regional-forecast{background:transparent;padding:0}
+#tripWeather .has-regional-forecast .region-forecast{background:#e7f1f5;border:1px solid #d5e4e9;border-radius:12px;padding:8px 12px}
+#tripWeather .has-regional-forecast .forecast-label{margin:0 0 4px;font-size:12px;line-height:1.5}
+#tripWeather .has-regional-forecast .forecast-row{grid-template-columns:42px minmax(0,1fr) auto;gap:2px 5px;padding:5px 0;align-items:center;line-height:1.35}
+#tripWeather .has-regional-forecast .forecast-row:last-child{border-bottom:0}
+#tripWeather .has-regional-forecast .forecast-extra{font-size:11px;line-height:1.35;text-align:right}
+#tripWeather .has-regional-forecast .comparison-condition{font-size:14px;justify-content:flex-start}
+#tripWeather .has-regional-forecast .forecast-row>strong:last-of-type{font-size:20px;white-space:nowrap;letter-spacing:-.6px}
+#tripWeather .has-regional-forecast .region-forecast-status{margin:6px 2px 0;font-size:11px;line-height:1.5}
+#tripWeather .has-regional-forecast .weather-history-overview{position:relative;margin-top:18px;padding:12px;background:#f5f1e7;border:1px solid #e3dac8;border-radius:12px}
+#tripWeather .history-section-title{margin:0 0 4px;font-size:16px;color:#78613e}
+#tripWeather .has-regional-forecast .weather-history-badge{padding:0;font-size:12px}
+#tripWeather .has-regional-forecast .weather-big-temperature{position:static;font-size:22px;line-height:1.4;margin:5px 0 0;color:#78613e}
+#tripWeather .has-regional-forecast .weather-lowhigh{position:static;margin:0;font-size:11px}
+#tripWeather .has-regional-forecast .weather-snow{display:block;font-size:12px;margin:4px 0}
+#tripWeather .has-regional-forecast .weather-outfit{font-size:14px;margin:7px 0 0}
+@media(max-width:350px){#tripWeather .has-regional-forecast .region-forecast{padding:8px}#tripWeather .has-regional-forecast .forecast-row>strong:last-of-type{font-size:18px}#tripWeather .has-regional-forecast .comparison-condition{font-size:13px}}
