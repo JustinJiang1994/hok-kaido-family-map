@@ -43,3 +43,23 @@ add("donbe-nijo","丼兵卫 · 二条市场店","札幌","food",43.058674,141.35
 add("donbe-jogai","丼兵卫 · 场外市场店","札幌","food",43.070324,141.320755,[],"以海鲜丼为主，分店位置与营业时间不同。","用户收藏","","https://www.donbe.sapporo-asaichi.com/shop/");
 add("tenma-stellar","天马咖喱 · 札幌Stellar Place店","札幌","food",43.0682,141.3525,[],"供应汤咖喱和咖喱饭；官方列34席，全日禁烟。","用户收藏","","https://www.jr-tower.jp/shop_detail_stellar/129");
 add("tenma-aurora","天马咖喱 · Aurora Town店","札幌","food",43.0608,141.3551,[],"供应汤咖喱、咖喱饭与店内制作的咖喱面包，也可外带。","用户收藏","","https://www.sapporo-chikagai.jp/shop/single/190");
+
+// Native landmark / branch names for Google Maps directions; coordinates remain map markers only.
+// Branch names and addresses checked against the official shop directories on 2026-10-18.
+const NAVIGATION_NAMES={
+ odori:'大通公園',shiroi:'白い恋人パーク',shrine:'北海道神宮',red:'北海道庁旧本庁舎 赤れんが庁舎',
+ clock:'札幌市時計台',t38:'JRタワー展望室 タワー・スリーエイト',tv:'さっぽろテレビ塔',
+ zoo:'旭川市旭山動物園',otok:'男山酒造り資料舘',science:'旭川市科学館 サイパル',
+ blue:'白金青い池',falls:'白ひげの滝',tree:'クリスマスツリーの木',ken:'ケンとメリーの木',seven:'セブンスターの木',shiki:'展望花畑 四季彩の丘',
+ unimuseum:'北海道大学総合博物館',beer:'サッポロビール博物館',moiwa:'藻岩山 山頂展望台',
+ tokiwa:'常磐公園',kitasaito:'あさひかわ北彩都ガーデン',hokusei:'北西の丘展望公園',takushin:'拓真館',
+ susukino:'すすきの',nijo:'二条市場',nakajima:'中島公園',hoheikan:'豊平館',parco:'札幌PARCO',
+ 'marui-odori':'丸井今井札幌本店 大通館','marui-ichijo':'丸井今井札幌本店 一条館',daimaru:'大丸札幌店',apia:'アピア 札幌',
+ 'donbe-asa':'丼兵衛 さっぽろ朝市店 中央区北12条西20丁目1-20',
+ 'donbe-nijo':'丼兵衛 二条市場店 中央区南3条東2丁目',
+ 'donbe-jogai':'丼兵衛 場外市場店 中央区北11条西22丁目1-28',
+ 'tenma-stellar':'スープカレーとカレーの店 天馬 札幌ステラプレイス店',
+ 'tenma-aurora':'咖喱＆カレーパン 天馬 オーロラタウン店'
+};
+const NAVIGATION_CITIES={'札幌':'札幌市','旭川':'旭川市','美瑛':'美瑛町'};
+PLACES.forEach(p=>{p.navigationDestination=`${NAVIGATION_NAMES[p.id]||p.name} 日本 北海道 ${NAVIGATION_CITIES[p.city]||p.city}`;});

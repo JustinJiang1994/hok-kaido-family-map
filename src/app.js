@@ -22,7 +22,7 @@ setTimeout(()=>{if(!tileSuccess){$('#mapStatus').className='error';$('#mapStatus
 const routeLayer=L.layerGroup().addTo(map),markerLayer=L.layerGroup().addTo(map);
 const userLayer=L.layerGroup().addTo(map);
 function drawUserLocation(){userLayer.clearLayers();if(!userPosition||region==='行程总览')return;L.circle([userPosition.lat,userPosition.lon],{radius:userPosition.accuracy,color:'#1769d2',weight:1,fillOpacity:.08,interactive:false}).addTo(userLayer);L.circleMarker([userPosition.lat,userPosition.lon],{radius:8,color:'white',weight:3,fillColor:'#1769d2',fillOpacity:1,interactive:false}).addTo(userLayer);}
-function placeLocationInfo(p){return `<a class="place-navigation" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(p.lat+','+p.lon)}" aria-label="用 Google 地图导航到${esc(p.name)}">用 Google 地图导航 ↗</a>`;}
+function placeLocationInfo(p){return `<a class="place-navigation" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(p.navigationDestination||`${p.name} 日本 北海道 ${p.city}`)}" aria-label="用 Google 地图导航到${esc(p.name)}">用 Google 地图导航 ↗</a>`;}
 const placeColor=p=>p.type==='food'?'#c65c18':p.type==='shop'?'#6351b5':p.type==='hub'?'#54677c':'#c02570';
 function renderMarkers(){
  if(region==='行程总览')return;
