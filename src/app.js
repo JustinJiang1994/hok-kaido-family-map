@@ -48,6 +48,7 @@ function showPlace(p){
  detail.innerHTML=`<div class="detail-head"><h2 id="detailTitle">${esc(info?.title||p.name)}</h2><button id="closeDetail" aria-label="关闭地点介绍">关闭 ×</button></div><div class="detail-body">${photos.length?`<section class="photo-section" aria-label="${esc(p.name)}照片"><div class="photo-track" tabindex="0" aria-label="左右滑动查看照片">${photos.map((im,i)=>`<figure class="photo-slide"><div class="photo-frame">${PhotoLoader.markup(im,i)}<div class="photo-error" hidden>照片暂未加载<br><button type="button">重新加载</button></div></div><figcaption>${esc(im.caption)}<small>照片：${esc(im.credit)}</small></figcaption></figure>`).join('')}</div><div class="photo-controls"><button id="prevPhoto" aria-label="上一张照片">‹</button><span id="photoCount" aria-live="polite">1 / ${photos.length}</span><span class="swipe-tip">左右滑动看照片</span><button id="nextPhoto" aria-label="下一张照片">›</button></div></section>`:''}<div class="place-copy"><p class="place-city">${esc(p.city)} · ${p.type==='hub'?'交通枢纽':p.type==='food'?'餐厅':p.type==='shop'?'购物':'景点'}</p>${placeLocationInfo(p)}${renderSections(p,info)}${info?.note?'<div class="visit-note"><strong>看图与到访提示</strong><p>'+esc(info.note)+'</p></div>':p.detail?'<p>'+esc(p.detail)+'</p>':''}${photos.length?'<p class="photo-footnote">图片来自上述地点官方或当地官方旅游页面，为资料照片，季节、天气与现场布置可能不同。图片已压缩，首次查看需联网加载。</p>':''}</div></div>`;
  $('#closeDetail').onclick=()=>detail.close();if(!detail.open)detail.showModal();
  const track=detail.querySelector('.photo-track');if(!track)return;
+ track.querySelectorAll('.photo-frame').forEach((frame,i)=>{const b=document.createElement('button');b.className='expand-photo';b.textContent='放大照片 ⤢';b.setAttribute('aria-label','全屏查看'+photos[i].caption);b.onclick=()=>openPhotoViewer(photos,i);frame.append(b);});
  let index=0;const update=()=>{index=Math.max(0,Math.min(photos.length-1,Math.round(track.scrollLeft/track.clientWidth)));$('#photoCount').textContent=(index+1)+' / '+photos.length;$('#prevPhoto').disabled=index===0;$('#nextPhoto').disabled=index===photos.length-1;PhotoLoader.near(track,index);};
  const go=step=>track.scrollTo({left:Math.max(0,Math.min(photos.length-1,index+step))*track.clientWidth,behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
  $('#prevPhoto').onclick=()=>go(-1);$('#nextPhoto').onclick=()=>go(1);track.addEventListener('scroll',update,{passive:true});track.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();go(e.key==='ArrowLeft'?-1:1);}});update();
@@ -80,7 +81,7 @@ function drawOverviewLabels(){
 }
 function drawDay(index){
  dayIndex=index;const day=JOURNEY[index];
- $('#journeyTitle').textContent=day.title;$('#journeyRoute').textContent=day.route;drawOverviewLabels();
+ $('#journeyPanel').classList.remove('has-arrived');$('#journeyTitle').textContent=day.title;$('#journeyRoute').textContent=day.route;drawOverviewLabels();
  started=performance.now();elapsed=0;
 }
 function setupJourney(){
@@ -89,16 +90,16 @@ function setupJourney(){
  L.polygon(HOKKAIDO_OUTLINE,{color:'#287875',weight:2,fillColor:'#d1ebde',fillOpacity:.18,interactive:false}).addTo(overviewLayer);
  const path=['airport','sapporo','asahi','biei','asahi','airport'].map(k=>JOURNEY_HUBS[k]);
  L.polyline(path,{color:'white',weight:9,opacity:.95,interactive:false}).addTo(overviewLayer);
- activeLine=L.polyline([path[0]],{color:'#e75019',weight:6,opacity:1,interactive:false}).addTo(overviewLayer);
+ activeLine=L.polyline([path[0]],{color:'#e75019',weight:6,opacity:1,interactive:false,className:'journey-trail'}).addTo(overviewLayer);
  Object.values(JOURNEY_HUBS).slice(0,4).forEach(pos=>L.circleMarker(pos,{radius:5,color:'white',weight:2,fillColor:'#193e42',fillOpacity:1,interactive:false}).addTo(overviewLayer));
- traveler=L.circleMarker(path[0],{radius:10,color:'white',weight:3,fillColor:'#e75019',fillOpacity:1,interactive:false}).addTo(overviewLayer);
+ traveler=L.marker(path[0],{interactive:false,icon:L.divIcon({className:'journey-traveler',html:'<span aria-hidden="true">🚙</span>',iconSize:[34,34],iconAnchor:[17,17]})}).addTo(overviewLayer);
  drawOverviewLabels();drawDay(0);
 }
 function tickJourney(now){
  if(!playing||region!=='行程总览')return;
  const t=Math.min(1,(now-started)/2200),points=JOURNEY[dayIndex].points.map(k=>JOURNEY_HUBS[k]);
  const u=Math.min(1,t/0.8),pos=[points[0][0]+(points[1][0]-points[0][0])*u,points[0][1]+(points[1][1]-points[0][1])*u];
- traveler.setLatLng(pos);activeLine.setLatLngs([...JOURNEY.slice(0,dayIndex+1).map(d=>JOURNEY_HUBS[d.points[0]]),pos]);
+ $('#journeyPanel').classList.toggle('has-arrived',u===1);traveler.setLatLng(pos);activeLine.setLatLngs([...JOURNEY.slice(0,dayIndex+1).map(d=>JOURNEY_HUBS[d.points[0]]),pos]);
  if(t>=1){if(dayIndex===JOURNEY.length-1){activeLine.setLatLngs([JOURNEY_HUBS.airport]);drawDay(0);}else drawDay(dayIndex+1);}
  animation=requestAnimationFrame(tickJourney);
 }
@@ -180,3 +181,19 @@ window.addEventListener('pagehide',stopLocationWatch);
 window.addEventListener('pageshow',e=>{if(e.persisted&&locationEnabled&&!document.hidden)startLocationWatch(null);});
 // Defer until all region/weather listeners are installed.
 setTimeout(()=>{if(!document.hidden)startLocationWatch('auto');else locationEnabled=true;},0);
+
+// Fullscreen photos use the same optimized assets as the detail sheet.
+const photoViewer=document.createElement('dialog');photoViewer.id='photoViewer';photoViewer.setAttribute('aria-label','景点照片');document.body.append(photoViewer);
+function openPhotoViewer(photos,start){
+ photoViewer.innerHTML=`<header><span>左右滑动查看照片</span><button autofocus type="button">关闭 ×</button></header><div class="viewer-track">${photos.map((p,i)=>`<figure><div class="photo-frame">${PhotoLoader.markup(p,i)}<div class="photo-error" hidden>照片暂未加载<button type="button">重新加载</button></div></div><figcaption>${esc(p.caption)}<small>${i+1} / ${photos.length} · 照片：${esc(p.credit)}</small></figcaption></figure>`).join('')}</div>`;
+ photoViewer.querySelector('header button').onclick=()=>photoViewer.close();photoViewer.showModal();
+ const track=photoViewer.querySelector('.viewer-track');track.scrollLeft=start*track.clientWidth;PhotoLoader.near(track,start);
+ track.addEventListener('scroll',()=>PhotoLoader.near(track,Math.round(track.scrollLeft/track.clientWidth)),{passive:true});
+ track.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();track.scrollBy({left:track.clientWidth*(e.key==='ArrowLeft'?-1:1),behavior:'smooth'});}});
+ track.tabIndex=0;
+}
+photoViewer.addEventListener('close',()=>photoViewer.replaceChildren());
+const journeyVisibility=new IntersectionObserver(entries=>{for(const e of entries){if(region!=='行程总览')continue;if(!e.isIntersecting)stopJourney();else if(!document.hidden&&!playing&&!matchMedia('(prefers-reduced-motion: reduce)').matches)startJourney();}});
+journeyVisibility.observe(document.querySelector('#map'));
+
+document.addEventListener('visibilitychange',()=>{if(document.hidden)stopJourney();else if(region==='行程总览'&&!playing&&!matchMedia('(prefers-reduced-motion: reduce)').matches){const r=document.querySelector('#map').getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight)startJourney();}});
