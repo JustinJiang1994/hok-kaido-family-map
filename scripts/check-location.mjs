@@ -9,5 +9,5 @@ assert.equal(n.valid({latitude:43,longitude:141,accuracy:NaN}),false);
 assert.equal(n.valid({latitude:43,longitude:141,accuracy:20}),true);
 assert.ok(n.distance({lat:31.23,lon:121.47},{lat:43.06,lon:141.35})>n.radius);
 assert.match(n.error(1),/权限/);assert.match(n.error(3),/超时/);
-const app=fs.readFileSync('src/app.js','utf8');assert.ok(!app.includes('watchPosition'));assert.ok(app.includes('maximumAge:0'));assert.ok(app.includes('request!==locationRequest'));
+const app=fs.readFileSync('src/app.js','utf8');assert.ok(app.includes('watchPosition'));assert.ok(app.includes('maximumAge:0'));assert.ok(app.includes('request!==locationRequest'));
 console.log('Location distance, validation, errors and request guards passed');
