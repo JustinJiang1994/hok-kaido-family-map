@@ -1,0 +1,13 @@
+import vm from 'node:vm';
+import fs from 'node:fs';
+import assert from 'node:assert/strict';
+const c=vm.createContext({});vm.runInContext(fs.readFileSync('src/location.js','utf8')+';this.nearby=Nearby',c);const n=c.nearby;
+assert.equal(n.distance({lat:43,lon:141},{lat:43,lon:141}),0);
+assert.ok(Math.abs(n.distance({lat:0,lon:0},{lat:0,lon:1})-111195)<10);
+assert.equal(n.valid({latitude:91,longitude:0,accuracy:3}),false);
+assert.equal(n.valid({latitude:43,longitude:141,accuracy:NaN}),false);
+assert.equal(n.valid({latitude:43,longitude:141,accuracy:20}),true);
+assert.ok(n.distance({lat:31.23,lon:121.47},{lat:43.06,lon:141.35})>n.radius);
+assert.match(n.error(1),/权限/);assert.match(n.error(3),/超时/);
+const app=fs.readFileSync('src/app.js','utf8');assert.ok(!app.includes('watchPosition'));assert.ok(app.includes('maximumAge:0'));assert.ok(app.includes('request!==locationRequest'));
+console.log('Location distance, validation, errors and request guards passed');

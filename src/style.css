@@ -132,3 +132,5 @@ body:not(.reading-open){overflow:clip}
 
 /* Single-category map filter, with generous phone tap targets. */
 .legend{gap:8px}.legend button{flex:1;min-height:44px;border:1px solid #d6ddd8;border-radius:9px;background:#fff;color:var(--type-color);font-size:15px;font-weight:700;padding:7px 12px}.legend button[aria-pressed="true"]{background:var(--type-color);border-color:var(--type-color);color:white;box-shadow:0 2px 5px #193e421c}.legend[hidden]{display:none}
+
+.location-tools{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px}.location-tools button{min-height:44px;border:1px solid #b9cedb;border-radius:8px;background:#edf5fc;padding:8px 12px;font-weight:700;color:#17518a}.location-tools button:disabled{opacity:.6}.location-tools span{flex-basis:100%;font-size:12px;line-height:1.5;color:#526770}.location-tools [hidden]{display:none}.place-location{padding:12px;background:#edf5fc;border-radius:10px;margin:10px 0}.place-location p{font-weight:700}.place-location a{display:inline-block;min-height:44px;padding:10px 0;color:#17518a;font-weight:700}.place-location small{display:block;color:#526770;line-height:1.5}

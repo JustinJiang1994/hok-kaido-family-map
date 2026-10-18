@@ -1,10 +1,14 @@
 'use strict';
 const $=s=>document.querySelector(s),esc=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 let region='行程总览',placeType='sight',current=[],markers=[],bounds,selectedId=null;
+let userPosition=null,nearbyMode=false,locationRequest=0;
 const PLACE_TYPES={sight:'景点',food:'餐厅',shop:'购物'};
 function updatePlaceFilter(){
- current=PLACES.filter(p=>p.city===region&&p.type===placeType);
+ $('#mapTitle').textContent=nearbyMode?'我的附近':region==='行程总览'?'北海道全览':region+'地图';
+ current=PLACES.filter(p=>p.type===placeType&&(nearbyMode&&userPosition?Nearby.distance(userPosition,p)<=Nearby.radius:p.city===region));
+ if(nearbyMode)current.sort((a,b)=>Nearby.distance(userPosition,a)-Nearby.distance(userPosition,b));
  document.querySelectorAll('[data-place-type]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.placeType===placeType)));
+ if(nearbyMode){$('#mapHint').textContent=current.length?'附近5公里内已收录'+current.length+'个'+PLACE_TYPES[placeType]+' · 点圆点查看':'附近5公里内暂无已收录的'+PLACE_TYPES[placeType]+'，可换类型或退出定位';return;}
  if(region!=='行程总览')$('#mapHint').textContent=current.length?'只显示'+PLACE_TYPES[placeType]+' · 点圆点查看介绍 · 双指缩放':'暂未添加'+region+'的'+PLACE_TYPES[placeType]+'地点，可切换其他类型';
 }
 
@@ -14,10 +18,14 @@ const tiles=L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.p
 let tileSuccess=0;tiles.on('loading',()=>{tileSuccess=0;$('#mapStatus').textContent='正在加载这一片区域的道路地图…';});tiles.on('tileload',()=>{tileSuccess++;$('#mapStatus').className='';$('#mapStatus').textContent='浅色道路底图 · 放大可看街区';});tiles.on('tileerror',()=>{if(!tileSuccess){$('#mapStatus').className='error';$('#mapStatus').textContent='道路底图暂未加载，请检查网络；请稍后刷新重试。';}});
 setTimeout(()=>{if(!tileSuccess){$('#mapStatus').className='error';$('#mapStatus').textContent='底图加载较慢，请检查网络；点圆点仍可查看介绍。';}},12000);
 const routeLayer=L.layerGroup().addTo(map),markerLayer=L.layerGroup().addTo(map);
+const userLayer=L.layerGroup().addTo(map);
+function drawUserLocation(){userLayer.clearLayers();if(!userPosition||region==='行程总览')return;L.circle([userPosition.lat,userPosition.lon],{radius:userPosition.accuracy,color:'#1769d2',weight:1,fillOpacity:.08,interactive:false}).addTo(userLayer);L.circleMarker([userPosition.lat,userPosition.lon],{radius:8,color:'white',weight:3,fillColor:'#1769d2',fillOpacity:1,interactive:false}).addTo(userLayer);}
+function placeLocationInfo(p){const distance=userPosition?'距上次定位约 '+Nearby.format(Nearby.distance(userPosition,p))+' · 直线距离（非步行距离）':'';return `<div class="place-location">${distance?'<p>'+distance+'</p>':''}<a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(p.lat+','+p.lon)}">用 Google 地图导航 ↗</a><small>地点标点为参考位置，请在地图中确认入口。</small></div>`;}
 const placeColor=p=>p.type==='food'?'#c65c18':p.type==='shop'?'#6351b5':p.type==='hub'?'#54677c':'#c02570';
 function renderMarkers(){
  if(region==='行程总览')return;
  markerLayer.clearLayers();routeLayer.clearLayers();markers=[];const size=map.getSize(),used=[];
+ if(userPosition)used.push(map.latLngToContainerPoint([userPosition.lat,userPosition.lon]));
  current.forEach(p=>{const actual=map.latLngToContainerPoint([p.lat,p.lon]);if(actual.x<0||actual.y<0||actual.x>size.x||actual.y>size.y)return;
  let best=null;for(let y=26;y<=size.y-38;y+=6)for(let x=26;x<=size.x-26;x+=6){if(x<78&&y<126)continue;if(used.some(q=>Math.abs(x-q.x)<46&&Math.abs(y-q.y)<46))continue;const d=(x-actual.x)**2+(y-actual.y)**2;if(!best||d<best.d)best={x,y,d};}
  const pt=best||actual;used.push(pt);const pos=map.containerPointToLatLng([pt.x,pt.y]);if(best&&best.d>100)L.polyline([[p.lat,p.lon],pos],{color:placeColor(p),weight:1.5,opacity:.65,interactive:false}).addTo(routeLayer);
@@ -35,7 +43,7 @@ function renderSections(p,info){
 }
 function showPlace(p){
  highlight(p.id);const info=PLACE_MEDIA[p.id],photos=info?.photos||[];
- detail.innerHTML=`<div class="detail-head"><h2 id="detailTitle">${esc(info?.title||p.name)}</h2><button id="closeDetail" aria-label="关闭地点介绍">关闭 ×</button></div><div class="detail-body">${photos.length?`<section class="photo-section" aria-label="${esc(p.name)}照片"><div class="photo-track" tabindex="0" aria-label="左右滑动查看照片">${photos.map((im,i)=>`<figure class="photo-slide"><div class="photo-frame"><img src="${esc(im.src)}" alt="${esc(im.caption)}" loading="${i===0?'eager':'lazy'}" decoding="async"><div class="photo-error" hidden>照片暂未加载<br><button type="button">重新加载</button></div></div><figcaption>${esc(im.caption)}<small>照片：${esc(im.credit)}</small></figcaption></figure>`).join('')}</div><div class="photo-controls"><button id="prevPhoto" aria-label="上一张照片">‹</button><span id="photoCount" aria-live="polite">1 / ${photos.length}</span><span class="swipe-tip">左右滑动看照片</span><button id="nextPhoto" aria-label="下一张照片">›</button></div></section>`:''}<div class="place-copy"><p class="place-city">${esc(p.city)} · ${p.type==='hub'?'交通枢纽':p.type==='food'?'餐厅':p.type==='shop'?'购物':'景点'}</p>${renderSections(p,info)}${info?.note?'<div class="visit-note"><strong>看图与到访提示</strong><p>'+esc(info.note)+'</p></div>':p.detail?'<p>'+esc(p.detail)+'</p>':''}${photos.length?'<p class="photo-footnote">图片来自上述地点官方或当地官方旅游页面，为资料照片，季节、天气与现场布置可能不同。图片需联网加载。</p>':''}</div></div>`;
+ detail.innerHTML=`<div class="detail-head"><h2 id="detailTitle">${esc(info?.title||p.name)}</h2><button id="closeDetail" aria-label="关闭地点介绍">关闭 ×</button></div><div class="detail-body">${photos.length?`<section class="photo-section" aria-label="${esc(p.name)}照片"><div class="photo-track" tabindex="0" aria-label="左右滑动查看照片">${photos.map((im,i)=>`<figure class="photo-slide"><div class="photo-frame"><img src="${esc(im.src)}" alt="${esc(im.caption)}" loading="${i===0?'eager':'lazy'}" decoding="async"><div class="photo-error" hidden>照片暂未加载<br><button type="button">重新加载</button></div></div><figcaption>${esc(im.caption)}<small>照片：${esc(im.credit)}</small></figcaption></figure>`).join('')}</div><div class="photo-controls"><button id="prevPhoto" aria-label="上一张照片">‹</button><span id="photoCount" aria-live="polite">1 / ${photos.length}</span><span class="swipe-tip">左右滑动看照片</span><button id="nextPhoto" aria-label="下一张照片">›</button></div></section>`:''}<div class="place-copy"><p class="place-city">${esc(p.city)} · ${p.type==='hub'?'交通枢纽':p.type==='food'?'餐厅':p.type==='shop'?'购物':'景点'}</p>${placeLocationInfo(p)}${renderSections(p,info)}${info?.note?'<div class="visit-note"><strong>看图与到访提示</strong><p>'+esc(info.note)+'</p></div>':p.detail?'<p>'+esc(p.detail)+'</p>':''}${photos.length?'<p class="photo-footnote">图片来自上述地点官方或当地官方旅游页面，为资料照片，季节、天气与现场布置可能不同。图片需联网加载。</p>':''}</div></div>`;
  $('#closeDetail').onclick=()=>detail.close();if(!detail.open)detail.showModal();
  const track=detail.querySelector('.photo-track');if(!track)return;
  let index=0;const update=()=>{index=Math.max(0,Math.min(photos.length-1,Math.round(track.scrollLeft/track.clientWidth)));$('#photoCount').textContent=(index+1)+' / '+photos.length;$('#prevPhoto').disabled=index===0;$('#nextPhoto').disabled=index===photos.length-1;};
@@ -115,10 +123,33 @@ function render(){
  bounds=L.latLngBounds(overview?[[41.35,139.35],[45.6,145.9]]:PLACES.filter(p=>p.city===region).map(p=>[p.lat,p.lon]));
  map.invalidateSize({animate:false});fitRegion();
  if(overview){setupJourney();if(!matchMedia('(prefers-reduced-motion: reduce)').matches)startJourney();}else renderMarkers();
- $('main').scrollTop=0;
+ drawUserLocation();$('main').scrollTop=0;
 }
-$('#days').onclick=e=>{const b=e.target.closest('[data-region]');if(b){region=b.dataset.region;placeType='sight';render();}};
+$('#days').onclick=e=>{const b=e.target.closest('[data-region]');if(b){locationRequest++;$('#locate').disabled=false;$('#locate').textContent='⌖ 查看我附近';nearbyMode=false;region=b.dataset.region;placeType='sight';render();}};
 $('#placeLegend').onclick=e=>{const b=e.target.closest('[data-place-type]');if(!b||region==='行程总览')return;placeType=b.dataset.placeType;selectedId=null;if(detail.open)detail.close();updatePlaceFilter();renderMarkers();};
 document.addEventListener('visibilitychange',()=>{if(document.hidden)stopJourney();else if(region==='行程总览'&&!matchMedia('(prefers-reduced-motion: reduce)').matches)startJourney();});
-$('#fit').onclick=fitRegion;map.on('moveend',()=>{if(region==='行程总览')drawOverviewLabels();else renderMarkers();});map.on('resize',()=>{if(bounds)fitRegion();});
+$('#fit').onclick=()=>{locationRequest++;$('#locate').disabled=false;nearbyMode=false;updatePlaceFilter();fitRegion();renderMarkers();};map.on('moveend',()=>{if(region==='行程总览')drawOverviewLabels();else renderMarkers();});map.on('resize',()=>{if(bounds)fitRegion();});
 render();
+
+$('#clearLocation').onclick=()=>{locationRequest++;userPosition=null;nearbyMode=false;userLayer.clearLayers();$('#clearLocation').hidden=true;$('#locate').disabled=false;$('#locate').textContent='⌖ 查看我附近';$('#locationStatus').textContent='已退出定位 · 可继续手动查看地图';updatePlaceFilter();fitRegion();renderMarkers();};
+$('#locate').onclick=()=>{
+ const status=$('#locationStatus');
+ if(!window.isSecureContext){status.textContent='请通过 HTTPS 网站打开后使用定位。';return;}
+ if(!navigator.geolocation){status.textContent='此浏览器不支持定位，请在 Safari 或其他浏览器中打开。';return;}
+ const request=++locationRequest;$('#locate').disabled=true;status.textContent='正在定位，请允许浏览器访问位置…';
+ // Own deadline also covers browsers that wait indefinitely on a permission prompt.
+ const fail=code=>{if(request!==locationRequest)return;locationRequest++;clearTimeout(deadline);$('#locate').disabled=false;status.textContent=Nearby.error(code)+(userPosition?' 仍保留上次位置。':'');};
+ const deadline=setTimeout(()=>fail(3),20000);
+ try{navigator.geolocation.getCurrentPosition(pos=>{
+  if(request!==locationRequest)return;if(!Nearby.valid(pos.coords)){fail(2);return;}
+  clearTimeout(deadline);$('#locate').disabled=false;
+  const located={lat:pos.coords.latitude,lon:pos.coords.longitude,accuracy:pos.coords.accuracy,time:Date.now()};
+  const nearest=PLACES.filter(p=>p.type!=='hub').reduce((a,b)=>Nearby.distance(located,a)<Nearby.distance(located,b)?a:b);
+  const requestedType=placeType;
+  // Use the normal region event so weather stays in sync with the map.
+  document.querySelector('[data-region="'+nearest.city+'"]').click();
+  placeType=requestedType;userPosition=located;nearbyMode=true;$('#clearLocation').hidden=false;$('#locate').textContent='⌖ 更新我的位置';
+  status.textContent='位置更新于 '+new Date(located.time).toLocaleTimeString('zh-CN',{hour:'2-digit',minute:'2-digit'})+' · 精度约'+Nearby.format(located.accuracy)+(located.accuracy>500?'（定位较粗略）':'');
+  updatePlaceFilter();drawUserLocation();map.setView([located.lat,located.lon],14,{animate:false});renderMarkers();$('main').scrollTop=0;
+ },err=>fail(err.code),{enableHighAccuracy:true,timeout:15000,maximumAge:0});}catch(e){fail(2);}
+};
