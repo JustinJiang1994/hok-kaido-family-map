@@ -1,0 +1,1460 @@
+{
+  "https://shop.ishiya.co.jp/cdn/shop/products/shiroi-koibito_image2_600x.jpg?v=1711930630": {
+    "variants": [
+      {
+        "src": "assets/photos/9f6ab79ca46a5cd13bdd.webp",
+        "width": 600,
+        "height": 600,
+        "bytes": 38332
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAABQBQCdASoYABgAPulkpk6pJaOiN/qoASAdCWwAtuipwvdfJ+2lleuXYuT+B+PuaGc87AgA/ou5BHSQdpM7v++SUuUxEHUeoYhDjR62E6ghlcf7bE76+DyE9/ErVMLtdjy9ZHExHnEr2Tc5iNcNlTai7BaDBmZDnzES6zB+BL5XeWEbXMLGUtsVmeESj4smKmKgAA==",
+    "originalBytes": 79878,
+    "originalWidth": 600,
+    "originalHeight": 600,
+    "fetchSeconds": 0.08
+  },
+  "https://www.asahikawa-park.or.jp/park/tokiwa_toppage_img_2022_11_002.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/54af5703d7df81230d42.webp",
+        "width": 640,
+        "height": 376,
+        "bytes": 80762
+      },
+      {
+        "src": "assets/photos/661b9071f9ebc4cbe4ca.webp",
+        "width": 700,
+        "height": 411,
+        "bytes": 95746
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAADwAwCdASoYAA4APwFqrU8rJiQiMAgBYCAJQBdmUABYVD7I9a2NtcYAAP7ZZ9MfKU+O2dfcCVF7TMg6Q2oz+W5A6HB/CvooZguHakiiXAf9QVS50QefW1LShF/WXYq2LyTl3Al9+/zToZ6glJcm3Tkq/+i0AAAA",
+    "originalBytes": 89819,
+    "originalWidth": 700,
+    "originalHeight": 411,
+    "fetchSeconds": 0.17
+  },
+  "https://ainu-upopoy.go.jp/wp/wp-content/uploads/2026/04/culture_nepki.png": {
+    "variants": [
+      {
+        "src": "assets/photos/9dac2c561890b2c7a6ba.webp",
+        "width": 640,
+        "height": 396,
+        "bytes": 37330
+      },
+      {
+        "src": "assets/photos/9a5932a5887bead07281.webp",
+        "width": 1166,
+        "height": 722,
+        "bytes": 79852
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAAAQBACdASoYAA8APwFqrE8rJiQiMAgBYCAJZQDCgBe5lwy1zl94agKx5ADLqktUSFpvjbQtjDWCoDaj+OWkchmWLhUylgytcObI8EWA+FrSE2HtsQa215dNSVfkJNkuVbm1ZnJMBj8mxoeHKOfSC1ecVTkwgAAA",
+    "originalBytes": 1616128,
+    "originalWidth": 1166,
+    "originalHeight": 722,
+    "fetchSeconds": 0.22
+  },
+  "https://www.biei-hokkaido.jp/wp3/wp-content/uploads/2023/11/shirogane-blue-pond.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/1bc033ec3d294cb01d78.webp",
+        "width": 640,
+        "height": 480,
+        "bytes": 61672
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAABwBACdASoYABIAPwFurlCrJiQiqA1RYCAJZgCdM47BqhCYeGFyO5Hfasrl0AD+xTrq4bWdz0cpycXs3ZSwZfPnkfWvsjHyZ9owC0KtjZcQjPFNIRhSdJ0zGWrIfBv0ppQXPpNbAbA+cAdHUQE3MihXJdMJTfMyTIEX1UIth4gE5aZuH8nND1+coZu2oojyb6uHEgAA",
+    "originalBytes": 94978,
+    "originalWidth": 640,
+    "originalHeight": 480,
+    "fetchSeconds": 0.06
+  },
+  "https://asahikawa-park.or.jp/kitasaito/images/top/main05.png": {
+    "variants": [
+      {
+        "src": "assets/photos/0adf0ea6a01241a7b4ff.webp",
+        "width": 640,
+        "height": 363,
+        "bytes": 97034
+      },
+      {
+        "src": "assets/photos/5db32dadd4e036a5b3a2.webp",
+        "width": 1200,
+        "height": 680,
+        "bytes": 335360
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAABQBACdASoYAA4APwForE6rJaQiMAgBYCAJbACdMoBOACEa+b0DUvKinVxAAMszWyVVCpKYDQmSdz3I3SJAKHSuBglf+1z/mqFusuHZ1pY1QBk8Jb9G7dD3Wr6tdWaYuo0ms4syBapHo6Ox3g7XRw3bYDcGG3b4TxYbSBvOhPofj0sNPdLia2k5wo5UR9CqGSFEbwvjmJUmzRYwLAAAAA==",
+    "originalBytes": 2175356,
+    "originalWidth": 1200,
+    "originalHeight": 680,
+    "fetchSeconds": 0.31
+  },
+  "https://ainu-upopoy.go.jp/wp/wp-content/uploads/2026/04/urespa.png": {
+    "variants": [
+      {
+        "src": "assets/photos/5efcc98045b44427f9b1.webp",
+        "width": 640,
+        "height": 396,
+        "bytes": 39530
+      },
+      {
+        "src": "assets/photos/6fc34bd1beb43e6797de.webp",
+        "width": 1166,
+        "height": 722,
+        "bytes": 198516
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAACQAwCdASoYAA8APwForE6rJaQiMAgBYCAJQBdgA2cY/MEY2BcAAP6HwuMuPoY3wAQwWNUwhaTMvmRr8hZLz8dmQ+av6cMqw9wlR4KClbvdIpPDCxVCbHXN6U3hs0d9e/oBEw88hjgrYwAA",
+    "originalBytes": 1962419,
+    "originalWidth": 1166,
+    "originalHeight": 722,
+    "fetchSeconds": 0.32
+  },
+  "https://www.biei-hokkaido.jp/wp3/wp-content/uploads/2023/10/IMG_20250905_083656-scaled.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/3004bb1866d3c10f7ecb.webp",
+        "width": 640,
+        "height": 482,
+        "bytes": 85222
+      },
+      {
+        "src": "assets/photos/fe6ca3c345f793aa47f2.webp",
+        "width": 1200,
+        "height": 904,
+        "bytes": 250418
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRvwAAABXRUJQVlA4IPAAAACwBQCdASoYABIAPwFurlArJiQiqA1RYCAJbACdMu0A/5Src04Xq/s9RneY4J9bNMb4ZyQRkgAAymFthKJ0l7BhGJLAKheuUw625GebnGwy2f+Isg1jMeyZ9pQ+QkVfiWFWedU826o+8rUAtQCfxZnxaOKCF19hSYtEYThmqRmk5/QBwFcQiDxY6aLb3puEvhfIZdsSSwsXtWjqnX380WoCobwksHBrCQlqMOjiRpfG5SLz+LHPVX3sgx3VSOcWdfW3taqt0DunyOEvQKrlaiFjMBMtYSeRgLDByW82OVfqTvqB3IasHMlUL/+Z2urlAAA=",
+    "originalBytes": 1033664,
+    "originalWidth": 2560,
+    "originalHeight": 1928,
+    "fetchSeconds": 0.37
+  },
+  "https://www.biei-hokkaido.jp/wp3/wp-content/uploads/2023/12/0f799e4e34d5eb7bd4c0c59ef30b9bc1-scaled.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/85c7b88515de31979c82.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 12812
+      },
+      {
+        "src": "assets/photos/4a0cd5454c0aa6baf5e1.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 37890
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRmoAAABXRUJQVlA4IF4AAAAwBACdASoYABAAPwFqrU6rJiQiMAgBYCAJZACdMoMYAEmiWl3uN5Rk1TAA/t6xVtTSicFJqm2wcjBO7z1u0toevaRqsLVHvIDohcS5BhYkXl8ychZfaCTu0xTpOXAA",
+    "originalBytes": 242576,
+    "originalWidth": 2560,
+    "originalHeight": 1707,
+    "fetchSeconds": 0.16
+  },
+  "https://www.biei-hokkaido.jp/wp3/wp-content/uploads/2023/12/27494e43127e73b60febf32f370cd4c0.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/70f795570c1caca05afa.webp",
+        "width": 640,
+        "height": 448,
+        "bytes": 33926
+      },
+      {
+        "src": "assets/photos/e90c8965cc8b4c91e98b.webp",
+        "width": 1200,
+        "height": 839,
+        "bytes": 89000
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAAAwBQCdASoYABEAPwF2s1OrJySiqAgBYCAJZQDE2ywAh+2xV/TRUGe9R+uWxCJJZS/JoAD+7WDbOqSphmyRED1cPMHDR2+3uHVhjiOwoytSUuLRo/3pSNa9j6aR+RBPaXTV5Zn8zW/mqijUxr+f2Iqel05m60lSHo8J694uuIJKn6R6LQR0559PoZtw7vuI50nJJ75eCLFeN2iAoT1RfVHdav8AAAAA",
+    "originalBytes": 1244934,
+    "originalWidth": 1234,
+    "originalHeight": 863,
+    "fetchSeconds": 0.2
+  },
+  "https://www.biei-hokkaido.jp/wp3/wp-content/uploads/2023/11/6cb52fdb32e180810af544efeb75f1eb-scaled.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/bc193f0e89a68889f8f1.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 87030
+      },
+      {
+        "src": "assets/photos/f0f1e1955025b4a261c4.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 276684
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAADwAwCdASoYABAAPwFqrE8rJiQiMAgBYCAJZgC0+f/gF5eCBBhd8PBcAPoNn2/IS7wIPmYhcDS1cCk2/Q7eN6UsPd2PJG55zns76cy74wpcMTxdemHGZBOOmM15a9jZTUIviYLCz1Z8jlH8pjsWNZL/7DE7d3tDuIuKXBTxcxfvmF1I2crhLQve/h7f48qzHz8AAA==",
+    "originalBytes": 1083073,
+    "originalWidth": 2560,
+    "originalHeight": 1707,
+    "fetchSeconds": 0.4
+  },
+  "https://www.biei-hokkaido.jp/wp3/wp-content/uploads/2023/12/474730e00d8bf896ef009001d56bf291-scaled.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/92cfccd9c87d0edd317e.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 24958
+      },
+      {
+        "src": "assets/photos/6d897a59a90b8b07174b.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 70090
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAADQAwCdASoYABAAPwFqrE6rJiQiMAgBYCAJZQCdAB6CqdLKkX04u2gAyqkcbrBK9Cd4EFfdsW9azXMHPE+6DE/Vd3XipyjxvrZ2BuMhiBpjtj860RWgQUFBaADWfe0OukbhsZEFMApIF29pgAA=",
+    "originalBytes": 415268,
+    "originalWidth": 2560,
+    "originalHeight": 1707,
+    "fetchSeconds": 0.23
+  },
+  "https://www.biei-hokkaido.jp/wp3/wp-content/uploads/2023/12/7446cc6875f2ca42ea88a5fc9c78c4df-scaled.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/a9c94d455d0301790e73.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 39158
+      },
+      {
+        "src": "assets/photos/f8ce037b4372c7f00b66.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 121738
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAAAwBACdASoYABAAPwForE6rJiQiMAgBYCAJbACdMoR4GCHIfp3AD4vbsIAA/d44v7IX/WXWqO62dM8mvVki7X4+O76MPPjuaSimtLimP90LmhJzO2oY031s1HNZnk94AFP15+qge4DKBEr2y72ZJs0G0Em+uA2AvNlWQ8AjgAA=",
+    "originalBytes": 578082,
+    "originalWidth": 2560,
+    "originalHeight": 1707,
+    "fetchSeconds": 0.24
+  },
+  "https://www.biei-hokkaido.jp/wp3/wp-content/uploads/2025/10/NKZ_3887.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/49029fe5ca0c18bbb25d.webp",
+        "width": 640,
+        "height": 426,
+        "bytes": 6680
+      },
+      {
+        "src": "assets/photos/b568fd0fad268010c621.webp",
+        "width": 1200,
+        "height": 799,
+        "bytes": 25678
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAAAQBACdASoYABAAPwFqrE6rJiQiMAgBYCAJQAAMP9RfNWuLVXo2iTArgAD+2kxaHmBmgeBwCNtpfrOJ/tshUSHCi0goSjfRdludiPzAAAA=",
+    "originalBytes": 521953,
+    "originalWidth": 2048,
+    "originalHeight": 1363,
+    "fetchSeconds": 0.15
+  },
+  "https://www.biei-hokkaido.jp/wp3/wp-content/uploads/2023/12/IMG_7059-scaled.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/47bef3723e4c9e2e2f0a.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 48650
+      },
+      {
+        "src": "assets/photos/7b69cd84555e5114ee66.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 153882
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAADwAwCdASoYABAAPwFqrU6rJiQiMAgBYCAJZACdABujfjBu7btFVclIAP7Fw5zqd7FBY7MajGt7ql/z9x0eMroKM6VBb1EvetUUGRkHawDuAxyOMKr0eJkzNCaW+YSe+8XD4eYBWXYV1zOkGg0xAtsMEAA=",
+    "originalBytes": 705091,
+    "originalWidth": 2560,
+    "originalHeight": 1707,
+    "fetchSeconds": 0.26
+  },
+  "https://www.biei-hokkaido.jp/wp3/wp-content/uploads/2023/12/83fa0458dc1c42948974b4fb687afcad-scaled.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/a9f921b2634b5fd9a67f.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 80396
+      },
+      {
+        "src": "assets/photos/f2d47a9e0480a807c3c7.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 210564
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRqwAAABXRUJQVlA4IKAAAAAwBACdASoYABAAPwFqrE8rJaQiMAgBYCAJbAAD5hlGfyvET9UmDcRyRxAA8ClskRFHNPX8DZp2XkTsHYSqxPIckuI0MZf/n9a9Yrz2IkkNlB4v/ouLbkX3bSUQK9uoBHf9lHrUvBQbU53uqTdPi1usOxcgTxC36GRmuZ2GxXZiSLRQn4KbjloG26GQuIbzrxAVi8016Jilsz12QhdKYAAA",
+    "originalBytes": 937314,
+    "originalWidth": 2560,
+    "originalHeight": 1707,
+    "fetchSeconds": 0.34
+  },
+  "https://www.biei-hokkaido.jp/wp3/wp-content/uploads/2023/12/5da3240e06dcc16ea6d07339ef9ee425-scaled.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/73f010f718176772651e.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 110880
+      },
+      {
+        "src": "assets/photos/cdf1044136a83119e6a6.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 354838
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAACwAwCdASoYABAAPwForE6rJiQiMAgBYCAJagCdABV6St7D6ncVuAD6XHPBmFY9OMAhrLP1XpRgu0kze7hJs8Y+q1/OHhMR2udvSpFM+s7OL5cMtpugVzWM/5MYa35XpaeqDV+lZsJphns4slH0gYbkSisC5ykk4nOLKFcViUlJBZl5nMlm5nLVzxy4AAAA",
+    "originalBytes": 1454170,
+    "originalWidth": 2560,
+    "originalHeight": 1707,
+    "fetchSeconds": 0.43
+  },
+  "https://www.biei-hokkaido.jp/wp3/wp-content/uploads/2026/10/56fd2316d05ac3354285cb4d99390baa-1024x722.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/f9386d6017086d8ac50d.webp",
+        "width": 640,
+        "height": 451,
+        "bytes": 29624
+      },
+      {
+        "src": "assets/photos/199ab9d8cd3e0bd1f8be.webp",
+        "width": 1024,
+        "height": 722,
+        "bytes": 66538
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAABQBACdASoYABEAPwFwrFErJiQiqA1RYCAJQBidP/wD5rgXP0wOVG7AQuwAAPdNoKu9mKSUtbJ7v1xlJbZ/tV9LtiYlZEs/n+Afh8JgfNn6IdzhE3L8duGigwibbVtraMkJkEE1M1BkUjxIe1Ihs0YCATG5elKUxnCoAA==",
+    "originalBytes": 122024,
+    "originalWidth": 1024,
+    "originalHeight": 722,
+    "fetchSeconds": 0.12
+  },
+  "https://www.city.asahikawa.hokkaido.jp/science/04/p002436_d/img/008_s.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/b52c9586a713b3ba1dd4.webp",
+        "width": 300,
+        "height": 200,
+        "bytes": 6974
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAAAwBACdASoYABAAPwFqrU8rJaQiMAgBYCAJZgC7ACHhBweEi89SMTPm7sAA/c5mbrxAponp2XZixFfTnwWlzf7/gEUUN6DMSIn4qEa91nnwbH4DZQKDlMf4M2dUJY4wDPSUmJ3274NBzML0IIbOzgeKRFk9CrjoOwuoAA==",
+    "originalBytes": 121910,
+    "originalWidth": 300,
+    "originalHeight": 200,
+    "fetchSeconds": 0.01
+  },
+  "https://www.city.asahikawa.hokkaido.jp/hanyoukanri/scienseslide/d053484_d/img/001.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/37fdfa4f875d948515ff.webp",
+        "width": 640,
+        "height": 213,
+        "bytes": 15034
+      },
+      {
+        "src": "assets/photos/135658b3a085e07eac75.webp",
+        "width": 1200,
+        "height": 400,
+        "bytes": 42272
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAACwAwCdASoYAAgAPwFwrk+rJqQiMAgBYCAJYwC7ACHMuIdgAymE8AD+2Nu5vonfPoNN1BE+hGTlhKF9AVNFDJV8uLwxnCoYiIsvIG+8X0BAoAAA",
+    "originalBytes": 66255,
+    "originalWidth": 1331,
+    "originalHeight": 444,
+    "fetchSeconds": 0.09
+  },
+  "https://www.biei-hokkaido.jp/wp3/wp-content/uploads/2025/06/IMG_3887-scaled.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/773c1acc11240db811be.webp",
+        "width": 640,
+        "height": 480,
+        "bytes": 72188
+      },
+      {
+        "src": "assets/photos/81a9557e44234f8e6d8b.webp",
+        "width": 1200,
+        "height": 900,
+        "bytes": 248836
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAABwBQCdASoYABIAPwFsr1ErJaQisBgIAWAgCWQAsR8xoIADz2SOXf8uHkh2XvH+NLkwH6wAAP7nVXVWUFpHptIas7isTegVDyRK3FAlaOPdkt1nOS9Ie8ftY7lmyuFys9vsrBlPxO1WmqHBJBacTzBW+Eyu/0H5TxbbNspKJbNS0+ZytUYGeiMVPv4DOL278v2QAA==",
+    "originalBytes": 1104524,
+    "originalWidth": 2560,
+    "originalHeight": 1920,
+    "fetchSeconds": 0.36
+  },
+  "https://www.biei-hokkaido.jp/wp3/wp-content/uploads/2025/11/sikisainooka003.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/44ba2a91f6c339d491ad.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 33072
+      },
+      {
+        "src": "assets/photos/dbe1eb3ca36f73140915.webp",
+        "width": 1200,
+        "height": 675,
+        "bytes": 103928
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAAAQBACdASoYAA4APwFqrk8rJiQiMAgBYCAJQBOgBDtKMVq8eMawGquTQAD+IM1qv5iFTqjMkbkTDeQKucHzSFHcD3VUm5O6mk6MeJgjfZlZ4TaL0Rtdf6kwAAA=",
+    "originalBytes": 704388,
+    "originalWidth": 1280,
+    "originalHeight": 720,
+    "fetchSeconds": 0.17
+  },
+  "https://www.kinotoya.com/cp_admin/wp-content/uploads/2018/09/807d00e5c08cd366b20834a49cf5cdcc.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/de31418b8af296374234.webp",
+        "width": 600,
+        "height": 600,
+        "bytes": 52932
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRuYAAABXRUJQVlA4INoAAADwBQCdASoYABgAPwF0rVKrJqOiqAqpYCAJbACdMxszGCUR19GTX5LJMjzet8JgN+E2OsAGfIqqaAD+77pwGFxOrwor7ObenfvkiPZTZCjUMAcwoPYkw/LhxCKABLgEIYyRjUJVyW83qpBh7LbwQzQdhdXC6gc+DH6m10JgQCLEBs5S2Xd6q8cmnw1BTBUJOfUt1ibpa4BS30GmrFGrS8+L0XAo4M0hyMzbj/UI6BFbY01FNOOIiDLOhWiyggs8nfOw6TPugnh7dHD186LUNkkGwDuyAjIFzcSAAA==",
+    "originalBytes": 321134,
+    "originalWidth": 600,
+    "originalHeight": 600,
+    "fetchSeconds": 0.05
+  },
+  "https://www.donbe.sapporo-asaichi.com/images/IMG_9765_pc.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/07de29fbace064d31540.webp",
+        "width": 640,
+        "height": 359,
+        "bytes": 42774
+      },
+      {
+        "src": "assets/photos/4c8e189d4402853c9aa5.webp",
+        "width": 660,
+        "height": 370,
+        "bytes": 46532
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRtYAAABXRUJQVlA4IMoAAADQBACdASoYAA0APwFqrE6rJiQiMAgBYCAJbACdMoLT+z/4tlRuJiS0IUYuGWrcAAD+6jEDaOSO6Ma0v53MAn2WVuGGVyL4VsxKbKB9RrZU/GdL8xDVIGZeZOMsMAum1JZw1rErTUzw2jkBm0RF5LcHjfL7V79Ipd0Zw/Gvr9C9p7/R3h7LRfOhztiZtN8PgxfQ7h4qLn3sIWtObpLIppt7vOCEJPotbrDhJZn25tQMWGz+AqiIKN0P4kG8lB35CiUIcUWmCSfesAAA",
+    "originalBytes": 293091,
+    "originalWidth": 660,
+    "originalHeight": 370,
+    "fetchSeconds": 0.09
+  },
+  "https://www.biei-hokkaido.jp/wp3/wp-content/uploads/2025/11/c.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/8c79a2aaac68ca2d39c0.webp",
+        "width": 640,
+        "height": 480,
+        "bytes": 74544
+      },
+      {
+        "src": "assets/photos/acedc930a9f46866212f.webp",
+        "width": 1200,
+        "height": 900,
+        "bytes": 245962
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRqAAAABXRUJQVlA4IJQAAAAQBQCdASoYABIAPwFqqU+rJaOiMBgMAWAgCWMAthQRBMRvh2efbptiVq0c0TMzPUQgAP6QdsqfciH6UjEBYEAHUPO51C8zJmyqFeD3Orc/NVSfyTbe5D73ZO9DPle/fFNLnwNEh11ZEpms5qwPdpwdsglhOoM2LnldC+c+WOQQgAi/ZVgAz9rn0WL40JZ1G2IYlgAA",
+    "originalBytes": 752432,
+    "originalWidth": 2048,
+    "originalHeight": 1536,
+    "fetchSeconds": 0.34
+  },
+  "https://www.otokoyama.com/images/museum_section01.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/6217dfff10fe81f23550.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 39544
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRq4AAABXRUJQVlA4IKIAAABQBACdASoYAA4APwFqrU8rJiQiMAgBYCAJQBOmUAS3AxIvqzlp7QvaIRYgAPfPBCVdCb/NhlUDxgnlyKCMi3gikLr9uyaAL1ragf57HWg8BWwYp/ME58W4pKPZHNn0IOh70QncRnTi/+9dPja9AsKrV2WOh74JGMLo3kKfbxyFgffceqegz+5QHREslRv5JcmKd056+4oskmeJ2ZtVQdDFAAA=",
+    "originalBytes": 42154,
+    "originalWidth": 640,
+    "originalHeight": 360,
+    "fetchSeconds": 0.04
+  },
+  "https://www.otokoyama.com/images/museum_section02.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/6f443dc5e9c2ac3e0ae6.webp",
+        "width": 640,
+        "height": 360,
+        "bytes": 31364
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRooAAABXRUJQVlA4IH4AAADQAwCdASoYAA4APwFqrE8rJiQiMAgBYCAJQBOgBDvkPbB6TdUwYAAA/qoZQcCRvnXJRZjRgTzgkgVgen51y2Z7cOK+N77ShBdoJ66JYieg7w2xSLYmUbjnuntHgbz32/mGUWN58dfaofWLdCFPPmOQiNFlY5hlx381iqMUYAA=",
+    "originalBytes": 219738,
+    "originalWidth": 640,
+    "originalHeight": 360,
+    "fetchSeconds": 0.04
+  },
+  "https://www.donbe.sapporo-asaichi.com/images/7D53075F-C578-4D6A-BDE7-8AA23892064F.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/6ca0260c06cbadb7086f.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 46334
+      },
+      {
+        "src": "assets/photos/738cb1977dd63e5936ab.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 116220
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRr4AAABXRUJQVlA4ILIAAADQBACdASoYABAAPwForE6rJiQiMAgBYCAJagCdMoBOAhABD3zBURtOkgeGvQTwuAD+ZkNfS+LtmIuvM7haGrh05a2qFwzIKv6vHg8xOHLo6crZ+4x2zCND6HEHEfmBOa1vMeSwwLCP6Ikfo/lDVimQf2g+UPqgH/2vGC8exPETHrvk7u6ietEyXE8rLWYTsW1rYbFrorN/3zq7ilKtvfIa/BolnFi19D7GyexsHrqpREAA",
+    "originalBytes": 460642,
+    "originalWidth": 1560,
+    "originalHeight": 1040,
+    "fetchSeconds": 0.22
+  },
+  "https://www.letao-brand.jp/lp/doublefromage/assets/images/main_slide01.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/1f0de9cb6d8444475b2c.webp",
+        "width": 640,
+        "height": 480,
+        "bytes": 18178
+      },
+      {
+        "src": "assets/photos/db55ad50f7cd8c6f9521.webp",
+        "width": 1200,
+        "height": 899,
+        "bytes": 51674
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAAAwBACdASoYABIAPwF0sVIrJqSiqAqpYCAJQBjPgel3J9ztAquWlRZxA4AA/uqSvWo98pj3GxGvnNdN2Z5nuiVjdzevLklthMsbsuZPTcaDE4lkhOP9E8drrHAQoIfoiFa41PPa4WnhPAzeF+sphhxwgvsuectyIIpskqwA",
+    "originalBytes": 118756,
+    "originalWidth": 1800,
+    "originalHeight": 1349,
+    "fetchSeconds": 0.18
+  },
+  "https://www.pokkasapporo-fb.jp/products/cms/images/WA96.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/ce625dc8080dbe9cdb6d.webp",
+        "width": 596,
+        "height": 596,
+        "bytes": 17048
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRoIAAABXRUJQVlA4IHYAAADwAwCdASoYABgAPwFurlArJiQiqA1RYCAJagDM0BEczD5OAz2aIzNAAP7vv8DxcNguoPZtoREqdwYFM3u5Nadyy0TywHVN7U9LcQXvqoZX7NMJZe1mdPi7BDahlwwbqSm17f0dN5Dq+KXu2aOKWND6mZJPQAAA",
+    "originalBytes": 93586,
+    "originalWidth": 596,
+    "originalHeight": 596,
+    "fetchSeconds": 0.02
+  },
+  "https://www.rokkatei.co.jp/assets/images/en/img_03.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/b63e792ae13ff3dc56f5.webp",
+        "width": 590,
+        "height": 328,
+        "bytes": 28386
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAAAwBACdASoYAA0APwFqrU8rJiQiMAgBYCAJbACdACKsEbNwlbx3Gae7VgAA/tYmNhPw7ptwKGE+PUHAZRI8XaoUB3wIEVfihSpqwinroeoZxDGz42xXX6AzGx03O6Y4HNWK9SBmhPm+4qVsRibMdC7MeVFM9tHrl3nauT3O/eADLLgAAAA=",
+    "originalBytes": 80428,
+    "originalWidth": 590,
+    "originalHeight": 328,
+    "fetchSeconds": 0.03
+  },
+  "https://www.pref.hokkaido.lg.jp/fs/1/2/1/6/2/7/3/7/_/daisetsu.png": {
+    "variants": [
+      {
+        "src": "assets/photos/e1f6fd8a928f2e6ccba5.webp",
+        "width": 640,
+        "height": 388,
+        "bytes": 56474
+      },
+      {
+        "src": "assets/photos/5f8e0d0a19ff82f18910.webp",
+        "width": 747,
+        "height": 453,
+        "bytes": 80004
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRoYAAABXRUJQVlA4IHoAAAAQBACdASoYAA8APwFqrU8rJaQiMAgBYCAJQBOkGxBgcYg60k8BTfCtTAD+kEvPB349Kw+fYLiy+8CEi59r1tVrsrilfybGxTLcgCmvc7P+PySRFPl4tERq12Ar41KncGYEXF8LvVghu6sgg3jA5CAfYi7R7e7gMYMAAA==",
+    "originalBytes": 206097,
+    "originalWidth": 747,
+    "originalHeight": 453,
+    "fetchSeconds": 0.14
+  },
+  "https://www.pref.hokkaido.lg.jp/fs/1/2/1/6/2/7/4/1/_/shiretoko.png": {
+    "variants": [
+      {
+        "src": "assets/photos/d67a285d2f74717f79d3.webp",
+        "width": 640,
+        "height": 388,
+        "bytes": 77836
+      },
+      {
+        "src": "assets/photos/fdb12d76f6b8b60b907e.webp",
+        "width": 747,
+        "height": 453,
+        "bytes": 112034
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAABwBACdASoYAA8APwFqrE6rJiQiMAgBYCAJbACdH8Ixnb/4DX8vSgkJPdnNAAD8ckowKSEi/GSVfK9LPjiGXOIMyCdJjLDlDZLmjEaI0U5qe36OQhlTdlXyDjg+/l4yfpmxzHMKVGp4q7RL5Jmxjf9Lf4YrF+669lPo4a7SaJ+NrQU7Lrd/Mk7JbzQAAA==",
+    "originalBytes": 628069,
+    "originalWidth": 747,
+    "originalHeight": 453,
+    "fetchSeconds": 0.16
+  },
+  "https://www.royce.com/images/goods/2054_2.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/793cdc1408b3dd2f5df7.webp",
+        "width": 640,
+        "height": 640,
+        "bytes": 39806
+      },
+      {
+        "src": "assets/photos/b69e8819ada09e9444e9.webp",
+        "width": 960,
+        "height": 960,
+        "bytes": 67836
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRtgAAABXRUJQVlA4IMwAAAAQBgCdASoYABgAPwFurlCrJiQiqA1RYCAJbACdMoPM5tNon7xyA0rQrdssUwp4STKuN9zdXg2RAAAA+7zBeKddY2yw7TXv6zkdjkqLAsU6sHZ9q5YnY7atpmImMOxJZD2U+INeOU6BgWZztvwHGEec4DjysJJeeKcxHNW7rHZyQ8OH/bIvJJMxc/Y8TbzE/6QQdrRKeE0PAg7JW94pGytE3Y4F+rsPVyjnKCAgwpkF+vmGP01K4e5ZeKp125/a3pSfaR//XdV9j+oAAAA=",
+    "originalBytes": 53730,
+    "originalWidth": 960,
+    "originalHeight": 960,
+    "fetchSeconds": 0.15
+  },
+  "https://www.royce.com/images/goods/8400_2.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/e4dfb720eb8a6aa8c958.webp",
+        "width": 640,
+        "height": 640,
+        "bytes": 33810
+      },
+      {
+        "src": "assets/photos/418aeb2658d03bad9daf.webp",
+        "width": 960,
+        "height": 960,
+        "bytes": 56284
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRugAAABXRUJQVlA4INwAAAAwBgCdASoYABgAPwF2slOrJyQiqAgBYCAJbAC7MuN+B+AOoOO0PDbVh+8vSixt5DP+bGY31xcm9igAAP7nTxwYuFkCw2MYRWru/JSZLapzHspP2s/p2brwo53cubvXmA7+yaPiZJuhULbOWlon3vj3NVe2nhvkpEi4EvLuuLP75SQRR3luPRNvhyfIQ+H84JBsNncyIP133IZMvJ7y1rpjZPQqhCk5Ns38Q779O4JvDc9XMOoN9vw8p8op3bWWOdMMJ57Ujr1VExaCS+I62iAEtfoFErJjXK2sAAAA",
+    "originalBytes": 52424,
+    "originalWidth": 960,
+    "originalHeight": 960,
+    "fetchSeconds": 0.13
+  },
+  "https://www.s-hoheikan.jp/hoheikan_wp/wp-content/themes/hoheikan/assets/img/sp_mv.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/cb3d266158806d7781ec.webp",
+        "width": 640,
+        "height": 357,
+        "bytes": 17510
+      },
+      {
+        "src": "assets/photos/03877f8c27eba4a90b09.webp",
+        "width": 1200,
+        "height": 670,
+        "bytes": 51478
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRmgAAABXRUJQVlA4IFwAAABwAwCdASoYAA0ALsGAwGAjqysrCwDASgCw7EO/iJPJ9fspugAA/vKaDnOavpyYRsebRo3djMcoW9WWnwfIwxJHFyYLWXnfZNiwSbOcIOE5zRZw2dX7HQiuosgAAA==",
+    "originalBytes": 192678,
+    "originalWidth": 2348,
+    "originalHeight": 1311,
+    "fetchSeconds": 0.18
+  },
+  "https://www.sapporo.travel/cms/wp-content/uploads/2020/10/1566460229-1.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/d861aa8649003e1038cf.webp",
+        "width": 640,
+        "height": 299,
+        "bytes": 52298
+      },
+      {
+        "src": "assets/photos/3670c3bf545629dcbb7b.webp",
+        "width": 900,
+        "height": 421,
+        "bytes": 108810
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAAAwBACdASoYAAsAPwFqrk8rJiQiMAgBYCAJagCdMoADYUkkDnjBD0F1xgAA/lt1Iy5JaIzYueh1hT6x4t4PthGuM0WT6J23K9VIBoU/Xeh/bbkvKytYRjDWUfxJ6SjSl8X3lGggrzdvo5wJbMediJEiZyxE0MxcgUHEvURu2QMmEZMqYAAAAA==",
+    "originalBytes": 165453,
+    "originalWidth": 900,
+    "originalHeight": 421,
+    "fetchSeconds": 0.14
+  },
+  "https://www.calbee.co.jp/jagapokkuru/assets/img/products_jagapokkuru-pkg.png": {
+    "variants": [
+      {
+        "src": "assets/photos/6c5e379278d7b4cd3e12.webp",
+        "width": 440,
+        "height": 639,
+        "bytes": 23316
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRvIAAABXRUJQVlA4WAoAAAAQAAAAEAAAFwAAQUxQSCMAAAABJ6AQQADE37nRiIi4EWoiSWE+YCD5Nws9bUT/07jGE1O5FQBWUDggqAAAADAFAJ0BKhEAGAA/AWisTyslpCIwGAwBYCAJaAC0+f/gHmYQ9rp6TORbpYBxjub2fHEAAP7qjqFxKcvHtQ0+xcrGsTGVhJmDU4rE5dnoV6veRwyyke9qft2XesNYdZcXDIYdqCk/ZX6iK4z3llwM9bgYTZMkGhY8UZpueMvaQlZOnK5PVsrtdG39YSSOJSMrC70KB4kkn22kYm9EZnxpAmCcgPyAxMAAAA==",
+    "originalBytes": 313647,
+    "originalWidth": 440,
+    "originalHeight": 639,
+    "fetchSeconds": 0.89
+  },
+  "https://www.sapporo.travel/cms/wp-content/uploads/2020/10/IMG_4080-1200x600-2.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/8ad47c4a4d1b2afa929e.webp",
+        "width": 640,
+        "height": 320,
+        "bytes": 23274
+      },
+      {
+        "src": "assets/photos/3cec18fb9ceaa073f672.webp",
+        "width": 1200,
+        "height": 600,
+        "bytes": 62300
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRnYAAABXRUJQVlA4IGoAAADwAwCdASoYAAwAPwFqrE6rJiQiMAgBYCAJZgAAWsfc4fjJfRiFH/WAAP7nK9CBjkZXZFIH7E3q0AjTDQPFbrjOSay6GaExvvRgjbk6sVG6TI8+aL4nzROpYhVWeVTTDJL41J6VfmsmAAAA",
+    "originalBytes": 158693,
+    "originalWidth": 1200,
+    "originalHeight": 600,
+    "fetchSeconds": 0.11
+  },
+  "https://www.sapporo.travel/cms/wp-content/uploads/2020/10/f_hokkaidou_jingu_main-1200x600-1.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/293799e6cf1c9a43663f.webp",
+        "width": 640,
+        "height": 320,
+        "bytes": 39798
+      },
+      {
+        "src": "assets/photos/3eb9200a657482a69d8f.webp",
+        "width": 1200,
+        "height": 600,
+        "bytes": 122522
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRogAAABXRUJQVlA4IHwAAABwAwCdASoYAAwAPwFsrU8rJiQiMAgBYCAJZQAAJpTNi1jO3gAA/oe6oHfMSNAHHL+RER2+k26Jtr5os7MCAcwMcRXvewznFv1P83WEUyLH4WImjH90S2Wl/fWxXebdPH2k2s2BDPZ9vgBQXgFCnLCEQnz0zqbXQoAZ8AAA",
+    "originalBytes": 248784,
+    "originalWidth": 1200,
+    "originalHeight": 600,
+    "fetchSeconds": 0.16
+  },
+  "https://www.sapporo.travel/cms/wp-content/uploads/2020/10/MV_slide4.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/6b6bf6eb3f537053dd9f.webp",
+        "width": 640,
+        "height": 320,
+        "bytes": 53124
+      },
+      {
+        "src": "assets/photos/c884d407b291b8d4d8fb.webp",
+        "width": 1200,
+        "height": 600,
+        "bytes": 153516
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAABQBACdASoYAAwAPwFqrE8rJiQiMAgBYCAJbACdMoRwACTXIIwmAKfewmAAAP5mv0yqh5VN/u6HPt60NfxLexw30e+oLUPQ5f77oPX4vDk7qiYP+5mClU158AMv2rPV7fYkpW6FsoRdx34sVuhAO0aO+BJ+nHBIOQpADLrmaGr/11q9c6WoDJw77sg3TWAA",
+    "originalBytes": 803903,
+    "originalWidth": 1200,
+    "originalHeight": 600,
+    "fetchSeconds": 0.2
+  },
+  "https://www.sapporo.travel/cms/wp-content/uploads/2020/10/hokkaidoshrine_winter2.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/4a4d6ae86a71fb890c0f.webp",
+        "width": 640,
+        "height": 320,
+        "bytes": 32602
+      },
+      {
+        "src": "assets/photos/88108aec5dbc0c676731.webp",
+        "width": 1200,
+        "height": 600,
+        "bytes": 73050
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRrAAAABXRUJQVlA4IKQAAABwBACdASoYAAwAPwFqrE8rJiQiMAgBYCAJZgCdAYxi4K1XgqCaIfekyWtbAAD+h6W4UJJk/6yo+HeKzF5gJUKCS048GFNhygP22p4fx1Gi55hdTFQVI2lHu2q+hKEbK7HnRLY1tqPobM5EmXMMUZfl8jtHywdJ/8ig1j4OyId+V7+drzO3jivduOyDgVBeKMkPV8iwRw/SRRRlKKyPhxgJ79AAAA==",
+    "originalBytes": 402957,
+    "originalWidth": 1200,
+    "originalHeight": 600,
+    "fetchSeconds": 0.13
+  },
+  "https://www.sapporo.travel/cms/wp-content/uploads/2020/10/hokudai_sub_02-360x270-1-300x200.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/0a37827aaa679ff052ec.webp",
+        "width": 300,
+        "height": 200,
+        "bytes": 10556
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAACwAwCdASoYABAAPwFqrE8rJiQiMAgBYCAJZQCw7A2W9HSbrfk2wAD+gs+nyyw2Igqe0RZRB0agPnz3cVLchQtaQfbeS0PKNNiKPDOV3q6Jp8Mi8ZXNJOapFMGagdgGwb04+QvDFaPFlxER4mB+VYFVP9dR8b6/o4x+lmP1eoRAfxGaYycUjWNNhgAAAA==",
+    "originalBytes": 14771,
+    "originalWidth": 300,
+    "originalHeight": 200,
+    "fetchSeconds": 0.01
+  },
+  "https://www.sapporo.travel/cms/wp-content/uploads/2020/10/hokudai_main_02-1200x600-1.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/f683cf0913f57d86604c.webp",
+        "width": 640,
+        "height": 320,
+        "bytes": 31976
+      },
+      {
+        "src": "assets/photos/1b909b817b4474a9c2d4.webp",
+        "width": 1200,
+        "height": 600,
+        "bytes": 82898
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAADwAwCdASoYAAwAPwFqrE8rJiQiMAgBYCAJYgCdACBfT7j/uMGxrpKQAM2luknsQNCBI7NGRcFCtVPtyMzwOCSNpFj2ZAq0NBzau1t6GYGX9zL125nfi1cmo5p/so2OmULpeZDyb9jtqabgoc0PiO9JctpzjCG/mkDNe+TarjJgAGOIWsz64PUEIbIAAA==",
+    "originalBytes": 147186,
+    "originalWidth": 1200,
+    "originalHeight": 600,
+    "fetchSeconds": 0.13
+  },
+  "https://www.sapporo.travel/cms/wp-content/uploads/2020/10/kashikiri.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/548d4631d718db93219f.webp",
+        "width": 450,
+        "height": 300,
+        "bytes": 18642
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAABwBACdASoYABAAPwFqrE8rJaQiMAgBYCAJZgAD5RHl3WhkqOPAk2tVI1dv8AD+5jvntx5onjF6nfE5Q59KFjnHAe9r02HW4ig0zcWId6fGIvra+CHytccg494xmjUP1Fj3azxs0mZHAUDQjHF9Q6sqZCMEWXw+7CXzGX5Znj9g/Ww3NIMXhP16n3r99aY8E7m7mQwkGLLx28uF2EhwAA==",
+    "originalBytes": 120763,
+    "originalWidth": 450,
+    "originalHeight": 300,
+    "fetchSeconds": 0.02
+  },
+  "https://www.sapporo.travel/cms/wp-content/uploads/2020/10/tokeidaiMV_slide2.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/c990f165e18df8e5ad17.webp",
+        "width": 640,
+        "height": 320,
+        "bytes": 27160
+      },
+      {
+        "src": "assets/photos/1da7ab74fa5437a590d9.webp",
+        "width": 1200,
+        "height": 600,
+        "bytes": 64952
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRnwAAABXRUJQVlA4IHAAAAAQBACdASoYAAwAPwFqrE6rJiQiMAgBYCAJZQCw7Bn7vtXlrEwTBPvgAAD+5+4OXomOoVZC6YklxKjO/FAY6Ez/HwW7Nx491p6Dkf/e98ZLRwW0NDMPAi5IEks1b+M0DxXu6ggLbcIThq7QBpvFAAAA",
+    "originalBytes": 512653,
+    "originalWidth": 1200,
+    "originalHeight": 600,
+    "fetchSeconds": 0.12
+  },
+  "https://www.sapporo.travel/cms/wp-content/uploads/2020/10/tokeidaiMV_slide1.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/54e8789807752b6ed1f0.webp",
+        "width": 640,
+        "height": 320,
+        "bytes": 77624
+      },
+      {
+        "src": "assets/photos/397ee42e0321c6e91f48.webp",
+        "width": 1200,
+        "height": 600,
+        "bytes": 266686
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAADwAwCdASoYAAwAPwFqrU8rJiQiMAgBYCAJYgCdABdbgAqdt3Tsk04AAP3vka47ax5fWpHafFv+ULLAAElc6UODFdyopq0+OpQSCxK/cxI2mpk3u9wjbcc4asp+kqZxjHdft+2XXfDZJX9P7foD/odNj6ZFg0rlYJGyw55THQAAAA==",
+    "originalBytes": 1094566,
+    "originalWidth": 1200,
+    "originalHeight": 600,
+    "fetchSeconds": 0.25
+  },
+  "https://www.sapporo.travel/cms/wp-content/uploads/2020/10/tokeidaiMV_slide3.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/93a82adb9c7585593a36.webp",
+        "width": 640,
+        "height": 320,
+        "bytes": 28748
+      },
+      {
+        "src": "assets/photos/54c754e3caaf5f5bab29.webp",
+        "width": 1200,
+        "height": 600,
+        "bytes": 74546
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRn4AAABXRUJQVlA4IHIAAACQAwCdASoYAAwAPwForE6rJaQiMAgBYCAJQBOgA74OEuOuL7yAAP7JHfeUuoQ5Y+ROQzQNbVv151c49A5Up1h9wDQ7NlOIBtICK/XMkScTHdhiAW01bFWciIlcpTl6t3jqPPyv6vHHgCqEjNk6BejwAAA=",
+    "originalBytes": 557472,
+    "originalWidth": 1200,
+    "originalHeight": 600,
+    "fetchSeconds": 0.13
+  },
+  "https://www.sapporo.travel/cms/wp-content/uploads/2024/01/616e85b584e6995f652222e6d51d367a-3.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/12aa6c26eb35c51227e6.webp",
+        "width": 640,
+        "height": 426,
+        "bytes": 48978
+      },
+      {
+        "src": "assets/photos/52f7cb5fc7d7d023283b.webp",
+        "width": 800,
+        "height": 533,
+        "bytes": 75780
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRpAAAABXRUJQVlA4IIQAAAAwBACdASoYABAAPwFqrU8rJiQiMAgBYCAJZACdMoACN9tfwlHeTCkqBZAA/uNB5mN77ICA+m/LLo6/Vd4JGrQ3grVYzQpmr/NJwf+FWv2GIjs8UX0B5jm30p6cBkBzhiPoAqMYpGEANTw3mYb/9NGEZkN91np7woT0JUEhSE+k01QAAAA=",
+    "originalBytes": 95665,
+    "originalWidth": 800,
+    "originalHeight": 533,
+    "fetchSeconds": 0.12
+  },
+  "https://www.meg-snow.com/products/img-p/3138_main.png": {
+    "variants": [
+      {
+        "src": "assets/photos/621138efab2902272bb4.webp",
+        "width": 350,
+        "height": 350,
+        "bytes": 15214
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRvIBAABXRUJQVlA4WAoAAAAQAAAAFwAAFwAAQUxQSLsAAAANgBvbdgPlPmnx3kVEkEJOIQwd0Iathh7I6IGhBR+uN3oY8bV0EBETQDWVo/slht1895gKUfngGJbX+XhqOiuzzLRz+myimi5fIshcPHzKgTQ7wRlgr/MWAiN+F+JmskhVjskrWL+mJQYW1UKrqLvBDJaT9avEYLQofuc0aZCpLuZBw9/jGY1GlUnBETPIixVhovJqYc4zpbmYXmdpLiDzz05ukW3Qao9GOycQV8rTiPk83zjY3D18QTOqAFZQOCAQAQAAUAYAnQEqGAAYAD8Bcq9SqyakIqgKqWAgCWwAsRuQOCJAcLlZp5EeBOR6P7tUJoZic6nfand94hPdEQAA/nGb2pFj7Psj0JFjUnzDsLp+4FJlaazBMlWAI+o58SALUAU6ZZBENMlPinnEgsKa23ppxwtxJhQ+Gmk5CYMs8t8P7q++fYVKxQ/pFEoikd36GA1Qv9QwUY3NqkTQ/8wB34Vnmyk8sYboWdXarHR2MQq+K5vRIEpnERklhhFed0k7Sd+o+PdSCgekdLrt9/8EerLMHpdlE0LzxZ/f0M1WuoDRPJT/l7cmGCFckx1GIuLzmvXCWl5hwD2CiImw0xcyyiw/4W+pT36w8e/f0ZMTyqAAAAA=",
+    "originalBytes": 87954,
+    "originalWidth": 350,
+    "originalHeight": 350,
+    "fetchSeconds": 1.4
+  },
+  "https://www.sapporo.travel/cms/wp-content/uploads/2013/06/北海道庁旧本庁舎_馬渕翔様_DSC00093-2.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/ebb01e2a5ec0880823fa.webp",
+        "width": 640,
+        "height": 320,
+        "bytes": 67116
+      },
+      {
+        "src": "assets/photos/d14b3b5a0ac6abab781e.webp",
+        "width": 1200,
+        "height": 600,
+        "bytes": 230430
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRoAAAABXRUJQVlA4IHQAAAAQBACdASoYAAwAPwFurk+rJqQiMAgBYCAJagCdACHo9IdboGzzpUzAAAD+y0sJlKukVy7USXbh4bbJI5prqxkmrBPTpmAAEJ+xZgMENqDPow6xuXBDxirtBxs1ebk8XLa98tAiE31qqNql6Uot3bBCwwAAAA==",
+    "originalBytes": 468914,
+    "originalWidth": 1200,
+    "originalHeight": 600,
+    "fetchSeconds": 1.12
+  },
+  "https://www.sapporo.travel/cms/wp-content/uploads/2013/06/外観寄りヨコ_re.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/7c88a025b830852a8bf2.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 65548
+      },
+      {
+        "src": "assets/photos/f535154beea625ec5d97.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 213084
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRpIAAABXRUJQVlA4IIYAAAAwBACdASoYABAAPwFqrE8rJaQiMAgBYCAJYwC7AB6Ura07dyUM+WM5EoAA/uqWzg0HesgGkt3H2mPDZGwIPdG+fbjmKu0ATxWDXKukSIPMm/gDtyW2J38/fdQXVH/yklDIvMsEi1ud+p6YrPfdmtZQX02l9TrMVkgOjxeQ9ybZB/mIpoAAAA==",
+    "originalBytes": 989401,
+    "originalWidth": 1200,
+    "originalHeight": 800,
+    "fetchSeconds": 1.13
+  },
+  "https://www.sapporo.travel/cms/wp-content/uploads/2024/01/susukino_05-scaled1.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/b513124a503f9a9e22e5.webp",
+        "width": 640,
+        "height": 428,
+        "bytes": 64086
+      },
+      {
+        "src": "assets/photos/1e37b02a3338692f3f85.webp",
+        "width": 1200,
+        "height": 802,
+        "bytes": 178336
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRr4AAABXRUJQVlA4ILIAAADQBACdASoYABAAPwFqrE8rJiQiMAgBYCAJQBUgv/7I7IjMVrM9sLsGClUBw5deAAD+rJeZkWpOgLB0uUG7OeQdokSJh1ueT5E2b9DONwIqZxr0UBIpFr3HzU/l29GBkb20nSiNNMcMv27+QDXRaRSRiXmP75kX1DYcaeaiejToyzFm3qfEOS7j89eg9rveacZxBqaRaCCIAFFG4TPIrp8NNBuKZPvdmRYnptuSJei0gAAA",
+    "originalBytes": 2191945,
+    "originalWidth": 2560,
+    "originalHeight": 1710,
+    "fetchSeconds": 0.3
+  },
+  "https://www.sapporo.travel/white-illumination/assets/images/event/munich/img_002.webp": {
+    "variants": [
+      {
+        "src": "assets/photos/2eccfd9d462c2cdd9557.webp",
+        "width": 640,
+        "height": 453,
+        "bytes": 53798
+      },
+      {
+        "src": "assets/photos/5e0c28e501bc12cf2350.webp",
+        "width": 1029,
+        "height": 729,
+        "bytes": 103508
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRvgAAABXRUJQVlA4IOwAAABwBgCdASoYABEAPwFyslGrJqSiqAqpYCAJagCsMoLUDgMf+bEkvwAywAelIL1qRz4BPVh91LVoQXWuXbAA9qZ9Kw9GEi5aUESmSIiwceBCo9PHgLGHnx/d055ahgVKjBMt+ZTbknZY20JKKI1uSnjizWciEShX/NlZYxssQYGv1UDq0DIcpNhkfXvSo17yzrJXoYn6diGs/2E8u2yxIm9mtE+hiHkGlSxWmqTPPpXsJDIXUgy1DSUImuw9F0WFoEY1b+p4RL36NP/fdvsEzsZRB9/BQFwuDjBr+vgt6Feobkkjp7vsioGr9cAAAA==",
+    "originalBytes": 103872,
+    "originalWidth": 1029,
+    "originalHeight": 729,
+    "fetchSeconds": 0.15
+  },
+  "https://www.secoma.co.jp/aboutus/nurture/kids/images/gaikan.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/56b99cb9afe4c00bec82.webp",
+        "width": 640,
+        "height": 425,
+        "bytes": 25216
+      },
+      {
+        "src": "assets/photos/3712de90f25aef0b14ec.webp",
+        "width": 1000,
+        "height": 664,
+        "bytes": 55008
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRngAAABXRUJQVlA4IGwAAADQAwCdASoYABAAPwFqrE8rJiQiMAgBYCAJaACdABeeg39F5klwJIAA86VvoUdtCBt4YC3sNmhYjMec8R/iVNPe9PNzgSOLMOFVD8x+yyn9iHD4MfSSv47hYgOHrB8GXGqrTyiMSZw3gGAAAAA=",
+    "originalBytes": 392286,
+    "originalWidth": 1000,
+    "originalHeight": 664,
+    "fetchSeconds": 0.1
+  },
+  "https://www.seicomart.co.jp/images/instore/hc/hot_main.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/e6c98f73552eb9feb345.webp",
+        "width": 420,
+        "height": 240,
+        "bytes": 10524
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRpQAAABXRUJQVlA4IIgAAABwBACdASoYAA4APwFqrU8rJiQiMAgBYCAJYgCdMoMYADV0W28O12nxVEpVAAD+hHVcspnv6hF12w5w6fXHchLTqXaqm2tECHvrTDvKCQfeaycrUx+ESGI5NV0QNQSbrN6O1/uD/d1q470eadTWYkyki5HERTgNWQPC/ocRZuNZZwtOI0p0UAAA",
+    "originalBytes": 79153,
+    "originalWidth": 420,
+    "originalHeight": 240,
+    "fetchSeconds": 0.01
+  },
+  "https://www.sapporobeer.jp/brewery/s_museum/img/index-main_img01.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/2ba9cebfc3230596db7c.webp",
+        "width": 640,
+        "height": 331,
+        "bytes": 69220
+      },
+      {
+        "src": "assets/photos/efd3681897c4293566ee.webp",
+        "width": 1200,
+        "height": 621,
+        "bytes": 213638
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAAAwBACdASoYAAwAPwFqrE6rJiQiMAgBYCAJbACdMoADgzLZAFbaieluLkAA+K/0UyXEghMKPM+SncZfwsAdwQXUTFGuIg9YQsYlyVoXt7tXez1GW/Ybgca/8Tgwx/6Jycqo+OjcQRYeHwZ/2QDfIJEODwIGc7Y4xyqFS+pXySYSTB8VIfbpHhhTGEOAFMrieI3muaeQNbH230KNNgAAAA==",
+    "originalBytes": 662870,
+    "originalWidth": 1680,
+    "originalHeight": 870,
+    "fetchSeconds": 0.26
+  },
+  "https://www.sapporo.travel/white-illumination/assets/images/event/munich/main.webp": {
+    "variants": [
+      {
+        "src": "assets/photos/a2b78a0bd2e29ee9e5c3.webp",
+        "width": 640,
+        "height": 396,
+        "bytes": 96418
+      },
+      {
+        "src": "assets/photos/f78775ae1b170dc61c2b.webp",
+        "width": 1200,
+        "height": 742,
+        "bytes": 259574
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRsAAAABXRUJQVlA4ILQAAABwBACdASoYAA8APwForE6rJiQiMAgBYCAJYgC7AYyK1bC2R9G84GIdy7wWAAD+cjSn8zbHI40F5QGJRNq8ZXgauDMR/0bHEg7XWRf28lCWqKE9mwMeyUmTYG6zkpPl84dHhPSLUN68s1pxh1Kz+yKfXh/fkfiCF1zXWPd/FiK09lt4SW+X5t+ygobcQbE+U9OuY70gS7dX9NBuNuCP6K7ixYEE8J6PBqBHdjejsKwITNT8AAA=",
+    "originalBytes": 496286,
+    "originalWidth": 1857,
+    "originalHeight": 1149,
+    "fetchSeconds": 0.33
+  },
+  "https://www.shiroikoibitopark.jp/facility/uploads/06_clocktower_02.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/2b47e0f9febb7e477cfa.webp",
+        "width": 640,
+        "height": 393,
+        "bytes": 21660
+      },
+      {
+        "src": "assets/photos/a574c96ca596425a1e99.webp",
+        "width": 1188,
+        "height": 730,
+        "bytes": 66082
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAACwAwCdASoYAA8APwFsrU8rJiQiMAgBYCAJagCdMoABj9q9XYGOAADTUsgiNfvZDUZK9WraLl9AtSoZq97+xSMTBVxY7jynxezYQj2Nr05O5bLmvtVZ1wAA",
+    "originalBytes": 84982,
+    "originalWidth": 1188,
+    "originalHeight": 730,
+    "fetchSeconds": 0.11
+  },
+  "https://www.shiroikoibitopark.jp/facility/uploads/dream-kitchen1.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/6fedfc914a59940a9222.webp",
+        "width": 640,
+        "height": 393,
+        "bytes": 47868
+      },
+      {
+        "src": "assets/photos/3bbfb3cc8ebf3961817c.webp",
+        "width": 1188,
+        "height": 730,
+        "bytes": 124926
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRqoAAABXRUJQVlA4IJ4AAABwBACdASoYAA8APwForE6rJaQiMAgBYCAJZACdMoMrasAnQQ2QoS3NZWE1XAD+uoNelqniHLXNYxvDrdVTmXTrU2hCX8AvyFsmM/CFSktllI3D5cojgrKWWpaHmQ4iz7/9GR9B1CGAGlSpdmJlgZM1w7KjMhnhLCjNKFL8xcGcl2SlgyDD+WLdES0uFEy9PnsIehnMHLSrGgEUxTwAAA==",
+    "originalBytes": 168550,
+    "originalWidth": 1188,
+    "originalHeight": 730,
+    "fetchSeconds": 0.18
+  },
+  "https://www.shiroikoibitopark.jp/facility/uploads/shiroikoibito-factory1.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/0cd8a37d42fdb051f0a7.webp",
+        "width": 640,
+        "height": 393,
+        "bytes": 36890
+      },
+      {
+        "src": "assets/photos/b4e1cbd3953dc7846f3b.webp",
+        "width": 1188,
+        "height": 730,
+        "bytes": 105842
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRpYAAABXRUJQVlA4IIoAAADQAwCdASoYAA8APwFqrE6rJiQiMAgBYCAJZACsEf/gNezENtpf9QAAzJWgpnUyjl4qFf0bLTBKc1gUUe6ivYEiwnjiJAKasRrF+H5cVJIVCZHLnX0/NtR84HosbXyaiMqR9Pd+pDhsWgolBRvqhJwL6dAZ8NH48mxTIBoI5r/uXeWcxQgXkI7AAAA=",
+    "originalBytes": 152169,
+    "originalWidth": 1188,
+    "originalHeight": 730,
+    "fetchSeconds": 0.16
+  },
+  "https://www.town.biei.hokkaido.jp/files/00005100/00005192/huyu_aoiike.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/77509aeaa7ca7fca0708.webp",
+        "width": 640,
+        "height": 425,
+        "bytes": 77300
+      },
+      {
+        "src": "assets/photos/f3aa7109e5c9cce9587f.webp",
+        "width": 753,
+        "height": 500,
+        "bytes": 110174
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAABwAwCdASoYABAAPwFqrU8rJiQiMAgBYCAJQBOgBDoQc53KHBoA/uk8QSAmyT4ye7zAtRDgJDREu514aXf1YTT56UcfX7bFWydXAighIb2CRbCPsAmJPgyAAAA=",
+    "originalBytes": 426766,
+    "originalWidth": 753,
+    "originalHeight": 500,
+    "fetchSeconds": 0.17
+  },
+  "https://www.visit-hokkaido.jp/gourmet/images/gourmetPhoto-01.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/9f087b0d7f193a063ec5.webp",
+        "width": 640,
+        "height": 358,
+        "bytes": 31834
+      },
+      {
+        "src": "assets/photos/21e5b9898af7529afb6f.webp",
+        "width": 1200,
+        "height": 672,
+        "bytes": 73926
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRrwAAABXRUJQVlA4ILAAAADQBACdASoYAA0APwFqrE6rJiQiMAgBYCAJbACdMoRwFf/l2AKQPk0TJiCYdSz+sAD+29cfQ1b/rhDH6sVXQzrbhCkZTW4ZroKSv9ji3Ua4LHohZ5oIgXHAtE3xrqCvkCUXU1JSzeWHT4+H+6fvmScV9giUoGn/8RphxFbTFrFD2F/VSLc/S4XDt2EFw/51ZQkpMDxLe4pZQrGBMcxYlZ9F7IHr/8I5DcCP0OSD4IYiAA==",
+    "originalBytes": 207890,
+    "originalWidth": 2000,
+    "originalHeight": 1120,
+    "fetchSeconds": 0.17
+  },
+  "https://www.visit-hokkaido.jp/gourmet/images/gourmetPhoto-02.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/88557bb556a59fc991d4.webp",
+        "width": 640,
+        "height": 371,
+        "bytes": 44066
+      },
+      {
+        "src": "assets/photos/6e70bb3c30f4ecd98b29.webp",
+        "width": 1200,
+        "height": 696,
+        "bytes": 106442
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRrYAAABXRUJQVlA4IKoAAADQBACdASoYAA4APwFqrE8rJaQiMAgBYCAJbACdMoR4GdBw7r+tNyQ3fXT1lKb6AAD+3bHtW8/urt7DdbcslofYASO8J1/Jn3NGTke9E+NTbmrP+apMFhWuil/mbnY52qCkjVLq2W/hKcGLTV1oIAO9MioWU6LGZUe5buEhFeq3Uf1gMdxaQY4bie+kCHBNluBxw/j/nIxr8Lxq8qKgPABu+M6aXpV7XXwAAA==",
+    "originalBytes": 275030,
+    "originalWidth": 2000,
+    "originalHeight": 1160,
+    "fetchSeconds": 0.2
+  },
+  "https://www.visit-hokkaido.jp/gourmet/images/gourmetPhoto-03.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/13ff409d3bca90517e1c.webp",
+        "width": 640,
+        "height": 358,
+        "bytes": 35914
+      },
+      {
+        "src": "assets/photos/be6b90b0e839cee22826.webp",
+        "width": 1200,
+        "height": 672,
+        "bytes": 86740
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAAAQBACdASoYAA0APwFqrE6rJiQiMAgBYCAJbACdMoMljEmGGc2QP7HGwgD+7oTmeoEOqRxkFPFm+GcTwqo1PEd1iERvOHQShAuciPtUOwXwt+QvgeaP25HyAYwmF4Z4DouQtSPcRJ6tn6biXHWALfLTIl+8FUXrvivAIS+9UKMONLEVIge3D0zvm7M/QIp6har2FpzWV4Oc3okoMOb6Iu3wNcgEAAAA",
+    "originalBytes": 306894,
+    "originalWidth": 2000,
+    "originalHeight": 1120,
+    "fetchSeconds": 0.18
+  },
+  "https://www.visit-hokkaido.jp/lsc/upfile/individual/0000/0147/147_1_m.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/af8fc000fda0db114363.webp",
+        "width": 640,
+        "height": 425,
+        "bytes": 49416
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRroAAABXRUJQVlA4IK4AAACQBACdASoYABAAPwForE6rJaQiMAgBYCAJbACdMoMYPYABgNDRuKXXOt20BZAA3PQBUK2eEUr/E05W6UCcqIc51oZKMe78uOR1o75+dPV2NCcQn95+24ZZeUYNvmShpVKG/Bdg4aVozrFD6WJUscrQlZLVDlhVA3NG6RrRlmiRA57OxaQF3JLYqJWJfOlH7Y/x9USsfoAqfwY93jepy9L1TNEgHng3NUVYf+AAAAA=",
+    "originalBytes": 110396,
+    "originalWidth": 640,
+    "originalHeight": 425,
+    "fetchSeconds": 0.04
+  },
+  "https://www.sapporo.travel/cms/wp-content/uploads/2024/01/黄昏山河風光小.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/28733b2bfd8e0fca05c7.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 31434
+      },
+      {
+        "src": "assets/photos/1a36d6882c3c7d9de056.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 80138
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRp4AAABXRUJQVlA4IJIAAABwBACdASoYABAAPwFqrE8rJiQiMAgBYCAJbACdLwABemBAc1qqD2xSSCq6AAD+2e3XV8ID+76dGc/k5LB/TN53y2mzZZUxoq/32xAWevcBHH9ayJhxeKIxhPAylkmxZvz/bwUe/GOZDfvuiejpHdsZHpCzvXwkwd4drTrrRJ4L0fqYOe+S9ha/cNoKMAOjxroAAA==",
+    "originalBytes": 937771,
+    "originalWidth": 1500,
+    "originalHeight": 1000,
+    "fetchSeconds": 1.11
+  },
+  "https://www.visit-hokkaido.jp/gourmet/images/gourmetPhoto-06.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/08b7e4b7519231602a51.webp",
+        "width": 640,
+        "height": 352,
+        "bytes": 18456
+      },
+      {
+        "src": "assets/photos/973a8b1c498e35105553.webp",
+        "width": 1200,
+        "height": 660,
+        "bytes": 47700
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRpgAAABXRUJQVlA4IIwAAABQBACdASoYAA0APwFqrU8rJaQiMAgBYCAJbACdMoR4GCnH8o8T11Y+5ugAAP7tR2ulS4501Pcxfal46nsS2LJfwlz8nTnQg874gHHzp5sP8jlkkq9bvcvN8gibz9E6TmVo9KQrMDKbXNLVth9QLa5KF99eRBDCCy5+3eCzobvGDy2QTiNfM/7yxczQAA==",
+    "originalBytes": 153698,
+    "originalWidth": 2000,
+    "originalHeight": 1100,
+    "fetchSeconds": 0.14
+  },
+  "https://www.visit-hokkaido.jp/lsc/upfile/individual/0000/0172/172_1_m.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/3e42352796cab105fc66.webp",
+        "width": 640,
+        "height": 426,
+        "bytes": 63432
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRqQAAABXRUJQVlA4IJgAAADQBACdASoYABAAPwFqrU8rJiQiMAgBYCAJbACdMoR4OsCrjW/+A8hE4VudGcetAAD+oFXqagOj/NFKFkGQ4HF3BjvgFg9QMOXDafremXnY1Fi+OWjw5kTAnJTfczz6uVH4Rmm9u8KpnP+wFwOF+5zG7if7JzdFAthCq0ly7q1eI1fv4SIkysDGn1+zneXjhsJSZUSmqj9kAA==",
+    "originalBytes": 136957,
+    "originalWidth": 640,
+    "originalHeight": 426,
+    "fetchSeconds": 0.05
+  },
+  "https://www.visit-hokkaido.jp/lsc/upfile/spot/0001/0043/10043_6_l.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/c638302221b9008fa40c.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 28452
+      },
+      {
+        "src": "assets/photos/3399199facddf6352f98.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 67036
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRqYAAABXRUJQVlA4IJoAAACQBACdASoYABAAPwForE6rJiQiMAgBYCAJZQDA3Yxi7S3pYNkqH2aufmRFKAAA/q0hDL0/4WNQFacKHnZ4qnGvxczre/xDNcEEGrVPIofhiueb1wZGnzdgNjm6d6dz2wrmyEi6KvjtT+N3FZFZgCL0+O9Ux1bEd4+krZQ0u6/SnI6t5bhY48ZBS2kuoC3gOt4Nvt/phZHKAAAA",
+    "originalBytes": 218148,
+    "originalWidth": 1280,
+    "originalHeight": 853,
+    "fetchSeconds": 0.16
+  },
+  "https://www.visit-hokkaido.jp/lsc/upfile/spot/0001/0043/10043_2_l.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/b2d10ce2ff93d1b7df85.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 38592
+      },
+      {
+        "src": "assets/photos/7c9240c051f2abfd21e1.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 95670
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRowAAABXRUJQVlA4IIAAAAAwBACdASoYABAAPwFqrE6rJiQiMAgBYCAJQBadA4mRH06yrSbMzmq0w5AA/jmtHTq61OC+om9HlOxHqJa1WmuO9q8bnmZXiGRLO46A/zKKPMpQ2MRhopiz940Lpa2hG6zEU39MVrq+b95ZlEjEQfj42QyOIfSuWVDMKTK0rgAAAA==",
+    "originalBytes": 266530,
+    "originalWidth": 1280,
+    "originalHeight": 853,
+    "fetchSeconds": 0.19
+  },
+  "https://www.visit-hokkaido.jp/lsc/upfile/spot/0001/0043/10043_4_l.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/59fc219f717ca4e7d9ac.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 32738
+      },
+      {
+        "src": "assets/photos/e253d03f8742f57bc9bd.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 82380
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRrIAAABXRUJQVlA4IKYAAABQBACdASoYABAAPwFqrE8rJiQiMAgBYCAJQBTihDwI6Be9Iu/59ShuUo6UAP7yq6MzGzPVs/zlnt8BwqJ4Gg8YjmxiXSE1kdfyZ+abfC2weU2+RJdQ7uDaLm72Gwz8URCILPvJVXaX9vfqbQApLb4Q6Cd5o8KtBhOpCPzrsWVDIEE0a4KnwDQKYeIAJ4DtdELSGe0qp568v+M20ppIwELCqsVp4yAA",
+    "originalBytes": 239069,
+    "originalWidth": 1280,
+    "originalHeight": 853,
+    "fetchSeconds": 0.17
+  },
+  "https://www.sapporo.travel/cms/wp-content/uploads/2024/01/★眺望_夜_南３-1-scaled.jpg": {
+    "variants": [
+      {
+        "src": "assets/photos/6fc7f9e43daf54d32737.webp",
+        "width": 640,
+        "height": 427,
+        "bytes": 73230
+      },
+      {
+        "src": "assets/photos/13b6507e5687aa8eb034.webp",
+        "width": 1200,
+        "height": 800,
+        "bytes": 208882
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRpoAAABXRUJQVlA4II4AAAAwBACdASoYABAAPwFqrE8rJiQiMAgBYCAJZQDA3CHN8W64d1p9NhffhAAA/u7W1WMEb/3G4xpEcqXUwxylKWYyOIwpzKcuWTn02vExn9ggWLSn8p1pmrjAj+PvkfA4hLaVGwNf5cJQusonRYrBn8TtjX36t9/bJ+Z9ndvfQAOioHKr5MzON7fdbxtAUQAA",
+    "originalBytes": 978884,
+    "originalWidth": 2560,
+    "originalHeight": 1707,
+    "fetchSeconds": 1.63
+  },
+  "https://www.seicomart.co.jp/images/instore/randing/milk/img_7.png": {
+    "variants": [
+      {
+        "src": "assets/photos/7ef707ceb2ede2d65125.webp",
+        "width": 630,
+        "height": 500,
+        "bytes": 50380
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRt4BAABXRUJQVlA4WAoAAAAQAAAAFwAAEgAAQUxQSPcAAAABkKRtm6FX318dLcDmzE5mtm1npFkWkRVkbGNk2+Y0ObZ9+q+q96A6vYWImACybN8s99UzRqZ9fgE4JnNsFrrQrV0aM5MPgf/DSTPRKjkAKeJMtUCBWLLTNI09oBFCEUdm6wxitZz01IRgZjGoMQhyA4BVsjEVOSh0bv2QRJqFMUZUrcCPYUhA4msgqQ2+XQoJgCPF3tHd10+jKoMD/Cdk4szbr/orhwfsKyQqXgDQ46nSYE8BfRJCWrFB5Qbbqt/rkBC4oVJuFULwz2uCSynEryXBuc7PqBLqA6i38f8dhYwsb6/PTXV3zN6+f3KzM10yeTTV091JAFZQOCDAAAAAEAUAnQEqGAATAD8Bcq5SqyajoqgKqWAgCWgAA+VxByoC0zVecQNX1xxZ/3fSbSahAAD+3xvhXAvr4z5xWX1NVKRyHZJWX9IOkI2jSKRaokG6PUXjZ3fkximhdwPJGeq6r+a7II7UmWaE7WReukhLEELSprtt7Y46mwpuIcKWluObfwciKAGAvIkk/oT7YQ/Wn5Zn0iooIz1205/ASK5jsR4qNtC1fd/Xq5O3uDLVMrHDJFcc+vFcdwcWTzuphIAA",
+    "originalBytes": 411539,
+    "originalWidth": 630,
+    "originalHeight": 500,
+    "fetchSeconds": 1.44
+  },
+  "https://www.maruchan.co.jp/products/upload/picture/c891191dc5393792b10c2749bbf00207.png": {
+    "variants": [
+      {
+        "src": "assets/photos/04282208610a82d7d67b.webp",
+        "width": 640,
+        "height": 640,
+        "bytes": 71978
+      },
+      {
+        "src": "assets/photos/8a1f0a0fa17134315289.webp",
+        "width": 760,
+        "height": 760,
+        "bytes": 85836
+      }
+    ],
+    "placeholder": "data:image/webp;base64,UklGRiQCAABXRUJQVlA4WAoAAAAQAAAAFwAAFwAAQUxQSOYAAAAFgCPZtmpln/ssxt2J3EldIidyMpcBEDMBtxBicvfQXSfgHr33/78Hff8yg4iYAPyjIIBc8A+WADFUEhNnRJiGLogAZiml9Dp8e0LcMw6F3DWD3VyPAMA/6BfyGTsF5mky/3Av6SYt4CKAyS+m55SwfQ0qvTkRC0wKmCpjZ3yaAp/WET+oaCi2RdFcTKEUCqTYjEpmUsB0E6NDU+Bjz3YZpPBLCqw31FfVezVy59U3Z+ffgeEBBoN/IRCLtUovSGPfdLsFt7za+Gh4GQROCLEsQxfMPsexP85BjJ9Cwj2B8bsgVyzxr1ZQOCAYAQAAUAYAnQEqGAAYAD8BcK1RKyYkIqgNUWAgCWwArCCqHAI4EIBq+yDsnfG+gLONOhygDLyJt4XWG0cgJ2AA/up9ZMSDnxPHFTmxqHWPfL75SsDrCa1D0Hu9i+kTx9foTJaksyTHgur5Z/Y29PbYArDt7xBam2o1lh7n3vkmV3GYb3GLOym8U8uvxiUbo4F68NX7Py2z4OWhQhRdrJhCeWNG0ZBYhbBBEHv5Ub/f4mC3yiA5LSrgBheTd3noPiWSNugq2LNwHrDmGPxGMMg/YdinCSOPnnL7Mx891tR7zr8t0Dx+xBzgT9GoG+og4afrTUaPHX7Cd/Fo95290kCQn5r8Y+CujMB8WDmirYxFA07cSNxRcERLI2AAAA==",
+    "originalBytes": 544351,
+    "originalWidth": 760,
+    "originalHeight": 760,
+    "fetchSeconds": 3.93
+  }
+}

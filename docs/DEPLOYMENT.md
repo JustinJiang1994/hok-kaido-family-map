@@ -47,3 +47,7 @@ curl -fsS -o /dev/null https://120.26.54.152/hokkaido/
 ```
 
 上线前配置备份：`/etc/nginx/hokkaido.pre-tls.conf`。不要用不带证书路径的旧配置覆盖当前 HTTPS 配置。
+
+## 图片资源发布
+版本化 WebP 位于 dist/assets/photos；部署先复制图片、启用仅该路径的一年 immutable 缓存，再原子替换 HTML。照片路径为相对路径，兼容 /hokkaido/。首次启用缓存仅增补北海道站点 location，保留 TLS 配置，nginx -t 通过才 reload；幸福助手服务不操作。
+本地 --output 输出旁会生成 hokkaido-assets/photos，移动 HTML 时须同时携带该文件夹。旧哈希图片保留，支持旧 HTML 回滚。
