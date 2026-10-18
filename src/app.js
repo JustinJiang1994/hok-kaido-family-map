@@ -22,7 +22,7 @@ setTimeout(()=>{if(!tileSuccess){$('#mapStatus').className='error';$('#mapStatus
 const routeLayer=L.layerGroup().addTo(map),markerLayer=L.layerGroup().addTo(map);
 const userLayer=L.layerGroup().addTo(map);
 function drawUserLocation(){userLayer.clearLayers();if(!userPosition||region==='行程总览')return;L.circle([userPosition.lat,userPosition.lon],{radius:userPosition.accuracy,color:'#1769d2',weight:1,fillOpacity:.08,interactive:false}).addTo(userLayer);L.circleMarker([userPosition.lat,userPosition.lon],{radius:8,color:'white',weight:3,fillColor:'#1769d2',fillOpacity:1,interactive:false}).addTo(userLayer);}
-function placeLocationInfo(p){const distance=userPosition?'距上次定位约 '+Nearby.format(Nearby.distance(userPosition,p))+' · 直线距离（非步行距离）':'';return `<div class="place-location">${distance?'<p>'+distance+'</p>':''}<a target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(p.lat+','+p.lon)}">用 Google 地图导航 ↗</a><small>地点标点为参考位置，请在地图中确认入口。</small></div>`;}
+function placeLocationInfo(p){return `<a class="place-navigation" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(p.lat+','+p.lon)}" aria-label="用 Google 地图导航到${esc(p.name)}">用 Google 地图导航 ↗</a>`;}
 const placeColor=p=>p.type==='food'?'#c65c18':p.type==='shop'?'#6351b5':p.type==='hub'?'#54677c':'#c02570';
 function renderMarkers(){
  if(region==='行程总览')return;
@@ -170,8 +170,6 @@ function startLocationWatch(focus=null){
   status.textContent='● 定位已开启 · '+new Date(located.time).toLocaleTimeString('zh-CN',{hour:'2-digit',minute:'2-digit',second:'2-digit'})+'更新 · 精度约'+Nearby.format(located.accuracy);
   drawUserLocation();
   if(region!=='行程总览'){updatePlaceFilter();renderMarkers();}
-  // Update only the distance text: leave the open photos and scroll position intact.
-  if(detail.open&&selectedId){const p=PLACES.find(p=>p.id===selectedId),box=detail.querySelector('.place-location');if(p&&box){let line=box.querySelector('p');if(!line){line=document.createElement('p');box.prepend(line);}line.textContent='距上次定位约 '+Nearby.format(Nearby.distance(located,p))+' · 直线距离（非步行距离）';}}
  },err=>fail(err.code),{enableHighAccuracy:true,timeout:15000,maximumAge:0});}catch(e){fail(2);}
 }
 document.addEventListener('visibilitychange',()=>{
