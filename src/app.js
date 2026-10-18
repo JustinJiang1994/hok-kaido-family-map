@@ -141,14 +141,14 @@ function startLocationWatch(focus=null){
  const status=$('#locationStatus');locationFocus=focus;
  if(!window.isSecureContext){status.textContent='请通过 HTTPS 网站打开后使用定位。';return;}
  if(!navigator.geolocation){status.textContent='此浏览器不支持定位，请在 Safari 或其他浏览器中打开。';return;}
- stopLocationWatch();locationEnabled=true;$('#clearLocation').hidden=false;
+ stopLocationWatch();locationEnabled=true;
  const request=locationRequest;
- status.textContent='正在获取位置，请允许定位；未弹出提示可点“查看我附近”。';
- locationDeadline=setTimeout(()=>{if(request===locationRequest&&!userPosition)status.textContent='尚未获取位置，可点“查看我附近”重试，或继续浏览地图。';},20000);
+ status.textContent='正在获取位置，允许定位后自动更新。';
+ locationDeadline=setTimeout(()=>{if(request===locationRequest&&!userPosition)status.textContent='尚未获取位置，可检查浏览器定位权限后刷新；也可继续浏览地图。';},20000);
  const fail=code=>{
   if(request!==locationRequest)return;
   clearTimeout(locationDeadline);
-  if(code===1){locationEnabled=false;stopLocationWatch();$('#clearLocation').hidden=!userPosition;}
+  if(code===1){locationEnabled=false;stopLocationWatch();}
   status.textContent=Nearby.error(code)+(userPosition?' 当前显示上次位置。':'');
  };
  try{locationWatch=navigator.geolocation.watchPosition(pos=>{
@@ -156,7 +156,7 @@ function startLocationWatch(focus=null){
   clearTimeout(locationDeadline);
   const located={lat:pos.coords.latitude,lon:pos.coords.longitude,accuracy:pos.coords.accuracy,time:pos.timestamp||Date.now()};
   const nearest=PLACES.filter(p=>p.type!=='hub').reduce((a,b)=>Nearby.distance(located,a)<Nearby.distance(located,b)?a:b);
-  const focusNow=locationFocus==='manual'||(locationFocus==='auto'&&Nearby.distance(located,nearest)<50000);
+  const focusNow=locationFocus==='auto'&&Nearby.distance(located,nearest)<50000;
   locationFocus=null;
   userPosition=located;
   if(focusNow){
@@ -165,7 +165,6 @@ function startLocationWatch(focus=null){
    placeType=requestedType;nearbyMode=true;
    map.setView([located.lat,located.lon],14,{animate:false});
   }
-  $('#locate').textContent='⌖ 查看我附近';
   status.textContent='● 定位已开启 · '+new Date(located.time).toLocaleTimeString('zh-CN',{hour:'2-digit',minute:'2-digit',second:'2-digit'})+'更新 · 精度约'+Nearby.format(located.accuracy);
   drawUserLocation();
   if(region!=='行程总览'){updatePlaceFilter();renderMarkers();}
@@ -173,13 +172,6 @@ function startLocationWatch(focus=null){
   if(detail.open&&selectedId){const p=PLACES.find(p=>p.id===selectedId),box=detail.querySelector('.place-location');if(p&&box){let line=box.querySelector('p');if(!line){line=document.createElement('p');box.prepend(line);}line.textContent='距上次定位约 '+Nearby.format(Nearby.distance(located,p))+' · 直线距离（非步行距离）';}}
  },err=>fail(err.code),{enableHighAccuracy:true,timeout:15000,maximumAge:0});}catch(e){fail(2);}
 }
-$('#clearLocation').onclick=()=>{
- locationEnabled=false;locationFocus=null;stopLocationWatch();userPosition=null;nearbyMode=false;userLayer.clearLayers();
- $('#clearLocation').hidden=true;$('#locationStatus').textContent='定位已关闭 · 可继续手动查看地图';
- if(detail.open){const line=detail.querySelector('.place-location p');if(line)line.remove();}
- updatePlaceFilter();fitRegion();renderMarkers();
-};
-$('#locate').onclick=()=>startLocationWatch('manual');
 document.addEventListener('visibilitychange',()=>{
  if(document.hidden){stopLocationWatch();if(locationEnabled)$('#locationStatus').textContent='定位已暂停 · 返回页面后继续更新';}
  else if(locationEnabled)startLocationWatch(locationFocus);
