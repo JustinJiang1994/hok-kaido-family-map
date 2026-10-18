@@ -1,15 +1,17 @@
 'use strict';
 const $=s=>document.querySelector(s),esc=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-let region='行程总览',placeType='sight',current=[],markers=[],bounds,selectedId=null;
+let region='行程总览',placeTypes=new Set(['sight']),current=[],markers=[],bounds,selectedId=null;
 let userPosition=null,nearbyMode=false,locationRequest=0,locationWatch=null,locationEnabled=false,locationFocus=null,locationDeadline=null;
 const PLACE_TYPES={sight:'景点',food:'餐厅',shop:'购物'};
 function updatePlaceFilter(){
  $('#mapTitle').textContent=nearbyMode?'我的附近':region==='行程总览'?'北海道全览':region+'地图';
- current=PLACES.filter(p=>p.type===placeType&&(nearbyMode&&userPosition?Nearby.distance(userPosition,p)<=Nearby.radius:p.city===region));
+ current=PLACES.filter(p=>placeTypes.has(p.type)&&(nearbyMode&&userPosition?Nearby.distance(userPosition,p)<=Nearby.radius:p.city===region));
  if(nearbyMode)current.sort((a,b)=>Nearby.distance(userPosition,a)-Nearby.distance(userPosition,b));
- document.querySelectorAll('[data-place-type]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.placeType===placeType)));
- if(nearbyMode){$('#mapHint').textContent=current.length?'附近5公里内已收录'+current.length+'个'+PLACE_TYPES[placeType]+' · 点圆点查看':'附近5公里内暂无已收录的'+PLACE_TYPES[placeType]+'，可换类型或退出定位';return;}
- if(region!=='行程总览')$('#mapHint').textContent=current.length?'只显示'+PLACE_TYPES[placeType]+' · 点圆点查看介绍 · 双指缩放':'暂未添加'+region+'的'+PLACE_TYPES[placeType]+'地点，可切换其他类型';
+ document.querySelectorAll('[data-place-type]').forEach(b=>b.setAttribute('aria-pressed',String(placeTypes.has(b.dataset.placeType))));
+ const typeLabel=Object.keys(PLACE_TYPES).filter(t=>placeTypes.has(t)).map(t=>PLACE_TYPES[t]).join('、');
+ if(!placeTypes.size){$('#mapHint').textContent='请选择要显示的类型 · 可多选';return;}
+ if(nearbyMode){$('#mapHint').textContent=current.length?'附近5公里内已收录'+current.length+'个'+typeLabel+' · 点圆点查看':'附近5公里内暂无已收录的'+typeLabel+'，可选择其他类型';return;}
+ if(region!=='行程总览')$('#mapHint').textContent=current.length?'显示'+typeLabel+' · 可多选 · 点圆点查看介绍':'暂未添加'+region+'的'+typeLabel+'地点，可切换其他类型';
 }
 
 const map=L.map('map',{zoomAnimation:false,fadeAnimation:false,scrollWheelZoom:false,zoomControl:true,minZoom:5,maxZoom:18}).setView([43.2,142.1],7);
@@ -125,8 +127,8 @@ function render(){
  if(overview){setupJourney();if(!matchMedia('(prefers-reduced-motion: reduce)').matches)startJourney();}else renderMarkers();
  drawUserLocation();$('main').scrollTop=0;
 }
-$('#days').onclick=e=>{const b=e.target.closest('[data-region]');if(b){locationFocus=null;nearbyMode=false;region=b.dataset.region;placeType='sight';render();}};
-$('#placeLegend').onclick=e=>{const b=e.target.closest('[data-place-type]');if(!b||region==='行程总览')return;placeType=b.dataset.placeType;selectedId=null;if(detail.open)detail.close();updatePlaceFilter();renderMarkers();};
+$('#days').onclick=e=>{const b=e.target.closest('[data-region]');if(b){locationFocus=null;nearbyMode=false;region=b.dataset.region;placeTypes=new Set(['sight']);render();}};
+$('#placeLegend').onclick=e=>{const b=e.target.closest('[data-place-type]');if(!b||region==='行程总览')return;const type=b.dataset.placeType;if(placeTypes.has(type))placeTypes.delete(type);else placeTypes.add(type);selectedId=null;if(detail.open)detail.close();updatePlaceFilter();renderMarkers();};
 document.addEventListener('visibilitychange',()=>{if(document.hidden)stopJourney();else if(region==='行程总览'&&!matchMedia('(prefers-reduced-motion: reduce)').matches)startJourney();});
 $('#fit').onclick=()=>{locationFocus=null;nearbyMode=false;updatePlaceFilter();fitRegion();renderMarkers();};map.on('moveend',()=>{if(region==='行程总览')drawOverviewLabels();else renderMarkers();});map.on('resize',()=>{if(bounds)fitRegion();});
 render();
@@ -160,9 +162,9 @@ function startLocationWatch(focus=null){
   locationFocus=null;
   userPosition=located;
   if(focusNow){
-   const requestedType=placeType;
+   const requestedTypes=new Set(placeTypes);
    document.querySelector('[data-region="'+nearest.city+'"]').click();
-   placeType=requestedType;nearbyMode=true;
+   placeTypes=requestedTypes;nearbyMode=true;
    map.setView([located.lat,located.lon],14,{animate:false});
   }
   status.textContent='● 定位已开启 · '+new Date(located.time).toLocaleTimeString('zh-CN',{hour:'2-digit',minute:'2-digit',second:'2-digit'})+'更新 · 精度约'+Nearby.format(located.accuracy);
