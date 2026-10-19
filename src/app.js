@@ -82,7 +82,7 @@ function drawOverviewLabels(){
 function drawDay(index){
  dayIndex=index;const day=JOURNEY[index];
  $('#journeyPanel').classList.remove('has-arrived');$('#journeyTitle').textContent=day.title;$('#journeyRoute').textContent=day.route;drawOverviewLabels();
- started=performance.now();elapsed=0;
+ started=performance.now();elapsed=0;document.dispatchEvent(new CustomEvent('journeychange',{detail:index}));
 }
 function setupJourney(){
  overviewLayer.clearLayers();
