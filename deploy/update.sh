@@ -15,10 +15,6 @@ cp dist/index.html "dist/index.html.backup-$previous"
 # Content-hashed filenames allow old and new HTML to share this directory safely.
 mkdir -p dist/assets/photos
 cp -n "$release"/dist/assets/photos/*.webp dist/assets/photos/
-if [ -d "$release/dist/assets/vendor" ]; then
-  mkdir -p dist/assets/vendor
-  cp -R "$release/dist/assets/vendor/." dist/assets/vendor/
-fi
 python3 "$release/deploy/enable-photo-cache.py"
 git merge --ff-only "$revision"
 install -m 644 "$release/dist/index.html" dist/index.html.next

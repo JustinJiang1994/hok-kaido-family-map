@@ -14,7 +14,7 @@ def build(output=None):
     for name in ['vendor/leaflet.css', 'style.css']:
         html = html.replace(f'<link rel="stylesheet" href="{name}">',
                             '<style>' + (source / name).read_text(encoding='utf-8') + '</style>')
-    for name in ['vendor/leaflet.js', 'data.js', 'media.js', 'outline.js', 'location.js', 'images.js', 'app.js', 'intro.js', 'terrain.js', 'weather.js']:
+    for name in ['vendor/leaflet.js', 'data.js', 'media.js', 'outline.js', 'location.js', 'images.js', 'app.js', 'intro.js', 'journey-photos.js', 'weather.js']:
         html = html.replace(f'<script src="{name}"></script>',
                             '<script>\n' + (source / name).read_text(encoding='utf-8') + '\n</script>')
     manifest=json.loads((ROOT/'content/image-assets.json').read_text())
@@ -30,10 +30,6 @@ def build(output=None):
         tag=tag.replace(found.group(0),'src="'+asset['placeholder']+'" data-photo-src="'+variants[-1]['src']+'" data-photo-srcset="'+', '.join(v['src']+' '+str(v['width'])+'w' for v in variants)+'" sizes="(max-width:600px) calc(100vw - 40px), 800px" class="progressive-photo"')
         return tag
     html=re.sub(r'<img\b[^>]*>',responsive,html)
-    html=html.replace('// Local, pinned renderer;', 'const TERRAIN_VENDOR_BASE='+json.dumps(asset_dir.replace('/photos','/vendor')+'/')+';\n// Local, pinned renderer;',1)
-    vendor=target.parent/asset_dir.replace('/photos','/vendor')
-    vendor.mkdir(parents=True,exist_ok=True)
-    for name in ['maplibre-gl.js','maplibre-gl.css','LICENSE-MapLibre']:shutil.copy2(source/'vendor'/name,vendor/name)
     dest=target.parent/asset_dir
     dest.mkdir(parents=True,exist_ok=True)
     for file in (source/'assets/photos').glob('*.webp'):shutil.copy2(file,dest/file.name)
