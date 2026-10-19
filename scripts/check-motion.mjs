@@ -1,0 +1,25 @@
+import fs from 'node:fs';
+import vm from 'node:vm';
+import assert from 'node:assert/strict';
+const source=fs.readFileSync('src/app.js','utf8');
+const extract=(name,next)=>source.slice(source.indexOf('function '+name+'('),source.indexOf(next,source.indexOf('function '+name+'(')));
+let clock=0,nextId=0,reduced=false,rect={top:0,bottom:500,left:0,right:390};
+const frames=new Map(),classes=new Set();
+const panel={classList:{toggle(k,on){on?classes.add(k):classes.delete(k);}}};
+const ctx=vm.createContext({performance:{now:()=>clock},document:{hidden:false,querySelector:()=>({getBoundingClientRect:()=>rect}),body:panel},innerHeight:760,innerWidth:390,matchMedia:()=>({matches:reduced}),requestAnimationFrame:fn=>{frames.set(++nextId,fn);return nextId;},cancelAnimationFrame:id=>frames.delete(id),$:()=>panel});
+vm.runInContext(`let region='行程总览',playing=false,animation=0,started=0,elapsed=0,dayIndex=0;
+const JOURNEY_HUBS={a:[0,0],b:[10,10],airport:[0,0]},JOURNEY=[{points:['a','b']}];
+const traveler={setLatLng(p){this.pos=p}},activeLine={setLatLngs(p){this.points=p}};
+function drawDay(i){dayIndex=i;started=performance.now();elapsed=0;}
+`+extract('stopJourney','function drawOverviewLabels')+extract('tickJourney','function fitRegion'),ctx);
+const run=s=>vm.runInContext(s,ctx);
+run('syncJourneyPlayback();syncJourneyPlayback();startJourney()');assert.equal(frames.size,1,'only one animation loop');
+clock=1000;const [id,frame]=frames.entries().next().value;frames.delete(id);frame(clock);assert.deepEqual(Array.from(run('traveler.pos')),[6.25,6.25]);
+ctx.document.hidden=true;run('syncJourneyPlayback()');assert.equal(frames.size,0);
+clock=40000;ctx.document.hidden=false;run('syncJourneyPlayback()');assert.equal(run('started'),39000,'resume without background time jump');assert.equal(frames.size,1);
+rect.top=900;rect.bottom=1300;run('syncJourneyPlayback()');assert.equal(frames.size,0,'offscreen stops playback');
+rect.top=0;rect.bottom=500;run("region='札幌';syncJourneyPlayback()");assert.equal(frames.size,0,'regional map stays still');
+run("region='行程总览'");reduced=true;run('syncJourneyPlayback()');assert.equal(frames.size,0,'reduced motion honored');
+reduced=false;run('syncJourneyPlayback()');assert.equal(frames.size,1);
+assert.ok(source.includes('photoOpener?.focus({preventScroll:true})'));
+console.log('Motion lifecycle passed: one loop, background resume, offscreen pause, regional isolation, reduced motion.');

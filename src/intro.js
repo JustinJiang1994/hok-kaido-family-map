@@ -15,3 +15,15 @@
   document.body.classList.add('reading-open');dialog.showModal();dialog.querySelector('.reader-scroll').scrollTop=0;photoObserver?.disconnect();photoObserver=PhotoLoader.observe(dialog.querySelector('.reader-scroll'));
  }));
 })();
+
+// Reveal each cover once; weather movement pauses off-screen and in background tabs.
+(() => {
+ const covers=new IntersectionObserver(entries=>entries.forEach(entry=>{
+  if(entry.isIntersecting){entry.target.classList.add('motion-seen');covers.unobserve(entry.target);}
+ }),{threshold:.12});
+ document.querySelectorAll('[data-topic]').forEach(card=>covers.observe(card));
+ const weather=document.querySelector('#tripWeather');
+ if(weather)new IntersectionObserver(entries=>entries.forEach(entry=>entry.target.classList.toggle('weather-motion-visible',entry.isIntersecting))).observe(weather);
+ const visibility=()=>document.body.classList.toggle('motion-page-hidden',document.hidden);
+ document.addEventListener('visibilitychange',visibility);visibility();
+})();

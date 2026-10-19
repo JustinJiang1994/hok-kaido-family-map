@@ -97,13 +97,23 @@ function setupJourney(){
 }
 function tickJourney(now){
  if(!playing||region!=='行程总览')return;
- const t=Math.min(1,(now-started)/2200),points=JOURNEY[dayIndex].points.map(k=>JOURNEY_HUBS[k]);
+ const t=Math.min(1,(now-started)/2000),points=JOURNEY[dayIndex].points.map(k=>JOURNEY_HUBS[k]);
  const u=Math.min(1,t/0.8),pos=[points[0][0]+(points[1][0]-points[0][0])*u,points[0][1]+(points[1][1]-points[0][1])*u];
  $('#journeyPanel').classList.toggle('has-arrived',u===1);traveler.setLatLng(pos);activeLine.setLatLngs([...JOURNEY.slice(0,dayIndex+1).map(d=>JOURNEY_HUBS[d.points[0]]),pos]);
  if(t>=1){if(dayIndex===JOURNEY.length-1){activeLine.setLatLngs([JOURNEY_HUBS.airport]);drawDay(0);}else drawDay(dayIndex+1);}
  animation=requestAnimationFrame(tickJourney);
 }
-function startJourney(){playing=true;started=performance.now()-elapsed;animation=requestAnimationFrame(tickJourney);}
+function startJourney(){
+ if(playing||document.hidden||region!=='行程总览'||matchMedia('(prefers-reduced-motion: reduce)').matches)return;
+ playing=true;started=performance.now()-elapsed;animation=requestAnimationFrame(tickJourney);
+}
+function syncJourneyPlayback(){
+ const r=document.querySelector('#map').getBoundingClientRect();
+ const visible=r.bottom>0&&r.top<innerHeight&&r.right>0&&r.left<innerWidth;
+ if(document.hidden||region!=='行程总览'||!visible||matchMedia('(prefers-reduced-motion: reduce)').matches)stopJourney();
+ else startJourney();
+ document.body.classList.toggle('journey-running',playing);
+}
 function fitRegion(){
  if(region==='行程总览'){
   map.options.zoomSnap=0.1;
@@ -130,7 +140,7 @@ function render(){
 }
 $('#days').onclick=e=>{const b=e.target.closest('[data-region]');if(b){locationFocus=null;nearbyMode=false;region=b.dataset.region;placeTypes=new Set(['sight']);render();}};
 $('#placeLegend').onclick=e=>{const b=e.target.closest('[data-place-type]');if(!b||region==='行程总览')return;const type=b.dataset.placeType;if(placeTypes.has(type))placeTypes.delete(type);else placeTypes.add(type);selectedId=null;if(detail.open)detail.close();updatePlaceFilter();renderMarkers();};
-document.addEventListener('visibilitychange',()=>{if(document.hidden)stopJourney();else if(region==='行程总览'&&!matchMedia('(prefers-reduced-motion: reduce)').matches)startJourney();});
+
 $('#fit').onclick=()=>{locationFocus=null;nearbyMode=false;updatePlaceFilter();fitRegion();renderMarkers();};map.on('moveend',()=>{if(region==='行程总览')drawOverviewLabels();else renderMarkers();});map.on('resize',()=>{if(bounds)fitRegion();});
 render();
 
@@ -184,16 +194,19 @@ setTimeout(()=>{if(!document.hidden)startLocationWatch('auto');else locationEnab
 
 // Fullscreen photos use the same optimized assets as the detail sheet.
 const photoViewer=document.createElement('dialog');photoViewer.id='photoViewer';photoViewer.setAttribute('aria-label','景点照片');document.body.append(photoViewer);
+let photoOpener;
 function openPhotoViewer(photos,start){
+ photoOpener=document.activeElement;
  photoViewer.innerHTML=`<header><span>左右滑动查看照片</span><button autofocus type="button">关闭 ×</button></header><div class="viewer-track">${photos.map((p,i)=>`<figure><div class="photo-frame">${PhotoLoader.markup(p,i)}<div class="photo-error" hidden>照片暂未加载<button type="button">重新加载</button></div></div><figcaption>${esc(p.caption)}<small>${i+1} / ${photos.length} · 照片：${esc(p.credit)}</small></figcaption></figure>`).join('')}</div>`;
  photoViewer.querySelector('header button').onclick=()=>photoViewer.close();photoViewer.showModal();
  const track=photoViewer.querySelector('.viewer-track');track.scrollLeft=start*track.clientWidth;PhotoLoader.near(track,start);
  track.addEventListener('scroll',()=>PhotoLoader.near(track,Math.round(track.scrollLeft/track.clientWidth)),{passive:true});
- track.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();track.scrollBy({left:track.clientWidth*(e.key==='ArrowLeft'?-1:1),behavior:'smooth'});}});
+ track.addEventListener('keydown',e=>{if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();track.scrollBy({left:track.clientWidth*(e.key==='ArrowLeft'?-1:1),behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});}});
  track.tabIndex=0;
 }
-photoViewer.addEventListener('close',()=>photoViewer.replaceChildren());
-const journeyVisibility=new IntersectionObserver(entries=>{for(const e of entries){if(region!=='行程总览')continue;if(!e.isIntersecting)stopJourney();else if(!document.hidden&&!playing&&!matchMedia('(prefers-reduced-motion: reduce)').matches)startJourney();}});
+photoViewer.addEventListener('close',()=>{photoViewer.replaceChildren();photoOpener?.focus({preventScroll:true});});
+// One visibility owner prevents duplicate animation loops after returning to the page.
+const journeyVisibility=new IntersectionObserver(syncJourneyPlayback);
 journeyVisibility.observe(document.querySelector('#map'));
-
-document.addEventListener('visibilitychange',()=>{if(document.hidden)stopJourney();else if(region==='行程总览'&&!playing&&!matchMedia('(prefers-reduced-motion: reduce)').matches){const r=document.querySelector('#map').getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight)startJourney();}});
+document.addEventListener('visibilitychange',syncJourneyPlayback);
+matchMedia('(prefers-reduced-motion: reduce)').addEventListener('change',syncJourneyPlayback);

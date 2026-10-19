@@ -21,7 +21,7 @@ const TripWeather = (() => {
  let region=document.querySelector('#days [aria-pressed="true"]')?.dataset.region||'行程总览',controller,lastFetch=0;
  const el=(tag,cls,text)=>{const e=document.createElement(tag);e.className=cls;if(text!==undefined)e.textContent=text;return e;};
 
- function weatherCondition(code){const label=el('span','comparison-condition');const icon=el('span','weather-condition-icon',TripWeather.icon(code));icon.setAttribute('aria-hidden','true');label.append(icon,el('span','',TripWeather.condition(code)));return label;}
+ function weatherCondition(code){const label=el('span','comparison-condition');const icon=el('span','weather-condition-icon',TripWeather.icon(code));icon.setAttribute('aria-hidden','true');icon.dataset.weather=code===0?'sun':[1,2,3,45,48].includes(code)?'cloud':[71,73,75,77,85,86].includes(code)?'snow':'still';label.append(icon,el('span','',TripWeather.condition(code)));return label;}
  function comparison(results,today){
   const panel=el('section','weather-comparison');
   panel.append(el('p','comparison-note','六天预报对比 · 气温为最低～最高（℃）'));

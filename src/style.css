@@ -160,3 +160,21 @@ body:not(.reading-open){overflow:clip}
 #photoViewer .photo-frame{flex:1;min-height:0;background:transparent;aspect-ratio:auto}#photoViewer img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;filter:none}
 #photoViewer figcaption{padding:14px 20px;line-height:1.6;font-size:16px}#photoViewer figcaption small{display:block;color:#b9ced1;font-size:12px}
 @media(prefers-reduced-motion:reduce){#placeDetail[open],#photoViewer[open],.category-pin span,.journey-trail,.journey-traveler span{animation:none!important}#journeyPanel{transition:none}}
+
+/* Only animate visible content; keep text and temperature values still. */
+@keyframes cover-enter{from{opacity:.4;translate:0 16px}to{opacity:1;translate:0 0}}
+@keyframes sun-turn{to{rotate:360deg}}
+@keyframes cloud-drift{0%,100%{translate:-2px 0}50%{translate:2px 0}}
+@keyframes snow-drift{0%,100%{translate:0 -2px;rotate:-12deg}50%{translate:0 2px;rotate:12deg}}
+[data-topic].motion-seen{animation:cover-enter .5s ease-out both}
+[data-topic] img{transition:scale .35s ease-out}
+@media(hover:hover){[data-topic]:hover img{scale:1.025}}
+#topicReader[open]{animation:sheet-enter .28s ease-out}
+.weather-condition-icon[data-weather=sun]{animation:sun-turn 20s linear infinite}
+.weather-condition-icon[data-weather=cloud]{animation:cloud-drift 3.5s ease-in-out infinite}
+.weather-condition-icon[data-weather=snow]{animation:snow-drift 3s ease-in-out infinite}
+.weather-condition-icon{display:inline-block;animation-play-state:paused!important}
+.weather-motion-visible .weather-condition-icon{animation-play-state:running!important}
+body:not(.journey-running) .journey-trail,body:not(.journey-running) .journey-traveler span{animation-play-state:paused}
+body.motion-page-hidden .weather-condition-icon,body.motion-page-hidden .journey-trail,body.motion-page-hidden .journey-traveler span{animation-play-state:paused!important}
+@media(prefers-reduced-motion:reduce){[data-topic].motion-seen,#topicReader[open],.weather-condition-icon{animation:none!important}[data-topic] img{transition:none}}
