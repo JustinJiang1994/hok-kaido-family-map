@@ -29,6 +29,7 @@
 })();
 
 function enhanceReading(dialog,topic){
+ const cleanups=[];
  const root=dialog.querySelector('.reader-scroll'),content=dialog.querySelector('#readerContent');
  if(topic==='history'){
   const dates=['历史概览','名称出现以前','港口与贸易','1869年以后','铁路与煤矿','20世纪前半','战后—1972年','1988年至今','带着历史旅行'];
@@ -47,10 +48,11 @@ function enhanceReading(dialog,topic){
    let frame;
    const update=()=>{cancelAnimationFrame(frame);frame=requestAnimationFrame(()=>{const center=rail.getBoundingClientRect().left+rail.clientWidth/2;let nearest=0,distance=Infinity;chapters.forEach((c,i)=>{const r=c.getBoundingClientRect(),d=Math.abs(r.left+r.width/2-center);if(d<distance){distance=d;nearest=i;}});chapters.forEach((c,i)=>c.classList.toggle('current',i===nearest));hint.textContent=(nearest+1)+' / '+chapters.length+' · 左右滑动挑选';});};
    rail.addEventListener('scroll',update,{passive:true});
+   cleanups.push(()=>{cancelAnimationFrame(frame);rail.removeEventListener('scroll',update);});
    rail.addEventListener('keydown',e=>{if(e.target!==rail||!['ArrowLeft','ArrowRight'].includes(e.key))return;e.preventDefault();rail.scrollBy({left:(chapters[0].getBoundingClientRect().width+14)*(e.key==='ArrowLeft'?-1:1),behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});});
   }
  }
  const observed=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('reading-visible');observed.unobserve(entry.target);}}),{root,threshold:.15});
  content.querySelectorAll('.history-step,.chart-bar').forEach(node=>observed.observe(node));
- return ()=>observed.disconnect();
+ return ()=>{observed.disconnect();cleanups.forEach(clean=>clean());};
 }

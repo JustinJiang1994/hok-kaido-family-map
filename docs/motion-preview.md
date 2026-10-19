@@ -49,3 +49,9 @@
 - 特色章节中的白色恋人、六花亭、ROYCE、KINOTOYA、LeTAO、薯条三兄弟转为横向滑动展示卡；原文与照片保留，详情可展开。
 - 分类按钮按压反馈和标记错峰出现；景点卡片淡入，优化图片加载后的显现。
 - 减少动态效果设置下停用上述动画。仍待手机视觉验收，未发布线上。
+
+## 自动回归验证
+
+2026-10-19：使用临时 linkedom 0.18.12（不加入网站运行依赖）验证实际构建 HTML 和 enhanceReading 转换。历史 9 个节点、伴手礼 6 张卡片、原文字与照片数量、反复打开关闭通过。发现并修复伴手礼滚动后立即关闭时未取消的 requestAnimationFrame。
+
+复验命令：`HOKKAIDO_DOM_MODULE=/tmp/hokkaido-dom-validation/node_modules/linkedom node scripts/check-reading.cjs`。其他地点、筛选、动效生命周期、随机照片、天气、定位、图片资源检查全部通过。以上为 DOM/逻辑验证，不代表手机布局、图片解码显示或 iPhone 微信真机验收。
