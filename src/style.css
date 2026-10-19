@@ -147,7 +147,7 @@ body:not(.reading-open){overflow:clip}
 .category-pin:focus-visible span{scale:1.15;box-shadow:0 0 0 5px #fff,0 0 0 8px #193e42}
 .journey-trail{stroke-dasharray:18 10;animation:trail-flow .9s linear infinite;filter:drop-shadow(0 2px 2px #b4492335)}
 .journey-traveler span{display:grid;place-items:center;width:34px;height:34px;border:2px solid white;border-radius:50%;background:#fff7e8;font-size:23px;box-shadow:0 3px 12px #193e4240;animation:travel-halo 1.6s ease-in-out infinite}
-.overview-label.is-current{background:#fff2d6!important;border-color:#e75019!important;box-shadow:0 2px 12px #d96a3340}
+.overview-label.is-current{background:#fff2d6!important;color:#193e42!important;border-color:#e75019!important;box-shadow:0 2px 12px #d96a3340}
 #journeyPanel{transition:box-shadow .3s,border-color .3s}
 #journeyPanel.has-arrived{box-shadow:0 3px 16px #e7501938;border-color:#e75019}
 .photo-frame{position:relative}.expand-photo{position:absolute;right:10px;bottom:10px;min-height:44px;padding:8px 12px;border:1px solid #fff8;border-radius:24px;background:#163d42e8;color:white;font-size:14px;z-index:2}
@@ -185,3 +185,4 @@ body.motion-page-hidden .weather-condition-icon,body.motion-page-hidden .journey
 .journey-thumb{display:block;position:relative;width:80px;height:58px;flex:0 0 80px;overflow:hidden;border-radius:8px;background:#e3eeec}.journey-thumb img{width:100%;height:100%;object-fit:cover}.airport-photo-symbol{width:80px;text-align:center;font-size:32px}
 body:not(.overview-mode) #journeyPhoto{display:none!important}
 @media(max-width:560px){#journeyPhoto{padding:6px 10px;min-height:70px}.journey-thumb{width:70px;flex-basis:70px;height:52px}#journeyPhoto strong{font-size:14px}#journeyPhoto small{font-size:11px}}
+#journeyPhoto .journey-photo-credit{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
