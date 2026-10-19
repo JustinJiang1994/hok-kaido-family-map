@@ -33,6 +33,20 @@ def build(output=None):
     dest=target.parent/asset_dir
     dest.mkdir(parents=True,exist_ok=True)
     for file in (source/'assets/photos').glob('*.webp'):shutil.copy2(file,dest/file.name)
+    # Inline comparison charts so individual bars can animate without moving labels.
+    def inline_chart(match):
+        rel=match.group(1)
+        svg=(source/rel).read_text(encoding='utf-8')
+        def bar(m):
+            tag=m.group(0)
+            height=re.search(r'height="([0-9.]+)"',tag)
+            if height and float(height.group(1))<=80 and ' x="' in tag:
+                return tag.replace('<rect ', '<rect class="chart-bar" ',1)
+            return tag
+        svg=re.sub(r'<rect\b[^>]*>',bar,svg)
+        return re.sub(r' role="[^"]*"','',svg,count=1).replace('<svg ', '<svg class="animated-data-chart" role="img" ',1)
+    chart_names='(?:population-(?:age|density|total)|agriculture-(?:area|value)|fishery-(?:quantity|value))'
+    html=re.sub(r'<img\b[^>]*src="(assets/intro/'+chart_names+r'\.svg)"[^>]*>',inline_chart,html)
     # Embed local topic images so the delivered HTML remains a single file.
     def embed(match):
         asset = (source / match.group(1)).resolve()

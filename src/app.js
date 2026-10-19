@@ -24,14 +24,14 @@ const userLayer=L.layerGroup().addTo(map);
 function drawUserLocation(){userLayer.clearLayers();if(!userPosition||region==='行程总览')return;L.circle([userPosition.lat,userPosition.lon],{radius:userPosition.accuracy,color:'#1769d2',weight:1,fillOpacity:.08,interactive:false}).addTo(userLayer);L.circleMarker([userPosition.lat,userPosition.lon],{radius:8,color:'white',weight:3,fillColor:'#1769d2',fillOpacity:1,interactive:false}).addTo(userLayer);}
 function placeLocationInfo(p){return `<a class="place-navigation" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(p.navigationDestination||`${p.name} 日本 北海道 ${p.city}`)}" aria-label="用 Google 地图导航到${esc(p.name)}">用 Google 地图导航 ↗</a>`;}
 const placeColor=p=>p.type==='food'?'#c65c18':p.type==='shop'?'#6351b5':p.type==='hub'?'#54677c':'#c02570';
-function renderMarkers(){
+function renderMarkers(animateFilter=false){
  if(region==='行程总览')return;
  markerLayer.clearLayers();routeLayer.clearLayers();markers=[];const size=map.getSize(),used=[];
  if(userPosition)used.push(map.latLngToContainerPoint([userPosition.lat,userPosition.lon]));
  current.forEach(p=>{const actual=map.latLngToContainerPoint([p.lat,p.lon]);if(actual.x<0||actual.y<0||actual.x>size.x||actual.y>size.y)return;
  let best=null;for(let y=26;y<=size.y-38;y+=6)for(let x=26;x<=size.x-26;x+=6){if(x<78&&y<126)continue;if(used.some(q=>Math.abs(x-q.x)<46&&Math.abs(y-q.y)<46))continue;const d=(x-actual.x)**2+(y-actual.y)**2;if(!best||d<best.d)best={x,y,d};}
  const pt=best||actual;used.push(pt);const pos=map.containerPointToLatLng([pt.x,pt.y]);if(best&&best.d>100)L.polyline([[p.lat,p.lon],pos],{color:placeColor(p),weight:1.5,opacity:.65,interactive:false}).addTo(routeLayer);
- const m=L.marker(pos,{icon:L.divIcon({className:'category-pin',html:`<span style="background:${placeColor(p)}"></span>`,iconSize:[44,44],iconAnchor:[22,22]}),title:p.name,alt:p.name,keyboard:true}).addTo(markerLayer);m.on('click',()=>showPlace(p));markers.push({m,ps:[p]});});}
+ const m=L.marker(pos,{icon:L.divIcon({className:'category-pin',html:`<span style="background:${placeColor(p)};${animateFilter?'animation-delay:'+Math.min(markers.length*22,180)+'ms;animation-fill-mode:both':''}"></span>`,iconSize:[44,44],iconAnchor:[22,22]}),title:p.name,alt:p.name,keyboard:true}).addTo(markerLayer);m.on('click',()=>showPlace(p));markers.push({m,ps:[p]});});}
 const detail=document.createElement('dialog');detail.id='placeDetail';detail.setAttribute('aria-labelledby','detailTitle');document.body.append(detail);
 function renderSections(p,info){
  if(!info?.tagline)return `<p>${esc(p.desc||p.note)}</p>`;
@@ -139,7 +139,7 @@ function render(){
  drawUserLocation();$('main').scrollTop=0;
 }
 $('#days').onclick=e=>{const b=e.target.closest('[data-region]');if(b){locationFocus=null;nearbyMode=false;region=b.dataset.region;placeTypes=new Set(['sight']);render();}};
-$('#placeLegend').onclick=e=>{const b=e.target.closest('[data-place-type]');if(!b||region==='行程总览')return;const type=b.dataset.placeType;if(placeTypes.has(type))placeTypes.delete(type);else placeTypes.add(type);selectedId=null;if(detail.open)detail.close();updatePlaceFilter();renderMarkers();};
+$('#placeLegend').onclick=e=>{const b=e.target.closest('[data-place-type]');if(!b||region==='行程总览')return;const type=b.dataset.placeType;if(placeTypes.has(type))placeTypes.delete(type);else placeTypes.add(type);selectedId=null;if(detail.open)detail.close();updatePlaceFilter();renderMarkers(true);};
 
 $('#fit').onclick=()=>{locationFocus=null;nearbyMode=false;updatePlaceFilter();fitRegion();renderMarkers();};map.on('moveend',()=>{if(region==='行程总览')drawOverviewLabels();else renderMarkers();});map.on('resize',()=>{if(bounds)fitRegion();});
 render();

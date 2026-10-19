@@ -1,7 +1,7 @@
 import fs from 'node:fs';import vm from 'node:vm';import assert from 'node:assert/strict';
 const events={},card={querySelector:()=>({})},days={addEventListener(){}},stage={after(){}};
 let selected;
-const ctx=vm.createContext({document:{querySelector:s=>s==='.map-stage'?stage:days,createElement:()=>card,addEventListener:(k,fn)=>events[k]=fn},PhotoLoader:{markup:()=>'<img>',load(){}},showPlace:p=>selected=p,esc:s=>s});
+const ctx=vm.createContext({matchMedia:()=>({matches:false}),document:{querySelector:s=>s==='.map-stage'?stage:days,createElement:()=>card,addEventListener:(k,fn)=>events[k]=fn},PhotoLoader:{markup:()=>'<img>',load(){}},showPlace:p=>selected=p,esc:s=>s});
 vm.runInContext(fs.readFileSync('src/data.js','utf8')+fs.readFileSync('src/media.js','utf8'),ctx);
 vm.runInContext("let region='行程总览',dayIndex=0;const JOURNEY=[{points:['airport','sapporo']},{points:['sapporo','asahi']},{points:['asahi','biei']},{points:['asahi','airport']}];",ctx);
 vm.runInContext(fs.readFileSync('src/journey-photos.js','utf8'),ctx);

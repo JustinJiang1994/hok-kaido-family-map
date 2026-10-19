@@ -18,6 +18,7 @@
   const place=nextPlace(city);if(!place){card.hidden=true;return;}
   const {id}=place,title=city+' · '+place.name,photo=PLACE_MEDIA[id].photos[0];card.disabled=false;
   card.innerHTML=`<span class="journey-thumb">${PhotoLoader.markup(photo,0)}</span><span><strong>${esc(title)}</strong><small>当地景点 · 点开看介绍</small><small class="journey-photo-credit">${esc(photo.caption)} · ${esc(photo.credit)}</small></span><span aria-hidden="true">›</span>`;
+  if(!matchMedia('(prefers-reduced-motion: reduce)').matches)card.animate?.([{opacity:.45},{opacity:1}],{duration:320,easing:'ease-out'});
   card.onclick=()=>showPlace(PLACES.find(p=>p.id===id));PhotoLoader.load(card.querySelector('img'));
  }
  document.addEventListener('journeychange',e=>updatePhoto(e.detail));
