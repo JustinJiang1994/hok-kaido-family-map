@@ -50,11 +50,24 @@ const PLACE_MEDIA={
       {
         "label": "费用",
         "value": "逛市集免费，餐饮与购物另付费"
+      },
+      {
+        "label": "大通灯饰",
+        "value": "16:30—22:00"
+      },
+      {
+        "label": "7人用餐",
+        "value": "摊位价格与7人座位未确认；适合逛吃，不作已落实的正式晚餐"
+      },
+      {
+        "label": "研究记录",
+        "value": "10月26日研究基线，27—28日检查未发现足以变更本项主清单的新消息；本次同步不代表重新实时核价或查余位。价格为日元。"
       }
     ],
-    "checkedOn": "2026-10-15",
+    "checkedOn": "2026-10-28",
     "informationSources": [
-      "https://www.sapporo.travel/white-illumination/event/munich/"
+      "https://www.sapporo.travel/white-illumination/event/munich/",
+      "https://www.sapporo.travel/white-illumination/event/illumination/odori/"
     ]
   },
   "shiroi": {
@@ -98,31 +111,51 @@ const PLACE_MEDIA={
       "甜点制作体验（部分需预约）"
     ],
     "details": [
-      "园区分为户外庭院、商店与收费参观区域。可以在室内认识巧克力和饼干制作，再看庭院建筑；不同体验项目有各自的费用与参加条件。"
+      "园区分为户外庭院、商店与收费参观区域。可以在室内认识巧克力和饼干制作，再看庭院建筑；不同体验项目有各自的费用与参加条件。",
+      "冬季时间来自2026/9/6官方公告。9/16发表的实访报道实际是暑假到访，不能用来判断本次12月体验。",
+      "2026圣诞主题期间为11月1日至12月25日，灯饰另从12月1日开始。官网列蟹肉扇贝白汤咖喱1900日元、长尾山雀丹麦酥700日元、热巧克力700日元、圣诞下午茶饮料套装3700日元，可作为园内用餐参考；7人座位和儿童适用菜式未核实，口味描述来自商家，并非独立实访。"
     ],
     "history": null,
     "facts": [
       {
         "label": "常规时间",
-        "value": "10:00—18:00；收费区域最后入场16:30，部分展区17:30结束"
+        "value": "12月10:00—19:00；收费受理16:30截止，主要室内设施17:30结束"
       },
       {
         "label": "冬季安排",
-        "value": "亮灯期间延长营业以当季通知为准"
+        "value": "圣诞灯饰12月1日起16:00—19:00；Gulliver Town冬季关闭"
       },
       {
         "label": "地点",
-        "value": "札幌市西区宫之泽2条2丁目"
+        "value": "札幌市西区宫之泽2条2丁目11-36"
       },
       {
         "label": "费用",
-        "value": "免费区域与收费参观区分开；手作另收费"
+        "value": "成人1200日元，3岁免费；6成人合计7200日元，手作另收费"
+      },
+      {
+        "label": "手作参考",
+        "value": "绘画1500日元或彩笔1800日元；开放当月及次月，推断11/1可查12月，具体时刻与空位未确认"
+      },
+      {
+        "label": "幼儿陪同",
+        "value": "学龄前建议成人陪同；一位陪同免手作票但需入园票，具体课程年龄条件待核实"
+      },
+      {
+        "label": "研究记录",
+        "value": "10月26日研究基线，27—28日检查未发现足以变更本项主清单的新消息；本次同步不代表重新实时核价或查余位。价格为日元。"
       }
     ],
-    "checkedOn": "2026-10-15",
+    "checkedOn": "2026-10-28",
     "informationSources": [
       "https://www.shiroikoibitopark.jp/en/attractions.html",
-      "https://www.shiroikoibitopark.jp/"
+      "https://www.shiroikoibitopark.jp/",
+      "https://www.shiroikoibitopark.jp/information/uploads/a1ca26e8e6a480274f3d694dd861be4a_1.pdf",
+      "https://www.shiroikoibitopark.jp/facility/counter.html",
+      "https://www.shiroikoibitopark.jp/facility/dream-kitchen.html",
+      "https://www.shiroikoibitopark.jp/information/2023/09/post-90.html",
+      "https://rocketnews24.com/2026/09/16/2799594/amp/",
+      "https://www.shiroikoibitopark.jp/christmas/"
     ]
   },
   "shrine": {
@@ -466,7 +499,8 @@ const PLACE_MEDIA={
       "海豹穿行圆柱水槽"
     ],
     "details": [
-      "园区以让游客看见动物行为的展示方式闻名，不同观察窗口会带来不同视角。动物是否进入水中或靠近窗口无法保证；冬季企鹅散步还需要足够积雪，并根据动物状态安排。"
+      "园区以让游客看见动物行为的展示方式闻名，不同观察窗口会带来不同视角。动物是否进入水中或靠近窗口无法保证；冬季企鹅散步还需要足够积雪，并根据动物状态安排。",
+      "本季企鹅散步开始日仍未确认；2025/12/18的旧公告不是2026年公告。"
     ],
     "history": null,
     "facts": [
@@ -485,12 +519,31 @@ const PLACE_MEDIA={
       {
         "label": "活动提示",
         "value": "企鹅散步不保证12月20日已开始，开放与场次须看当日公告"
+      },
+      {
+        "label": "本季冬期",
+        "value": "2026年11月11日—12月29日；建议12月20日前往"
+      },
+      {
+        "label": "门票",
+        "value": "成人1000日元，3岁免费；6成人合计6000日元（票价2026/10/1更新）"
+      },
+      {
+        "label": "Saipal联动",
+        "value": "若本来先去Saipal，保留成人票根到动物园人工窗口购900日元票，6人省600日元；不要为优惠特意加馆或先买普通网络票"
+      },
+      {
+        "label": "研究记录",
+        "value": "10月26日研究基线，27—28日检查未发现足以变更本项主清单的新消息；本次同步不代表重新实时核价或查余位。价格为日元。"
       }
     ],
-    "checkedOn": "2026-10-15",
+    "checkedOn": "2026-10-28",
     "informationSources": [
       "https://www.visit-hokkaido.jp/spot/detail_10043.html",
-      "https://www.city.asahikawa.hokkaido.jp/asahiyamazoo/event/event202609.html"
+      "https://www.city.asahikawa.hokkaido.jp/asahiyamazoo/event/event202609.html",
+      "https://www.city.asahikawa.hokkaido.jp/asahiyamazoo/event/event.html",
+      "https://www.city.asahikawa.hokkaido.jp/asahiyamazoo/generalinformation/d052849.html",
+      "https://www.city.asahikawa.hokkaido.jp/asahiyamazoo/generalinformation/d075901.html"
     ]
   },
   "otok": {
@@ -584,7 +637,8 @@ const PLACE_MEDIA={
       "室内亲子探索空间"
     ],
     "details": [
-      "常设展示与天文馆是不同的参观内容。常设展可以按兴趣慢慢看，天文馆需要对应放映场次入场；带小朋友时可先挑容易理解的展品，具体体验按现场条件参加。"
+      "常设展示与天文馆是不同的参观内容。常设展可以按兴趣慢慢看，天文馆需要对应放映场次入场；带小朋友时可先挑容易理解的展品，具体体验按现场条件参加。",
+      "本项常设展票价资料8/5更新、10/1实施；天文馆是另一个项目，不把常设展家庭合计当作套票价格。"
     ],
     "history": null,
     "facts": [
@@ -603,9 +657,17 @@ const PLACE_MEDIA={
       {
         "label": "门票",
         "value": "成人常设展610日元、天文馆490日元、二者套票770日元；初中生及以下免费"
+      },
+      {
+        "label": "家庭常设展",
+        "value": "成人610日元，3岁免费；6成人合计3660日元。12月19或20日备选，12月21日休馆"
+      },
+      {
+        "label": "研究记录",
+        "value": "10月26日研究基线，27—28日检查未发现足以变更本项主清单的新消息；本次同步不代表重新实时核价或查余位。价格为日元。"
       }
     ],
-    "checkedOn": "2026-10-15",
+    "checkedOn": "2026-10-28",
     "informationSources": [
       "https://www.city.asahikawa.hokkaido.jp/science/",
       "https://www.city.asahikawa.hokkaido.jp/science/04/p002436.html",
@@ -653,7 +715,8 @@ const PLACE_MEDIA={
       "冬季夜间灯光景观"
     ],
     "details": [
-      "水体中的微小颗粒使光线散射，带来蓝色观感，但颜色随天气和水况变化。冬季水面可能冻结并覆雪，夜间则通过灯光呈现树影与雪景，不能把夏季照片当作12月实景。"
+      "水体中的微小颗粒使光线散射，带来蓝色观感，但颜色随天气和水况变化。冬季水面可能冻结并覆雪，夜间则通过灯光呈现树影与雪景，不能把夏季照片当作12月实景。",
+      "2026/10/21旅游协会公告补充本季信息。青池至白须瀑布约2.5公里，不安排带3岁孩子夜走公路。"
     ],
     "history": null,
     "facts": [
@@ -672,12 +735,30 @@ const PLACE_MEDIA={
       {
         "label": "开放条件",
         "value": "步道部分不除雪；停车、通行与临时关闭按现场公告"
+      },
+      {
+        "label": "灯光轮换",
+        "value": "约15分钟一轮；冰雪可能遮住蓝色水面"
+      },
+      {
+        "label": "停车参考",
+        "value": "普通车1000日元；交通方式尚未确定"
+      },
+      {
+        "label": "预约与交通",
+        "value": "普通观景无需预约；美遊巴士2026—27冬季计划尚未公布，去程和返程待确定"
+      },
+      {
+        "label": "研究记录",
+        "value": "10月26日研究基线，27—28日检查未发现足以变更本项主清单的新消息；本次同步不代表重新实时核价或查余位。价格为日元。"
       }
     ],
-    "checkedOn": "2026-10-15",
+    "checkedOn": "2026-10-28",
     "informationSources": [
       "https://www.town.biei.hokkaido.jp/culture/event/illuminate.html",
-      "https://www.biei-hokkaido.jp/ja/facility/shirogane-blue-pond"
+      "https://www.biei-hokkaido.jp/ja/facility/shirogane-blue-pond",
+      "https://www.biei-hokkaido.jp/ja/27188",
+      "https://www.biei-hokkaido.jp/ja/bus"
     ]
   },
   "falls": {
@@ -740,12 +821,25 @@ const PLACE_MEDIA={
       {
         "label": "冬季留意",
         "value": "桥面结冰时慢行，不翻越栏杆"
+      },
+      {
+        "label": "费用与停车",
+        "value": "普通观景免费、无需预约；使用旅游中心停车场"
+      },
+      {
+        "label": "与青池衔接",
+        "value": "相距约2.5公里，不带幼儿夜走公路；夜间返程交通尚待确定"
+      },
+      {
+        "label": "研究记录",
+        "value": "10月26日研究基线，27—28日检查未发现足以变更本项主清单的新消息；本次同步不代表重新实时核价或查余位。价格为日元。"
       }
     ],
-    "checkedOn": "2026-10-15",
+    "checkedOn": "2026-10-28",
     "informationSources": [
       "https://www.biei-hokkaido.jp/ja/facility/shirahige-waterfalls",
-      "https://www.town.biei.hokkaido.jp/culture/event/illuminate.html"
+      "https://www.town.biei.hokkaido.jp/culture/event/illuminate.html",
+      "https://www.visit-hokkaido.jp/spot/detail_11198.html"
     ]
   },
   "tree": {
@@ -972,13 +1066,22 @@ const PLACE_MEDIA={
       },
       {
         "label": "费用与儿童",
-        "value": "冬季入园免费，雪上活动及羊驼牧场另收费；雪地摩托不接受身高102厘米及以下儿童乘坐"
+        "value": "冬季入园免费；羊驼成人500日元、学龄前免费，6成人合计3000日元；雪橇500日元/台"
+      },
+      {
+        "label": "雪上项目",
+        "value": "2026年开场尚未公布；雪地摩托禁止102cm及以下，皮筏也有抓握与理解要求，不默认适合3岁"
+      },
+      {
+        "label": "研究记录",
+        "value": "10月26日研究基线，27—28日检查未发现足以变更本项主清单的新消息；本次同步不代表重新实时核价或查余位。价格为日元。"
       }
     ],
-    "checkedOn": "2026-10-15",
+    "checkedOn": "2026-10-28",
     "informationSources": [
       "https://www.biei-hokkaido.jp/ja/facility/shikisai-no-oka-flower-park-winter",
-      "https://www.shikisainooka.jp/about/guide/"
+      "https://www.shikisainooka.jp/about/guide/",
+      "https://shikisainooka.jp/winter/"
     ]
   },
   "unimuseum": {

@@ -1,6 +1,6 @@
 // DOM logic only; not a browser layout or real-device test. Requires linkedom (or HOKKAIDO_DOM_MODULE).
 const {parseHTML}=require(process.env.HOKKAIDO_DOM_MODULE||'linkedom'),fs=require('fs'),vm=require('vm'),assert=require('node:assert/strict');
-const html=fs.readFileSync(require('node:path').resolve(__dirname,'../../北海道家庭旅行地图-动效测试版.html'),'utf8');
+const html=fs.readFileSync(require('node:path').resolve(__dirname,'../dist/index.html'),'utf8');
 const {window,document}=parseHTML(html);let frames=new Map(),id=0,observers=[];
 const context=vm.createContext({document,IntersectionObserver:class{constructor(fn){this.fn=fn;this.nodes=[];observers.push(this)}observe(n){this.nodes.push(n)}unobserve(){}disconnect(){this.disconnected=true}},requestAnimationFrame:fn=>{frames.set(++id,fn);return id},cancelAnimationFrame:i=>frames.delete(i),matchMedia:()=>({matches:false})});
 const src=fs.readFileSync(require('node:path').resolve(__dirname,'../src/intro.js'),'utf8');vm.runInContext(src.slice(src.indexOf('function enhanceReading')),context);
