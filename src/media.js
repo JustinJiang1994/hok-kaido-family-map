@@ -113,7 +113,9 @@ const PLACE_MEDIA={
     "details": [
       "园区分为户外庭院、商店与收费参观区域。可以在室内认识巧克力和饼干制作，再看庭院建筑；不同体验项目有各自的费用与参加条件。",
       "冬季时间来自2026/9/6官方公告。9/16发表的实访报道实际是暑假到访，不能用来判断本次12月体验。",
-      "2026圣诞主题期间为11月1日至12月25日，灯饰另从12月1日开始。官网列蟹肉扇贝白汤咖喱1900日元、长尾山雀丹麦酥700日元、热巧克力700日元、圣诞下午茶饮料套装3700日元，可作为园内用餐参考；7人座位和儿童适用菜式未核实，口味描述来自商家，并非独立实访。"
+      "2026圣诞主题期间为11月1日至12月25日，灯饰另从12月1日开始。官网列蟹肉扇贝白汤咖喱1900日元、长尾山雀丹麦酥700日元、热巧克力700日元、圣诞下午茶饮料套装3700日元，可作为园内用餐参考；7人座位和儿童适用菜式未核实，口味描述来自商家，并非独立实访。",
+      "11月4日复核官网圣诞菜单：另有虾夷鹿主题松饼2150日元、烟熏三文鱼与北海道鲑鱼卵奶油宽面1750日元、雪兔杯装芭菲850日元，均为含税标价。各餐食分属园内不同店铺，7人座位、库存、儿童适用与过敏原仍需另核实。",
+      "圣诞老人活动页列2026年12月19、20日11:00及13:00，每场约30分钟、15组，每家庭最多4人且至少1位成人陪同；免费、事前抽选，不能按7人全组直接参加。页面列11月1—15日通过官方LINE申请：未加好友者先加好友，经“登録はこちら”登记后返回申请页面。页面同时标有“已结束”，与未来活动及申请日期矛盾；实际提交和可申请状态未验证，不视为已开放或已预约。12月19日是转往旭川当天，20日已在旭川，不为此默认调整行程。"
     ],
     "history": null,
     "facts": [
@@ -144,9 +146,17 @@ const PLACE_MEDIA={
       {
         "label": "研究记录",
         "value": "10月26日研究基线，27—28日检查未发现足以变更本项主清单的新消息；本次同步不代表重新实时核价或查余位。价格为日元。"
+      },
+      {
+        "label": "活动状态（11月4日）",
+        "value": "圣诞老人LINE抽选页面日期与“已结束”标记矛盾；提交未验证，每家庭最多4人，不能保证7人参加"
+      },
+      {
+        "label": "本次核查范围",
+        "value": "11月4日复核圣诞活动及限定菜单；其余票价、预约余位及旧研究仍按原日期，不代表全项重新核实"
       }
     ],
-    "checkedOn": "2026-10-28",
+    "checkedOn": "2026-11-04",
     "informationSources": [
       "https://www.shiroikoibitopark.jp/en/attractions.html",
       "https://www.shiroikoibitopark.jp/",
@@ -155,7 +165,8 @@ const PLACE_MEDIA={
       "https://www.shiroikoibitopark.jp/facility/dream-kitchen.html",
       "https://www.shiroikoibitopark.jp/information/2023/09/post-90.html",
       "https://rocketnews24.com/2026/09/16/2799594/amp/",
-      "https://www.shiroikoibitopark.jp/christmas/"
+      "https://www.shiroikoibitopark.jp/christmas/",
+      "https://www.shiroikoibitopark.jp/event/2026/post_302.html"
     ]
   },
   "shrine": {
@@ -500,7 +511,8 @@ const PLACE_MEDIA={
     ],
     "details": [
       "园区以让游客看见动物行为的展示方式闻名，不同观察窗口会带来不同视角。动物是否进入水中或靠近窗口无法保证；冬季企鹅散步还需要足够积雪，并根据动物状态安排。",
-      "本季企鹅散步开始日仍未确认；2025/12/18的旧公告不是2026年公告。"
+      "本季企鹅散步开始日仍未确认；2025/12/18的旧公告不是2026年公告。",
+      "11月4日园方公告：圣诞树预计12月6—25日陈列于いこいの広場休憩所、イベントホール1階和やすらぎの森休憩所，可在12月20日游园时顺路看看。装饰与点灯活动仅12月6日举行，不在本次旅期；展示不代表企鹅散步已经开始。"
     ],
     "history": null,
     "facts": [
@@ -522,7 +534,7 @@ const PLACE_MEDIA={
       },
       {
         "label": "本季冬期",
-        "value": "2026年11月11日—12月29日；建议12月20日前往"
+        "value": "2026年11月11日—2027年4月7日；12月30日—1月1日休园，建议12月20日前往（11月3日园方公告）"
       },
       {
         "label": "门票",
@@ -535,15 +547,24 @@ const PLACE_MEDIA={
       {
         "label": "研究记录",
         "value": "10月26日研究基线，27—28日检查未发现足以变更本项主清单的新消息；本次同步不代表重新实时核价或查余位。价格为日元。"
+      },
+      {
+        "label": "圣诞树展示",
+        "value": "12月6—25日，园内3处休憩／活动空间（计划）；12月6日装饰活动不在旅期"
+      },
+      {
+        "label": "本次核查范围",
+        "value": "11月4日复核圣诞活动与冬期开园公告；其余票价、预约余位及旧研究仍按原日期，不代表全项重新核实"
       }
     ],
-    "checkedOn": "2026-10-28",
+    "checkedOn": "2026-11-04",
     "informationSources": [
       "https://www.visit-hokkaido.jp/spot/detail_10043.html",
       "https://www.city.asahikawa.hokkaido.jp/asahiyamazoo/event/event202609.html",
       "https://www.city.asahikawa.hokkaido.jp/asahiyamazoo/event/event.html",
       "https://www.city.asahikawa.hokkaido.jp/asahiyamazoo/generalinformation/d052849.html",
-      "https://www.city.asahikawa.hokkaido.jp/asahiyamazoo/generalinformation/d075901.html"
+      "https://www.city.asahikawa.hokkaido.jp/asahiyamazoo/generalinformation/d075901.html",
+      "https://www.city.asahikawa.hokkaido.jp/asahiyamazoo/news-blog/news.html"
     ]
   },
   "otok": {
