@@ -517,7 +517,7 @@ const PLACE_MEDIA={
     ],
     "details": [
       "园区以让游客看见动物行为的展示方式闻名，不同观察窗口会带来不同视角。动物是否进入水中或靠近窗口无法保证；冬季企鹅散步还需要足够积雪，并根据动物状态安排。",
-      "11月6日冬季公告：企鹅散步预计12月下旬至3月中旬，计划日本时间11:00及14:30，是否举行依积雪和天气决定。确切开始日期尚未公布，12月20日是否能看仍不确定；以上是计划，不是当天开场保证。2025/12/18旧公告不能当作本季启动日期。",
+      "11月6日冬季公告：企鹅散步预计12月下旬至3月中旬，计划日本时间11:00及14:30（3月计划仅11:00），是否举行依积雪和天气决定。确切开始日期尚未公布，12月20日是否能看仍不确定；以上是计划，不是当天开场保证。2025/12/18旧公告不能当作本季启动日期。",
       "11月4日园方公告：圣诞树预计12月6—25日陈列于いこいの広場休憩所、イベントホール1階和やすらぎの森休憩所，可在12月20日游园时顺路看看。装饰与点灯活动仅12月6日举行，不在本次旅期；展示不代表企鹅散步已经开始。"
     ],
     "history": null,
@@ -536,7 +536,7 @@ const PLACE_MEDIA={
       },
       {
         "label": "活动提示",
-        "value": "企鹅散步预计12月下旬—3月中旬，日本时间11:00／14:30（计划）；依积雪天气决定，开始日未公布，12月20日不保证"
+        "value": "企鹅散步预计12月下旬—3月中旬，日本时间11:00／14:30（计划，3月仅11:00）；依积雪天气决定，开始日未公布，12月20日不保证"
       },
       {
         "label": "本季冬期",
@@ -560,17 +560,18 @@ const PLACE_MEDIA={
       },
       {
         "label": "本次核查范围",
-        "value": "11月6日补充企鹅散步冬季计划；其余票价、活动及旧研究按原日期，未全项重新核验"
+        "value": "11月7日独立核准d082799现为令和8年度、更新日11月6日，并补充3月仅11:00的计划例外；启动首日仍未公布，其余信息按原日期"
       }
     ],
-    "checkedOn": "2026-11-06",
+    "checkedOn": "2026-11-07",
     "informationSources": [
       "https://www.visit-hokkaido.jp/spot/detail_10043.html",
       "https://www.city.asahikawa.hokkaido.jp/asahiyamazoo/event/event202609.html",
       "https://www.city.asahikawa.hokkaido.jp/asahiyamazoo/event/event.html",
       "https://www.city.asahikawa.hokkaido.jp/asahiyamazoo/generalinformation/d052849.html",
       "https://www.city.asahikawa.hokkaido.jp/asahiyamazoo/generalinformation/d075901.html",
-      "https://www.city.asahikawa.hokkaido.jp/asahiyamazoo/news-blog/news.html"
+      "https://www.city.asahikawa.hokkaido.jp/asahiyamazoo/news-blog/news.html",
+      "https://www.city.asahikawa.hokkaido.jp/asahiyamazoo/news-blog/osirase/d082799.html"
     ]
   },
   "otok": {
