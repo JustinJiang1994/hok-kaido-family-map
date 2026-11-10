@@ -194,3 +194,6 @@ body:not(.overview-mode) #journeyPhoto{display:none!important}
 #placeLegend button{transition:background-color .2s,color .2s,box-shadow .2s,transform .15s}#placeLegend button:active{transform:scale(.97)}#placeLegend button[aria-pressed=true]{box-shadow:inset 0 0 0 2px #ffffff55,0 2px 7px #193e4220}
 #journeyPhoto .journey-thumb img[data-loaded=true]{animation:sheet-enter .35s ease-out}
 @media(prefers-reduced-motion:reduce){.chart-bar.reading-visible,.history-step.reading-visible .history-date,.souvenir-card details[open],#journeyPhoto .journey-thumb img[data-loaded=true]{animation:none!important}.history-step:before,.souvenir-card,#placeLegend button{transition:none!important}}
+
+/* User-supplied recommendation provenance, separate from verified venue facts. */
+.recommendation-badge{display:table;max-width:100%;box-sizing:border-box;padding:7px 11px;margin:8px 0 14px;border:1px solid #e4a7b4;border-radius:10px;background:#fff0f3;color:#982545;font-size:14px;font-weight:700;line-height:1.6;overflow-wrap:anywhere}
