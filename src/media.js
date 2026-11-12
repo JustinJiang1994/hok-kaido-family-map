@@ -522,7 +522,8 @@ const PLACE_MEDIA={
       "11月10日园方公告：西门收费停车场在2026年11月11日至2027年4月7日冬期开园期间免费，12月30日至1月1日休园除外。出租车及大型、中型、小型、微型巴士均不能使用，西门附近没有供这些车辆上下客的车道。不能把免费停车默认用于本次包车；是否包车、车型及适用入口须按实际安排由运营方确认。",
       "11月11日核对本季冬期开园公告：わくわく広場、みんなの広場在冬期关闭，不把这两处广场安排为幼儿游玩或休息点；这不代表全园关闭。企鹅散步仍未公布确切开始日期，12月20日不保证举行。",
       "11月11日核对园方利用规则：婴儿车借用仅限夏期开园期间，12月不能依赖园方借车；雪橇及雪球夹（スノーボールメーカー）禁止带入。两处广场冬季关闭提示仍适用，不能把秋季游乐场实访照搬为冬季安排。",
-      "东门餐厅カムイチカプ官网列2026/5/1—2027/4/7餐厅11:00—15:00、末点14:30，随动物园开园但可能单独休业。11月4日发表、10月18日带两岁儿童到访的个人文章提到儿童椅、餐具及儿童餐；属秋季单次经验，12月设施数量、七人同桌、排队与出餐时间未确认，不引用秋季等待时长作冬季保证。"
+      "东门餐厅カムイチカプ官网列2026/5/1—2027/4/7餐厅11:00—15:00、末点14:30，随动物园开园但可能单独休业。11月4日发表、10月18日带两岁儿童到访的个人文章提到儿童椅、餐具及儿童餐；属秋季单次经验，12月设施数量、七人同桌、排队与出餐时间未确认，不引用秋季等待时长作冬季保证。",
+      "11月11日园方公告MYZOOKAN更新上线：可在园内扫码登记官方LINE，从菜单进入免费网页内容；地图可查免费休息处、厕所及授乳室，也可做动物观察问答和图鉴。属于可选工具，不要求额外安装独立App，不是入园前置步骤；本次未登记、上传照片或验证现场网络。"
     ],
     "history": null,
     "facts": [
@@ -564,7 +565,7 @@ const PLACE_MEDIA={
       },
       {
         "label": "本次核查范围",
-        "value": "11月11日核准广场关闭、儿童装备及东门餐厅时间；儿童设施注明秋季个人来源，企鹅首日仍未定，其余按原日期。"
+        "value": "11月12日仅核对MYZOOKAN公告；企鹅首日未定，其他信息保留原核查日期。"
       },
       {
         "label": "西门冬季停车",
@@ -581,9 +582,13 @@ const PLACE_MEDIA={
       {
         "label": "东门餐厅参考",
         "value": "11:00—15:00，末点14:30；可能单独休业，儿童设施为秋季实访，冬季座位未确认。"
+      },
+      {
+        "label": "可选园内网页地图",
+        "value": "MYZOOKAN：园内扫码登记官方LINE后进入免费网页，可查休息处、厕所、授乳室；非必装。"
       }
     ],
-    "checkedOn": "2026-11-11",
+    "checkedOn": "2026-11-12",
     "informationSources": [
       "https://www.visit-hokkaido.jp/spot/detail_10043.html",
       "https://www.city.asahikawa.hokkaido.jp/asahiyamazoo/event/event202609.html",
@@ -595,7 +600,8 @@ const PLACE_MEDIA={
       "https://www.city.asahikawa.hokkaido.jp/asahiyamazoo/news-blog/osirase/news.html",
       "https://www.city.asahikawa.hokkaido.jp/asahiyamazoo/generalinformation/d053773.html",
       "https://car82090.wixsite.com/kamuy-cikap/アクセス",
-      "https://www.happiness-life-hl.com/asahiyama-zoo-bringing-children-review/"
+      "https://www.happiness-life-hl.com/asahiyama-zoo-bringing-children-review/",
+      "https://www.city.asahikawa.hokkaido.jp/asahiyamazoo/news-blog/event/news2026.html"
     ]
   },
   "otok": {
@@ -1845,7 +1851,9 @@ const PLACE_MEDIA={
       "百货与餐饮"
     ],
     "details": [
-      "适合在车站周边购物时顺路逛，食品层可比较多个品牌。商品库存与楼层以当天指引为准。"
+      "适合在车站周边购物时顺路逛，食品层可比较多个品牌。商品库存与楼层以当天指引为准。",
+      "11月12日核对2026年HAPPY SURPRISE官方安排：12月19日大丸札幌1楼活动空间有札幌西区管弦乐团成员室内乐，日本时间11:00、13:00为弦乐电影音乐合奏加双簧管，15:00、17:00为木管五重奏；活动每场约15—30分钟。费用及预约方式未列明，不推定免费或可报名。可在离开札幌前顺路评估，具体列车时间尚未提供，不保证赶得上。",
+      "12月19、20日表格列Secret Guest，2026主题页提及圣诞老人，但嘉宾出现时间与地点作为惊喜未公开，不保证遇到、合影或可预约；12月20日已在旭川行程，不为此默认返回札幌。不要把室内乐的场次或1楼地点套用到Secret Guest。"
     ],
     "history": "",
     "facts": [
@@ -1856,14 +1864,24 @@ const PLACE_MEDIA={
       {
         "label": "营业",
         "value": "按当日店铺及楼层公告；餐饮可能与百货不同"
+      },
+      {
+        "label": "12月19日室内乐备选",
+        "value": "1楼11:00／13:00／15:00／17:00；费用预约未列。Secret Guest另有未知时间地点，不保证见面。"
+      },
+      {
+        "label": "本次核查范围",
+        "value": "11月12日仅核对2026节日活动；常规店铺资料按原日期，未查预约或余位。"
       }
     ],
-    "checkedOn": "2026-10-16",
+    "checkedOn": "2026-11-12",
     "informationSources": [
       {
         "title": "官方网站",
         "url": "https://www.daimaru.co.jp/sapporo/access.html"
-      }
+      },
+      "https://www.daimaru.co.jp/sapporo/topics/event-175079.html",
+      "https://www.daimaru.co.jp/sapporo/happyholidays/index2026.html"
     ],
     "note": "",
     "photos": []
