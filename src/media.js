@@ -33,7 +33,7 @@ const PLACE_MEDIA={
     "details": [
       "市集在户外展开，可以近看装饰与手工杂货，也有饮食摊位。白天更容易看清商品，夜晚以亮灯后的气氛为主。",
       "11月5日补充核实资料：2026札幌官方指南第9—10页列大通公园1丁目圣诞老人见面，工作日日本时间16:00—20:00期间不定时出现，并非全时在场。12月17日（周四）、18日（周五）均为工作日，可在逛市集时留意；具体出现时刻、费用和预约未列明，不能保证到场即可遇见或合影。",
-      "11月20日核对电视塔官方交通页：札幌站可经Chi-Ka-Ho地下步行空间→Aurora Town前往大通西1丁目。27号出入口只是官方路线标志，未证明它有电梯；推车请另核大通1丁目无障碍电梯及当日通行，不默认全程无台阶。"
+      "札幌站可经Chi-Ka-Ho地下步行空间→Aurora Town前往大通。11月22日核对主办方无障碍路线：大通站8号出口有电梯，出到西3丁目后再往西2、东侧西1丁目市集走；不把27号出口写成电梯。Aurora Town西3丁目Crosspoint的咨询台及带换尿布台的授乳区10:00—20:00，Aurora Square东侧另有多功能厕所，独立关闭时间未列。可作为幼儿途中休息与照护点，七人座位和现场可用情况不保证。"
     ],
     "history": "札幌与德国慕尼黑是姐妹城市，市集体现了两座城市之间的交流。",
     "facts": [
@@ -70,16 +70,18 @@ const PLACE_MEDIA={
         "value": "1丁目，工作日16:00—20:00期间不定时出现（日本时间），非全时在场；12月17、18日适用工作日范围。具体出现时刻、费用、预约未列明"
       },
       {
-        "label": "11月20日补核范围",
-        "value": "地下步行路线；原指南Santa时段不变，电梯待核。"
+        "label": "11月22日亲子通行",
+        "value": "大通站8号出口电梯至西3丁目；Aurora Town西3照护区10:00—20:00；27号出口不当作电梯。"
       }
     ],
-    "checkedOn": "2026-11-20",
+    "checkedOn": "2026-11-22",
     "informationSources": [
       "https://www.sapporo.travel/white-illumination/event/munich/",
       "https://www.sapporo.travel/white-illumination/event/illumination/odori/",
       "https://www.sapporo.travel/cms/wp-content/uploads/2026/10/2026-%E3%81%95%E3%81%A3%E3%81%BD%E3%82%8D%E3%83%9B%E3%83%AF%E3%82%A4%E3%83%88%E3%82%A4%E3%83%AB%E3%83%9F%E3%83%8D%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E5%85%AC%E5%BC%8F%E3%82%AC%E3%82%A4%E3%83%89%E3%83%96%E3%83%83%E3%82%AF.pdf",
-      "https://www.tv-tower.co.jp/access.html"
+      "https://www.tv-tower.co.jp/access.html",
+      "https://www.sapporo.travel/white-illumination/access/",
+      "https://sapporo-chikagai.jp/floorguide/facility"
     ]
   },
   "shiroi": {
@@ -541,7 +543,8 @@ const PLACE_MEDIA={
       "11月11日核对园方利用规则：婴儿车借用仅限夏期开园期间，12月不能依赖园方借车；雪橇及雪球夹（スノーボールメーカー）禁止带入。两处广场冬季关闭提示仍适用，不能把秋季游乐场实访照搬为冬季安排。",
       "东门餐厅カムイチカプ官网列2026/5/1—2027/4/7餐厅11:00—15:00、末点14:30，随动物园开园但可能单独休业。11月4日发表、10月18日带两岁儿童到访的个人文章提到儿童椅、餐具及儿童餐；属秋季单次经验，12月设施数量、七人同桌、排队与出餐时间未确认，不引用秋季等待时长作冬季保证。",
       "11月11日园方公告MYZOOKAN更新上线：可在园内扫码登记官方LINE，从菜单进入免费网页内容；地图可查免费休息处、厕所及授乳室，也可做动物观察问答和图鉴。属于可选工具，不要求额外安装独立App，不是入园前置步骤；本次未登记、上传照片或验证现场网络。",
-      "11月21日补核园方设施与交通页：12月20日若天气和道路允许，可优先看企鹅馆360度水下隧道（当天开放另核），不以企鹅散步必开为前提；散步预计12月下旬、依积雪，首日仍未确认。旭川站前6号站台41/47路成人670日元单程，6成人往返加1000日元园票参考14040日元；幼儿普通公交票规未核实，未计入。若路况不适合则改旭川市区室内，别为两日优惠重复奔波。"
+      "11月21日补核园方设施与交通页：12月20日若天气和道路允许，可优先看企鹅馆360度水下隧道（当天开放另核），不以企鹅散步必开为前提；散步预计12月下旬、依积雪，首日仍未确认。旭川站前6号站台41/47路成人670日元单程，6成人往返加1000日元园票参考14040日元；幼儿普通公交票规未核实，未计入。若路况不适合则改旭川市区室内，别为两日优惠重复奔波。",
+      "11月22日补充近期家庭样本：SYSTYLE文章11月16日发表、20日更新，记11月冬期开园初无雪到访，孩子反复看企鹅馆水下隧道、河马馆及儿童牧场。九处约2.5小时只是该家庭经验，不套用到12月雪天。可把企鹅馆与河马馆作为短线重点，楼间仍需走室外；园方确认冬季儿童牧场可在室内接触兔或天竺鼠，但当天时间看入口公告，不沿用游记场次或保证动物行为。原有西门车辆限制和夏季才借童车规则不变，企鹅散步首日仍未核。"
     ],
     "history": null,
     "facts": [
@@ -606,7 +609,7 @@ const PLACE_MEDIA={
         "value": "MYZOOKAN：园内扫码登记官方LINE后进入免费网页，可查休息处、厕所、授乳室；非必装。"
       }
     ],
-    "checkedOn": "2026-11-21",
+    "checkedOn": "2026-11-22",
     "informationSources": [
       "https://www.visit-hokkaido.jp/spot/detail_10043.html",
       "https://www.city.asahikawa.hokkaido.jp/asahiyamazoo/event/event202609.html",
@@ -621,7 +624,9 @@ const PLACE_MEDIA={
       "https://www.happiness-life-hl.com/asahiyama-zoo-bringing-children-review/",
       "https://www.city.asahikawa.hokkaido.jp/asahiyamazoo/news-blog/event/news2026.html",
       "https://www.city.asahikawa.hokkaido.jp/asahiyamazoo/facilityinformation/d055082.html",
-      "https://www.city.asahikawa.hokkaido.jp/asahiyamazoo/generalinformation/d053767.html"
+      "https://www.city.asahikawa.hokkaido.jp/asahiyamazoo/generalinformation/d053767.html",
+      "https://systyle.net/archives/1480",
+      "https://www.city.asahikawa.hokkaido.jp/asahiyamazoo/event/d054855.html"
     ]
   },
   "otok": {
@@ -817,7 +822,8 @@ const PLACE_MEDIA={
       "11月20日核对OPTBOOKMARK的旭川往返方案及公开价目：旭川合同自动车9人ジャンボ挂牌45950—55100日元/车，另计青池停车1000日元，参考合计46950—56100日元；不是页面首页25920日元起的普通车单程价。旭川市内酒店往返约3.5小时，12月建议15:30后出发，青池、白须瀑布及Birke为可调整模型路线；Birke商店夜间可能已关。12月21日实价、余车、儿童座椅及安装后七人/行李容量未确认，不视为已订妥。",
       "大丸交通官网特定大型车时间制为每30分钟5470日元；按7或8段计算，3.5小时38290／4小时43760日元仅为基价算例，不是相同路线实际报价，停车等另计。官网Hiace推荐2—6人、最多9人，七人加儿童座椅的实车配置及余车仍待确认；不能与其他运营商套餐直接当作同条件比价。",
       "美瑛站换车仍仅有条件备选：美瑛ハイヤーJumbo只1台，官网包时2小时21880／2.5小时27350日元；这是计价参考，不证明愿接双景点路线或七人含儿童座椅容量。町方停车表列町内出租车豁免，不能把此前旭川出发车的1000日元停车费照加。包时是否冬季另加20%尚未确认，不乘算成确定报价；车次、转乘与当天路况均须另核，雪天优先减少折返。",
-      "11月21日补核旭川往返OPTBOOKMARK方案：事前信用卡付款，预约截止出发前一天17:00；若12月21日出发，取消费12月19日30%、20日50%、21日100%。冬季Jumbo超时每30分钟6560日元另计。恶劣天气可能取消或改线，页面未说明此时退款处理，不保证退款；这是该产品条件，不套用美瑛ハイヤー。"
+      "11月21日补核旭川往返OPTBOOKMARK方案：事前信用卡付款，预约截止出发前一天17:00；若12月21日出发，取消费12月19日30%、20日50%、21日100%。冬季Jumbo超时每30分钟6560日元另计。恶劣天气可能取消或改线，页面未说明此时退款处理，不保证退款；这是该产品条件，不套用美瑛ハイヤー。",
+      "11月22日核对独立备援旭タクシー株式会社：官网列9人Jumbo与旭川—美瑛观光项目，4320日元／30分钟是普通车价，Jumbo须另报价。它与旭川合同自动车不是同一公司；12月21日晚余车、夜景两站往返、适龄儿童座椅安装后能否保留六成人座、报价及取消条款均未确认，不把名义9座当作七人可用保证。"
     ],
     "history": null,
     "facts": [
@@ -866,7 +872,7 @@ const PLACE_MEDIA={
         "value": "旭川往返包车候选与车辆条件；灯光巴士12/21不运行的原结论保留。"
       }
     ],
-    "checkedOn": "2026-11-21",
+    "checkedOn": "2026-11-22",
     "informationSources": [
       "https://www.town.biei.hokkaido.jp/culture/event/illuminate.html",
       "https://www.biei-hokkaido.jp/ja/facility/shirogane-blue-pond",
@@ -883,7 +889,8 @@ const PLACE_MEDIA={
       "https://www.bieihire.jp/lightup.html",
       "https://optbookmark.jp/plans/6607",
       "https://www.daimaru-g.co.jp/service.html",
-      "https://www.town.biei.hokkaido.jp/culture/event/news/bluepondpaidparking.html"
+      "https://www.town.biei.hokkaido.jp/culture/event/news/bluepondpaidparking.html",
+      "https://asahi-taxi.co.jp/sightseeing.html"
     ]
   },
   "falls": {
@@ -935,7 +942,8 @@ const PLACE_MEDIA={
       "11月20日核对OPTBOOKMARK的旭川往返方案及公开价目：旭川合同自动车9人ジャンボ挂牌45950—55100日元/车，另计青池停车1000日元，参考合计46950—56100日元；不是页面首页25920日元起的普通车单程价。旭川市内酒店往返约3.5小时，12月建议15:30后出发，青池、白须瀑布及Birke为可调整模型路线；Birke商店夜间可能已关。12月21日实价、余车、儿童座椅及安装后七人/行李容量未确认，不视为已订妥。",
       "大丸交通官网特定大型车时间制为每30分钟5470日元；按7或8段计算，3.5小时38290／4小时43760日元仅为基价算例，不是相同路线实际报价，停车等另计。官网Hiace推荐2—6人、最多9人，七人加儿童座椅的实车配置及余车仍待确认；不能与其他运营商套餐直接当作同条件比价。",
       "美瑛站换车仍仅有条件备选：美瑛ハイヤーJumbo只1台，官网包时2小时21880／2.5小时27350日元；这是计价参考，不证明愿接双景点路线或七人含儿童座椅容量。町方停车表列町内出租车豁免，不能把此前旭川出发车的1000日元停车费照加。包时是否冬季另加20%尚未确认，不乘算成确定报价；车次、转乘与当天路况均须另核，雪天优先减少折返。",
-      "11月21日补核旭川往返OPTBOOKMARK方案：事前信用卡付款，预约截止出发前一天17:00；若12月21日出发，取消费12月19日30%、20日50%、21日100%。冬季Jumbo超时每30分钟6560日元另计。恶劣天气可能取消或改线，页面未说明此时退款处理，不保证退款；这是该产品条件，不套用美瑛ハイヤー。"
+      "11月21日补核旭川往返OPTBOOKMARK方案：事前信用卡付款，预约截止出发前一天17:00；若12月21日出发，取消费12月19日30%、20日50%、21日100%。冬季Jumbo超时每30分钟6560日元另计。恶劣天气可能取消或改线，页面未说明此时退款处理，不保证退款；这是该产品条件，不套用美瑛ハイヤー。",
+      "11月22日核对独立备援旭タクシー株式会社：官网列9人Jumbo与旭川—美瑛观光项目，4320日元／30分钟是普通车价，Jumbo须另报价。它与旭川合同自动车不是同一公司；12月21日晚余车、夜景两站往返、适龄儿童座椅安装后能否保留六成人座、报价及取消条款均未确认，不把名义9座当作七人可用保证。"
     ],
     "history": null,
     "facts": [
@@ -980,7 +988,7 @@ const PLACE_MEDIA={
         "value": "旭川往返包车候选，不代表七人用车已落实。"
       }
     ],
-    "checkedOn": "2026-11-21",
+    "checkedOn": "2026-11-22",
     "informationSources": [
       "https://www.biei-hokkaido.jp/ja/facility/shirahige-waterfalls",
       "https://www.town.biei.hokkaido.jp/culture/event/illuminate.html",
@@ -992,7 +1000,8 @@ const PLACE_MEDIA={
       "https://www.bieihire.jp/lightup.html",
       "https://optbookmark.jp/plans/6607",
       "https://www.daimaru-g.co.jp/service.html",
-      "https://www.town.biei.hokkaido.jp/culture/event/news/bluepondpaidparking.html"
+      "https://www.town.biei.hokkaido.jp/culture/event/news/bluepondpaidparking.html",
+      "https://asahi-taxi.co.jp/sightseeing.html"
     ]
   },
   "tree": {
@@ -1918,7 +1927,9 @@ const PLACE_MEDIA={
       "适合在车站周边购物时顺路逛，食品层可比较多个品牌。商品库存与楼层以当天指引为准。",
       "11月12日核对2026年HAPPY SURPRISE官方安排：12月19日大丸札幌1楼活动空间有札幌西区管弦乐团成员室内乐，日本时间11:00、13:00为弦乐电影音乐合奏加双簧管，15:00、17:00为木管五重奏；活动每场约15—30分钟。费用及预约方式未列明，不推定免费或可报名。可在离开札幌前顺路评估，具体列车时间尚未提供，不保证赶得上。",
       "12月19、20日表格列Secret Guest，2026主题页提及圣诞老人，但嘉宾出现时间与地点作为惊喜未公开，不保证遇到、合影或可预约；12月20日已在旭川行程，不为此默认返回札幌。不要把室内乐的场次或1楼地点套用到Secret Guest。",
-      "11月13日核准宝可梦札幌官方11月6日活动公告：12月19日圣诞服皮卡丘与火狐狸（フォッコ）预计11:00、13:00、15:00登场，每次约15—25分钟；当日10:00—10:30到店受付，人数有限，满额可能提前结束，也可能使用整理券。店铺位于大丸札幌8楼，费用未列明，不保证七人都能参与或角色一定出现。当天转场旭川，只把11:00场作为不影响交通时的备选，不安排13:00或15:00场；它与大丸1楼11:00室内乐时间重叠，应择一，不能假定两场都能参加。"
+      "11月13日核准宝可梦札幌官方11月6日活动公告：12月19日圣诞服皮卡丘与火狐狸（フォッコ）预计11:00、13:00、15:00登场，每次约15—25分钟；当日10:00—10:30到店受付，人数有限，满额可能提前结束，也可能使用整理券。店铺位于大丸札幌8楼，费用未列明，不保证七人都能参与或角色一定出现。当天转场旭川，只把11:00场作为不影响交通时的备选，不安排13:00或15:00场；它与大丸1楼11:00室内乐时间重叠，应择一，不能假定两场都能参加。",
+      "11月22日核对大丸亲子设施：4楼Stellar Place连通口旁有室内游玩区，同层婴儿休息室内有儿童厕所及换尿布设施，4楼常规10:00—20:00。借用童车只供满2岁及以下儿童，三岁不依赖。优先12月17或18日顺路休息，19日仅赶车有余裕时考虑，不保证空位。",
+      "未来邮筒12月2—25日免费参加：1楼活动区或6楼Green Patio取卡，两处每天合计500张，活动期每人最多3张，写好在1楼投寄。只寄日本国内地址，预计2027年12月收到，不能指定日期。没有日本收件地址可自备卡片画好带回家，明年再拆；这不是圣诞老人见面活动。"
     ],
     "history": "",
     "facts": [
@@ -1943,7 +1954,7 @@ const PLACE_MEDIA={
         "value": "8楼；10:00—10:30当日受付，仅评估11:00场。名额有限、费用未列，与1楼11:00音乐会择一。"
       }
     ],
-    "checkedOn": "2026-11-13",
+    "checkedOn": "2026-11-22",
     "informationSources": [
       {
         "title": "官方网站",
@@ -1952,7 +1963,10 @@ const PLACE_MEDIA={
       "https://www.daimaru.co.jp/sapporo/topics/event-175079.html",
       "https://www.daimaru.co.jp/sapporo/happyholidays/index2026.html",
       "https://shop.pokemon.co.jp/ja/shop/pokemoncenter-sapporo/events/202611/000681.html",
-      "https://shop.pokemon.co.jp/ja/shop/pokemoncenter-sapporo/"
+      "https://shop.pokemon.co.jp/ja/shop/pokemoncenter-sapporo/",
+      "https://www.daimaru.co.jp/sapporo/service/okosama.html",
+      "https://www.daimaru.co.jp/sapporo/hours.html",
+      "https://www.daimaru.co.jp/sapporo/topics/campaign-174805.html"
     ],
     "note": "",
     "photos": []
