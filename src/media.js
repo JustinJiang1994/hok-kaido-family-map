@@ -33,7 +33,9 @@ const PLACE_MEDIA={
     "details": [
       "市集在户外展开，可以近看装饰与手工杂货，也有饮食摊位。白天更容易看清商品，夜晚以亮灯后的气氛为主。",
       "11月5日补充核实资料：2026札幌官方指南第9—10页列大通公园1丁目圣诞老人见面，工作日日本时间16:00—20:00期间不定时出现，并非全时在场。12月17日（周四）、18日（周五）均为工作日，可在逛市集时留意；具体出现时刻、费用和预约未列明，不能保证到场即可遇见或合影。",
-      "札幌站可经Chi-Ka-Ho地下步行空间→Aurora Town前往大通。11月22日核对主办方无障碍路线：大通站8号出口有电梯，出到西3丁目后再往西2、东侧西1丁目市集走；不把27号出口写成电梯。Aurora Town西3丁目Crosspoint的咨询台及带换尿布台的授乳区10:00—20:00，Aurora Square东侧另有多功能厕所，独立关闭时间未列。可作为幼儿途中休息与照护点，七人座位和现场可用情况不保证。"
+      "札幌站可经Chi-Ka-Ho地下步行空间→Aurora Town前往大通。11月22日核对主办方无障碍路线：大通站8号出口有电梯，出到西3丁目后再往西2、东侧西1丁目市集走；不把27号出口写成电梯。Aurora Town西3丁目Crosspoint的咨询台及带换尿布台的授乳区10:00—20:00，Aurora Square东侧另有多功能厕所，独立关闭时间未列。可作为幼儿途中休息与照护点，七人座位和现场可用情况不保证。",
+      "12月18日大通西1丁目互动点灯可选17:50、18:50或19:50（日本时间）；带孩子优先早一场，和不定时出现的圣诞老人是两回事。",
+      "11月25日补核：大通西1丁目北侧 Sapporo Sweets & Coffee 摊在11月20日至12月25日售森彦市集限定原味及咖啡味圣诞果子面包切片。11月22日发表的实访记整条实付3,560日元；切片价及旅行当日库存未知。原味含朗姆葡萄干及坚果，定位成人尝鲜与伴手礼。"
     ],
     "history": "札幌与德国慕尼黑是姐妹城市，市集体现了两座城市之间的交流。",
     "facts": [
@@ -72,16 +74,28 @@ const PLACE_MEDIA={
       {
         "label": "11月22日亲子通行",
         "value": "大通站8号出口电梯至西3丁目；Aurora Town西3照护区10:00—20:00；27号出口不当作电梯。"
+      },
+      {
+        "label": "12月18日互动点灯",
+        "value": "17:50／18:50／19:50（日本时间）；带幼儿可先选最早一场。"
+      },
+      {
+        "label": "森彦市集限定",
+        "value": "大通西1丁目北侧限量切片；原味、咖啡味，实访整条参考3,560日元，切片价及库存未核。"
       }
     ],
-    "checkedOn": "2026-11-22",
+    "checkedOn": "2026-11-25",
     "informationSources": [
       "https://www.sapporo.travel/white-illumination/event/munich/",
       "https://www.sapporo.travel/white-illumination/event/illumination/odori/",
       "https://www.sapporo.travel/cms/wp-content/uploads/2026/10/2026-%E3%81%95%E3%81%A3%E3%81%BD%E3%82%8D%E3%83%9B%E3%83%AF%E3%82%A4%E3%83%88%E3%82%A4%E3%83%AB%E3%83%9F%E3%83%8D%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E5%85%AC%E5%BC%8F%E3%82%AC%E3%82%A4%E3%83%89%E3%83%96%E3%83%83%E3%82%AF.pdf",
       "https://www.tv-tower.co.jp/access.html",
       "https://www.sapporo.travel/white-illumination/access/",
-      "https://sapporo-chikagai.jp/floorguide/facility"
+      "https://sapporo-chikagai.jp/floorguide/facility",
+      "https://www.sapporo.travel/white-illumination/event/munich/event/",
+      "https://www.morihico.com/newspaper/20261117/",
+      "https://buffeguruguru1.blog.fc2.com/blog-entry-612.html",
+      "https://online.parco.jp/shop/g/gP010010-00260/"
     ]
   },
   "shiroi": {
@@ -724,7 +738,8 @@ const PLACE_MEDIA={
       "本项常设展票价资料8/5更新、10/1实施；天文馆是另一个项目，不把常设展家庭合计当作套票价格。",
       "11月18日核对11月17日更新的12月天文馆表：12月19日（周六）11:00、14:00开场，20日（周日）10:30、14:00开场，10分钟后播放幼儿向《クリスマスのふしぎ》，约20分钟。20日另有11:30开场的面包超人节目，约30分钟；以场次表为准，切勿将开场时间当作播放开始时间。投影开始后不能入场或重新入场，七人座位及孩子对日语、暗场的适应未知。",
       "天文馆单场成人490日元、中学生以下免费，6成人及3岁儿童合计2940日元；常设展加天文馆一场成人770日元，全家4620日元。12月21日闭馆；19日转城、20日动物园均有时间取舍，仅作恶劣天气替代，未查余位或购票。",
-      "11月20日核对市方11月19日更新：12月19日19:00—20:30有免费观星会，50名抽签，11月19日—12月9日网上申请。先在天文馆讲解30分钟，坏天气延长室内讲解、不上天文台；原则仅中签者入场，难以独自在家的幼儿可随同，但六成人一幼儿共同申请方式及表单字段尚未核实。活动从南口入场，须充分御寒；当天转城后是否参加取决于体力与中签，不默认已报名。"
+      "11月20日核对市方11月19日更新：12月19日19:00—20:30有免费观星会，50名抽签，11月19日—12月9日网上申请。先在天文馆讲解30分钟，坏天气延长室内讲解、不上天文台；原则仅中签者入场，难以独自在家的幼儿可随同，但六成人一幼儿共同申请方式及表单字段尚未核实。活动从南口入场，须充分御寒；当天转城后是否参加取决于体力与中签，不默认已报名。",
+      "12月20日若动物园行程因风雪缩短，可改旭川科学馆2楼木工模型室做圣诞木饰。10:00—11:30或13:00—16:00（日本时间）现场参加，约20—30分钟，参加费500日元，先到50组、不需预约；小学三年级及以下由监护人陪同。三岁孩子能参与的步骤、七人能否同桌及是否另需入馆费未说明，锯切交由成人按工作人员指导。可先看13:00场名额，再赶14:00开门的幼儿圣诞星空节目（天文馆另购票）。"
     ],
     "history": null,
     "facts": [
@@ -759,16 +774,21 @@ const PLACE_MEDIA={
       {
         "label": "11月20日补核范围",
         "value": "夜间观星会抽签与入场边界；不等同白天天文馆票。"
+      },
+      {
+        "label": "12月20日圣诞木饰",
+        "value": "2楼木工模型室；10:00–11:30／13:00–16:00，500日元，先到50组、不需预约；低年级及幼儿须成人陪同。"
       }
     ],
-    "checkedOn": "2026-11-20",
+    "checkedOn": "2026-11-25",
     "informationSources": [
       "https://www.city.asahikawa.hokkaido.jp/science/",
       "https://www.city.asahikawa.hokkaido.jp/science/04/p002436.html",
       "https://www.city.asahikawa.hokkaido.jp/science/06/p002414.html",
       "https://www.city.asahikawa.hokkaido.jp/science/04/d054248.html",
       "https://www.city.asahikawa.hokkaido.jp/science/20/d065072.html",
-      "https://logoform.jp/form/iLZf/tenmi20261219"
+      "https://logoform.jp/form/iLZf/tenmi20261219",
+      "https://www.city.asahikawa.hokkaido.jp/event/category-07/d082501.html"
     ]
   },
   "blue": {
