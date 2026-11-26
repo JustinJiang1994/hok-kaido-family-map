@@ -197,3 +197,8 @@ body:not(.overview-mode) #journeyPhoto{display:none!important}
 
 /* User-supplied recommendation provenance, separate from verified venue facts. */
 .recommendation-badge{display:table;max-width:100%;box-sizing:border-box;padding:7px 11px;margin:8px 0 14px;border:1px solid #e4a7b4;border-radius:10px;background:#fff0f3;color:#982545;font-size:14px;font-weight:700;line-height:1.6;overflow-wrap:anywhere}
+
+.source-legend{font-size:14px;line-height:1.7;color:#a54c14;margin:8px 0}.tabelog-key{color:#087f8c}.tabelog-badge{padding:10px;border-radius:8px;background:#e5f5f5;color:#08636d;font-size:16px;font-weight:700}.tabelog-source{display:inline-block;min-height:44px;line-height:44px;color:#08636d;font-size:16px}
+.overview-mode .source-legend{display:none}.source-legend>span:first-child{color:#a54c14}
+
+#restaurantCatalog{margin:10px 0;color:#233f42}#restaurantCatalog[hidden]{display:none}#restaurantCatalog summary{padding:12px 4px;cursor:pointer;font-weight:700;min-height:44px}.restaurant-method{font-size:14px;line-height:1.7}.restaurant-choice{display:block;width:100%;text-align:left;white-space:normal;padding:12px;margin:8px 0;border:1px solid #bad9d9;border-radius:10px;background:#f3fbfa;color:#233f42}.restaurant-choice strong{display:block;font-size:16px;line-height:1.6}.restaurant-choice strong span{color:#087f8c;white-space:nowrap}.restaurant-choice small{display:block;font-size:14px;line-height:1.7;margin-top:4px}.restaurant-choice:focus-visible{outline:3px solid #087f8c;outline-offset:2px}

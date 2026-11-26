@@ -8,10 +8,21 @@ function updatePlaceFilter(){
  current=PLACES.filter(p=>placeTypes.has(p.type)&&(nearbyMode&&userPosition?Nearby.distance(userPosition,p)<=Nearby.radius:p.city===region));
  if(nearbyMode)current.sort((a,b)=>Nearby.distance(userPosition,a)-Nearby.distance(userPosition,b));
  document.querySelectorAll('[data-place-type]').forEach(b=>b.setAttribute('aria-pressed',String(placeTypes.has(b.dataset.placeType))));
+ updateRestaurantCatalog();
  const typeLabel=Object.keys(PLACE_TYPES).filter(t=>placeTypes.has(t)).map(t=>PLACE_TYPES[t]).join('、');
  if(!placeTypes.size){$('#mapHint').textContent='请选择要显示的类型 · 可多选';return;}
  if(nearbyMode){$('#mapHint').textContent=current.length?'附近5公里内已收录'+current.length+'个'+typeLabel+' · 点圆点查看':'附近5公里内暂无已收录的'+typeLabel+'，可选择其他类型';return;}
  if(region!=='行程总览')$('#mapHint').textContent=current.length?'显示'+typeLabel+' · 可多选 · 点圆点查看介绍':'暂未添加'+region+'的'+typeLabel+'地点，可切换其他类型';
+}
+
+function updateRestaurantCatalog(){
+ const panel=$('#restaurantCatalog');
+ if(!panel)return;
+ const list=current.filter(p=>p.source==='tabelog').sort((a,b)=>b.rating-a.rating);
+ panel.hidden=region==='行程总览'||!placeTypes.has('food')||!list.length;
+ const restricted=list.filter(p=>['日期冲突','本次不适用','带娃不优先'].includes(p.visitStatus)).length;
+ $('#restaurantCount').textContent=`Tabelog 餐厅 ${list.length} 家${restricted?' · '+restricted+' 家有明确限制':''} · 展开列表`;
+ $('#restaurantList').innerHTML=list.map(p=>`<button type="button" class="restaurant-choice" data-restaurant-id="${esc(p.id)}"><strong>${esc(p.name)} <span>${Number(p.rating).toFixed(2)} 分</span></strong><small>${esc(p.desc)} · ${esc(p.selectionReason)} · ${esc(p.visitStatus)}</small><small>${esc(p.detail)}</small></button>`).join('');
 }
 
 const map=L.map('map',{zoomAnimation:false,fadeAnimation:false,scrollWheelZoom:false,zoomControl:true,minZoom:5,maxZoom:18}).setView([43.2,142.1],7);
@@ -23,7 +34,7 @@ const routeLayer=L.layerGroup().addTo(map),markerLayer=L.layerGroup().addTo(map)
 const userLayer=L.layerGroup().addTo(map);
 function drawUserLocation(){userLayer.clearLayers();if(!userPosition||region==='行程总览')return;L.circle([userPosition.lat,userPosition.lon],{radius:userPosition.accuracy,color:'#1769d2',weight:1,fillOpacity:.08,interactive:false}).addTo(userLayer);L.circleMarker([userPosition.lat,userPosition.lon],{radius:8,color:'white',weight:3,fillColor:'#1769d2',fillOpacity:1,interactive:false}).addTo(userLayer);}
 function placeLocationInfo(p){return `<a class="place-navigation" target="_blank" rel="noopener noreferrer" href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(p.navigationDestination||`${p.name} 日本 北海道 ${p.city}`)}" aria-label="用 Google 地图导航到${esc(p.name)}">用 Google 地图导航 ↗</a>`;}
-const placeColor=p=>p.type==='food'?'#c65c18':p.type==='shop'?'#6351b5':p.type==='hub'?'#54677c':'#c02570';
+const placeColor=p=>p.source==='tabelog'?'#087f8c':p.type==='food'?'#c65c18':p.type==='shop'?'#6351b5':p.type==='hub'?'#54677c':'#c02570';
 function renderMarkers(animateFilter=false){
  if(region==='行程总览')return;
  markerLayer.clearLayers();routeLayer.clearLayers();markers=[];const size=map.getSize(),used=[];
@@ -45,7 +56,7 @@ function renderSections(p,info){
 }
 function showPlace(p){
  highlight(p.id);const info=PLACE_MEDIA[p.id],photos=info?.photos||[];
- detail.innerHTML=`<div class="detail-head"><h2 id="detailTitle">${esc(info?.title||p.name)}</h2><button id="closeDetail" aria-label="关闭地点介绍">关闭 ×</button></div><div class="detail-body">${photos.length?`<section class="photo-section" aria-label="${esc(p.name)}照片"><div class="photo-track" tabindex="0" aria-label="左右滑动查看照片">${photos.map((im,i)=>`<figure class="photo-slide"><div class="photo-frame">${PhotoLoader.markup(im,i)}<div class="photo-error" hidden>照片暂未加载<br><button type="button">重新加载</button></div></div><figcaption>${esc(im.caption)}<small>照片：${esc(im.credit)}</small></figcaption></figure>`).join('')}</div><div class="photo-controls"><button id="prevPhoto" aria-label="上一张照片">‹</button><span id="photoCount" aria-live="polite">1 / ${photos.length}</span><span class="swipe-tip">左右滑动看照片</span><button id="nextPhoto" aria-label="下一张照片">›</button></div></section>`:''}<div class="place-copy"><p class="place-city">${esc(p.city)} · ${p.type==='hub'?'交通枢纽':p.type==='food'?'餐厅':p.type==='shop'?'购物':'景点'}</p>${info?.recommendation?`<p class="recommendation-badge">${esc(info.recommendation)}</p>`:''}${placeLocationInfo(p)}${renderSections(p,info)}${info?.note?'<div class="visit-note"><strong>看图与到访提示</strong><p>'+esc(info.note)+'</p></div>':p.detail?'<p>'+esc(p.detail)+'</p>':''}${photos.length?'<p class="photo-footnote">图片来自上述地点官方或当地官方旅游页面，为资料照片，季节、天气与现场布置可能不同。图片已压缩，首次查看需联网加载。</p>':''}</div></div>`;
+ detail.innerHTML=`<div class="detail-head"><h2 id="detailTitle">${esc(info?.title||p.name)}</h2><button id="closeDetail" aria-label="关闭地点介绍">关闭 ×</button></div><div class="detail-body">${photos.length?`<section class="photo-section" aria-label="${esc(p.name)}照片"><div class="photo-track" tabindex="0" aria-label="左右滑动查看照片">${photos.map((im,i)=>`<figure class="photo-slide"><div class="photo-frame">${PhotoLoader.markup(im,i)}<div class="photo-error" hidden>照片暂未加载<br><button type="button">重新加载</button></div></div><figcaption>${esc(im.caption)}<small>照片：${esc(im.credit)}</small></figcaption></figure>`).join('')}</div><div class="photo-controls"><button id="prevPhoto" aria-label="上一张照片">‹</button><span id="photoCount" aria-live="polite">1 / ${photos.length}</span><span class="swipe-tip">左右滑动看照片</span><button id="nextPhoto" aria-label="下一张照片">›</button></div></section>`:''}<div class="place-copy"><p class="place-city">${esc(p.city)} · ${p.type==='hub'?'交通枢纽':p.type==='food'?'餐厅':p.type==='shop'?'购物':'景点'}</p>${info?.recommendation?`<p class="recommendation-badge">${esc(info.recommendation)}</p>`:''}${p.source==='tabelog'?`<p class="tabelog-badge">Tabelog 来源 · ${Number(p.rating).toFixed(2)} 分 · ${esc(p.checkedOn)} 查询 · ${esc(p.selectionReason)}</p><a class="tabelog-source" href="${esc(p.url)}" target="_blank" rel="noopener noreferrer">查看 Tabelog 店铺页</a>`:''}${placeLocationInfo(p)}${renderSections(p,info)}${info?.note?'<div class="visit-note"><strong>看图与到访提示</strong><p>'+esc(info.note)+'</p></div>':p.detail?'<p>'+esc(p.detail)+'</p>':''}${photos.length?'<p class="photo-footnote">图片来自上述地点官方或当地官方旅游页面，为资料照片，季节、天气与现场布置可能不同。图片已压缩，首次查看需联网加载。</p>':''}</div></div>`;
  $('#closeDetail').onclick=()=>detail.close();if(!detail.open)detail.showModal();
  const track=detail.querySelector('.photo-track');if(!track)return;
  track.querySelectorAll('.photo-frame').forEach((frame,i)=>{const b=document.createElement('button');b.className='expand-photo';b.textContent='放大照片 ⤢';b.setAttribute('aria-label','全屏查看'+photos[i].caption);b.onclick=()=>openPhotoViewer(photos,i);frame.append(b);});
@@ -141,6 +152,7 @@ function render(){
 $('#days').onclick=e=>{const b=e.target.closest('[data-region]');if(b){locationFocus=null;nearbyMode=false;region=b.dataset.region;placeTypes=new Set(['sight']);render();}};
 $('#placeLegend').onclick=e=>{const b=e.target.closest('[data-place-type]');if(!b||region==='行程总览')return;const type=b.dataset.placeType;if(placeTypes.has(type))placeTypes.delete(type);else placeTypes.add(type);selectedId=null;if(detail.open)detail.close();updatePlaceFilter();renderMarkers(true);};
 
+$('#restaurantList').onclick=e=>{const b=e.target.closest('[data-restaurant-id]');if(b){const p=PLACES.find(p=>p.id===b.dataset.restaurantId);if(p)showPlace(p);}};
 $('#fit').onclick=()=>{locationFocus=null;nearbyMode=false;updatePlaceFilter();fitRegion();renderMarkers();};map.on('moveend',()=>{if(region==='行程总览')drawOverviewLabels();else renderMarkers();});map.on('resize',()=>{if(bounds)fitRegion();});
 render();
 
