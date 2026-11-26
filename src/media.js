@@ -35,7 +35,8 @@ const PLACE_MEDIA={
       "11月5日补充核实资料：2026札幌官方指南第9—10页列大通公园1丁目圣诞老人见面，工作日日本时间16:00—20:00期间不定时出现，并非全时在场。12月17日（周四）、18日（周五）均为工作日，可在逛市集时留意；具体出现时刻、费用和预约未列明，不能保证到场即可遇见或合影。",
       "札幌站可经Chi-Ka-Ho地下步行空间→Aurora Town前往大通。11月22日核对主办方无障碍路线：大通站8号出口有电梯，出到西3丁目后再往西2、东侧西1丁目市集走；不把27号出口写成电梯。Aurora Town西3丁目Crosspoint的咨询台及带换尿布台的授乳区10:00—20:00，Aurora Square东侧另有多功能厕所，独立关闭时间未列。可作为幼儿途中休息与照护点，七人座位和现场可用情况不保证。",
       "12月18日大通西1丁目互动点灯可选17:50、18:50或19:50（日本时间）；带孩子优先早一场，和不定时出现的圣诞老人是两回事。",
-      "11月25日补核：大通西1丁目北侧 Sapporo Sweets & Coffee 摊在11月20日至12月25日售森彦市集限定原味及咖啡味圣诞果子面包切片。11月22日发表的实访记整条实付3,560日元；切片价及旅行当日库存未知。原味含朗姆葡萄干及坚果，定位成人尝鲜与伴手礼。"
+      "11月25日补核：大通西1丁目北侧 Sapporo Sweets & Coffee 摊在11月20日至12月25日售森彦市集限定原味及咖啡味圣诞果子面包切片。11月22日发表的实访记整条实付3,560日元；切片价及旅行当日库存未知。原味含朗姆葡萄干及坚果，定位成人尝鲜与伴手礼。",
+      "11月26日补读开市后的一篇居民家庭实访：作者提到人流踩过的积雪很滑，并在当次遇到免费圣诞老人互动。这是单次经验，不确认12月17、18日费用、报名、排队或到场分钟，原官方时窗继续适用。带孩子夜间建议尽量走地下通道、穿防滑鞋，地面短段仍须慢行；这是行程建议，不是对旅期路况的预测。"
     ],
     "history": "札幌与德国慕尼黑是姐妹城市，市集体现了两座城市之间的交流。",
     "facts": [
@@ -84,7 +85,7 @@ const PLACE_MEDIA={
         "value": "大通西1丁目北侧限量切片；原味、咖啡味，实访整条参考3,560日元，切片价及库存未核。"
       }
     ],
-    "checkedOn": "2026-11-25",
+    "checkedOn": "2026-11-26",
     "informationSources": [
       "https://www.sapporo.travel/white-illumination/event/munich/",
       "https://www.sapporo.travel/white-illumination/event/illumination/odori/",
@@ -95,7 +96,8 @@ const PLACE_MEDIA={
       "https://www.sapporo.travel/white-illumination/event/munich/event/",
       "https://www.morihico.com/newspaper/20261117/",
       "https://buffeguruguru1.blog.fc2.com/blog-entry-612.html",
-      "https://online.parco.jp/shop/g/gP010010-00260/"
+      "https://online.parco.jp/shop/g/gP010010-00260/",
+      "https://ameblo.jp/bddmt636/entry-12985237448.html"
     ]
   },
   "shiroi": {
