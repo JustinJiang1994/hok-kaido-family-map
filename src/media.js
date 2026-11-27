@@ -32,7 +32,7 @@ const PLACE_MEDIA={
     ],
     "details": [
       "市集在户外展开，可以近看装饰与手工杂货，也有饮食摊位。白天更容易看清商品，夜晚以亮灯后的气氛为主。",
-      "11月5日补充核实资料：2026札幌官方指南第9—10页列大通公园1丁目圣诞老人见面，工作日日本时间16:00—20:00期间不定时出现，并非全时在场。12月17日（周四）、18日（周五）均为工作日，可在逛市集时留意；具体出现时刻、费用和预约未列明，不能保证到场即可遇见或合影。",
+      "11月27日核对主办方当季活动正文：大通西1丁目圣诞老人工作日16:00—20:00、周末及节假日11:00—19:00（日本时间）区间内不定时出现，可现场互动拍照，不是全时在场或固定场次。12月17、18日适用工作日窗口，可与16:30灯饰顺路安排；19日窗口与转旭川取舍。单独费用、预约及排队规则未列明，不保证遇见；12月6日派礼物不在本团旅期，白色恋人抽选未恢复。",
       "札幌站可经Chi-Ka-Ho地下步行空间→Aurora Town前往大通。11月22日核对主办方无障碍路线：大通站8号出口有电梯，出到西3丁目后再往西2、东侧西1丁目市集走；不把27号出口写成电梯。Aurora Town西3丁目Crosspoint的咨询台及带换尿布台的授乳区10:00—20:00，Aurora Square东侧另有多功能厕所，独立关闭时间未列。可作为幼儿途中休息与照护点，七人座位和现场可用情况不保证。",
       "12月18日大通西1丁目互动点灯可选17:50、18:50或19:50（日本时间）；带孩子优先早一场，和不定时出现的圣诞老人是两回事。",
       "11月25日补核：大通西1丁目北侧 Sapporo Sweets & Coffee 摊在11月20日至12月25日售森彦市集限定原味及咖啡味圣诞果子面包切片。11月22日发表的实访记整条实付3,560日元；切片价及旅行当日库存未知。原味含朗姆葡萄干及坚果，定位成人尝鲜与伴手礼。",
@@ -85,7 +85,7 @@ const PLACE_MEDIA={
         "value": "大通西1丁目北侧限量切片；原味、咖啡味，实访整条参考3,560日元，切片价及库存未核。"
       }
     ],
-    "checkedOn": "2026-11-26",
+    "checkedOn": "2026-11-27",
     "informationSources": [
       "https://www.sapporo.travel/white-illumination/event/munich/",
       "https://www.sapporo.travel/white-illumination/event/illumination/odori/",
@@ -97,7 +97,8 @@ const PLACE_MEDIA={
       "https://www.morihico.com/newspaper/20261117/",
       "https://buffeguruguru1.blog.fc2.com/blog-entry-612.html",
       "https://online.parco.jp/shop/g/gP010010-00260/",
-      "https://ameblo.jp/bddmt636/entry-12985237448.html"
+      "https://ameblo.jp/bddmt636/entry-12985237448.html",
+      "https://www.sapporo.travel/white-illumination/event/munich/event/"
     ]
   },
   "shiroi": {
@@ -845,7 +846,8 @@ const PLACE_MEDIA={
       "大丸交通官网特定大型车时间制为每30分钟5470日元；按7或8段计算，3.5小时38290／4小时43760日元仅为基价算例，不是相同路线实际报价，停车等另计。官网Hiace推荐2—6人、最多9人，七人加儿童座椅的实车配置及余车仍待确认；不能与其他运营商套餐直接当作同条件比价。",
       "美瑛站换车仍仅有条件备选：美瑛ハイヤーJumbo只1台，官网包时2小时21880／2.5小时27350日元；这是计价参考，不证明愿接双景点路线或七人含儿童座椅容量。町方停车表列町内出租车豁免，不能把此前旭川出发车的1000日元停车费照加。包时是否冬季另加20%尚未确认，不乘算成确定报价；车次、转乘与当天路况均须另核，雪天优先减少折返。",
       "11月21日补核旭川往返OPTBOOKMARK方案：事前信用卡付款，预约截止出发前一天17:00；若12月21日出发，取消费12月19日30%、20日50%、21日100%。冬季Jumbo超时每30分钟6560日元另计。恶劣天气可能取消或改线，页面未说明此时退款处理，不保证退款；这是该产品条件，不套用美瑛ハイヤー。",
-      "11月22日核对独立备援旭タクシー株式会社：官网列9人Jumbo与旭川—美瑛观光项目，4320日元／30分钟是普通车价，Jumbo须另报价。它与旭川合同自动车不是同一公司；12月21日晚余车、夜景两站往返、适龄儿童座椅安装后能否保留六成人座、报价及取消条款均未确认，不把名义9座当作七人可用保证。"
+      "11月22日核对独立备援旭タクシー株式会社：官网列9人Jumbo与旭川—美瑛观光项目，4320日元／30分钟是普通车价，Jumbo须另报价。它与旭川合同自动车不是同一公司；12月21日晚余车、夜景两站往返、适龄儿童座椅安装后能否保留六成人座、报价及取消条款均未确认，不把名义9座当作七人可用保证。",
+      "11月27日核对道之驿11月20日冬季公告：白金Birke在12—2月室内营业10:00—17:00，停车场和厕所24小时可用。17:00后不能把室内当作夜景路线的取暖候车点，厕所开放不等于商店、餐饮或室内休息区开放；幼儿保暖、食物和返程另作安排。"
     ],
     "history": null,
     "facts": [
@@ -894,7 +896,7 @@ const PLACE_MEDIA={
         "value": "旭川往返包车候选与车辆条件；灯光巴士12/21不运行的原结论保留。"
       }
     ],
-    "checkedOn": "2026-11-22",
+    "checkedOn": "2026-11-27",
     "informationSources": [
       "https://www.town.biei.hokkaido.jp/culture/event/illuminate.html",
       "https://www.biei-hokkaido.jp/ja/facility/shirogane-blue-pond",
@@ -912,7 +914,8 @@ const PLACE_MEDIA={
       "https://optbookmark.jp/plans/6607",
       "https://www.daimaru-g.co.jp/service.html",
       "https://www.town.biei.hokkaido.jp/culture/event/news/bluepondpaidparking.html",
-      "https://asahi-taxi.co.jp/sightseeing.html"
+      "https://asahi-taxi.co.jp/sightseeing.html",
+      "https://hokkaido-michinoeki.jp/rinjiinfo/70562/"
     ]
   },
   "falls": {
@@ -965,7 +968,8 @@ const PLACE_MEDIA={
       "大丸交通官网特定大型车时间制为每30分钟5470日元；按7或8段计算，3.5小时38290／4小时43760日元仅为基价算例，不是相同路线实际报价，停车等另计。官网Hiace推荐2—6人、最多9人，七人加儿童座椅的实车配置及余车仍待确认；不能与其他运营商套餐直接当作同条件比价。",
       "美瑛站换车仍仅有条件备选：美瑛ハイヤーJumbo只1台，官网包时2小时21880／2.5小时27350日元；这是计价参考，不证明愿接双景点路线或七人含儿童座椅容量。町方停车表列町内出租车豁免，不能把此前旭川出发车的1000日元停车费照加。包时是否冬季另加20%尚未确认，不乘算成确定报价；车次、转乘与当天路况均须另核，雪天优先减少折返。",
       "11月21日补核旭川往返OPTBOOKMARK方案：事前信用卡付款，预约截止出发前一天17:00；若12月21日出发，取消费12月19日30%、20日50%、21日100%。冬季Jumbo超时每30分钟6560日元另计。恶劣天气可能取消或改线，页面未说明此时退款处理，不保证退款；这是该产品条件，不套用美瑛ハイヤー。",
-      "11月22日核对独立备援旭タクシー株式会社：官网列9人Jumbo与旭川—美瑛观光项目，4320日元／30分钟是普通车价，Jumbo须另报价。它与旭川合同自动车不是同一公司；12月21日晚余车、夜景两站往返、适龄儿童座椅安装后能否保留六成人座、报价及取消条款均未确认，不把名义9座当作七人可用保证。"
+      "11月22日核对独立备援旭タクシー株式会社：官网列9人Jumbo与旭川—美瑛观光项目，4320日元／30分钟是普通车价，Jumbo须另报价。它与旭川合同自动车不是同一公司；12月21日晚余车、夜景两站往返、适龄儿童座椅安装后能否保留六成人座、报价及取消条款均未确认，不把名义9座当作七人可用保证。",
+      "11月27日核对道之驿11月20日冬季公告：白金Birke在12—2月室内营业10:00—17:00，停车场和厕所24小时可用。17:00后不能把室内当作夜景路线的取暖候车点，厕所开放不等于商店、餐饮或室内休息区开放；幼儿保暖、食物和返程另作安排。"
     ],
     "history": null,
     "facts": [
@@ -1010,7 +1014,7 @@ const PLACE_MEDIA={
         "value": "旭川往返包车候选，不代表七人用车已落实。"
       }
     ],
-    "checkedOn": "2026-11-22",
+    "checkedOn": "2026-11-27",
     "informationSources": [
       "https://www.biei-hokkaido.jp/ja/facility/shirahige-waterfalls",
       "https://www.town.biei.hokkaido.jp/culture/event/illuminate.html",
@@ -1023,7 +1027,8 @@ const PLACE_MEDIA={
       "https://optbookmark.jp/plans/6607",
       "https://www.daimaru-g.co.jp/service.html",
       "https://www.town.biei.hokkaido.jp/culture/event/news/bluepondpaidparking.html",
-      "https://asahi-taxi.co.jp/sightseeing.html"
+      "https://asahi-taxi.co.jp/sightseeing.html",
+      "https://hokkaido-michinoeki.jp/rinjiinfo/70562/"
     ]
   },
   "tree": {
